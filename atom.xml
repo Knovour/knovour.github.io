@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-12-27T06:57:23.881Z</updated>
+  <updated>2016-01-09T18:24:52.959Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[記錄幾個 Google 搜尋技巧]]></title>
+    <link href="http://yoursite.com/2016/01/10/some-google-search-skills/"/>
+    <id>http://yoursite.com/2016/01/10/some-google-search-skills/</id>
+    <published>2016-01-09T18:24:05.000Z</published>
+    <updated>2016-01-09T18:24:52.959Z</updated>
+    <content type="html"><![CDATA[<p>記錄幾個自己在搜尋時常用到的方式</p>
+<h2 id="u4E00_u822C_u65B9_u5F0F"><a href="#u4E00_u822C_u65B9_u5F0F" class="headerlink" title="一般方式"></a>一般方式</h2><ul>
+<li><code>-</code>：排除某個關鍵字。例：<code>ui -jquery</code></li>
+<li><code>site:</code>：搜尋特定網站內容。例：<code>site:medium.com node.js</code></li>
+<li><code>&quot;關鍵字&quot;</code>：限定搜尋結果包含引號內完整字串。</li>
+</ul>
+<h2 id="u984D_u5916_u95DC_u9375_u5B57"><a href="#u984D_u5916_u95DC_u9375_u5B57" class="headerlink" title="額外關鍵字"></a>額外關鍵字</h2><ul>
+<li><code>alternative(s)</code>：搜尋某個軟體或 library 有沒有類似的東西。若搜尋的是 library 相關的，搜尋結果裡的 <a href="http://alternativeto.net/" target="_blank" rel="external">AlternativeTo</a> 網站則可以不用管，因為裡面舉的例子還是以軟體為主。</li>
+<li><code>how (to)</code>：搜尋一些 server 或開發環境架設時會用到</li>
+<li><code>附近</code>：搜尋 Map 時會用到。如：<code>101 附近 餐廳</code></li>
+</ul>
+<h2 id="u4E00_u4E9B_u7279_u6B8A_u7B26_u865F_u7684_u82F1_u6587"><a href="#u4E00_u4E9B_u7279_u6B8A_u7B26_u865F_u7684_u82F1_u6587" class="headerlink" title="一些特殊符號的英文"></a>一些特殊符號的英文</h2><p>主要是以前剛接觸 CSS3 跟 HTML 時會找的符號 (sign 或 symbol)</p>
+<ul>
+<li><code>&gt;</code>：greater than</li>
+<li><code>~</code>：tilde</li>
+<li><code>+</code>：plus</li>
+<li><code>:</code>：colon</li>
+<li><code>;</code>：semicolon</li>
+<li><code>-</code>：dash、minus</li>
+<li><code>_</code>：underline</li>
+<li><code>,</code>：comma</li>
+<li><code>.</code>：dot</li>
+<li><code>•</code>：bullet point</li>
+<li><code>·</code>：middot</li>
+<li><code>$</code>：dollar</li>
+<li><code>#</code>：number、pound (美式)</li>
+</ul>
+<h2 id="u5E7E_u500B_UI__u76F8_u95DC_u5143_u4EF6_u7684_u82F1_u6587"><a href="#u5E7E_u500B_UI__u76F8_u95DC_u5143_u4EF6_u7684_u82F1_u6587" class="headerlink" title="幾個 UI 相關元件的英文"></a>幾個 UI 相關元件的英文</h2><ul>
+<li><code>hamburger menu</code>：就是本 blog 左上角那三條線。</li>
+<li><code>ghost button</code>：只有 border 沒有 background-color 的按鈕。</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>記錄幾個自己在搜尋時常用到的方式</p>
+<h2 id="u4E00_u822C_u65B9_u5F0F"><a href="#u4E00_u822C_u65B9_u5F0F" class="headerlink" title="一般方式"></a>一般方式</h2><ul]]>
+    </summary>
+    
+      <category term="google, search" scheme="http://yoursite.com/tags/google-search/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hello World]]></title>

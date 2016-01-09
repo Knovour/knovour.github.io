@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/01/10/some-google-search-skills/</loc>
+    <lastmod>2016-01-09T18:24:52.959Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2015/12/27/hello-world/</loc>
     <lastmod>2015-12-27T06:57:23.881Z</lastmod>
   </url>

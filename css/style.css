@@ -177,12 +177,12 @@ body {
 }
 .logo {
   display: block;
-  width: 260px;
-  height: 42px;
+  width: 200px;
+  height: 32px;
   background: url("images/logo.png") no-repeat;
-  -webkit-background-size: auto 42px;
-  -moz-background-size: auto 42px;
-  background-size: auto 42px;
+  -webkit-background-size: auto 32px;
+  -moz-background-size: auto 32px;
+  background-size: auto 32px;
   text-indent: -9999px;
 }
 @media screen and (min-width: 768px) {
@@ -378,7 +378,7 @@ body {
 }
 #header .logo {
   float: left;
-  margin: 24px 24px 0 0;
+  margin: 28px 20px 0 0;
 }
 #header-outer {
   height: 100%;

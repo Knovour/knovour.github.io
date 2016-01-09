@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Knovour Notes</title>
+  <title>用 Shipit 部署 node server | Knovour Notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Knovour Notes">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="用 Shipit 做簡單的 node.js server 佈署。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用 Shipit 部署 node server">
+<meta property="og:url" content="http://yoursite.com/2015/07/17/deploy-node-js-by-shipit/index.html">
 <meta property="og:site_name" content="Knovour Notes">
-<meta property="og:description">
+<meta property="og:description" content="用 Shipit 做簡單的 node.js server 佈署。">
+<meta property="og:updated_time" content="2016-01-09T19:10:04.793Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Knovour Notes">
-<meta name="twitter:description">
+<meta name="twitter:title" content="用 Shipit 部署 node server">
+<meta name="twitter:description" content="用 Shipit 做簡單的 node.js server 佈署。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -116,103 +117,7 @@
   
 </aside>
         
-        <section id="main">
-  
-    <article id="post-path-of-exile-on-linux" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/16/path-of-exile-on-linux/" class="article-date">
-  <time datetime="2015-09-16T13:26:00.000Z" itemprop="datePublished">2015-09-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/16/path-of-exile-on-linux/">在 Linux 上執行 Path of Exile (PoE)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>之前在 Wine 上跑過一陣子 PoE，但經過幾次更新後，loading 畫面除了狂閃外基本上就是完全進不去的狀態，然而當時也是有點膩了，所以也懶得折騰（基本上都是在講把 Wine 降級或是裝 PlayOnLinux，不過不想這樣搞）。</p>
-<p>現在 2.0 出了，「據說」修好了錯位，也偶然發現有一篇比較不那麼麻煩的設定<a href="https://russell.cc/path-of-exile-linux/">文章</a>，試一試還真的成功了，在這邊紀錄一下。<br>
-        
-          <p class="article-more-link">
-            <a href="/2015/09/16/path-of-exile-on-linux/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/16/path-of-exile-on-linux/" data-id="cij7hedcz000aznn3ek87305b" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/game/">game</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wine/">wine</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-deploy-node-js-by-pm2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/08/13/deploy-node-js-by-pm2/" class="article-date">
-  <time datetime="2015-08-12T18:38:00.000Z" itemprop="datePublished">2015-08-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/13/deploy-node-js-by-pm2/">用 PM2 部署 node server</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="u524D_u7F6E_u4F5C_u696D"><a href="#u524D_u7F6E_u4F5C_u696D" class="headerlink" title="前置作業"></a>前置作業</h2><p>首先先設定完<a href="http://notes.knovour.ninja/deploy-node-js-by-shipit/">這篇文</a>的前置作業。</p>
-<p><strong>部署與開發用的機器都要安裝 PM2</strong>：<code>sudo npm i pm2 -g</code></p>
-<p><br></p>
-<h2 id="u90E8_u7F72_u8A2D_u5B9A"><a href="#u90E8_u7F72_u8A2D_u5B9A" class="headerlink" title="部署設定"></a>部署設定</h2><p>於專案資料夾底下執行 <code>pm2 ecosystem</code> 生成 <code>ecosystem.json5</code>，修改副檔名為 json 檔以便顯示語法 hightlight。</p>
-<p>將裡面的內容做修改</p>
-<script src="https://gist.github.com/Knovour/f27c0cf743e991973f57.js"></script>
-
-<p>注意最後一句裡 <code>pm2 startOrRestart ecosystem.json</code> 的副檔名是否相同。<br>
-        
-          <p class="article-more-link">
-            <a href="/2015/08/13/deploy-node-js-by-pm2/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/13/deploy-node-js-by-pm2/" data-id="cij7hedcj0000znn31jkjbu07" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deploy/">deploy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-deploy-node-js-by-shipit" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-deploy-node-js-by-shipit" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/17/deploy-node-js-by-shipit/" class="article-date">
   <time datetime="2015-07-17T15:42:00.000Z" itemprop="datePublished">2015-07-17</time>
@@ -225,8 +130,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/17/deploy-node-js-by-shipit/">用 Shipit 部署 node server</a>
+    <h1 class="article-title" itemprop="name">
+      用 Shipit 部署 node server
     </h1>
   
 
@@ -242,11 +147,30 @@
 <li>設定 server 裡程式碼的存放位置，假設為 <code>/usr/src</code>。</li>
 </ol>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/src/<span class="keyword">my</span>-project-<span class="property">name</span></span><br><span class="line">chown deploy:deploy /usr/src/<span class="keyword">my</span>-project-<span class="property">name</span></span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2015/07/17/deploy-node-js-by-shipit/#more">Read More</a>
-          </p>
-        
+<a id="more"></a>
+<p><br></p>
+<h2 id="u5728_u958B_u767C_u6A5F_u5B89_u88DD_u76F8_u95DC_u5957_u4EF6"><a href="#u5728_u958B_u767C_u6A5F_u5B89_u88DD_u76F8_u95DC_u5957_u4EF6" class="headerlink" title="在開發機安裝相關套件"></a>在開發機安裝相關套件</h2><p><code>sudo npm i shipit-cli -g</code></p>
+<p><code>npm i shipit-deploy shipit-npm --save-dev</code></p>
+<p><br></p>
+<h2 id="ShipIt_21"><a href="#ShipIt_21" class="headerlink" title="ShipIt!"></a>ShipIt!</h2><p>在專案資料夾目錄產生 <code>shipitfile.js</code></p>
+<p>內容如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params">shipit</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">require</span>(<span class="string">'shipit-deploy'</span>)(shipit);  <span class="comment">// remote deploy</span></span><br><span class="line">  <span class="built_in">require</span>(<span class="string">'shipit-npm'</span>)(shipit);      <span class="comment">// remote auto install npm packages</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> config = &#123;</span><br><span class="line">    <span class="keyword">default</span>: &#123;</span><br><span class="line">      workspace: <span class="string">'/tmp/project-name-in-deploy-server'</span>,</span><br><span class="line">      deployTo: <span class="string">'/usr/src/project-name-in-deploy-server'</span>,</span><br><span class="line">      repositoryUrl: <span class="string">'your git remote url (github, bitbucket, etc...)'</span>,</span><br><span class="line">      ignores: [<span class="string">'.git'</span>, <span class="string">'node_modules'</span>],</span><br><span class="line">      keepReleases: <span class="number">2</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    staging: &#123;</span><br><span class="line">      servers: <span class="string">'deploy@your-deploy-server-ip'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  shipit.initConfig(config);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>輸入 <code>shipit staging deploy</code> 開始部署</p>
+<p><br></p>
+<h2 id="u984D_u5916_u547D_u4EE4"><a href="#u984D_u5916_u547D_u4EE4" class="headerlink" title="額外命令"></a>額外命令</h2><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">shipit.initConfig(config);</span><br><span class="line"><span class="comment">// code 加在這行之後</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> current = config.<span class="keyword">default</span>.deployTo + <span class="string">'/current'</span>;</span><br><span class="line"><span class="comment">// shipit 會將 source code 放在 deploy server 專案資料夾裡的 current 中</span></span><br><span class="line">shipit.task(<span class="string">'server-on'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> shipit.remote(<span class="string">'cd '</span> + current + <span class="string">' &amp;&amp; bower i &amp;&amp; npm start'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">shipit.task(<span class="string">'start'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  shipit.start([<span class="string">'deploy'</span>, <span class="string">'server-on'</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>執行 <code>shipit staging start</code></p>
+<p><br></p>
+<h2 id="u57FA_u672C_u8A2D_u5B9A_u7684_u6A23_u5B50"><a href="#u57FA_u672C_u8A2D_u5B9A_u7684_u6A23_u5B50" class="headerlink" title="基本設定的樣子"></a>基本設定的樣子</h2><script src="https://gist.github.com/Knovour/97760c466552c2ed12db.js"></script>
+
+<p><br></p>
+<h2 id="u53C3_u8003_u4F86_u6E90"><a href="#u53C3_u8003_u4F86_u6E90" class="headerlink" title="參考來源"></a>參考來源</h2><ul>
+<li><p><a href="http://www.therightcode.net/deploy-nodejs-application-using-shipit/" target="_blank" rel="external">Forget Capistrano and deploy your node.js application using Shipit</a>（裡面是用 grunt 當範例，但我用 grunt 的方式跑不起來）</p>
+</li>
+<li><p><a href="https://github.com/shipitjs/shipit" target="_blank" rel="external">Shipit</a></p>
+</li>
+<li><a href="https://github.com/shipitjs/shipit-deploy" target="_blank" rel="external">shipit-deploy</a></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
@@ -258,64 +182,29 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-some-google-search-skills" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/15/some-google-search-skills/" class="article-date">
-  <time datetime="2015-04-15T13:43:00.000Z" itemprop="datePublished">2015-04-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2015/08/13/deploy-node-js-by-pm2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          用 PM2 部署 node server
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/15/some-google-search-skills/">記錄幾個 Google 搜尋技巧</a>
-    </h1>
   
+    <a href="/2015/04/15/some-google-search-skills/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">記錄幾個 Google 搜尋技巧</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>記錄幾個自己在搜尋時常用到的方式</p>
-<h2 id="u4E00_u822C_u65B9_u5F0F"><a href="#u4E00_u822C_u65B9_u5F0F" class="headerlink" title="一般方式"></a>一般方式</h2><ul>
-<li><code>-</code>：排除某個關鍵字。例：<code>ui -jquery</code></li>
-<li><code>site:</code>：搜尋特定網站內容。例：<code>site:medium.com node.js</code></li>
-<li><code>&quot;關鍵字&quot;</code>：限定搜尋結果包含引號內完整字串。</li>
-</ul>
-<h2 id="u984D_u5916_u95DC_u9375_u5B57"><a href="#u984D_u5916_u95DC_u9375_u5B57" class="headerlink" title="額外關鍵字"></a>額外關鍵字</h2><ul>
-<li><code>alternative(s)</code>：搜尋某個軟體或 library 有沒有類似的東西。若搜尋的是 library 相關的，搜尋結果裡的 <a href="http://alternativeto.net/">AlternativeTo</a> 網站則可以不用管，因為裡面舉的例子還是以軟體為主。</li>
-<li><code>how (to)</code>：搜尋一些 server 或開發環境架設時會用到</li>
-<li><code>附近</code>：搜尋 Map 時會用到。如：<code>101 附近 餐廳</code></li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2015/04/15/some-google-search-skills/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/15/some-google-search-skills/" data-id="cij7hedcq0005znn3l44gumgh" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/google/">google</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/search/">search</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
-
-  
-  
 </section>
       </div>
       <footer id="footer">

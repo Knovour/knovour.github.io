@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: search | Knovour Notes</title>
+  <title>用 PM2 部署 node server | Knovour Notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Knovour Notes">
-<meta property="og:url" content="http://yoursite.com/tags/search/index.html">
+  <meta name="description" content="用 PM2 進行 node.js server 佈署。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用 PM2 部署 node server">
+<meta property="og:url" content="http://yoursite.com/2015/08/13/deploy-node-js-by-pm2/index.html">
 <meta property="og:site_name" content="Knovour Notes">
-<meta property="og:description">
+<meta property="og:description" content="用 PM2 進行 node.js server 佈署。">
+<meta property="og:updated_time" content="2016-01-09T19:10:14.456Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Knovour Notes">
-<meta name="twitter:description">
+<meta name="twitter:title" content="用 PM2 部署 node server">
+<meta name="twitter:description" content="用 PM2 進行 node.js server 佈署。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -116,39 +117,89 @@
   
 </aside>
         
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/15/some-google-search-skills/" class="archive-article-date">
-  <time datetime="2015-04-15T13:43:00.000Z" itemprop="datePublished">Apr 15</time>
+        <section id="main"><article id="post-deploy-node-js-by-pm2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/13/deploy-node-js-by-pm2/" class="article-date">
+  <time datetime="2015-08-12T18:38:00.000Z" itemprop="datePublished">2015-08-13</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/15/some-google-search-skills/">記錄幾個 Google 搜尋技巧</a>
+    <h1 class="article-title" itemprop="name">
+      用 PM2 部署 node server
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="u524D_u7F6E_u4F5C_u696D"><a href="#u524D_u7F6E_u4F5C_u696D" class="headerlink" title="前置作業"></a>前置作業</h2><p>首先先設定完<a href="http://notes.knovour.ninja/deploy-node-js-by-shipit/" target="_blank" rel="external">這篇文</a>的前置作業。</p>
+<p><strong>部署與開發用的機器都要安裝 PM2</strong>：<code>sudo npm i pm2 -g</code></p>
+<p><br></p>
+<h2 id="u90E8_u7F72_u8A2D_u5B9A"><a href="#u90E8_u7F72_u8A2D_u5B9A" class="headerlink" title="部署設定"></a>部署設定</h2><p>於專案資料夾底下執行 <code>pm2 ecosystem</code> 生成 <code>ecosystem.json5</code>，修改副檔名為 json 檔以便顯示語法 hightlight。</p>
+<p>將裡面的內容做修改</p>
+<script src="https://gist.github.com/Knovour/f27c0cf743e991973f57.js"></script>
+
+<p>注意最後一句裡 <code>pm2 startOrRestart ecosystem.json</code> 的副檔名是否相同。<br><a id="more"></a><br><br></p>
+<h2 id="u958B_u59CB_u90E8_u7F72"><a href="#u958B_u59CB_u90E8_u7F72" class="headerlink" title="開始部署"></a>開始部署</h2><p>第一次部署時先執行 setup</p>
+<p><code>pm2 deploy ecosystem.json production setup</code></p>
+<p>成功後就可以正式部署了</p>
+<p><code>pm2 deploy ecosystem.json production</code></p>
+<p>之後專案更新時只要執行第二句即可。</p>
+<p>一切順利的話 PM2 就會在 server 端開始執行了。</p>
+<p><br></p>
+<h2 id="u984D_u5916_u6307_u4EE4"><a href="#u984D_u5916_u6307_u4EE4" class="headerlink" title="額外指令"></a>額外指令</h2><p>開機啟動：<code>pm2 startup -u DEPLOY_SERVER_USER_ACCOUNT</code></p>
+<p>不設 <code>-u</code>（user）的話，在開機時預設就會以 root 權限執行。</p>
+<p>其他指令或設定請至 <a href="https://github.com/Unitech/pm2" target="_blank" rel="external">PM2</a> 檢視說明文件</p>
+<p><br></p>
+<h2 id="u53C3_u8003_u4F86_u6E90"><a href="#u53C3_u8003_u4F86_u6E90" class="headerlink" title="參考來源"></a>參考來源</h2><ul>
+<li><a href="https://github.com/Unitech/pm2" target="_blank" rel="external">PM2</a></li>
+<li><a href="https://github.com/Unitech/PM2/blob/master/ADVANCED_README.md" target="_blank" rel="external">PM2 Advance Readme</a></li>
+<li><a href="http://www.toobug.net/article/using_pm2_deploy.html" target="_blank" rel="external">使用 PM2 Deploy 部署基于 Git 版本管理的网站应用</a></li>
+<li><a href="https://www.gitbook.com/book/wohugb/pm2/details" target="_blank" rel="external">PM2 GitBook</a></li>
+<li><a href="http://nicmitchell.com/2015/04/deploying-node-js-applications-with-pm2/" target="_blank" rel="external">Deploying Node.js Applications with PM2</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/13/deploy-node-js-by-pm2/" data-id="cij7hedcj0000znn31jkjbu07" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deploy/">deploy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/16/path-of-exile-on-linux/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          在 Linux 上執行 Path of Exile (PoE)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/17/deploy-node-js-by-shipit/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">用 Shipit 部署 node server</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 </section>
       </div>
       <footer id="footer">

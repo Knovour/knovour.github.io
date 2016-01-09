@@ -180,9 +180,9 @@ body {
   width: 260px;
   height: 42px;
   background: url("images/logo.png") no-repeat;
-  -webkit-background-size: 260px 42px;
-  -moz-background-size: 260px 42px;
-  background-size: 260px 42px;
+  -webkit-background-size: auto 42px;
+  -moz-background-size: auto 42px;
+  background-size: auto 42px;
   text-indent: -9999px;
 }
 @media screen and (min-width: 768px) {

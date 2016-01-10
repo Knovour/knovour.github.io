@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2016-01-10T08:22:26.219Z</updated>
+  <updated>2016-01-10T16:16:15.527Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,8 +19,17 @@
     <link href="http://yoursite.com/2016/01/10/about/"/>
     <id>http://yoursite.com/2016/01/10/about/</id>
     <published>2016-01-10T08:21:35.000Z</published>
-    <updated>2016-01-10T08:22:26.219Z</updated>
-    <content type="html"></content>
+    <updated>2016-01-10T16:16:15.527Z</updated>
+    <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1656/23668295773_6a48840818_h.jpg" alt=""></p>
+<h2 id="u4E4B_u524D_u5F85_u904E_u7684_Blog"><a href="#u4E4B_u524D_u5F85_u904E_u7684_Blog" class="headerlink" title="之前待過的 Blog"></a>之前待過的 Blog</h2><ul>
+<li><a href="http://qwert535286.pixnet.net/blog" target="_blank" rel="external">Pixnet</a></li>
+<li><a href="http://novathinking.blogspot.tw/" target="_blank" rel="external">Blogger</a></li>
+<li><a href="http://knovourland.logdown.com/" target="_blank" rel="external">Logdown</a></li>
+</ul>
+<h2 id="u500B_u4EBA_u5C08_u6848"><a href="#u500B_u4EBA_u5C08_u6848" class="headerlink" title="個人專案"></a>個人專案</h2><ul>
+<li><a href="https://github.com/Knovour" target="_blank" rel="external">Github</a></li>
+</ul>
+]]></content>
     <summary type="html">
     <![CDATA[關於 Knovour Notes]]>
     

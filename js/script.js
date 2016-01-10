@@ -31,7 +31,7 @@
   }
 
   //Set image scrollLoading
-  $('.article-entry img:nth-child(n+2)').each(function() {
+  $('.article-entry img:not(:first)').each(function() {
     $(this).attr('data-url', $(this).attr('src'));
     $(this).removeAttr('src');
     $(this).addClass('scrollLoading');

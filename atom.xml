@@ -151,7 +151,7 @@
     <link href="http://yoursite.com/2015/07/17/deploy-node-js-by-shipit/"/>
     <id>http://yoursite.com/2015/07/17/deploy-node-js-by-shipit/</id>
     <published>2015-07-17T15:42:00.000Z</published>
-    <updated>2016-01-09T19:10:04.793Z</updated>
+    <updated>2016-01-10T11:58:39.395Z</updated>
     <content type="html"><![CDATA[<h2 id="u524D_u7F6E_u4F5C_u696D"><a href="#u524D_u7F6E_u4F5C_u696D" class="headerlink" title="前置作業"></a>前置作業</h2><p><strong>假設是全新的 Linux，帳號為 deploy</strong></p>
 <ol>
 <li>在 github 等託管服務中登錄 deploy server 的 ssh public key。</li>
@@ -162,8 +162,7 @@
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/src/<span class="keyword">my</span>-project-<span class="property">name</span></span><br><span class="line">chown deploy:deploy /usr/src/<span class="keyword">my</span>-project-<span class="property">name</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p><br></p>
-<h2 id="u5728_u958B_u767C_u6A5F_u5B89_u88DD_u76F8_u95DC_u5957_u4EF6"><a href="#u5728_u958B_u767C_u6A5F_u5B89_u88DD_u76F8_u95DC_u5957_u4EF6" class="headerlink" title="在開發機安裝相關套件"></a>在開發機安裝相關套件</h2><p><code>sudo npm i shipit-cli -g</code></p>
-<p><code>npm i shipit-deploy shipit-npm --save-dev</code></p>
+<h2 id="u5728_u958B_u767C_u6A5F_u5B89_u88DD_u76F8_u95DC_u5957_u4EF6"><a href="#u5728_u958B_u767C_u6A5F_u5B89_u88DD_u76F8_u95DC_u5957_u4EF6" class="headerlink" title="在開發機安裝相關套件"></a>在開發機安裝相關套件</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm <span class="tag">i</span> shipit-cli -g</span><br><span class="line">npm <span class="tag">i</span> shipit-deploy shipit-npm --save-dev</span><br></pre></td></tr></table></figure>
 <p><br></p>
 <h2 id="ShipIt_21"><a href="#ShipIt_21" class="headerlink" title="ShipIt!"></a>ShipIt!</h2><p>在專案資料夾目錄產生 <code>shipitfile.js</code></p>
 <p>內容如下</p>
@@ -177,10 +176,8 @@
 
 <p><br></p>
 <h2 id="u53C3_u8003_u4F86_u6E90"><a href="#u53C3_u8003_u4F86_u6E90" class="headerlink" title="參考來源"></a>參考來源</h2><ul>
-<li><p><a href="http://www.therightcode.net/deploy-nodejs-application-using-shipit/" target="_blank" rel="external">Forget Capistrano and deploy your node.js application using Shipit</a>（裡面是用 grunt 當範例，但我用 grunt 的方式跑不起來）</p>
-</li>
-<li><p><a href="https://github.com/shipitjs/shipit" target="_blank" rel="external">Shipit</a></p>
-</li>
+<li><a href="http://www.therightcode.net/deploy-nodejs-application-using-shipit/" target="_blank" rel="external">Forget Capistrano and deploy your node.js application using Shipit</a>（裡面是用 grunt 當範例，但我用 grunt 的方式跑不起來）</li>
+<li><a href="https://github.com/shipitjs/shipit" target="_blank" rel="external">Shipit</a></li>
 <li><a href="https://github.com/shipitjs/shipit-deploy" target="_blank" rel="external">shipit-deploy</a></li>
 </ul>
 ]]></content>

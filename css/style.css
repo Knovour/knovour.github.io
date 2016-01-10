@@ -124,7 +124,7 @@ body,
 }
 body {
   background: #fff;
-  font: 14px 'Open Sans', "Microsoft Yahei";
+  font: 16px "思源黑體", "Source Han Sans", "Noto Sans", "Noto Sans CJK {JP, KR, SC, TC}", "儷黑Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", sans-serif, 'Open Sans';
   font-weight: 300;
   -webkit-text-size-adjust: 100%;
 }
@@ -159,7 +159,7 @@ body {
 }
 #wrap {
   width: 100%;
-  background: #fff;
+  background: #f3f3f3;
 }
 #container #wrap > .outer {
   padding: 0px 20px;
@@ -319,7 +319,7 @@ body {
 .article-entry dl,
 .archive-article-inner dl,
 .widget dl {
-  margin: 0 20px;
+  margin: 0 24px;
   line-height: 28px;
 }
 .article-inner ul ul,
@@ -411,17 +411,17 @@ body {
 .nav-icon {
   font-family: FontAwesome;
   text-align: center;
-  font-size: 14px;
-  width: 14px;
-  height: 14px;
-  padding: 5px 7px;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  padding: 5px 8px;
   position: relative;
   cursor: pointer;
   float: left;
-  top: 37px;
+  top: 28px;
 }
 .main-nav-link {
-  font-family: 'Open Sans', "Microsoft Yahei";
+  font-family: 'Open Sans', "思源黑體", "Source Han Sans", "Noto Sans", "Noto Sans CJK {JP, KR, SC, TC}", "儷黑Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", sans-serif;
   font-weight: 600;
 }
 @media screen and (max-width: 479px) {
@@ -631,7 +631,7 @@ a.article-title:hover {
   text-align: center;
 }
 .article-entry blockquote footer {
-  font-size: 14px;
+  font-size: 16px;
   margin: 20px 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -1362,7 +1362,7 @@ pre .javascript .function {
     display: none;
   }
   #header #main-nav-toggle {
-    top: 0px;
+    top: -8px;
   }
   #mobile-nav {
     display: block;

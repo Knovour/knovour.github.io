@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-01-11T16:39:35.959Z</updated>
+  <updated>2016-01-11T16:40:27.854Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -19,10 +19,10 @@
     <link href="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/"/>
     <id>https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/</id>
     <published>2016-01-11T15:40:12.000Z</published>
-    <updated>2016-01-11T16:39:35.959Z</updated>
+    <updated>2016-01-11T16:40:27.854Z</updated>
     <content type="html"><![CDATA[<p>去年決定將 Blog 從 <a href="http://logdown.com/" target="_blank" rel="external">Logdown</a> 換成自架 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 後，就想找一個線上空間來管理。但 <a href="https://www.linode.com/" target="_blank" rel="external">Linode</a> 或 <a href="https://www.digitalocean.com/" target="_blank" rel="external">Digital Ocean</a> 要從頭來覺得麻煩，而 <a href="https://heroku.com/" target="_blank" rel="external">Heroku</a> 不知道為何怎樣就是看不懂，後來看到 <a href="https://www.openshift.com/" target="_blank" rel="external">OpenShift</a> 設定似乎挺簡單，於是就辦來試試看。</p>
 <p>無奈 <a href="https://www.openshift.com/" target="_blank" rel="external">OpenShift</a> 根本 Bug 滿天飛，社群的 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 架設速成 script 根本不能用就算了，連從官方的 Node.js 重頭架也常設定跑失敗，跑到最後居然是鎖我帳號？？更別說我在試用時三不五時被登出，不然就是怎麼按 Application 都沒顯示東西，也不知道怎麼回到我剛剛的設定頁面。<br><a id="more"></a><br>後來過了幾個月回去看又好了（<a href="https://heroku.com/" target="_blank" rel="external">Heroku</a> 這段期間我還是看不懂），但 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 速成 script 還是不能用，至少官方 Node 是可行的，於是就把 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 給弄起來了（中間在 Build 時還是爆掉幾次）。之後要把 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 給升級時，說要額外加 Gear（就是要收錢的意思），我就給他加了，反正一個月只有收大概幾塊錢。</p>
-<p>最近幾個月，<a href="https://letsencrypt.org/" target="_blank" rel="external">Let’s Encrypt</a> 開放後熱了起來，想說看能不能在自己的 Blog 弄上去，然後找到了<a href="https://blog.mobiushorizons.com/letsencrypt-ghost/" target="_blank" rel="external">這篇</a>文章，做到替換 <code>index.js</code> 來進行認證的階段怎樣就是失敗，後來又開了社群的 Ghost script 來試，結果 script 居然可以跑了，而且替換 <code>index.js</code> 再認證的部份居然是 OK 的，雖然後面的步驟我沒做，但我也不想弄了。</p>
+<p>最近幾個月，<a href="https://letsencrypt.org/" target="_blank" rel="external">Let’s Encrypt</a> 開放後熱了起來，想說看能不能在自己的 Blog 弄上去，然後找到了<a href="https://blog.mobiushorizons.com/letsencrypt-ghost/" target="_blank" rel="external">這篇</a>文章，做到替換 <code>index.js</code> 來進行認證的階段怎樣就是失敗，後來又開了社群的 script 來試，結果居然可以跑了，而且替換 <code>index.js</code> 再認證的部份是 OK 的，雖然後面的步驟我沒做，但我也不想弄了。</p>
 <p>這兩天把上面幾篇比較重要的文章搬到 <a href="https://github.com/" target="_blank" rel="external">Github</a>，改用 <a href="https://hexo.io/zh-tw/" target="_blank" rel="external">Hexo</a> 管理後，想把 <a href="https://www.openshift.com/" target="_blank" rel="external">OpenShift</a> 上的砍掉重架當備份，無奈這次 script 又不能跑了，既然這樣也不強求了，隨他去吧，砍了帳號，別再收我錢就好。</p>
 <p>現在 domain 改用 <a href="https://www.cloudflare.com/" target="_blank" rel="external">CloudFlare</a> 管理，免費方案也有 SSL，這樣搞還比較省事。</p>
 ]]></content>

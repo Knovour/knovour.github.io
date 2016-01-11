@@ -3,9 +3,9 @@
   <title><![CDATA[Knovour Notes]]></title>
   
   <link href="/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
+  <link href="https://notes.knovour.ninja/"/>
   <updated>2016-01-11T14:39:48.390Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://notes.knovour.ninja/</id>
   
   <author>
     <name><![CDATA[Knovour Zheng]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[關於]]></title>
-    <link href="http://yoursite.com/2016/01/10/about/"/>
-    <id>http://yoursite.com/2016/01/10/about/</id>
+    <link href="https://notes.knovour.ninja/2016/01/10/about/"/>
+    <id>https://notes.knovour.ninja/2016/01/10/about/</id>
     <published>2016-01-10T08:21:35.000Z</published>
     <updated>2016-01-11T14:39:48.390Z</updated>
     <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1656/23668295773_6a48840818_h.jpg" alt=""></p>
@@ -39,14 +39,14 @@
     
     </summary>
     
-      <category term="about" scheme="http://yoursite.com/tags/about/"/>
+      <category term="about" scheme="https://notes.knovour.ninja/tags/about/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[在 Linux 上執行 Path of Exile (PoE)]]></title>
-    <link href="http://yoursite.com/2015/09/16/path-of-exile-on-linux/"/>
-    <id>http://yoursite.com/2015/09/16/path-of-exile-on-linux/</id>
+    <link href="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/"/>
+    <id>https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/</id>
     <published>2015-09-16T13:26:00.000Z</published>
     <updated>2016-01-10T16:31:09.660Z</updated>
     <content type="html"><![CDATA[<p><img src="https://farm1.staticflickr.com/621/21000960109_98f4415f3d_c.jpg" alt="poe on wine"></p>
@@ -98,21 +98,21 @@
     
     </summary>
     
-      <category term="game" scheme="http://yoursite.com/tags/game/"/>
+      <category term="game" scheme="https://notes.knovour.ninja/tags/game/"/>
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+      <category term="linux" scheme="https://notes.knovour.ninja/tags/linux/"/>
     
-      <category term="wine" scheme="http://yoursite.com/tags/wine/"/>
+      <category term="wine" scheme="https://notes.knovour.ninja/tags/wine/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[用 PM2 部署 node server]]></title>
-    <link href="http://yoursite.com/2015/08/13/deploy-node-js-by-pm2/"/>
-    <id>http://yoursite.com/2015/08/13/deploy-node-js-by-pm2/</id>
+    <link href="https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/"/>
+    <id>https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/</id>
     <published>2015-08-12T18:38:00.000Z</published>
     <updated>2016-01-11T15:05:13.861Z</updated>
-    <content type="html"><![CDATA[<h2 id="u524D_u7F6E_u4F5C_u696D"><a href="#u524D_u7F6E_u4F5C_u696D" class="headerlink" title="前置作業"></a>前置作業</h2><p>首先先設定完<a href="http://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/" target="_blank" rel="external">這篇文</a>的前置作業。</p>
+    <content type="html"><![CDATA[<h2 id="u524D_u7F6E_u4F5C_u696D"><a href="#u524D_u7F6E_u4F5C_u696D" class="headerlink" title="前置作業"></a>前置作業</h2><p>首先先設定完<a href="http://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/">這篇文</a>的前置作業。</p>
 <p><strong>部署與開發用的機器都要安裝 PM2</strong>：<code>sudo npm i pm2 -g</code></p>
 <h2 id="u90E8_u7F72_u8A2D_u5B9A"><a href="#u90E8_u7F72_u8A2D_u5B9A" class="headerlink" title="部署設定"></a>部署設定</h2><p>於專案資料夾底下執行 <code>pm2 ecosystem</code> 生成 <code>ecosystem.json5</code>，修改副檔名為 json 檔以便顯示語法 hightlight。</p>
 <p>將裡面的內容做修改</p>
@@ -141,16 +141,16 @@
     
     </summary>
     
-      <category term="deploy" scheme="http://yoursite.com/tags/deploy/"/>
+      <category term="deploy" scheme="https://notes.knovour.ninja/tags/deploy/"/>
     
-      <category term="node.js" scheme="http://yoursite.com/tags/node-js/"/>
+      <category term="node.js" scheme="https://notes.knovour.ninja/tags/node-js/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[用 Shipit 部署 node server]]></title>
-    <link href="http://yoursite.com/2015/07/17/deploy-node-js-by-shipit/"/>
-    <id>http://yoursite.com/2015/07/17/deploy-node-js-by-shipit/</id>
+    <link href="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/"/>
+    <id>https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/</id>
     <published>2015-07-17T15:42:00.000Z</published>
     <updated>2016-01-10T16:31:14.553Z</updated>
     <content type="html"><![CDATA[<h2 id="u524D_u7F6E_u4F5C_u696D"><a href="#u524D_u7F6E_u4F5C_u696D" class="headerlink" title="前置作業"></a>前置作業</h2><p><strong>假設是全新的 Linux，帳號為 deploy</strong></p>
@@ -184,16 +184,16 @@
     
     </summary>
     
-      <category term="deploy" scheme="http://yoursite.com/tags/deploy/"/>
+      <category term="deploy" scheme="https://notes.knovour.ninja/tags/deploy/"/>
     
-      <category term="node.js" scheme="http://yoursite.com/tags/node-js/"/>
+      <category term="node.js" scheme="https://notes.knovour.ninja/tags/node-js/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[記錄幾個 Google 搜尋技巧]]></title>
-    <link href="http://yoursite.com/2015/04/15/some-google-search-skills/"/>
-    <id>http://yoursite.com/2015/04/15/some-google-search-skills/</id>
+    <link href="https://notes.knovour.ninja/2015/04/15/some-google-search-skills/"/>
+    <id>https://notes.knovour.ninja/2015/04/15/some-google-search-skills/</id>
     <published>2015-04-15T13:43:00.000Z</published>
     <updated>2016-01-09T19:09:54.656Z</updated>
     <content type="html"><![CDATA[<p>記錄幾個自己在搜尋時常用到的方式</p>
@@ -234,9 +234,9 @@
     
     </summary>
     
-      <category term="google" scheme="http://yoursite.com/tags/google/"/>
+      <category term="google" scheme="https://notes.knovour.ninja/tags/google/"/>
     
-      <category term="search" scheme="http://yoursite.com/tags/search/"/>
+      <category term="search" scheme="https://notes.knovour.ninja/tags/search/"/>
     
   </entry>
   

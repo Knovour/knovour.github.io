@@ -102,7 +102,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/about/">about</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/">deploy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/">game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google/">google</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/search/">search</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wine/">wine</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/about/">about</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/">deploy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/">game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ghost/">ghost</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google/">google</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openshift/">openshift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/search/">search</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wine/">wine</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -111,7 +111,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/about/" style="font-size: 10px;">about</a> <a href="/tags/deploy/" style="font-size: 20px;">deploy</a> <a href="/tags/game/" style="font-size: 10px;">game</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/search/" style="font-size: 10px;">search</a> <a href="/tags/wine/" style="font-size: 10px;">wine</a>
+      <a href="/tags/about/" style="font-size: 10px;">about</a> <a href="/tags/deploy/" style="font-size: 20px;">deploy</a> <a href="/tags/game/" style="font-size: 10px;">game</a> <a href="/tags/ghost/" style="font-size: 10px;">ghost</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/openshift/" style="font-size: 10px;">openshift</a> <a href="/tags/search/" style="font-size: 10px;">search</a> <a href="/tags/wine/" style="font-size: 10px;">wine</a>
     </div>
   </div>
 
@@ -149,7 +149,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/11/change-blog-from-openshift-to-github/">change-blog-from-openshift-to-github</a>
+      <a class="article-title" href="/2016/01/11/change-blog-from-openshift-to-github/">放棄在 OpenShift 上管理部落格</a>
     </h1>
   
 
@@ -157,7 +157,12 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>去年決定將 Blog 從 <a href="http://logdown.com/" target="_blank" rel="external">Logdown</a> 換成自架 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 後，就想找一個線上空間來管理。但 Linode 或 Digital Ocean 要從頭來覺得麻煩，而 Heroku 不知道為何怎樣就是看不懂，後來看到 <a href="https://www.openshift.com/" target="_blank" rel="external">OpenShift</a> 設定似乎挺簡單，於是就辦來試試看。</p>
+<p>無奈 <a href="https://www.openshift.com/" target="_blank" rel="external">OpenShift</a> 根本 Bug 滿天飛，社群的 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 架設速成 script 根本不能用就算了，連從官方的 Node.js 從頭架也常設定跑失敗，跑到最後居然是鎖我帳號？？更別說我在試用時三不五時被登出，不然就是怎麼按 Application 都沒顯示東西，也不知道怎麼回到我剛剛的設定頁面。</p>
+<p>後來過了幾個月回去看又好了（Heroku 這段期間我還是看不懂），但 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 速成 script 還是不能用，至少官方 Node 是可行的，於是就把 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 給弄起來了（中間在 Build 時還是爆掉幾次）。之後要把 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 給升級時，說要額外加 Gear（就是要收錢的意思），我就給他加了，反正一個月只有收大概三四塊錢。</p>
+<p>最近幾個月，<a href="https://letsencrypt.org/" target="_blank" rel="external">Let’s Encryp</a> 開放後熱了起來，想說看能不能在自己的 Blog 弄上去，然後找到了<a href="https://blog.mobiushorizons.com/letsencrypt-ghost/" target="_blank" rel="external">這篇</a>文章，做到替換 <code>index.js</code> 來進行認證的階段怎樣就是失敗，後來又開了社群的 Ghost script 來試，結果 script 居然可以跑了，而且替換 <code>index.js</code> 再認證的部份居然是 OK 的，雖然後面的步驟我沒做，但我也不想弄了。</p>
+<p>這兩天把上面幾篇比較重要的文章搬到 <a href="https://github.com/" target="_blank" rel="external">Github</a>，改用 <a href="https://hexo.io/zh-tw/" target="_blank" rel="external">Hexo</a> 管理後，想把 <a href="https://www.openshift.com/" target="_blank" rel="external">OpenShift</a> 上的砍掉重架當備份，無奈這次 script 又不能跑了，既然這樣也不強求了，隨他去吧，砍了帳號，別再收我錢就好。</p>
+
       
     </div>
     <footer class="article-footer">
@@ -166,6 +171,8 @@ ga('send', 'pageview');
         <a href="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ghost/">ghost</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openshift/">openshift</a></li></ul>
+
     </footer>
   </div>
   

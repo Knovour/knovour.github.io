@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-01-11T14:39:48.390Z</updated>
+  <updated>2016-01-11T15:40:12.981Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -13,6 +13,19 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[change-blog-from-openshift-to-github]]></title>
+    <link href="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/"/>
+    <id>https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/</id>
+    <published>2016-01-11T15:40:12.000Z</published>
+    <updated>2016-01-11T15:40:12.981Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[關於]]></title>
@@ -111,8 +124,8 @@
     <link href="https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/"/>
     <id>https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/</id>
     <published>2015-08-12T18:38:00.000Z</published>
-    <updated>2016-01-11T15:05:13.861Z</updated>
-    <content type="html"><![CDATA[<h2 id="u524D_u7F6E_u4F5C_u696D"><a href="#u524D_u7F6E_u4F5C_u696D" class="headerlink" title="前置作業"></a>前置作業</h2><p>首先先設定完<a href="http://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/">這篇文</a>的前置作業。</p>
+    <updated>2016-01-11T15:48:49.371Z</updated>
+    <content type="html"><![CDATA[<h2 id="u524D_u7F6E_u4F5C_u696D"><a href="#u524D_u7F6E_u4F5C_u696D" class="headerlink" title="前置作業"></a>前置作業</h2><p>首先先設定完<a href="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/">這篇文</a>的前置作業。</p>
 <p><strong>部署與開發用的機器都要安裝 PM2</strong>：<code>sudo npm i pm2 -g</code></p>
 <h2 id="u90E8_u7F72_u8A2D_u5B9A"><a href="#u90E8_u7F72_u8A2D_u5B9A" class="headerlink" title="部署設定"></a>部署設定</h2><p>於專案資料夾底下執行 <code>pm2 ecosystem</code> 生成 <code>ecosystem.json5</code>，修改副檔名為 json 檔以便顯示語法 hightlight。</p>
 <p>將裡面的內容做修改</p>

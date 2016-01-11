@@ -1,4 +1,6 @@
 (function($){
+  if(window.location.protocol !== 'https:')
+    window.location.protocol = 'https:';
 
   // Caption
   $('.article-entry').each(function(i){

@@ -125,7 +125,7 @@ body,
 body {
   background: #fff;
   font: 16px "思源黑體", "Source Han Sans", "Noto Sans", "Noto Sans CJK {JP, KR, SC, TC}", "儷黑Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", sans-serif, 'Open Sans';
-  font-weight: 300;
+  font-weight: 400;
   -webkit-text-size-adjust: 100%;
 }
 .outer {

@@ -9,7 +9,7 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://www.arao.me/atom.xml
-Sitemap: http://www.arao.me/sitemap.xml
-Sitemap: http://www.arao.me/post-sitemap.xml
-Sitemap: http://www.arao.me/tag-sitemap.xml
+Sitemap: https://notes.knovour.ninja/atom.xml
+Sitemap: https://notes.knovour.ninja/sitemap.xml
+Sitemap: https://notes.knovour.ninja/post-sitemap.xml
+Sitemap: https://notes.knovour.ninja/tag-sitemap.xml

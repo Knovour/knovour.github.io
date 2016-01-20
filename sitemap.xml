@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://notes.knovour.ninja/2016/01/12/sequelize-notes/</loc>
+    <lastmod>2016-01-20T16:23:49.823Z</lastmod>
+  </url>
+  
+  <url>
     <loc>https://notes.knovour.ninja/2015/04/15/some-google-search-skills/</loc>
     <lastmod>2016-01-11T16:43:28.661Z</lastmod>
   </url>

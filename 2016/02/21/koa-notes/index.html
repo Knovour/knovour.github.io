@@ -3,22 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>在 Linux 上執行 Path of Exile (PoE) | Knovour Notes</title>
+  <title>Koa.js 踩坑筆記 | Knovour Notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="用 Wine 執行 PoE，無須降級、免裝 PlayOnLinux。">
+  <meta name="description" content="紀錄 Koa.js 的一些用法跟踩到的坑">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在 Linux 上執行 Path of Exile (PoE)">
-<meta property="og:url" content="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/index.html">
+<meta property="og:title" content="Koa.js 踩坑筆記">
+<meta property="og:url" content="https://notes.knovour.ninja/2016/02/21/koa-notes/index.html">
 <meta property="og:site_name" content="Knovour Notes">
-<meta property="og:description" content="用 Wine 執行 PoE，無須降級、免裝 PlayOnLinux。">
-<meta property="og:image" content="https://farm1.staticflickr.com/621/21000960109_98f4415f3d_c.jpg">
-<meta property="og:image" content="https://farm1.staticflickr.com/577/21195623851_4c22a1dc13_b.jpg">
-<meta property="og:image" content="https://farm1.staticflickr.com/738/20999863178_1337f3d5a8_b.jpg">
-<meta property="og:image" content="https://farm6.staticflickr.com/5805/21197789131_d983728162_o.jpg">
-<meta property="og:updated_time" content="2016-01-20T17:23:33.572Z">
+<meta property="og:description" content="紀錄 Koa.js 的一些用法跟踩到的坑">
+<meta property="og:updated_time" content="2016-02-21T14:01:22.737Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在 Linux 上執行 Path of Exile (PoE)">
-<meta name="twitter:description" content="用 Wine 執行 PoE，無須降級、免裝 PlayOnLinux。">
+<meta name="twitter:title" content="Koa.js 踩坑筆記">
+<meta name="twitter:description" content="紀錄 Koa.js 的一些用法跟踩到的坑">
   
     <link rel="alternative" href="/atom.xml" title="Knovour Notes" type="application/atom+xml">
   
@@ -156,10 +152,10 @@ ga('send', 'pageview');
   
 </aside>
         
-        <section id="main"><article id="post-path-of-exile-on-linux" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-koa-notes" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/09/16/path-of-exile-on-linux/" class="article-date">
-  <time datetime="2015-09-16T13:26:00.000Z" itemprop="datePublished">2015-09-16</time>
+    <a href="/2016/02/21/koa-notes/" class="article-date">
+  <time datetime="2016-02-21T13:55:52.000Z" itemprop="datePublished">2016-02-21</time>
 </a>
     
   </div>
@@ -170,7 +166,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      在 Linux 上執行 Path of Exile (PoE)
+      Koa.js 踩坑筆記
     </h1>
   
 
@@ -178,59 +174,22 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://farm1.staticflickr.com/621/21000960109_98f4415f3d_c.jpg" alt="poe on wine"></p>
-<p>之前在 Wine 上跑過一陣子 PoE，但經過幾次更新後，loading 畫面除了狂閃外基本上就是完全進不去的狀態，然而當時也是有點膩了，所以也懶得折騰（基本上都是在講把 Wine 降級或是裝 PlayOnLinux，不過不想這樣搞）。</p>
-<p>現在 2.0 出了，「據說」修好了錯位，也偶然發現有一篇比較不那麼麻煩的設定<a href="https://russell.cc/path-of-exile-linux/" target="_blank" rel="external">文章</a>，試一試還真的成功了，在這邊紀錄一下。<br><a id="more"></a><br>註：文章裡似乎是把 PoE 另外裝其他地方，再外帶參數啟動（我的理解啦），但我沒有用 Wine 模擬其他東西的需要，所以就把覺得可以跳過的部份跳過，下面的紀錄基本上就是個精簡後的設定步驟。</p>
-<h2 id="u74B0_u5883"><a href="#u74B0_u5883" class="headerlink" title="環境"></a>環境</h2><ul>
-<li><a href="https://manjaro.github.io/" target="_blank" rel="external">Manjaro Linux</a></li>
-<li><a href="https://www.kde.org/" target="_blank" rel="external">KDE Plasma 5</a></li>
-<li>NVIDIA 顯卡</li>
-</ul>
-<h2 id="u57F7_u884C_winecfg"><a href="#u57F7_u884C_winecfg" class="headerlink" title="執行 winecfg"></a>執行 winecfg</h2><ol>
-<li>選定 windows 版本（原文是 8 不過選 10 也沒差）。</li>
-<li>將 <code>openal32</code> 加進函式庫裡。</li>
-<li>勾選虛擬桌面，解析度自己根據需求調整。</li>
-</ol>
-<p><img src="https://farm1.staticflickr.com/577/21195623851_4c22a1dc13_b.jpg" alt="winecfg"></p>
-<h2 id="u5B89_u88DD_windows__u76F8_u95DC_u5957_u4EF6"><a href="#u5B89_u88DD_windows__u76F8_u95DC_u5957_u4EF6" class="headerlink" title="安裝 windows 相關套件"></a>安裝 windows 相關套件</h2><p>執行 <code>winetricks directx9 vcrun2010 riched20 usp10</code></p>
-<h2 id="u5B89_u88DD_u904A_u6232"><a href="#u5B89_u88DD_u904A_u6232" class="headerlink" title="安裝遊戲"></a>安裝遊戲</h2><p>執行 PoE 安裝檔，之後再開啟下載主程式，這部份不會有問題，但主程式裝完後先關掉不要按 Launch，不然 wine 會當掉。</p>
-<h2 id="u57F7_u884C_wine_regedit"><a href="#u57F7_u884C_wine_regedit" class="headerlink" title="執行 wine regedit"></a>執行 <code>wine regedit</code></h2><p>安裝期間可以先處理這部份（在 regedit 裡移到對應的路徑）</p>
-<ol>
-<li><code>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes</code>：新增一個字串值叫 <code>Fontin SmallCaps</code>，數值為 <code>Fontin</code>。</li>
-<li><code>HKEY_CURRENT_USER\Software\Wine\Direct3D</code>：若沒有 <code>Direct3D</code> 的資料夾則自行新增一個。在底下新增以下資料：<ol>
-<li><code>OffscreenRenderingMode</code>：字串值為 <code>backbuffer</code>。</li>
-<li><code>VideoMemorySize</code>：這是你的顯卡記憶體大小，以 MB 計，我的是 2048。</li>
-<li><code>UseGLSL</code>：NVIDIA 顯卡限定，值為 <code>disabled</code>，若執行時覺得有問題可以把這個值移除看看。</li>
-</ol>
-</li>
-</ol>
-<p><img src="https://farm1.staticflickr.com/738/20999863178_1337f3d5a8_b.jpg" alt="regedit"></p>
-<h2 id="u8A2D_u5B9A_PoE"><a href="#u8A2D_u5B9A_PoE" class="headerlink" title="設定 PoE"></a>設定 PoE</h2><p>到 <code>~/文件/My Games/Path of Exile/</code>（不同發行版位置可能不大一樣），開啟 <code>production_Config.ini</code>，在 <code>[DISPLAY]</code> 底下新增或替換以下設定：</p>
-<ol>
-<li><code>fullscreen=true</code></li>
-<li><code>borderless_windowed_fullscreen=false</code></li>
-<li><code>resolution_height=虛擬桌面高度</code></li>
-<li><code>resolution_width=虛擬桌面寬度</code></li>
-</ol>
-<h2 id="u7D50_u675F"><a href="#u7D50_u675F" class="headerlink" title="結束"></a>結束</h2><p>等 PoE 主程式載完就可以啟動了。</p>
-<p><img src="https://farm6.staticflickr.com/5805/21197789131_d983728162_o.jpg" alt="play"></p>
-<h2 id="u611F_u60F3"><a href="#u611F_u60F3" class="headerlink" title="感想"></a>感想</h2><ol>
-<li>基本上不會像以前那樣 FPS 掉很重了，但偶爾會破圖。</li>
-<li>地圖亮度偏暗，地穴根本是黑的，使用冰系或雷系技能擊中或發動瞬間會照亮地圖（火焰反而沒法照亮…），招喚 Golem（2.0 新技能）可以永久照亮。</li>
-<li>音效要在設定裡選擇 <code>Generic Software on out</code> 開頭的才有聲音。</li>
-<li>只有 Act4 沒錯位就算了，Act123 + Map 的錯位感覺更嚴重了是怎樣，新增的 Map 也是一樣慘。</li>
-</ol>
-<h2 id="u53C3_u8003_u4F86_u6E90"><a href="#u53C3_u8003_u4F86_u6E90" class="headerlink" title="參考來源"></a>參考來源</h2><p><a href="https://russell.cc/path-of-exile-linux/" target="_blank" rel="external">Path of Exile on Linux</a></p>
+        <p><strong> 以 <a href="https://github.com/koajs/koa/tree/v2.x" target="_blank" rel="external">Koa.js 2.0.0-alpha.3</a> 版本為主。 </strong></p>
+<h2 id="ctx-body__u6C92_u53CD_u61C9"><a href="#ctx-body__u6C92_u53CD_u61C9" class="headerlink" title="ctx.body 沒反應"></a><code>ctx.body</code> 沒反應</h2><p>當 <code>ctx.body</code> 在 Promise 的函式裡時（如 co），<code>ctx.body</code> 不會對頁面有任何反應，需要在該 function 前加 <code>return</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">index(ctx) &#123;</span><br><span class="line">  <span class="keyword">return</span> co(<span class="function"><span class="keyword">function</span>*(<span class="params"></span>) </span>&#123; <span class="comment">// &lt;- Must have `return`</span></span><br><span class="line">    ctx.body = <span class="string">'success'</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>自訂 <code>middleware</code> 的時候也是如此</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.use((ctx, next) =&gt; &#123;</span><br><span class="line">  ctx.msg = <span class="string">'hello'</span>;</span><br><span class="line">  <span class="keyword">return</span> next(); <span class="comment">// &lt;- Must have `return`</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="1-0__u8207_2-0__u7248_u672C_u554F_u984C"><a href="#1-0__u8207_2-0__u7248_u672C_u554F_u984C" class="headerlink" title="1.0 與 2.0 版本問題"></a>1.0 與 2.0 版本問題</h2><p><a href="https://github.com/koajs/koa" target="_blank" rel="external">Koa.js</a> 的大部分 middleware 都已經開始支援 <a href="https://github.com/koajs/koa/tree/v2.x" target="_blank" rel="external">2.0</a>，鑑於是 alpha 的關係，要安裝這些元件時要加 <code>@next</code> 的 tag，尚未支援的在使用時可以安裝 <code>koa-convert</code> 來轉換。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/" data-id="cikwlcfhd0008ogn3bvcs9dr7" class="article-share-link">Share</a>
+      <a data-url="https://notes.knovour.ninja/2016/02/21/koa-notes/" data-id="cikwlcfhf000fogn3w4jqzbqe" class="article-share-link">Share</a>
       
-        <a href="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="https://notes.knovour.ninja/2016/02/21/koa-notes/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/game/">game</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wine/">wine</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
 
     </footer>
   </div>
@@ -238,19 +197,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2016/01/10/about/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          關於
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/08/13/deploy-node-js-by-pm2/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/01/12/sequelize-notes/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">用 PM2 部署 node server</div>
+      <div class="article-nav-title">Sequelize 踩坑筆記</div>
     </a>
   
 </nav>
@@ -281,7 +231,7 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'knovour-notes';
   
-  var disqus_url = 'https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/';
+  var disqus_url = 'https://notes.knovour.ninja/2016/02/21/koa-notes/';
   
   (function(){
     var dsq = document.createElement('script');

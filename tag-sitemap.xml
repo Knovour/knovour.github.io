@@ -44,13 +44,6 @@
     </url>
 
     <url>
-        <loc>https://notes.knovour.ninja/tags/node-js/</loc>
-        <lastmod>2016-01-20T16:26:34.220Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://notes.knovour.ninja/tags/linux/</loc>
         <lastmod>2016-01-20T17:23:33.572Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -67,6 +60,13 @@
     <url>
         <loc>https://notes.knovour.ninja/tags/game/</loc>
         <lastmod>2016-01-20T17:23:33.572Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/node-js/</loc>
+        <lastmod>2016-02-21T14:01:22.737Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

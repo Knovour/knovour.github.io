@@ -91,7 +91,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -100,7 +100,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/about/">about</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/">deploy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/">game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ghost/">ghost</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google/">google</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openshift/">openshift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/search/">search</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wine/">wine</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/about/">about</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/">deploy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/">game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ghost/">ghost</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google/">google</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openshift/">openshift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/search/">search</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wine/">wine</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -153,6 +153,52 @@ ga('send', 'pageview');
         
         <section id="main">
   
+    <article id="post-koa-notes" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/21/koa-notes/" class="article-date">
+  <time datetime="2016-02-21T13:55:52.000Z" itemprop="datePublished">2016-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/21/koa-notes/">Koa.js 踩坑筆記</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> 以 <a href="https://github.com/koajs/koa/tree/v2.x" target="_blank" rel="external">Koa.js 2.0.0-alpha.3</a> 版本為主。 </strong></p>
+<h2 id="ctx-body__u6C92_u53CD_u61C9"><a href="#ctx-body__u6C92_u53CD_u61C9" class="headerlink" title="ctx.body 沒反應"></a><code>ctx.body</code> 沒反應</h2><p>當 <code>ctx.body</code> 在 Promise 的函式裡時（如 co），<code>ctx.body</code> 不會對頁面有任何反應，需要在該 function 前加 <code>return</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">index(ctx) &#123;</span><br><span class="line">  <span class="keyword">return</span> co(<span class="function"><span class="keyword">function</span>*(<span class="params"></span>) </span>&#123; <span class="comment">// &lt;- Must have `return`</span></span><br><span class="line">    ctx.body = <span class="string">'success'</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>自訂 <code>middleware</code> 的時候也是如此</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.use((ctx, next) =&gt; &#123;</span><br><span class="line">  ctx.msg = <span class="string">'hello'</span>;</span><br><span class="line">  <span class="keyword">return</span> next(); <span class="comment">// &lt;- Must have `return`</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="1-0__u8207_2-0__u7248_u672C_u554F_u984C"><a href="#1-0__u8207_2-0__u7248_u672C_u554F_u984C" class="headerlink" title="1.0 與 2.0 版本問題"></a>1.0 與 2.0 版本問題</h2><p><a href="https://github.com/koajs/koa" target="_blank" rel="external">Koa.js</a> 的大部分 middleware 都已經開始支援 <a href="https://github.com/koajs/koa/tree/v2.x" target="_blank" rel="external">2.0</a>，鑑於是 alpha 的關係，要安裝這些元件時要加 <code>@next</code> 的 tag，尚未支援的在使用時可以安裝 <code>koa-convert</code> 來轉換。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://notes.knovour.ninja/2016/02/21/koa-notes/" data-id="cikwlcfhf000fogn3w4jqzbqe" class="article-share-link">Share</a>
+      
+        <a href="https://notes.knovour.ninja/2016/02/21/koa-notes/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-sequelize-notes" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/12/sequelize-notes/" class="article-date">
@@ -188,7 +234,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2016/01/12/sequelize-notes/" data-id="cijn1hlya0005kvn3oyl0979p" class="article-share-link">Share</a>
+      <a data-url="https://notes.knovour.ninja/2016/01/12/sequelize-notes/" data-id="cikwlcfha0005ogn3te92jbpg" class="article-share-link">Share</a>
       
         <a href="https://notes.knovour.ninja/2016/01/12/sequelize-notes/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -234,7 +280,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/" data-id="cijn1hlyk000mkvn3umd37krs" class="article-share-link">Share</a>
+      <a data-url="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/" data-id="cikwlcfhj000nogn3v0elmyu0" class="article-share-link">Share</a>
       
         <a href="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -287,7 +333,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2016/01/10/about/" data-id="cijn1hlyn000rkvn34c4gyyre" class="article-share-link">Share</a>
+      <a data-url="https://notes.knovour.ninja/2016/01/10/about/" data-id="cikwlcfhk000sogn34ad1hff2" class="article-share-link">Share</a>
       
         <a href="https://notes.knovour.ninja/2016/01/10/about/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -334,7 +380,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/" data-id="cijn1hlyd0008kvn3024ei38p" class="article-share-link">Share</a>
+      <a data-url="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/" data-id="cikwlcfhd0008ogn3bvcs9dr7" class="article-share-link">Share</a>
       
         <a href="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -385,7 +431,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/" data-id="cijn1hlyi000jkvn3o0n941im" class="article-share-link">Share</a>
+      <a data-url="https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/" data-id="cikwlcfhi000kogn30ulitezp" class="article-share-link">Share</a>
       
         <a href="https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -437,7 +483,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/" data-id="cijn1hlyg000fkvn3767fyi4l" class="article-share-link">Share</a>
+      <a data-url="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/" data-id="cikwlcfhg000gogn3eiew0ayn" class="article-share-link">Share</a>
       
         <a href="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -493,7 +539,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2015/04/15/some-google-search-skills/" data-id="cijn1hlxx0000kvn3bu92030b" class="article-share-link">Share</a>
+      <a data-url="https://notes.knovour.ninja/2015/04/15/some-google-search-skills/" data-id="cikwlcfh20000ogn3ipz9amsz" class="article-share-link">Share</a>
       
         <a href="https://notes.knovour.ninja/2015/04/15/some-google-search-skills/#disqus_thread" class="article-comment-link">Comments</a>
       

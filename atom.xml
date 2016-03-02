@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-03-02T16:26:50.620Z</updated>
+  <updated>2016-03-02T19:01:38.746Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -19,16 +19,17 @@
     <link href="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/"/>
     <id>https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/</id>
     <published>2016-03-01T01:20:14.000Z</published>
-    <updated>2016-03-02T16:26:50.620Z</updated>
-    <content type="html"><![CDATA[<p>這陣子看了點 D3，並找了官方 wiki 的<a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>來試試，不過不是用 svg，而是用 canvas 來畫。</p>
-<p>之前要寫的網站要生成簡易的圖表，但因為沒學過 D3 的經驗（當時也來不及），所以找了現成的 <a href="http://www.chartjs.org/" target="_blank" rel="external">Chart.js</a> 來用，除了這套之外，之後也在 feedly 看了不少圖表生成的套件介紹，蠻多都是用 canvas 的。不過這倒也不是什麼選擇 canvas 的原因。</p>
+    <updated>2016-03-02T19:01:38.746Z</updated>
+    <content type="html"><![CDATA[<p>這陣子看了點 <a href="https://d3js.org/" target="_blank" rel="external">D3</a>，並找了官方 wiki 的<a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>來試試，不過不是用 SVG，而是用 canvas 來畫。</p>
+<p>之前要寫的網站要生成簡易的圖表，但因為沒學過 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 的經驗（當時也來不及），所以找了現成的 <a href="http://www.chartjs.org/" target="_blank" rel="external">Chart.js</a> 來用，除了這套之外，之後也在 feedly 看了不少圖表生成的套件介紹，蠻多都是用 canvas 的。不過這倒也不是什麼選擇 canvas 的原因。</p>
 <blockquote>
 <p>單純犯賤罷了…</p>
 </blockquote>
-<p>總之，之後會加減從官方的 D3 <a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>裡面簡單的例子來練習，也會原始碼放到 GitHub 上。</p>
+<p>然而，<a href="https://d3js.org/" target="_blank" rel="external">D3</a> 對 canvas 的支援不好，不過這也不是很意外。問題在於要怎麼用 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 把處理後的資料給 canvas 畫，根據<a href="http://blog.infographics.tw/2015/07/optimize-d3-with-canvas/" target="_blank" rel="external">這裡</a>的介紹，第三種方式算是我在網路上最常看見的，基本上就是處理資料並創建虛假的元素，假裝自己在操作 SVG，然後再把這些<strong>假元素</strong>吐出來再用 canvas 的方式畫出來。怎麼看都覺得…蠻蠢的。所以我比較偏好第二種方式，讓 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 負責處理資料、生成刻度等等，再用 <a href="http://p5js.org/" target="_blank" rel="external">p5.js</a> 直接畫上去。</p>
+<p>總之，之後會加減從 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 官方的<a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>裡面先挑簡單的例子來練習，也會原始碼放到 GitHub 上。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[往後會用 D3 官方範例來練習，並用 p5.js 繪製而成，程式碼會放到 GitHub 上。]]>
+    <![CDATA[往後會用 [D3] 官方範例來練習，並用 [p5.js] 繪製而成，程式碼會放到 GitHub 上。]]>
     
     </summary>
     

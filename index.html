@@ -188,7 +188,7 @@ ga('send', 'pageview');
 <blockquote>
 <p>單純犯賤罷了…</p>
 </blockquote>
-<p>然而，<a href="https://d3js.org/" target="_blank" rel="external">D3</a> 對 canvas 的支援不好，不過這也不是很意外。問題在於要怎麼用 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 把處理後的資料給 canvas 畫，根據<a href="http://blog.infographics.tw/2015/07/optimize-d3-with-canvas/" target="_blank" rel="external">這裡</a>的介紹，第三種方式算是我在網路上最常看見的，基本上就是處理資料並創建虛假的元素，假裝自己在操作 SVG，然後再把這些<strong>假元素</strong>吐出來再用 canvas 的方式畫出來。怎麼看都覺得…蠻蠢的。所以我比較偏好第二種方式，讓 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 負責處理資料、生成刻度等等，再用 <a href="http://p5js.org/" target="_blank" rel="external">p5.js</a> 直接畫上去。</p>
+<p>然而，<a href="https://d3js.org/" target="_blank" rel="external">D3</a> 對 canvas 的支援不好，不過這也不是很意外。問題在於要怎麼用 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 把處理後的資料給 canvas 畫，根據<a href="http://blog.infographics.tw/2015/07/optimize-d3-with-canvas/" target="_blank" rel="external">這裡</a>的介紹，第三種方式算是我在網路上最常看見的，基本上就是處理資料並創建虛假的元素，假裝自己在操作 SVG，然後再把這些<strong>假元素</strong>吐出來再用 canvas 的方式畫出來，怎麼看都覺得…蠻蠢的。所以我比較偏好第二種方式，讓 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 負責處理資料、生成刻度等等，再用 <a href="http://p5js.org/" target="_blank" rel="external">p5.js</a> 直接畫上去。</p>
 <p>總之，之後會加減從 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 官方的<a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>裡面先挑簡單的例子來練習，也會原始碼放到 GitHub 上。</p>
 
       

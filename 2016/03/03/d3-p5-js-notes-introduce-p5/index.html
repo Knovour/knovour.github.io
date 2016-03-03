@@ -20,7 +20,7 @@
 在圖片繪製上，p5 也簡化了一些步驟，比如畫線的時候，canvas 的畫法是
 12canvas.moveTo">
 <meta property="og:image" content="https://farm2.staticflickr.com/1464/25094916659_97593ca520_z.jpg">
-<meta property="og:updated_time" content="2016-03-03T08:54:24.385Z">
+<meta property="og:updated_time" content="2016-03-03T08:57:20.198Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="D3 + p5.js 筆記 - 介紹 p5">
 <meta name="twitter:description" content="先來大致介紹一下 p5.js。
@@ -214,9 +214,10 @@ ga('send', 'pageview');
 <h2 id="u89E3_u6C7A_u65B9_u5F0F"><a href="#u89E3_u6C7A_u65B9_u5F0F" class="headerlink" title="解決方式"></a>解決方式</h2><p>用 <code>new</code> 宣告一個。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> p5(ctx =&gt; &#123;</span><br><span class="line">  ctx.setup = () =&gt; &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ctx.draw = () =&gt; &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>在這裡面，不管要使用什麼函數，都要用 <code>ctx.[函數名稱]</code> 才可使用，但也避免了瀏覽器與編輯器的問題。</p>
-<h2 id="u5176_u4ED6"><a href="#u5176_u4ED6" class="headerlink" title="其他"></a>其他</h2><ul>
+<h2 id="u5176_u4ED6_u53C3_u8003"><a href="#u5176_u4ED6_u53C3_u8003" class="headerlink" title="其他參考"></a>其他參考</h2><ul>
 <li><a href="http://p5js.sketchpad.cc/sp/padlist/all-portfolio-sketches" target="_blank" rel="external">sketchpad</a>: 網路上有一個 <a href="http://p5js.sketchpad.cc/sp/padlist/all-portfolio-sketches" target="_blank" rel="external">sketchpad</a>，上面列了一些用 <a href="http://p5js.org/" target="_blank" rel="external">p5</a> 繪製的圖片與程式碼，可以大致了解一下怎麼寫出來的。</li>
 <li><a href="http://blog.infographics.tw/2015/03/beginner-visualization-with-p5js/" target="_blank" rel="external">p5.js － 初學者的資料視覺化函式庫</a></li>
+<li><a href="http://ithelp.ithome.com.tw/question/10096456" target="_blank" rel="external">Processing.js 的一些介紹及分享</a></li>
 </ul>
 
       

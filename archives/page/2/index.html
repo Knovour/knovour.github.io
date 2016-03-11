@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>D3 + p5.js 筆記 - 前言 | Knovour Notes</title>
+  <title>Archives | Knovour Notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="往後會用 [D3] 官方範例來練習，並用 [p5.js] 繪製而成，程式碼會放到 GitHub 上。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="D3 + p5.js 筆記 - 前言">
-<meta property="og:url" content="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/index.html">
+  <meta name="description" content="個人筆記、心得">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Knovour Notes">
+<meta property="og:url" content="https://notes.knovour.ninja/archives/page/2/index.html">
 <meta property="og:site_name" content="Knovour Notes">
-<meta property="og:description" content="往後會用 [D3] 官方範例來練習，並用 [p5.js] 繪製而成，程式碼會放到 GitHub 上。">
-<meta property="og:updated_time" content="2016-03-02T19:04:02.176Z">
+<meta property="og:description" content="個人筆記、心得">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="D3 + p5.js 筆記 - 前言">
-<meta name="twitter:description" content="往後會用 [D3] 官方範例來練習，並用 [p5.js] 繪製而成，程式碼會放到 GitHub 上。">
+<meta name="twitter:title" content="Knovour Notes">
+<meta name="twitter:description" content="個人筆記、心得">
   
     <link rel="alternative" href="/atom.xml" title="Knovour Notes" type="application/atom+xml">
   
@@ -160,78 +159,39 @@ ga('send', 'pageview');
   
 </aside>
         
-        <section id="main"><article id="post-d3-p5-js-notes" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/01/d3-p5-js-notes/" class="article-date">
-  <time datetime="2016-03-01T01:20:14.000Z" itemprop="datePublished">2016-03-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      D3 + p5.js 筆記 - 前言
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2015" class="archive-year">2015</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/04/15/some-google-search-skills/" class="archive-article-date">
+  <time datetime="2015-04-15T13:43:00.000Z" itemprop="datePublished">4月 15</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2015/04/15/some-google-search-skills/">記錄幾個 Google 搜尋技巧</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>這陣子看了點 <a href="https://d3js.org/" target="_blank" rel="external">D3</a>，並找了官方 wiki 的<a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>來試試，不過不是用 SVG，而是用 canvas 來畫。</p>
-<p>之前要寫的網站要生成簡易的圖表，但因為沒學過 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 的經驗（當時也來不及），所以找了現成的 <a href="http://www.chartjs.org/" target="_blank" rel="external">Chart.js</a> 來用，除了這套之外，之後也在 feedly 看了不少圖表生成的套件介紹，蠻多都是用 canvas 的。不過這倒也不是什麼選擇 canvas 的原因。</p>
-<blockquote>
-<p>單純犯賤罷了…</p>
-</blockquote>
-<p>然而，<a href="https://d3js.org/" target="_blank" rel="external">D3</a> 對 canvas 的支援不好，不過這也不是很意外。問題在於要怎麼用 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 把處理後的資料給 canvas 畫，根據<a href="http://blog.infographics.tw/2015/07/optimize-d3-with-canvas/" target="_blank" rel="external">這裡</a>的介紹，第三種方式算是我在網路上最常看見的，基本上就是處理資料並創建虛假的元素，假裝自己在操作 SVG，然後再把這些<strong>假元素</strong>吐出來再用 canvas 的方式畫出來，怎麼看都覺得…蠻蠢的。所以我比較偏好第二種方式，讓 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 負責處理資料、生成刻度等等，再用 <a href="http://p5js.org/" target="_blank" rel="external">p5.js</a> 直接畫上去。</p>
-<p>總之，之後會加減從 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 官方的<a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>裡面先挑簡單的例子來練習，也會原始碼放到 GitHub 上。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/" data-id="cilne6861000osfn3dcl74tzh" class="article-share-link">Share</a>
-      
-        <a href="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/D3/">D3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/p5-js/">p5.js</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/03/03/d3-p5-js-notes-introduce-p5/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          D3 + p5.js 筆記 - 介紹 p5
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/02/21/koa-notes/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Koa.js 踩坑筆記</div>
-    </a>
-  
-</nav>
-
-  
 </article>
-
-
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+  
+  
+    </div></section>
+  
 </section>
       </div>
       <footer id="footer">
@@ -249,13 +209,11 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'knovour-notes';
   
-  var disqus_url = 'https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

@@ -1,6 +1,6 @@
 (function($){
   if(location.protocol !== 'https:' && !location.host.includes('0.0.0.0'))
-    location.protocol = 'https:';
+    location.protocol = 'https';
 
   // Caption
   $('.article-entry').each(function(i){

@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Knovour Notes">
 <meta property="og:description" content="用 D3 + p5.js 繪製 Area Chart">
 <meta property="og:image" content="https://farm2.staticflickr.com/1702/25692006245_dff9729e3b_o.png">
-<meta property="og:updated_time" content="2016-03-21T14:00:30.192Z">
+<meta property="og:updated_time" content="2016-03-21T14:10:23.765Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="D3 + p5.js 筆記 - Area Chart">
 <meta name="twitter:description" content="用 D3 + p5.js 繪製 Area Chart">
@@ -201,9 +201,9 @@ ga('send', 'pageview');
             
             <ul>
 <li><a href="https://github.com/Knovour/d3-p5-practice/tree/master/example/area" target="_blank" rel="external">程式碼</a></li>
-<li><a href="http://bl.ocks.org/mbostock/3883195" target="_blank" rel="external">範例來源</a><a id="more"></a>
-</li>
+<li><a href="http://bl.ocks.org/mbostock/3883195" target="_blank" rel="external">範例來源</a></li>
 </ul>
+<a id="more"></a>
 <h2 id="程式碼說明"><a href="#程式碼說明" class="headerlink" title="程式碼說明"></a>程式碼說明</h2><p>以下主要說明部份的坑以及重點，請配合 GitHub 的 js 程式碼服用。</p>
 <h3 id="preload"><a href="#preload" class="headerlink" title="preload"></a>preload</h3><p><code>ctx.loadTable</code> 是非同步處理，最普通的作法就是指定給宣告的變數</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dataset = ctx.loadTable(<span class="string">'area.tsv'</span>, <span class="string">'tsv'</span>, <span class="string">'header'</span>, callback)</span><br></pre></td></tr></table></figure>

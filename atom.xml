@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-03-21T14:00:30.192Z</updated>
+  <updated>2016-03-21T14:10:23.765Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-area-chart/"/>
     <id>https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-area-chart/</id>
     <published>2016-03-03T14:44:07.000Z</published>
-    <updated>2016-03-21T14:00:30.192Z</updated>
+    <updated>2016-03-21T14:10:23.765Z</updated>
     
     <content type="html">&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/Knovour/d3-p5-practice/tree/master/example/area&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;程式碼&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://bl.ocks.org/mbostock/3883195&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;範例來源&lt;/a&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://bl.ocks.org/mbostock/3883195&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;範例來源&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;程式碼說明&quot;&gt;&lt;a href=&quot;#程式碼說明&quot; class=&quot;headerlink&quot; title=&quot;程式碼說明&quot;&gt;&lt;/a&gt;程式碼說明&lt;/h2&gt;&lt;p&gt;以下主要說明部份的坑以及重點，請配合 GitHub 的 js 程式碼服用。&lt;/p&gt;
 &lt;h3 id=&quot;preload&quot;&gt;&lt;a href=&quot;#preload&quot; class=&quot;headerlink&quot; title=&quot;preload&quot;&gt;&lt;/a&gt;preload&lt;/h3&gt;&lt;p&gt;&lt;code&gt;ctx.loadTable&lt;/code&gt; 是非同步處理，最普通的作法就是指定給宣告的變數&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;dataset = ctx.loadTable(&lt;span class=&quot;string&quot;&gt;&#39;area.tsv&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;tsv&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;header&#39;&lt;/span&gt;, callback)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;

@@ -3,12 +3,17 @@
 
     <sitemap>
         <loc>https://notes.knovour.ninja/post-sitemap.xml</loc>
-        <lastmod>2016-03-11T09:12:24.462Z</lastmod>
+        <lastmod>2016-03-21T14:00:30.192Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>https://notes.knovour.ninja/page-sitemap.xml</loc>
+        <lastmod>2016-03-21T13:57:27.046Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>https://notes.knovour.ninja/tag-sitemap.xml</loc>
-        <lastmod>2016-01-11T14:39:48.390Z</lastmod>
+        <lastmod>2016-01-11T15:48:49.371Z</lastmod>
     </sitemap>
 
 </sitemapindex>

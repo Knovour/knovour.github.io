@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang=zh>
 <head>
-  <meta charset="utf-8">
-  
-  <title>Knovour Notes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="個人筆記、心得">
+    <meta charset="utf-8">
+    
+    <title>Knovour Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="個人筆記、心得">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Knovour Notes">
 <meta property="og:url" content="https://notes.knovour.ninja/index.html">
@@ -14,19 +14,29 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Knovour Notes">
 <meta name="twitter:description" content="個人筆記、心得">
-  
-    <link rel="alternative" href="/atom.xml" title="Knovour Notes" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-  
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+<meta name="twitter:creator" content="@261262114">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.png# path to favicon" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
@@ -35,251 +45,420 @@ ga('create', 'UA-25128269-5', 'auto');
 ga('send', 'pageview');
 
 </script>
-<!-- End Google Analytics -->
-
+    
+    
+    
 
 </head>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="header-outer" class="outer">
-    <a href="/" class="logo">Knovour Notes</a>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-          <a class="main-nav-link" href="/2016/01/10/about">About</a>
-        
-          <a class="main-nav-link" href="/myresume">Resume</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        <div id="search-form-wrap">
-          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://notes.knovour.ninja"></form>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Knovour Notes</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜尋"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="https://notes.knovour.ninja"></form>
+
+</div>
         </div>
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        
-      </nav>
     </div>
-  </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜尋"><input type="hidden" name="sitesearch" value="https://notes.knovour.ninja"></form>
+
+                </td>
+            </tr>
+        </table>
+    </div>
 </header>
-      <nav id="mobile-nav" class="off">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-    <a href="/2016/01/10/about" class="mobile-nav-link">About</a>
-  
-    <a href="/myresume" class="mobile-nav-link">Resume</a>
-  
-  <div id="search-form-wrap-mobile">
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://notes.knovour.ninja"></form>
-  </div>
-</nav>
-      <div class="outer">
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">Knovour</h2>
+            <h3 id="title">Web Developer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Taipei, Taiwan</span>
+            <a id="follow" target="_blank" href="https://notes.knovour.ninja/myresume/">RESUME</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                10
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                11
+                <span>標籤</span>
+            </div>
+        </div>
         
-          <aside id="sidebar">
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li></ul>
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    <td><a href="https://github.com/Knovour" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+                    
+                    <td><a href="https://twitter.com/Knovour" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+                    
+                    <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+                    
+                </tr>
+            </table>
+        </div>
+        
     </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/D3/">D3</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/about/">about</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/">deploy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/">game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ghost/">ghost</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google/">google</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openshift/">openshift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/p5-js/">p5.js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/search/">search</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wine/">wine</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/D3/" style="font-size: 16.67px;">D3</a> <a href="/tags/about/" style="font-size: 10px;">about</a> <a href="/tags/deploy/" style="font-size: 13.33px;">deploy</a> <a href="/tags/game/" style="font-size: 10px;">game</a> <a href="/tags/ghost/" style="font-size: 10px;">ghost</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/openshift/" style="font-size: 10px;">openshift</a> <a href="/tags/p5-js/" style="font-size: 16.67px;">p5.js</a> <a href="/tags/search/" style="font-size: 10px;">search</a> <a href="/tags/wine/" style="font-size: 10px;">wine</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">links</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="https://github.com/Knovour">GitHub</a>
-          </li>
-        
-          <li>
-            <a href="https://share.readmoo.com/mooer/612883g92/bookshelf/Knovour/total">BookShelf</a>
-          </li>
-        
-          <li>
-            <a href="https://notes.knovour.ninja/myresume/">Resume</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">blogrolls</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="http://immortalnova.hatenablog.com">遊戲王的反主流學院</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-
-  
 </aside>
-        
-        <section id="main">
-  
+
+            
+            <section id="main">
     <article id="post-d3-p5-js-notes-area-chart" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/03/d3-p5-js-notes-area-chart/" class="article-date">
-  <time datetime="2016-03-03T14:44:07.000Z" itemprop="datePublished">2016-03-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="article-inner">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/03/d3-p5-js-notes-area-chart/">D3 + p5.js 筆記 - Area Chart</a>
-    </h1>
-  
+            
+	
+		<a href="/2016/03/03/d3-p5-js-notes-area-chart/" itemprop="url">
+            <img src="https://farm2.staticflickr.com/1702/25692006245_dff9729e3b_o.png" class="article-banner" />
+        </a>
+	
 
-      </header>
+
+
+        
+        
+        
+            <header class="article-header">
+                
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://farm2.staticflickr.com/1702/25692006245_dff9729e3b_o.png" alt=""></p>
-<p><p style='text-align: center'><a href="https://github.com/Knovour/d3-p5-practice/tree/master/example/area">程式碼</a>．<a href="http://bl.ocks.org/mbostock/3883195">參考來源</a></p><br>
-        
-          <p class="article-more-link">
-            <a href="/2016/03/03/d3-p5-js-notes-area-chart/#more">Read More</a>
-          </p>
-        
-      
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/03/d3-p5-js-notes-area-chart/">D3 + p5.js 筆記 - Area Chart</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/03/d3-p5-js-notes-area-chart/">
+            <time datetime="2016-03-03T14:44:07.000Z" itemprop="datePublished">2016-03-03</time>
+        </a>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-area-chart/" data-id="cilne6864000wsfn3k4kxikad" class="article-share-link">Share</a>
-      
-        <a href="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-area-chart/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/D3/">D3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/p5-js/">p5.js</a></li></ul>
 
-    </footer>
-  </div>
-  
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/D3/">D3</a>, <a class="tag-link" href="/tags/p5-js/">p5.js</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><ul>
+<li><a href="https://github.com/Knovour/d3-p5-practice/tree/master/example/area">程式碼</a></li>
+<li><a href="http://bl.ocks.org/mbostock/3883195">範例來源</a></p>
+            <p class="article-more-link">
+                <a href="/2016/03/03/d3-p5-js-notes-area-chart/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-area-chart/" data-id="cim0uutab00020un3x6vm53rs" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-area-chart/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-area-chart/">評論</a>
+    
+
+        </footer>
+    </div>
+    
 </article>
 
 
-  
-    <article id="post-d3-p5-js-notes-introduce-p5" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/03/d3-p5-js-notes-introduce-p5/" class="article-date">
-  <time datetime="2016-03-02T16:43:10.000Z" itemprop="datePublished">2016-03-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/03/d3-p5-js-notes-introduce-p5/">D3 + p5.js 筆記 - 介紹 p5</a>
-    </h1>
-  
 
-      </header>
+    <article id="post-d3-p5-js-notes-introduce-p5" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>先來大致介紹一下 <a href="http://p5js.org/">p5.js</a>。</p>
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/03/d3-p5-js-notes-introduce-p5/">D3 + p5.js 筆記 - 介紹 p5</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/03/d3-p5-js-notes-introduce-p5/">
+            <time datetime="2016-03-02T16:43:10.000Z" itemprop="datePublished">2016-03-03</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/D3/">D3</a>, <a class="tag-link" href="/tags/p5-js/">p5.js</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>先來大致介紹一下 <a href="http://p5js.org/">p5.js</a>。</p>
 <p>這是 <a href="https://processing.org/">Processing</a> 團隊移植的 web 版本，除了 <a href="http://p5js.org/">p5</a> 之外還有一個是由 jQuery 作者自己實現，叫 <a href="http://processingjs.org/">Processingjs</a> 的函式庫，可別搞混了。</p>
-<h2 id="u70BA_u4EC0_u9EBC_u9078_u64C7_p5_uFF1F"><a href="#u70BA_u4EC0_u9EBC_u9078_u64C7_p5_uFF1F" class="headerlink" title="為什麼選擇 p5？"></a>為什麼選擇 p5？</h2><p>以前大學時有教授教過 <a href="https://processing.org/">Processing</a> 算是因素之一，入門上不算太難。</p>
+<h2 id="為什麼選擇-p5？"><a href="#為什麼選擇-p5？" class="headerlink" title="為什麼選擇 p5？"></a>為什麼選擇 p5？</h2><p>以前大學時有教授教過 <a href="https://processing.org/">Processing</a> 算是因素之一，入門上不算太難。</p>
 <p>在圖片繪製上，<a href="http://p5js.org/">p5</a> 也簡化了一些步驟，比如畫線的時候，canvas 的畫法是</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">canvas.moveTo(x, y);</span><br><span class="line">canvas.lineTo(x2, y2);</span><br></pre></td></tr></table></figure>
-<p>而 <a href="http://p5js.org/">p5</a> 只要一個 <code>line</code> 就可以解決。稍微試過 <a href="http://www.pixijs.com/">Pixi.js</a> 與 <a href="http://createjs.com/easeljs">EaselJS</a>，這兩個基本上跟 canvas 原本的畫法差不了多少，畢竟定位是遊戲引擎，<a href="http://p5js.org/">p5</a> 是繪圖函式庫。<br>
+<p>而 <a href="http://p5js.org/">p5</a> 只要一個 <code>line</code> 就可以解決。稍微試過 <a href="http://www.pixijs.com/">Pixi.js</a> 與 <a href="http://createjs.com/easeljs">EaselJS</a>，這兩個基本上跟 canvas 原本的畫法差不了多少，畢竟定位是遊戲引擎，<a href="http://p5js.org/">p5</a> 是繪圖函式庫。<br></p>
+            <p class="article-more-link">
+                <a href="/2016/03/03/d3-p5-js-notes-introduce-p5/#more">Read More</a>
+            </p>
         
-          <p class="article-more-link">
-            <a href="/2016/03/03/d3-p5-js-notes-introduce-p5/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-introduce-p5/" data-id="cilne6862000tsfn374u8ygsz" class="article-share-link">Share</a>
-      
-        <a href="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-introduce-p5/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/D3/">D3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/p5-js/">p5.js</a></li></ul>
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
-    </footer>
-  </div>
-  
+
+
+</div>
+
+    <a data-url="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-introduce-p5/" data-id="cim0uutac00030un3mq24rej2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-introduce-p5/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-introduce-p5/">評論</a>
+    
+
+        </footer>
+    </div>
+    
 </article>
 
 
-  
-    <article id="post-d3-p5-js-notes" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/01/d3-p5-js-notes/" class="article-date">
-  <time datetime="2016-03-01T01:20:14.000Z" itemprop="datePublished">2016-03-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/01/d3-p5-js-notes/">D3 + p5.js 筆記 - 前言</a>
-    </h1>
-  
 
-      </header>
+    <article id="post-d3-p5-js-notes" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>這陣子看了點 <a href="https://d3js.org/" target="_blank" rel="external">D3</a>，並找了官方 wiki 的<a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>來試試，不過不是用 SVG，而是用 canvas 來畫。</p>
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/01/d3-p5-js-notes/">D3 + p5.js 筆記 - 前言</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/01/d3-p5-js-notes/">
+            <time datetime="2016-03-01T01:20:14.000Z" itemprop="datePublished">2016-03-01</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/D3/">D3</a>, <a class="tag-link" href="/tags/p5-js/">p5.js</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>這陣子看了點 <a href="https://d3js.org/" target="_blank" rel="external">D3</a>，並找了官方 wiki 的<a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>來試試，不過不是用 SVG，而是用 canvas 來畫。</p>
 <p>之前要寫的網站要生成簡易的圖表，但因為沒學過 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 的經驗（當時也來不及），所以找了現成的 <a href="http://www.chartjs.org/" target="_blank" rel="external">Chart.js</a> 來用，除了這套之外，之後也在 feedly 看了不少圖表生成的套件介紹，蠻多都是用 canvas 的。不過這倒也不是什麼選擇 canvas 的原因。</p>
 <blockquote>
 <p>單純犯賤罷了…</p>
@@ -287,409 +466,1102 @@ ga('send', 'pageview');
 <p>然而，<a href="https://d3js.org/" target="_blank" rel="external">D3</a> 對 canvas 的支援不好，不過這也不是很意外。問題在於要怎麼用 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 把處理後的資料給 canvas 畫，根據<a href="http://blog.infographics.tw/2015/07/optimize-d3-with-canvas/" target="_blank" rel="external">這裡</a>的介紹，第三種方式算是我在網路上最常看見的，基本上就是處理資料並創建虛假的元素，假裝自己在操作 SVG，然後再把這些<strong>假元素</strong>吐出來再用 canvas 的方式畫出來，怎麼看都覺得…蠻蠢的。所以我比較偏好第二種方式，讓 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 負責處理資料、生成刻度等等，再用 <a href="http://p5js.org/" target="_blank" rel="external">p5.js</a> 直接畫上去。</p>
 <p>總之，之後會加減從 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 官方的<a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>裡面先挑簡單的例子來練習，也會原始碼放到 GitHub 上。</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/" data-id="cilne6861000osfn3dcl74tzh" class="article-share-link">Share</a>
-      
-        <a href="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/D3/">D3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/p5-js/">p5.js</a></li></ul>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
-    </footer>
-  </div>
-  
+
+
+</div>
+
+    <a data-url="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/" data-id="cim0uutad00040un3lwyt8hw5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/">評論</a>
+    
+
+        </footer>
+    </div>
+    
 </article>
 
 
-  
-    <article id="post-koa-notes" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/21/koa-notes/" class="article-date">
-  <time datetime="2016-02-21T13:55:52.000Z" itemprop="datePublished">2016-02-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/21/koa-notes/">Koa.js 踩坑筆記</a>
-    </h1>
-  
 
-      </header>
+    <article id="post-koa-notes" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong> 以 <a href="https://github.com/koajs/koa/tree/v2.x" target="_blank" rel="external">Koa.js 2.0.0-alpha.3</a> 版本為主。 </strong></p>
-<h2 id="ctx-body__u6C92_u53CD_u61C9"><a href="#ctx-body__u6C92_u53CD_u61C9" class="headerlink" title="ctx.body 沒反應"></a><code>ctx.body</code> 沒反應</h2><p>當 <code>ctx.body</code> 在 Promise 的函式裡時（如 co）則不會對頁面有任何反應，需在該函式前加上 <code>return</code>。</p>
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/02/21/koa-notes/">Koa.js 踩坑筆記</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/02/21/koa-notes/">
+            <time datetime="2016-02-21T13:55:52.000Z" itemprop="datePublished">2016-02-21</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/node-js/">node.js</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><strong> 以 <a href="https://github.com/koajs/koa/tree/v2.x" target="_blank" rel="external">Koa.js 2.0.0-alpha.3</a> 版本為主。 </strong></p>
+<h2 id="ctx-body-沒反應"><a href="#ctx-body-沒反應" class="headerlink" title="ctx.body 沒反應"></a><code>ctx.body</code> 沒反應</h2><p>當 <code>ctx.body</code> 在 Promise 的函式裡時（如 co）則不會對頁面有任何反應，需在該函式前加上 <code>return</code>。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">index(ctx) &#123;</span><br><span class="line">  <span class="keyword">return</span> co(<span class="function"><span class="keyword">function</span>*(<span class="params"></span>) </span>&#123; <span class="comment">// &lt;- Must have `return`</span></span><br><span class="line">    ctx.body = <span class="string">'success'</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>自訂 <code>middleware</code> 的時候也是如此</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.use((ctx, next) =&gt; &#123;</span><br><span class="line">  ctx.msg = <span class="string">'hello'</span>;</span><br><span class="line">  <span class="keyword">return</span> next(); <span class="comment">// &lt;- Must have `return`</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="1-0__u8207_2-0__u7248_u672C_u554F_u984C"><a href="#1-0__u8207_2-0__u7248_u672C_u554F_u984C" class="headerlink" title="1.0 與 2.0 版本問題"></a>1.0 與 2.0 版本問題</h2><p><a href="https://github.com/koajs/koa" target="_blank" rel="external">Koa.js</a> 的大部分 middleware 都已經開始支援 <a href="https://github.com/koajs/koa/tree/v2.x" target="_blank" rel="external">2.0</a>，鑑於是 alpha 的關係，要安裝這些元件時要加 <code>@next</code> 的 tag，尚未支援的在使用時可以安裝 <code>koa-convert</code> 來轉換。</p>
+<h2 id="1-0-與-2-0-版本問題"><a href="#1-0-與-2-0-版本問題" class="headerlink" title="1.0 與 2.0 版本問題"></a>1.0 與 2.0 版本問題</h2><p><a href="https://github.com/koajs/koa" target="_blank" rel="external">Koa.js</a> 的大部分 middleware 都已經開始支援 <a href="https://github.com/koajs/koa/tree/v2.x" target="_blank" rel="external">2.0</a>，鑑於是 alpha 的關係，要安裝這些元件時要加 <code>@next</code> 的 tag，尚未支援的在使用時可以安裝 <code>koa-convert</code> 來轉換。</p>
 
-      
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://notes.knovour.ninja/2016/02/21/koa-notes/" data-id="cim0uutaf00070un37ryqtkfi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://notes.knovour.ninja/2016/02/21/koa-notes/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/02/21/koa-notes/">評論</a>
+    
+
+        </footer>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2016/02/21/koa-notes/" data-id="cilne685l000fsfn3azfqd2p8" class="article-share-link">Share</a>
-      
-        <a href="https://notes.knovour.ninja/2016/02/21/koa-notes/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
-
-    </footer>
-  </div>
-  
+    
 </article>
 
 
-  
-    <article id="post-sequelize-notes" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/12/sequelize-notes/" class="article-date">
-  <time datetime="2016-01-12T15:44:32.000Z" itemprop="datePublished">2016-01-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/12/sequelize-notes/">Sequelize 踩坑筆記</a>
-    </h1>
-  
 
-      </header>
+    <article id="post-sequelize-notes" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/01/12/sequelize-notes/">Sequelize 踩坑筆記</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/01/12/sequelize-notes/">
+            <time datetime="2016-01-12T15:44:32.000Z" itemprop="datePublished">2016-01-12</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/node-js/">node.js</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><ol>
 <li><strong>範例以<a href="https://github.com/sequelize/express-example/tree/master/models">這裡</a>為準（以下會換成 ES6 寫法），<a href="https://github.com/koajs/koa">Koa</a> 用法亦同</strong></li>
 <li><strong>異步程式碼寫法以 <a href="https://github.com/tj/co">co</a> 這套件來簡化 Promise 寫法</strong></li>
 </ol>
-<h2 id="u5167_u5EFA_u53C3_u6578_u7684_u4F4D_u7F6E"><a href="#u5167_u5EFA_u53C3_u6578_u7684_u4F4D_u7F6E" class="headerlink" title="內建參數的位置"></a>內建參數的位置</h2><p><script src="https://gist.github.com/Knovour/387c0699bd427d12b013.js"></script><br>
+<h2 id="內建參數的位置"><a href="#內建參數的位置" class="headerlink" title="內建參數的位置"></a>內建參數的位置</h2><p><script src="https://gist.github.com/Knovour/387c0699bd427d12b013.js"></script><br></p>
+            <p class="article-more-link">
+                <a href="/2016/01/12/sequelize-notes/#more">Read More</a>
+            </p>
         
-          <p class="article-more-link">
-            <a href="/2016/01/12/sequelize-notes/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2016/01/12/sequelize-notes/" data-id="cilne685h0005sfn347pah8s7" class="article-share-link">Share</a>
-      
-        <a href="https://notes.knovour.ninja/2016/01/12/sequelize-notes/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
-    </footer>
-  </div>
-  
+
+
+</div>
+
+    <a data-url="https://notes.knovour.ninja/2016/01/12/sequelize-notes/" data-id="cim0uutag00090un3cunrk5tu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://notes.knovour.ninja/2016/01/12/sequelize-notes/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/01/12/sequelize-notes/">評論</a>
+    
+
+        </footer>
+    </div>
+    
 </article>
 
 
-  
+
     <article id="post-change-blog-from-openshift-to-github" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/11/change-blog-from-openshift-to-github/" class="article-date">
-  <time datetime="2016-01-11T15:40:12.000Z" itemprop="datePublished">2016-01-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="article-inner">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/11/change-blog-from-openshift-to-github/">放棄在 OpenShift 上管理部落格</a>
-    </h1>
-  
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/01/11/change-blog-from-openshift-to-github/">放棄在 OpenShift 上管理部落格</a>
+        </h1>
+    
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>去年決定將 Blog 從 <a href="http://logdown.com/">Logdown</a> 換成自架 <a href="https://ghost.org/">Ghost</a> 後，就想找一個線上空間來管理。但 <a href="https://www.linode.com/">Linode</a> 或 <a href="https://www.digitalocean.com/">Digital Ocean</a> 要從頭來覺得麻煩，而 <a href="https://heroku.com/">Heroku</a> 不知道為何怎樣就是看不懂，後來看到 <a href="https://www.openshift.com/">OpenShift</a> 設定似乎挺簡單，於是就辦來試試看。</p>
-<p>無奈 <a href="https://www.openshift.com/">OpenShift</a> 根本 Bug 滿天飛，社群的 <a href="https://ghost.org/">Ghost</a> 架設速成 script 根本不能用就算了，連從官方的 Node.js 重頭架也常設定跑失敗，跑到最後居然是鎖我帳號？？更別說我在試用時三不五時被登出，不然就是怎麼按 Application 都沒顯示東西，也不知道怎麼回到我剛剛的設定頁面。<br>
-        
-          <p class="article-more-link">
-            <a href="/2016/01/11/change-blog-from-openshift-to-github/#more">Read More</a>
-          </p>
-        
-      
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/01/11/change-blog-from-openshift-to-github/">
+            <time datetime="2016-01-11T15:40:12.000Z" itemprop="datePublished">2016-01-11</time>
+        </a>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/" data-id="cilne6866000zsfn36knqga0i" class="article-share-link">Share</a>
-      
-        <a href="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ghost/">ghost</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openshift/">openshift</a></li></ul>
 
-    </footer>
-  </div>
-  
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/ghost/">ghost</a>, <a class="tag-link" href="/tags/openshift/">openshift</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>去年決定將 Blog 從 <a href="http://logdown.com/">Logdown</a> 換成自架 <a href="https://ghost.org/">Ghost</a> 後，就想找一個線上空間來管理。但 <a href="https://www.linode.com/">Linode</a> 或 <a href="https://www.digitalocean.com/">Digital Ocean</a> 要從頭來覺得麻煩，而 <a href="https://heroku.com/">Heroku</a> 不知道為何怎樣就是看不懂，後來看到 <a href="https://www.openshift.com/">OpenShift</a> 設定似乎挺簡單，於是就辦來試試看。</p>
+<p>無奈 <a href="https://www.openshift.com/">OpenShift</a> 根本 Bug 滿天飛，社群的 <a href="https://ghost.org/">Ghost</a> 架設速成 script 根本不能用就算了，連從官方的 Node.js 重頭架也常設定跑失敗，跑到最後居然是鎖我帳號？？更別說我在試用時三不五時被登出，不然就是怎麼按 Application 都沒顯示東西，也不知道怎麼回到我剛剛的設定頁面。<br></p>
+            <p class="article-more-link">
+                <a href="/2016/01/11/change-blog-from-openshift-to-github/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/" data-id="cim0uutab00010un30dtvb3q5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/">評論</a>
+    
+
+        </footer>
+    </div>
+    
 </article>
 
 
-  
-    <article id="post-about" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/10/about/" class="article-date">
-  <time datetime="2016-01-10T08:21:35.000Z" itemprop="datePublished">2016-01-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/10/about/">關於</a>
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://farm2.staticflickr.com/1656/23668295773_6a48840818_h.jpg" alt=""></p>
-<ul>
-<li><a href="https://github.com/Knovour" target="_blank" rel="external">Github</a></li>
-<li><a href="https://share.readmoo.com/mooer/612883g92/bookshelf/Knovour/total" target="_blank" rel="external">個人書櫃</a></li>
-</ul>
-<h3 id="u4E4B_u524D_u5F85_u904E_u7684_Blog"><a href="#u4E4B_u524D_u5F85_u904E_u7684_Blog" class="headerlink" title="之前待過的 Blog"></a>之前待過的 Blog</h3><ul>
-<li><a href="http://qwert535286.pixnet.net/blog" target="_blank" rel="external">Pixnet</a></li>
-<li><a href="http://novathinking.blogspot.tw" target="_blank" rel="external">Blogger</a></li>
-<li><a href="http://knovourland.logdown.com" target="_blank" rel="external">Logdown</a></li>
-</ul>
-<h3 id="u53CB_u7AD9_u9023_u7D50"><a href="#u53CB_u7AD9_u9023_u7D50" class="headerlink" title="友站連結"></a>友站連結</h3><ul>
-<li><a href="http://immortalnova.hatenablog.com" target="_blank" rel="external">遊戲王的反主流學院</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2016/01/10/about/" data-id="cilne68680014sfn3rp01epmw" class="article-share-link">Share</a>
-      
-        <a href="https://notes.knovour.ninja/2016/01/10/about/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/about/">about</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-path-of-exile-on-linux" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/16/path-of-exile-on-linux/" class="article-date">
-  <time datetime="2015-09-16T13:26:00.000Z" itemprop="datePublished">2015-09-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="article-inner">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/16/path-of-exile-on-linux/">在 Linux 上執行 Path of Exile (PoE)</a>
-    </h1>
-  
+            
+	
+		<a href="/2015/09/16/path-of-exile-on-linux/" itemprop="url">
+            <img src="https://farm1.staticflickr.com/621/21000960109_98f4415f3d_c.jpg" class="article-banner" />
+        </a>
+	
 
-      </header>
+
+
+        
+        
+        
+            <header class="article-header">
+                
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://farm1.staticflickr.com/621/21000960109_98f4415f3d_c.jpg" alt="poe on wine"></p>
-<p>之前在 Wine 上跑過一陣子 PoE，但經過幾次更新後，loading 畫面除了狂閃外基本上就是完全進不去的狀態，然而當時也是有點膩了，所以也懶得折騰（基本上都是在講把 Wine 降級或是裝 PlayOnLinux，不過不想這樣搞）。</p>
-<p>現在 2.0 出了，「據說」修好了錯位，也偶然發現有一篇比較不那麼麻煩的設定<a href="https://russell.cc/path-of-exile-linux/">文章</a>，試一試還真的成功了，在這邊紀錄一下。<br>
-        
-          <p class="article-more-link">
-            <a href="/2015/09/16/path-of-exile-on-linux/#more">Read More</a>
-          </p>
-        
-      
+        <h1 itemprop="name">
+            <a class="article-title" href="/2015/09/16/path-of-exile-on-linux/">在 Linux 上執行 Path of Exile (PoE)</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/09/16/path-of-exile-on-linux/">
+            <time datetime="2015-09-16T13:26:00.000Z" itemprop="datePublished">2015-09-16</time>
+        </a>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/" data-id="cilne685i0008sfn3yjo2xls8" class="article-share-link">Share</a>
-      
-        <a href="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/game/">game</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wine/">wine</a></li></ul>
 
-    </footer>
-  </div>
-  
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/game/">game</a>, <a class="tag-link" href="/tags/linux/">linux</a>, <a class="tag-link" href="/tags/wine/">wine</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>之前在 Wine 上跑過一陣子 PoE，但經過幾次更新後，loading 畫面除了狂閃外基本上就是完全進不去的狀態，然而當時也是有點膩了，所以也懶得折騰（基本上都是在講把 Wine 降級或是裝 PlayOnLinux，不過不想這樣搞）。</p>
+<p>現在 2.0 出了，「據說」修好了錯位，也偶然發現有一篇比較不那麼麻煩的設定<a href="https://russell.cc/path-of-exile-linux/">文章</a>，試一試還真的成功了，在這邊紀錄一下。<br></p>
+            <p class="article-more-link">
+                <a href="/2015/09/16/path-of-exile-on-linux/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/" data-id="cim0uutag00080un3g93ct1tf" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/">評論</a>
+    
+
+        </footer>
+    </div>
+    
 </article>
 
 
-  
-    <article id="post-deploy-node-js-by-pm2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/08/13/deploy-node-js-by-pm2/" class="article-date">
-  <time datetime="2015-08-12T18:38:00.000Z" itemprop="datePublished">2015-08-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/13/deploy-node-js-by-pm2/">用 PM2 部署 node server</a>
-    </h1>
-  
 
-      </header>
+    <article id="post-deploy-node-js-by-pm2" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="u524D_u7F6E_u4F5C_u696D"><a href="#u524D_u7F6E_u4F5C_u696D" class="headerlink" title="前置作業"></a>前置作業</h2><p>首先先設定完<a href="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/">這篇文</a>的前置作業。</p>
+        <h1 itemprop="name">
+            <a class="article-title" href="/2015/08/13/deploy-node-js-by-pm2/">用 PM2 部署 node server</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/08/13/deploy-node-js-by-pm2/">
+            <time datetime="2015-08-12T18:38:00.000Z" itemprop="datePublished">2015-08-13</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/deploy/">deploy</a>, <a class="tag-link" href="/tags/node-js/">node.js</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><p>首先先設定完<a href="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/">這篇文</a>的前置作業。</p>
 <p><strong>部署與開發用的機器都要安裝 PM2</strong>：<code>sudo npm i pm2 -g</code></p>
-<h2 id="u90E8_u7F72_u8A2D_u5B9A"><a href="#u90E8_u7F72_u8A2D_u5B9A" class="headerlink" title="部署設定"></a>部署設定</h2><p>於專案資料夾底下執行 <code>pm2 ecosystem</code> 生成 <code>ecosystem.json5</code>，修改副檔名為 json 檔以便顯示語法 hightlight。</p>
+<h2 id="部署設定"><a href="#部署設定" class="headerlink" title="部署設定"></a>部署設定</h2><p>於專案資料夾底下執行 <code>pm2 ecosystem</code> 生成 <code>ecosystem.json5</code>，修改副檔名為 json 檔以便顯示語法 hightlight。</p>
 <p>將裡面的內容做修改</p>
 <script src="https://gist.github.com/Knovour/f27c0cf743e991973f57.js"></script>
 
-<p>注意最後一句裡 <code>pm2 startOrRestart ecosystem.json</code> 的副檔名是否相同。<br>
+<p>注意最後一句裡 <code>pm2 startOrRestart ecosystem.json</code> 的副檔名是否相同。<br></p>
+            <p class="article-more-link">
+                <a href="/2015/08/13/deploy-node-js-by-pm2/#more">Read More</a>
+            </p>
         
-          <p class="article-more-link">
-            <a href="/2015/08/13/deploy-node-js-by-pm2/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/" data-id="cilne685z000lsfn3w4n18wng" class="article-share-link">Share</a>
-      
-        <a href="https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deploy/">deploy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
-    </footer>
-  </div>
-  
+
+
+</div>
+
+    <a data-url="https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/" data-id="cim0uutae00050un3nt07hnnc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/">評論</a>
+    
+
+        </footer>
+    </div>
+    
 </article>
 
 
-  
-    <article id="post-deploy-node-js-by-shipit" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/17/deploy-node-js-by-shipit/" class="article-date">
-  <time datetime="2015-07-17T15:42:00.000Z" itemprop="datePublished">2015-07-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/17/deploy-node-js-by-shipit/">用 Shipit 部署 node server</a>
-    </h1>
-  
 
-      </header>
+    <article id="post-deploy-node-js-by-shipit" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="u524D_u7F6E_u4F5C_u696D"><a href="#u524D_u7F6E_u4F5C_u696D" class="headerlink" title="前置作業"></a>前置作業</h2><p><strong>假設是全新的 Linux，帳號為 deploy</strong></p>
+        <h1 itemprop="name">
+            <a class="article-title" href="/2015/07/17/deploy-node-js-by-shipit/">用 Shipit 部署 node server</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/07/17/deploy-node-js-by-shipit/">
+            <time datetime="2015-07-17T15:42:00.000Z" itemprop="datePublished">2015-07-17</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/deploy/">deploy</a>, <a class="tag-link" href="/tags/node-js/">node.js</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><p><strong>假設是全新的 Linux，帳號為 deploy</strong></p>
 <ol>
 <li>在 github 等託管服務中登錄 deploy server 的 ssh public key。</li>
 <li>設定 ssh 免密碼遠端登入：在 <code>.ssh/authorized_keys</code> 裡貼上開發機的 ssh public key。</li>
 <li>如有需要，將 server 裡的 global package 裝好，如 bower、sails、grunt-cli 等等。</li>
 <li>設定 server 裡程式碼的存放位置，假設為 <code>/usr/src</code>。</li>
 </ol>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/src/<span class="keyword">my</span>-project-<span class="property">name</span></span><br><span class="line">chown deploy:deploy /usr/src/<span class="keyword">my</span>-project-<span class="property">name</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/src/<span class="keyword">my</span>-project-<span class="built_in">name</span></span><br><span class="line">chown deploy:deploy /usr/src/<span class="keyword">my</span>-project-<span class="built_in">name</span></span><br></pre></td></tr></table></figure></p>
+            <p class="article-more-link">
+                <a href="/2015/07/17/deploy-node-js-by-shipit/#more">Read More</a>
+            </p>
         
-          <p class="article-more-link">
-            <a href="/2015/07/17/deploy-node-js-by-shipit/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/" data-id="cilne685w000hsfn3k04ee7s6" class="article-share-link">Share</a>
-      
-        <a href="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deploy/">deploy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
-    </footer>
-  </div>
-  
+
+
+</div>
+
+    <a data-url="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/" data-id="cim0uutae00060un38fu20ll2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/">評論</a>
+    
+
+        </footer>
+    </div>
+    
 </article>
 
 
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
-</section>
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      <a href="/" class="logo">Knovour Notes</a>
-      &copy; 2016 Knovour Zheng<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+
+    <article id="post-some-google-search-skills" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<a href="/2015/04/15/some-google-search-skills/" itemprop="url">
+            <img src="https://farm6.staticflickr.com/5728/20759258074_6b108b0dac_c.jpg" class="article-banner" />
+        </a>
+	
+
+
+
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2015/04/15/some-google-search-skills/">記錄幾個 Google 搜尋技巧</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/04/15/some-google-search-skills/">
+            <time datetime="2015-04-15T13:43:00.000Z" itemprop="datePublished">2015-04-15</time>
+        </a>
     </div>
-  </div>
-</footer>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/google/">google</a>, <a class="tag-link" href="/tags/search/">search</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>記錄幾個自己在搜尋時常用到的方式</p>
+<h2 id="一般方式"><a href="#一般方式" class="headerlink" title="一般方式"></a>一般方式</h2><ul>
+<li><code>-</code>：排除某個關鍵字。例：<code>ui -jquery</code></li>
+<li><code>site:</code>：搜尋特定網站內容。例：<code>site:medium.com node.js</code></li>
+<li><code>&quot;關鍵字&quot;</code>：限定搜尋結果包含引號內完整字串。</li>
+</ul>
+<h2 id="額外關鍵字"><a href="#額外關鍵字" class="headerlink" title="額外關鍵字"></a>額外關鍵字</h2><ul>
+<li><code>alternative(s)</code>：搜尋某個軟體或 library 有沒有類似的東西。若搜尋的是 library 相關的，搜尋結果裡的 <a href="http://alternativeto.net/">AlternativeTo</a> 網站則可以不用管，因為裡面舉的例子還是以軟體為主。</li>
+<li><code>how (to)</code>：搜尋一些 server 或開發環境架設時會用到</li>
+<li><code>附近</code>：搜尋 Map 時會用到。如：<code>101 附近 餐廳</code></li>
+</ul></p>
+            <p class="article-more-link">
+                <a href="/2015/04/15/some-google-search-skills/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://notes.knovour.ninja/2015/04/15/some-google-search-skills/" data-id="cim20yhkz0003c5n3tf4vuigf" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://notes.knovour.ninja/2015/04/15/some-google-search-skills/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2015/04/15/some-google-search-skills/">評論</a>
+    
+
+        </footer>
     </div>
     
-<script>
-  var disqus_shortname = 'knovour-notes';
-  
-  (function(){
+</article>
+
+
+</section>
+            
+                <aside id="sidebar">
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">歸檔</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">標籤</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/D3/">D3</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/">deploy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/">game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ghost/">ghost</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google/">google</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openshift/">openshift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/p5-js/">p5.js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/search/">search</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wine/">wine</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">連結</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://immortalnova.hatenablog.com">遊戲王的反主流學院</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2016 Knovour Zheng<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'knovour-notes';
+    
+    
+    (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
+    })();
+    </script>
 
 
-<script src="/js/jquery.min.js" type="text/javascript"></script>
-<script src="/js/jquery.scrollLoading.js" type="text/javascript"></script>
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
 
-
-<script src="/js/script.js" type="text/javascript"></script>
-
-  </div>
+    </div>
 </body>
 </html>

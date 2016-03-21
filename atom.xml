@@ -1,49 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Knovour Notes]]></title>
+  <title>Knovour Notes</title>
   
   <link href="/atom.xml" rel="self"/>
+  
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-03-11T09:12:24.462Z</updated>
+  <updated>2016-03-21T14:00:30.192Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
-    <name><![CDATA[Knovour Zheng]]></name>
+    <name>Knovour Zheng</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[D3 + p5.js 筆記 - Area Chart]]></title>
+    <title>D3 + p5.js 筆記 - Area Chart</title>
     <link href="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-area-chart/"/>
     <id>https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-area-chart/</id>
     <published>2016-03-03T14:44:07.000Z</published>
-    <updated>2016-03-11T09:12:24.462Z</updated>
-    <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1702/25692006245_dff9729e3b_o.png" alt=""></p>
-<p></p><p style="text-align: center"><a href="https://github.com/Knovour/d3-p5-practice/tree/master/example/area" target="_blank" rel="external">程式碼</a>．<a href="http://bl.ocks.org/mbostock/3883195" target="_blank" rel="external">參考來源</a></p><br><a id="more"></a><p></p>
-<h2 id="u7A0B_u5F0F_u78BC_u8AAA_u660E"><a href="#u7A0B_u5F0F_u78BC_u8AAA_u660E" class="headerlink" title="程式碼說明"></a>程式碼說明</h2><p>以下主要說明部份的坑以及重點，請配合 GitHub 的 js 程式碼服用。</p>
-<h3 id="preload"><a href="#preload" class="headerlink" title="preload"></a>preload</h3><p><code>ctx.loadTable</code> 是非同步處理，最普通的作法就是指定給宣告的變數</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dataset = ctx.loadTable(<span class="string">'area.tsv'</span>, <span class="string">'tsv'</span>, <span class="string">'header'</span>, callback)</span><br></pre></td></tr></table></figure>
-<p>但 preload 請求的資料，在 <code>setup</code> 函式裡才可以使用，如果直接在 preload 裡 console 出來是沒有東西的，但你可以宣告 callback function 來對資料預先處理。</p>
-<p>不得不說，p5.js 的 <code>loadTable</code> 幫你整理資料這件事實在非常多餘，幫你把資料整理好了，但你卻沒法直接取出完整的 json 陣列資料。</p>
-<p><img src="https://farm2.staticflickr.com/1590/25066224863_bd6917b041_o.png" alt=""></p>
-<p>而官方提供的 API 中，最接近的 <code>getObject</code> 取出來的樣子是：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">'0'</span>: data1,</span><br><span class="line">  <span class="string">'1'</span>: data2,</span><br><span class="line">  <span class="string">'2'</span>: ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>WTF</strong></p>
-<h3 id="setup"><a href="#setup" class="headerlink" title="setup"></a>setup</h3><p>主要就是在這邊讓 D3 計算縮放後的刻度、座標，由於 <code>draw</code> 的函式預設會刷新畫布，所以能夠事先計算的部份都盡量放在 setup 裡。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">xScale = d3.time.scale()</span><br><span class="line">  .domain(d3.extent(dataset, d =&gt; d.date))</span><br><span class="line">  .range([ chartX, chartWidth + chartX ]);</span><br><span class="line"></span><br><span class="line">xTickFmt = xScale.tickFormat(date =&gt; date.getFullYear());</span><br><span class="line">xLabels  = xScale.ticks(d3.time.year);</span><br><span class="line"></span><br><span class="line">yScale = d3.scale.linear()</span><br><span class="line">  .domain([ <span class="number">0</span>, d3.max(dataset, (&#123; close &#125;) =&gt; close) ])</span><br><span class="line">  .range([ chartHeight + chartY, chartY ]);</span><br><span class="line"></span><br><span class="line">yLabels = yScale.ticks(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
-<p><code>domain</code>、<code>range</code>，簡單來講就是從資料以及指定的畫布大小來決定畫布上的座標，省去寫縮放程式碼的麻煩。</p>
-<p>X 軸是以時間為刻度，用 D3 的 <code>ticks</code> 設定為以年份劃分刻度，Y 軸則設定為分割成 10 個座標。ticks 最後會產生一串陣列，裡面存放刻度的標籤名稱，用 <code>yScale(data)</code> 可以取得該筆資料在 Y 軸的位置。</p>
-<h3 id="draw"><a href="#draw" class="headerlink" title="draw"></a>draw</h3><p>p5 預設會重複畫 draw 裡的內容，可以在 setup 補上 <code>noLoop</code> 來關掉自動重繪，否則也要在 draw 的開頭使用 <code>clean</code> 來清掉畫布，否則畫布上的元素會重複疊加上去。另外畫布的背景預設為透明，故需先畫上指定顏色的背景，否則存成圖檔時會是透明背景。</p>
-<p>這邊注意的一點是，除了 <code>stroke</code>、<code>fill</code> 等等會影響畫筆（ctx）行為之外，有些則是會影響整個畫布的，比如 <code>rotate</code> 會把要畫的圖層整個旋轉，結尾要使用 <code>resetMatrix</code> 調回原狀，或是用 <code>push</code> 與 <code>pop</code> 來暫存原本的狀態。</p>
-<p>比如前面設定 fill 的顏色，但是在 push 與 pop 之間使用 <code>noFill</code> 時，當 pop 出來後畫筆依舊是 fill 的狀態。</p>
-]]></content>
+    <updated>2016-03-21T14:00:30.192Z</updated>
+    
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Knovour/d3-p5-practice/tree/master/example/area&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;程式碼&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://bl.ocks.org/mbostock/3883195&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;範例來源&lt;/a&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;程式碼說明&quot;&gt;&lt;a href=&quot;#程式碼說明&quot; class=&quot;headerlink&quot; title=&quot;程式碼說明&quot;&gt;&lt;/a&gt;程式碼說明&lt;/h2&gt;&lt;p&gt;以下主要說明部份的坑以及重點，請配合 GitHub 的 js 程式碼服用。&lt;/p&gt;
+&lt;h3 id=&quot;preload&quot;&gt;&lt;a href=&quot;#preload&quot; class=&quot;headerlink&quot; title=&quot;preload&quot;&gt;&lt;/a&gt;preload&lt;/h3&gt;&lt;p&gt;&lt;code&gt;ctx.loadTable&lt;/code&gt; 是非同步處理，最普通的作法就是指定給宣告的變數&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;dataset = ctx.loadTable(&lt;span class=&quot;string&quot;&gt;&#39;area.tsv&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;tsv&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;header&#39;&lt;/span&gt;, callback)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;但 preload 請求的資料，在 &lt;code&gt;setup&lt;/code&gt; 函式裡才可以使用，如果直接在 preload 裡 console 出來是沒有東西的，但你可以宣告 callback function 來對資料預先處理。&lt;/p&gt;
+&lt;p&gt;不得不說，p5.js 的 &lt;code&gt;loadTable&lt;/code&gt; 幫你整理資料這件事實在非常多餘，幫你把資料整理好了，但你卻沒法直接取出完整的 json 陣列資料。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1590/25066224863_bd6917b041_o.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;而官方提供的 API 中，最接近的 &lt;code&gt;getObject&lt;/code&gt; 取出來的樣子是：&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;string&quot;&gt;&#39;0&#39;&lt;/span&gt;: data1,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;string&quot;&gt;&#39;1&#39;&lt;/span&gt;: data2,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;string&quot;&gt;&#39;2&#39;&lt;/span&gt;: ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;WTF&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;setup&quot;&gt;&lt;a href=&quot;#setup&quot; class=&quot;headerlink&quot; title=&quot;setup&quot;&gt;&lt;/a&gt;setup&lt;/h3&gt;&lt;p&gt;主要就是在這邊讓 D3 計算縮放後的刻度、座標，由於 &lt;code&gt;draw&lt;/code&gt; 的函式預設會刷新畫布，所以能夠事先計算的部份都盡量放在 setup 裡。&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;xScale = d3.time.scale()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  .domain(d3.extent(dataset, d =&amp;gt; d.date))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  .range([ chartX, chartWidth + chartX ]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;xTickFmt = xScale.tickFormat(date =&amp;gt; date.getFullYear());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;xLabels  = xScale.ticks(d3.time.year);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yScale = d3.scale.linear()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  .domain([ &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, d3.max(dataset, (&amp;#123; close &amp;#125;) =&amp;gt; close) ])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  .range([ chartHeight + chartY, chartY ]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yLabels = yScale.ticks(&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;domain&lt;/code&gt;、&lt;code&gt;range&lt;/code&gt;，簡單來講就是從資料以及指定的畫布大小來決定畫布上的座標，省去寫縮放程式碼的麻煩。&lt;/p&gt;
+&lt;p&gt;X 軸是以時間為刻度，用 D3 的 &lt;code&gt;ticks&lt;/code&gt; 設定為以年份劃分刻度，Y 軸則設定為分割成 10 個座標。ticks 最後會產生一串陣列，裡面存放刻度的標籤名稱，用 &lt;code&gt;yScale(data)&lt;/code&gt; 可以取得該筆資料在 Y 軸的位置。&lt;/p&gt;
+&lt;h3 id=&quot;draw&quot;&gt;&lt;a href=&quot;#draw&quot; class=&quot;headerlink&quot; title=&quot;draw&quot;&gt;&lt;/a&gt;draw&lt;/h3&gt;&lt;p&gt;p5 預設會重複畫 draw 裡的內容，可以在 setup 補上 &lt;code&gt;noLoop&lt;/code&gt; 來關掉自動重繪，否則也要在 draw 的開頭使用 &lt;code&gt;clean&lt;/code&gt; 來清掉畫布，否則畫布上的元素會重複疊加上去。另外畫布的背景預設為透明，故需先畫上指定顏色的背景，否則存成圖檔時會是透明背景。&lt;/p&gt;
+&lt;p&gt;這邊注意的一點是，除了 &lt;code&gt;stroke&lt;/code&gt;、&lt;code&gt;fill&lt;/code&gt; 等等會影響畫筆（ctx）行為之外，有些則是會影響整個畫布的，比如 &lt;code&gt;rotate&lt;/code&gt; 會把要畫的圖層整個旋轉，結尾要使用 &lt;code&gt;resetMatrix&lt;/code&gt; 調回原狀，或是用 &lt;code&gt;push&lt;/code&gt; 與 &lt;code&gt;pop&lt;/code&gt; 來暫存原本的狀態。&lt;/p&gt;
+&lt;p&gt;比如前面設定 fill 的顏色，但是在 push 與 pop 之間使用 &lt;code&gt;noFill&lt;/code&gt; 時，當 pop 出來後畫筆依舊是 fill 的狀態。&lt;/p&gt;
+</content>
+    
     <summary type="html">
-    <![CDATA[<p><img src="https://farm2.staticflickr.com/1702/25692006245_dff9729e3b_o.png" alt=""></p>
-<p><p style='text-align: center'><a href="https://github.com/Knovour/d3-p5-practice/tree/master/example/area">程式碼</a>．<a href="http://bl.ocks.org/mbostock/3883195">參考來源</a></p><br>]]>
+    
+      用 D3 + p5.js 繪製 Area Chart
     
     </summary>
+    
     
       <category term="D3" scheme="https://notes.knovour.ninja/tags/D3/"/>
     
@@ -52,45 +59,44 @@
   </entry>
   
   <entry>
-    <title><![CDATA[D3 + p5.js 筆記 - 介紹 p5]]></title>
+    <title>D3 + p5.js 筆記 - 介紹 p5</title>
     <link href="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-introduce-p5/"/>
     <id>https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-introduce-p5/</id>
     <published>2016-03-02T16:43:10.000Z</published>
-    <updated>2016-03-03T08:57:20.198Z</updated>
-    <content type="html"><![CDATA[<p>先來大致介紹一下 <a href="http://p5js.org/" target="_blank" rel="external">p5.js</a>。</p>
-<p>這是 <a href="https://processing.org/" target="_blank" rel="external">Processing</a> 團隊移植的 web 版本，除了 <a href="http://p5js.org/" target="_blank" rel="external">p5</a> 之外還有一個是由 jQuery 作者自己實現，叫 <a href="http://processingjs.org/" target="_blank" rel="external">Processingjs</a> 的函式庫，可別搞混了。</p>
-<h2 id="u70BA_u4EC0_u9EBC_u9078_u64C7_p5_uFF1F"><a href="#u70BA_u4EC0_u9EBC_u9078_u64C7_p5_uFF1F" class="headerlink" title="為什麼選擇 p5？"></a>為什麼選擇 p5？</h2><p>以前大學時有教授教過 <a href="https://processing.org/" target="_blank" rel="external">Processing</a> 算是因素之一，入門上不算太難。</p>
-<p>在圖片繪製上，<a href="http://p5js.org/" target="_blank" rel="external">p5</a> 也簡化了一些步驟，比如畫線的時候，canvas 的畫法是</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">canvas.moveTo(x, y);</span><br><span class="line">canvas.lineTo(x2, y2);</span><br></pre></td></tr></table></figure>
-<p>而 <a href="http://p5js.org/" target="_blank" rel="external">p5</a> 只要一個 <code>line</code> 就可以解決。稍微試過 <a href="http://www.pixijs.com/" target="_blank" rel="external">Pixi.js</a> 與 <a href="http://createjs.com/easeljs" target="_blank" rel="external">EaselJS</a>，這兩個基本上跟 canvas 原本的畫法差不了多少，畢竟定位是遊戲引擎，<a href="http://p5js.org/" target="_blank" rel="external">p5</a> 是繪圖函式庫。<br><a id="more"></a></p>
-<h3 id="canvas_1px__u76F4_u7DDA_u554F_u984C"><a href="#canvas_1px__u76F4_u7DDA_u554F_u984C" class="headerlink" title="canvas 1px 直線問題"></a>canvas 1px 直線問題</h3><p>canvas 有一個渲染上的問題，很多剛碰的人大概都會遇到，在畫 1px（或其他奇數）寬的線時，在螢幕上顯示卻有 2px 寬。</p>
-<p>簡單圖解類似這樣：</p>
-<p><img src="https://farm2.staticflickr.com/1464/25094916659_97593ca520_z.jpg" alt="canvas"></p>
-<p>當在座標上畫線時，canvas 並不會在該座標的 右邊或左邊畫線，而是會以座標為準，向兩邊各佔用一半的 px，在這邊就各佔用了 0.5px。而 canvas 的渲染機制就會把兩邊剩下的 0.5 補上顏色，類似防鋸齒那樣，就造成畫 1px 卻有 2px 寬的情形發生。</p>
-<p>解決方式就是向前或向後退 0.5 px，而 <a href="http://p5js.org/" target="_blank" rel="external">p5</a> 會幫你搞定這件事，但由於 [D3] 在幫你計算刻度座標時，數值不會那麼漂亮，所以還是會有漏網之魚發生，至少 XY 軸是正常顯示的。</p>
-<h2 id="p5__u7684_u57FA_u672C_u69CB_u9020"><a href="#p5__u7684_u57FA_u672C_u69CB_u9020" class="headerlink" title="p5 的基本構造"></a>p5 的基本構造</h2><p>基本上要先建立以下三個函數：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">preload</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 載入 csv, tsv 等檔案</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setup</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 初始化資料、建立 canvas 等</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">draw</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 繪製圖形</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其中 <code>preload</code> 可有可無，端看須不需要額外載入資料檔案，而絕大部分繪製的相關函數<strong>必須</strong>要在 <a href="http://p5js.org/" target="_blank" rel="external">p5</a> 指定的函數裡呼叫，否則不會有作用。當然也有其他的函數是獨立的（比如事件偵測），但絕大部分的還是得照著規則進行。</p>
-<h2 id="p5__u7684_u554F_u984C"><a href="#p5__u7684_u554F_u984C" class="headerlink" title="p5 的問題"></a>p5 的問題</h2><h3 id="u5168_u57DF_u8B8A_u6578"><a href="#u5168_u57DF_u8B8A_u6578" class="headerlink" title="全域變數"></a>全域變數</h3><p><a href="http://p5js.org/" target="_blank" rel="external">p5</a> 的函數都是全域變數，而一個網頁照一般的寫法也只會寫一個 <code>preload</code>、<code>setup</code>、<code>draw</code> 等函數，當需要數個 canvas 時（畫圖表時有多個畫布很正常吧），創建 canvas 的程式碼全都要擠在同一個 setup 裡（無法用匿名函數分開包裝），在繪製時又會全部擠在一起一次，因而造成很大的麻煩。</p>
-<h3 id="u7DE8_u8F2F_u5668"><a href="#u7DE8_u8F2F_u5668" class="headerlink" title="編輯器"></a>編輯器</h3><p>正因為 <a href="http://p5js.org/" target="_blank" rel="external">p5</a> 函式都是全域變數不須宣告，所以當你在寫程式碼時，你的編輯器會出現一堆下劃線，提醒你變數未宣告之類的錯誤。</p>
-<h2 id="u89E3_u6C7A_u65B9_u5F0F"><a href="#u89E3_u6C7A_u65B9_u5F0F" class="headerlink" title="解決方式"></a>解決方式</h2><p>用 <code>new</code> 宣告一個。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> p5(ctx =&gt; &#123;</span><br><span class="line">  ctx.setup = () =&gt; &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ctx.draw = () =&gt; &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>在這裡面，不管要使用什麼函數，都要用 <code>ctx.[函數名稱]</code> 才可使用，但也避免了瀏覽器與編輯器的問題。</p>
-<h2 id="u5176_u4ED6_u53C3_u8003"><a href="#u5176_u4ED6_u53C3_u8003" class="headerlink" title="其他參考"></a>其他參考</h2><ul>
-<li><a href="http://p5js.sketchpad.cc/sp/padlist/all-portfolio-sketches" target="_blank" rel="external">sketchpad</a>: 網路上有一個 <a href="http://p5js.sketchpad.cc/sp/padlist/all-portfolio-sketches" target="_blank" rel="external">sketchpad</a>，上面列了一些用 <a href="http://p5js.org/" target="_blank" rel="external">p5</a> 繪製的圖片與程式碼，可以大致了解一下怎麼寫出來的。</li>
-<li><a href="http://blog.infographics.tw/2015/03/beginner-visualization-with-p5js/" target="_blank" rel="external">p5.js － 初學者的資料視覺化函式庫</a></li>
-<li><a href="http://ithelp.ithome.com.tw/question/10096456" target="_blank" rel="external">Processing.js 的一些介紹及分享</a></li>
-</ul>
-]]></content>
+    <updated>2016-03-21T13:21:27.885Z</updated>
+    
+    <content type="html">&lt;p&gt;先來大致介紹一下 &lt;a href=&quot;http://p5js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5.js&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;這是 &lt;a href=&quot;https://processing.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Processing&lt;/a&gt; 團隊移植的 web 版本，除了 &lt;a href=&quot;http://p5js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5&lt;/a&gt; 之外還有一個是由 jQuery 作者自己實現，叫 &lt;a href=&quot;http://processingjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Processingjs&lt;/a&gt; 的函式庫，可別搞混了。&lt;/p&gt;
+&lt;h2 id=&quot;為什麼選擇-p5？&quot;&gt;&lt;a href=&quot;#為什麼選擇-p5？&quot; class=&quot;headerlink&quot; title=&quot;為什麼選擇 p5？&quot;&gt;&lt;/a&gt;為什麼選擇 p5？&lt;/h2&gt;&lt;p&gt;以前大學時有教授教過 &lt;a href=&quot;https://processing.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Processing&lt;/a&gt; 算是因素之一，入門上不算太難。&lt;/p&gt;
+&lt;p&gt;在圖片繪製上，&lt;a href=&quot;http://p5js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5&lt;/a&gt; 也簡化了一些步驟，比如畫線的時候，canvas 的畫法是&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;canvas.moveTo(x, y);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;canvas.lineTo(x2, y2);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;而 &lt;a href=&quot;http://p5js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5&lt;/a&gt; 只要一個 &lt;code&gt;line&lt;/code&gt; 就可以解決。稍微試過 &lt;a href=&quot;http://www.pixijs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pixi.js&lt;/a&gt; 與 &lt;a href=&quot;http://createjs.com/easeljs&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;EaselJS&lt;/a&gt;，這兩個基本上跟 canvas 原本的畫法差不了多少，畢竟定位是遊戲引擎，&lt;a href=&quot;http://p5js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5&lt;/a&gt; 是繪圖函式庫。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;canvas-1px-直線問題&quot;&gt;&lt;a href=&quot;#canvas-1px-直線問題&quot; class=&quot;headerlink&quot; title=&quot;canvas 1px 直線問題&quot;&gt;&lt;/a&gt;canvas 1px 直線問題&lt;/h3&gt;&lt;p&gt;canvas 有一個渲染上的問題，很多剛碰的人大概都會遇到，在畫 1px（或其他奇數）寬的線時，在螢幕上顯示卻有 2px 寬。&lt;/p&gt;
+&lt;p&gt;簡單圖解類似這樣：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1464/25094916659_97593ca520_z.jpg&quot; alt=&quot;canvas&quot;&gt;&lt;/p&gt;
+&lt;p&gt;當在座標上畫線時，canvas 並不會在該座標的 右邊或左邊畫線，而是會以座標為準，向兩邊各佔用一半的 px，在這邊就各佔用了 0.5px。而 canvas 的渲染機制就會把兩邊剩下的 0.5 補上顏色，類似防鋸齒那樣，就造成畫 1px 卻有 2px 寬的情形發生。&lt;/p&gt;
+&lt;p&gt;解決方式就是向前或向後退 0.5 px，而 &lt;a href=&quot;http://p5js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5&lt;/a&gt; 會幫你搞定這件事，但由於 [D3] 在幫你計算刻度座標時，數值不會那麼漂亮，所以還是會有漏網之魚發生，至少 XY 軸是正常顯示的。&lt;/p&gt;
+&lt;h2 id=&quot;p5-的基本構造&quot;&gt;&lt;a href=&quot;#p5-的基本構造&quot; class=&quot;headerlink&quot; title=&quot;p5 的基本構造&quot;&gt;&lt;/a&gt;p5 的基本構造&lt;/h2&gt;&lt;p&gt;基本上要先建立以下三個函數：&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;preload&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// 載入 csv, tsv 等檔案&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;setup&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// 初始化資料、建立 canvas 等&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;draw&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// 繪製圖形&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其中 &lt;code&gt;preload&lt;/code&gt; 可有可無，端看須不需要額外載入資料檔案，而絕大部分繪製的相關函數&lt;strong&gt;必須&lt;/strong&gt;要在 &lt;a href=&quot;http://p5js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5&lt;/a&gt; 指定的函數裡呼叫，否則不會有作用。當然也有其他的函數是獨立的（比如事件偵測），但絕大部分的還是得照著規則進行。&lt;/p&gt;
+&lt;h2 id=&quot;p5-的問題&quot;&gt;&lt;a href=&quot;#p5-的問題&quot; class=&quot;headerlink&quot; title=&quot;p5 的問題&quot;&gt;&lt;/a&gt;p5 的問題&lt;/h2&gt;&lt;h3 id=&quot;全域變數&quot;&gt;&lt;a href=&quot;#全域變數&quot; class=&quot;headerlink&quot; title=&quot;全域變數&quot;&gt;&lt;/a&gt;全域變數&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://p5js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5&lt;/a&gt; 的函數都是全域變數，而一個網頁照一般的寫法也只會寫一個 &lt;code&gt;preload&lt;/code&gt;、&lt;code&gt;setup&lt;/code&gt;、&lt;code&gt;draw&lt;/code&gt; 等函數，當需要數個 canvas 時（畫圖表時有多個畫布很正常吧），創建 canvas 的程式碼全都要擠在同一個 setup 裡（無法用匿名函數分開包裝），在繪製時又會全部擠在一起一次，因而造成很大的麻煩。&lt;/p&gt;
+&lt;h3 id=&quot;編輯器&quot;&gt;&lt;a href=&quot;#編輯器&quot; class=&quot;headerlink&quot; title=&quot;編輯器&quot;&gt;&lt;/a&gt;編輯器&lt;/h3&gt;&lt;p&gt;正因為 &lt;a href=&quot;http://p5js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5&lt;/a&gt; 函式都是全域變數不須宣告，所以當你在寫程式碼時，你的編輯器會出現一堆下劃線，提醒你變數未宣告之類的錯誤。&lt;/p&gt;
+&lt;h2 id=&quot;解決方式&quot;&gt;&lt;a href=&quot;#解決方式&quot; class=&quot;headerlink&quot; title=&quot;解決方式&quot;&gt;&lt;/a&gt;解決方式&lt;/h2&gt;&lt;p&gt;用 &lt;code&gt;new&lt;/code&gt; 宣告一個。&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; p5(ctx =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ctx.setup = () =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ctx.draw = () =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在這裡面，不管要使用什麼函數，都要用 &lt;code&gt;ctx.[函數名稱]&lt;/code&gt; 才可使用，但也避免了瀏覽器與編輯器的問題。&lt;/p&gt;
+&lt;h2 id=&quot;其他參考&quot;&gt;&lt;a href=&quot;#其他參考&quot; class=&quot;headerlink&quot; title=&quot;其他參考&quot;&gt;&lt;/a&gt;其他參考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://p5js.sketchpad.cc/sp/padlist/all-portfolio-sketches&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sketchpad&lt;/a&gt;: 網路上有一個 &lt;a href=&quot;http://p5js.sketchpad.cc/sp/padlist/all-portfolio-sketches&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sketchpad&lt;/a&gt;，上面列了一些用 &lt;a href=&quot;http://p5js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5&lt;/a&gt; 繪製的圖片與程式碼，可以大致了解一下怎麼寫出來的。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.infographics.tw/2015/03/beginner-visualization-with-p5js/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5.js － 初學者的資料視覺化函式庫&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ithelp.ithome.com.tw/question/10096456&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Processing.js 的一些介紹及分享&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
     <summary type="html">
-    <![CDATA[<p>先來大致介紹一下 <a href="http://p5js.org/">p5.js</a>。</p>
-<p>這是 <a href="https://processing.org/">Processing</a> 團隊移植的 web 版本，除了 <a href="http://p5js.org/">p5</a> 之外還有一個是由 jQuery 作者自己實現，叫 <a href="http://processingjs.org/">Processingjs</a> 的函式庫，可別搞混了。</p>
-<h2 id="u70BA_u4EC0_u9EBC_u9078_u64C7_p5_uFF1F"><a href="#u70BA_u4EC0_u9EBC_u9078_u64C7_p5_uFF1F" class="headerlink" title="為什麼選擇 p5？"></a>為什麼選擇 p5？</h2><p>以前大學時有教授教過 <a href="https://processing.org/">Processing</a> 算是因素之一，入門上不算太難。</p>
-<p>在圖片繪製上，<a href="http://p5js.org/">p5</a> 也簡化了一些步驟，比如畫線的時候，canvas 的畫法是</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">canvas.moveTo(x, y);</span><br><span class="line">canvas.lineTo(x2, y2);</span><br></pre></td></tr></table></figure>
-<p>而 <a href="http://p5js.org/">p5</a> 只要一個 <code>line</code> 就可以解決。稍微試過 <a href="http://www.pixijs.com/">Pixi.js</a> 與 <a href="http://createjs.com/easeljs">EaselJS</a>，這兩個基本上跟 canvas 原本的畫法差不了多少，畢竟定位是遊戲引擎，<a href="http://p5js.org/">p5</a> 是繪圖函式庫。<br>]]>
+    
+      大致介紹一下 p5.js，以及一些小特性
     
     </summary>
+    
     
       <category term="D3" scheme="https://notes.knovour.ninja/tags/D3/"/>
     
@@ -99,23 +105,27 @@
   </entry>
   
   <entry>
-    <title><![CDATA[D3 + p5.js 筆記 - 前言]]></title>
+    <title>D3 + p5.js 筆記 - 前言</title>
     <link href="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/"/>
     <id>https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/</id>
     <published>2016-03-01T01:20:14.000Z</published>
     <updated>2016-03-02T19:04:02.176Z</updated>
-    <content type="html"><![CDATA[<p>這陣子看了點 <a href="https://d3js.org/" target="_blank" rel="external">D3</a>，並找了官方 wiki 的<a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>來試試，不過不是用 SVG，而是用 canvas 來畫。</p>
-<p>之前要寫的網站要生成簡易的圖表，但因為沒學過 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 的經驗（當時也來不及），所以找了現成的 <a href="http://www.chartjs.org/" target="_blank" rel="external">Chart.js</a> 來用，除了這套之外，之後也在 feedly 看了不少圖表生成的套件介紹，蠻多都是用 canvas 的。不過這倒也不是什麼選擇 canvas 的原因。</p>
-<blockquote>
-<p>單純犯賤罷了…</p>
-</blockquote>
-<p>然而，<a href="https://d3js.org/" target="_blank" rel="external">D3</a> 對 canvas 的支援不好，不過這也不是很意外。問題在於要怎麼用 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 把處理後的資料給 canvas 畫，根據<a href="http://blog.infographics.tw/2015/07/optimize-d3-with-canvas/" target="_blank" rel="external">這裡</a>的介紹，第三種方式算是我在網路上最常看見的，基本上就是處理資料並創建虛假的元素，假裝自己在操作 SVG，然後再把這些<strong>假元素</strong>吐出來再用 canvas 的方式畫出來，怎麼看都覺得…蠻蠢的。所以我比較偏好第二種方式，讓 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 負責處理資料、生成刻度等等，再用 <a href="http://p5js.org/" target="_blank" rel="external">p5.js</a> 直接畫上去。</p>
-<p>總之，之後會加減從 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 官方的<a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>裡面先挑簡單的例子來練習，也會原始碼放到 GitHub 上。</p>
-]]></content>
+    
+    <content type="html">&lt;p&gt;這陣子看了點 &lt;a href=&quot;https://d3js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;D3&lt;/a&gt;，並找了官方 wiki 的&lt;a href=&quot;https://github.com/mbostock/d3/wiki/Gallery&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;範例&lt;/a&gt;來試試，不過不是用 SVG，而是用 canvas 來畫。&lt;/p&gt;
+&lt;p&gt;之前要寫的網站要生成簡易的圖表，但因為沒學過 &lt;a href=&quot;https://d3js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;D3&lt;/a&gt; 的經驗（當時也來不及），所以找了現成的 &lt;a href=&quot;http://www.chartjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Chart.js&lt;/a&gt; 來用，除了這套之外，之後也在 feedly 看了不少圖表生成的套件介紹，蠻多都是用 canvas 的。不過這倒也不是什麼選擇 canvas 的原因。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;單純犯賤罷了…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然而，&lt;a href=&quot;https://d3js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;D3&lt;/a&gt; 對 canvas 的支援不好，不過這也不是很意外。問題在於要怎麼用 &lt;a href=&quot;https://d3js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;D3&lt;/a&gt; 把處理後的資料給 canvas 畫，根據&lt;a href=&quot;http://blog.infographics.tw/2015/07/optimize-d3-with-canvas/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;這裡&lt;/a&gt;的介紹，第三種方式算是我在網路上最常看見的，基本上就是處理資料並創建虛假的元素，假裝自己在操作 SVG，然後再把這些&lt;strong&gt;假元素&lt;/strong&gt;吐出來再用 canvas 的方式畫出來，怎麼看都覺得…蠻蠢的。所以我比較偏好第二種方式，讓 &lt;a href=&quot;https://d3js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;D3&lt;/a&gt; 負責處理資料、生成刻度等等，再用 &lt;a href=&quot;http://p5js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5.js&lt;/a&gt; 直接畫上去。&lt;/p&gt;
+&lt;p&gt;總之，之後會加減從 &lt;a href=&quot;https://d3js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;D3&lt;/a&gt; 官方的&lt;a href=&quot;https://github.com/mbostock/d3/wiki/Gallery&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;範例&lt;/a&gt;裡面先挑簡單的例子來練習，也會原始碼放到 GitHub 上。&lt;/p&gt;
+</content>
+    
     <summary type="html">
-    <![CDATA[往後會用 [D3] 官方範例來練習，並用 [p5.js] 繪製而成，程式碼會放到 GitHub 上。]]>
+    
+      往後會用 [D3] 官方範例來練習，並用 [p5.js] 繪製而成，程式碼會放到 GitHub 上。
     
     </summary>
+    
     
       <category term="D3" scheme="https://notes.knovour.ninja/tags/D3/"/>
     
@@ -124,305 +134,302 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Koa.js 踩坑筆記]]></title>
+    <title>Koa.js 踩坑筆記</title>
     <link href="https://notes.knovour.ninja/2016/02/21/koa-notes/"/>
     <id>https://notes.knovour.ninja/2016/02/21/koa-notes/</id>
     <published>2016-02-21T13:55:52.000Z</published>
     <updated>2016-02-27T21:03:14.854Z</updated>
-    <content type="html"><![CDATA[<p><strong> 以 <a href="https://github.com/koajs/koa/tree/v2.x" target="_blank" rel="external">Koa.js 2.0.0-alpha.3</a> 版本為主。 </strong></p>
-<h2 id="ctx-body__u6C92_u53CD_u61C9"><a href="#ctx-body__u6C92_u53CD_u61C9" class="headerlink" title="ctx.body 沒反應"></a><code>ctx.body</code> 沒反應</h2><p>當 <code>ctx.body</code> 在 Promise 的函式裡時（如 co）則不會對頁面有任何反應，需在該函式前加上 <code>return</code>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">index(ctx) &#123;</span><br><span class="line">  <span class="keyword">return</span> co(<span class="function"><span class="keyword">function</span>*(<span class="params"></span>) </span>&#123; <span class="comment">// &lt;- Must have `return`</span></span><br><span class="line">    ctx.body = <span class="string">'success'</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>自訂 <code>middleware</code> 的時候也是如此</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.use((ctx, next) =&gt; &#123;</span><br><span class="line">  ctx.msg = <span class="string">'hello'</span>;</span><br><span class="line">  <span class="keyword">return</span> next(); <span class="comment">// &lt;- Must have `return`</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="1-0__u8207_2-0__u7248_u672C_u554F_u984C"><a href="#1-0__u8207_2-0__u7248_u672C_u554F_u984C" class="headerlink" title="1.0 與 2.0 版本問題"></a>1.0 與 2.0 版本問題</h2><p><a href="https://github.com/koajs/koa" target="_blank" rel="external">Koa.js</a> 的大部分 middleware 都已經開始支援 <a href="https://github.com/koajs/koa/tree/v2.x" target="_blank" rel="external">2.0</a>，鑑於是 alpha 的關係，要安裝這些元件時要加 <code>@next</code> 的 tag，尚未支援的在使用時可以安裝 <code>koa-convert</code> 來轉換。</p>
-]]></content>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt; 以 &lt;a href=&quot;https://github.com/koajs/koa/tree/v2.x&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Koa.js 2.0.0-alpha.3&lt;/a&gt; 版本為主。 &lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;ctx-body-沒反應&quot;&gt;&lt;a href=&quot;#ctx-body-沒反應&quot; class=&quot;headerlink&quot; title=&quot;ctx.body 沒反應&quot;&gt;&lt;/a&gt;&lt;code&gt;ctx.body&lt;/code&gt; 沒反應&lt;/h2&gt;&lt;p&gt;當 &lt;code&gt;ctx.body&lt;/code&gt; 在 Promise 的函式裡時（如 co）則不會對頁面有任何反應，需在該函式前加上 &lt;code&gt;return&lt;/code&gt;。&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;index(ctx) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; co(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;*(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;comment&quot;&gt;// &amp;lt;- Must have `return`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ctx.body = &lt;span class=&quot;string&quot;&gt;&#39;success&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;自訂 &lt;code&gt;middleware&lt;/code&gt; 的時候也是如此&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;app.use((ctx, next) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ctx.msg = &lt;span class=&quot;string&quot;&gt;&#39;hello&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; next(); &lt;span class=&quot;comment&quot;&gt;// &amp;lt;- Must have `return`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;1-0-與-2-0-版本問題&quot;&gt;&lt;a href=&quot;#1-0-與-2-0-版本問題&quot; class=&quot;headerlink&quot; title=&quot;1.0 與 2.0 版本問題&quot;&gt;&lt;/a&gt;1.0 與 2.0 版本問題&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/koajs/koa&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Koa.js&lt;/a&gt; 的大部分 middleware 都已經開始支援 &lt;a href=&quot;https://github.com/koajs/koa/tree/v2.x&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;2.0&lt;/a&gt;，鑑於是 alpha 的關係，要安裝這些元件時要加 &lt;code&gt;@next&lt;/code&gt; 的 tag，尚未支援的在使用時可以安裝 &lt;code&gt;koa-convert&lt;/code&gt; 來轉換。&lt;/p&gt;
+</content>
+    
     <summary type="html">
-    <![CDATA[紀錄 Koa.js 的一些用法跟踩到的坑]]>
+    
+      紀錄 Koa.js 的一些用法跟踩到的坑
     
     </summary>
+    
     
       <category term="node.js" scheme="https://notes.knovour.ninja/tags/node-js/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[Sequelize 踩坑筆記]]></title>
+    <title>Sequelize 踩坑筆記</title>
     <link href="https://notes.knovour.ninja/2016/01/12/sequelize-notes/"/>
     <id>https://notes.knovour.ninja/2016/01/12/sequelize-notes/</id>
     <published>2016-01-12T15:44:32.000Z</published>
     <updated>2016-01-20T16:26:34.220Z</updated>
-    <content type="html"><![CDATA[<ol>
-<li><strong>範例以<a href="https://github.com/sequelize/express-example/tree/master/models" target="_blank" rel="external">這裡</a>為準（以下會換成 ES6 寫法），<a href="https://github.com/koajs/koa" target="_blank" rel="external">Koa</a> 用法亦同</strong></li>
-<li><strong>異步程式碼寫法以 <a href="https://github.com/tj/co" target="_blank" rel="external">co</a> 這套件來簡化 Promise 寫法</strong></li>
-</ol>
-<h2 id="u5167_u5EFA_u53C3_u6578_u7684_u4F4D_u7F6E"><a href="#u5167_u5EFA_u53C3_u6578_u7684_u4F4D_u7F6E" class="headerlink" title="內建參數的位置"></a>內建參數的位置</h2><p><script src="https://gist.github.com/Knovour/387c0699bd427d12b013.js"></script><br><a id="more"></a></p>
-<h2 id="u57FA_u672C_u7528_u6CD5"><a href="#u57FA_u672C_u7528_u6CD5" class="headerlink" title="基本用法"></a>基本用法</h2><p>我們在 <code>getFullName</code> 裡加上以下這段</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> co(<span class="function"><span class="keyword">function</span>*(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> user = <span class="keyword">yield</span> User.findOne();</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;user.firstName&#125;</span> <span class="subst">$&#123;user.lastName&#125;</span>`</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><code>getterMethods</code> 裡可以加入一個 <code>fullName</code> 的 function</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getterMethods: &#123;</span><br><span class="line">  fullName() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;this.firstName&#125;</span> <span class="subst">$&#123;this.lastName&#125;</span>`</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>這樣 <code>getFullName</code> 裡就可以直接寫 <code>user.fullName</code> 獲取全名了。</p>
-<p>在外部使用時可以直接寫</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Models = <span class="built_in">require</span>(<span class="string">'/path/to/models'</span>);  <span class="comment">// 注意範例裡的 index.js 內容</span></span><br><span class="line"></span><br><span class="line">co(<span class="function"><span class="keyword">function</span>*(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> fullName = <span class="keyword">yield</span> Models.User.getFullName();</span><br><span class="line">  <span class="built_in">console</span>.log(fullName);</span><br><span class="line">&#125;).catch(<span class="built_in">console</span>.error);</span><br></pre></td></tr></table></figure>
-<h3 id="u4F7F_u7528_u5176_u4ED6_table"><a href="#u4F7F_u7528_u5176_u4ED6_table" class="headerlink" title="使用其他 table"></a>使用其他 table</h3><p>假如我在 <code>User</code> 裡需要用到其他 table（假設叫 <code>Family</code>），我就可以寫 <code>sequelize.models.Family</code> 來呼叫。</p>
-<h2 id="u5EFA_u7ACB_u95DC_u806F_uFF08associate_uFF09"><a href="#u5EFA_u7ACB_u95DC_u806F_uFF08associate_uFF09" class="headerlink" title="建立關聯（associate）"></a>建立關聯（associate）</h2><p>假設有個 table 叫 <code>Pet</code>，裡面有個 key 叫 <code>owner</code>，用以紀錄 <code>User</code> 的 id。</p>
-<p>兩邊的關聯性程式如下</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 寫在各自的 associate function 裡</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Pet</span></span><br><span class="line">Pet.belongsTo(models.User, &#123; foreignKey: <span class="string">'owner'</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// User（owner 即為 Pet 裡的 key）</span></span><br><span class="line">User.hasMany(models.Pet, &#123; foreignKey: <span class="string">'owner'</span> &#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="include"><a href="#include" class="headerlink" title="include"></a>include</h3><p>在查找的 json 中用 include 時，<code>hasMany</code> 與 <code>hasOne</code> 出來的 table 名稱會有單複數差異</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// hasMany</span></span><br><span class="line">&#123;</span><br><span class="line">  firstName: <span class="string">'XXXX'</span>,</span><br><span class="line">  Pets: [&#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// hasOne</span></span><br><span class="line">&#123;</span><br><span class="line">  firstName: <span class="string">'XXXX'</span>,</span><br><span class="line">  Pet: &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="group"><a href="#group" class="headerlink" title="group"></a>group</h3><p>要將 include 的資料進行 group 或 order 時，需要連帶寫上 table 名稱，例：<code>Pets.id</code>。</p>
-]]></content>
+    
+    <content type="html">&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;範例以&lt;a href=&quot;https://github.com/sequelize/express-example/tree/master/models&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;這裡&lt;/a&gt;為準（以下會換成 ES6 寫法），&lt;a href=&quot;https://github.com/koajs/koa&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Koa&lt;/a&gt; 用法亦同&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;異步程式碼寫法以 &lt;a href=&quot;https://github.com/tj/co&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;co&lt;/a&gt; 這套件來簡化 Promise 寫法&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;內建參數的位置&quot;&gt;&lt;a href=&quot;#內建參數的位置&quot; class=&quot;headerlink&quot; title=&quot;內建參數的位置&quot;&gt;&lt;/a&gt;內建參數的位置&lt;/h2&gt;&lt;p&gt;&lt;script src=&quot;https://gist.github.com/Knovour/387c0699bd427d12b013.js&quot;&gt;&lt;/script&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;基本用法&quot;&gt;&lt;a href=&quot;#基本用法&quot; class=&quot;headerlink&quot; title=&quot;基本用法&quot;&gt;&lt;/a&gt;基本用法&lt;/h2&gt;&lt;p&gt;我們在 &lt;code&gt;getFullName&lt;/code&gt; 裡加上以下這段&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; co(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;*(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; user = &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt; User.findOne();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;`&lt;span class=&quot;subst&quot;&gt;$&amp;#123;user.firstName&amp;#125;&lt;/span&gt; &lt;span class=&quot;subst&quot;&gt;$&amp;#123;user.lastName&amp;#125;&lt;/span&gt;`&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;getterMethods&lt;/code&gt; 裡可以加入一個 &lt;code&gt;fullName&lt;/code&gt; 的 function&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;getterMethods: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  fullName() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;`&lt;span class=&quot;subst&quot;&gt;$&amp;#123;this.firstName&amp;#125;&lt;/span&gt; &lt;span class=&quot;subst&quot;&gt;$&amp;#123;this.lastName&amp;#125;&lt;/span&gt;`&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;這樣 &lt;code&gt;getFullName&lt;/code&gt; 裡就可以直接寫 &lt;code&gt;user.fullName&lt;/code&gt; 獲取全名了。&lt;/p&gt;
+&lt;p&gt;在外部使用時可以直接寫&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; Models = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;/path/to/models&#39;&lt;/span&gt;);  &lt;span class=&quot;comment&quot;&gt;// 注意範例裡的 index.js 內容&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;co(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;*(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; fullName = &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt; Models.User.getFullName();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(fullName);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;).catch(&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.error);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;使用其他-table&quot;&gt;&lt;a href=&quot;#使用其他-table&quot; class=&quot;headerlink&quot; title=&quot;使用其他 table&quot;&gt;&lt;/a&gt;使用其他 table&lt;/h3&gt;&lt;p&gt;假如我在 &lt;code&gt;User&lt;/code&gt; 裡需要用到其他 table（假設叫 &lt;code&gt;Family&lt;/code&gt;），我就可以寫 &lt;code&gt;sequelize.models.Family&lt;/code&gt; 來呼叫。&lt;/p&gt;
+&lt;h2 id=&quot;建立關聯（associate）&quot;&gt;&lt;a href=&quot;#建立關聯（associate）&quot; class=&quot;headerlink&quot; title=&quot;建立關聯（associate）&quot;&gt;&lt;/a&gt;建立關聯（associate）&lt;/h2&gt;&lt;p&gt;假設有個 table 叫 &lt;code&gt;Pet&lt;/code&gt;，裡面有個 key 叫 &lt;code&gt;owner&lt;/code&gt;，用以紀錄 &lt;code&gt;User&lt;/code&gt; 的 id。&lt;/p&gt;
+&lt;p&gt;兩邊的關聯性程式如下&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 寫在各自的 associate function 裡&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Pet&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Pet.belongsTo(models.User, &amp;#123; foreignKey: &lt;span class=&quot;string&quot;&gt;&#39;owner&#39;&lt;/span&gt; &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// User（owner 即為 Pet 裡的 key）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;User.hasMany(models.Pet, &amp;#123; foreignKey: &lt;span class=&quot;string&quot;&gt;&#39;owner&#39;&lt;/span&gt; &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;include&quot;&gt;&lt;a href=&quot;#include&quot; class=&quot;headerlink&quot; title=&quot;include&quot;&gt;&lt;/a&gt;include&lt;/h3&gt;&lt;p&gt;在查找的 json 中用 include 時，&lt;code&gt;hasMany&lt;/code&gt; 與 &lt;code&gt;hasOne&lt;/code&gt; 出來的 table 名稱會有單複數差異&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// hasMany&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  firstName: &lt;span class=&quot;string&quot;&gt;&#39;XXXX&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Pets: [&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// hasOne&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  firstName: &lt;span class=&quot;string&quot;&gt;&#39;XXXX&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Pet: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;group&quot;&gt;&lt;a href=&quot;#group&quot; class=&quot;headerlink&quot; title=&quot;group&quot;&gt;&lt;/a&gt;group&lt;/h3&gt;&lt;p&gt;要將 include 的資料進行 group 或 order 時，需要連帶寫上 table 名稱，例：&lt;code&gt;Pets.id&lt;/code&gt;。&lt;/p&gt;
+</content>
+    
     <summary type="html">
-    <![CDATA[紀錄 Sequelize 的一些用法跟踩到的坑]]>
+    
+      紀錄 Sequelize 的一些用法跟踩到的坑
     
     </summary>
+    
     
       <category term="node.js" scheme="https://notes.knovour.ninja/tags/node-js/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[放棄在 OpenShift 上管理部落格]]></title>
+    <title>放棄在 OpenShift 上管理部落格</title>
     <link href="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/"/>
     <id>https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/</id>
     <published>2016-01-11T15:40:12.000Z</published>
     <updated>2016-01-11T16:40:27.854Z</updated>
-    <content type="html"><![CDATA[<p>去年決定將 Blog 從 <a href="http://logdown.com/" target="_blank" rel="external">Logdown</a> 換成自架 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 後，就想找一個線上空間來管理。但 <a href="https://www.linode.com/" target="_blank" rel="external">Linode</a> 或 <a href="https://www.digitalocean.com/" target="_blank" rel="external">Digital Ocean</a> 要從頭來覺得麻煩，而 <a href="https://heroku.com/" target="_blank" rel="external">Heroku</a> 不知道為何怎樣就是看不懂，後來看到 <a href="https://www.openshift.com/" target="_blank" rel="external">OpenShift</a> 設定似乎挺簡單，於是就辦來試試看。</p>
-<p>無奈 <a href="https://www.openshift.com/" target="_blank" rel="external">OpenShift</a> 根本 Bug 滿天飛，社群的 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 架設速成 script 根本不能用就算了，連從官方的 Node.js 重頭架也常設定跑失敗，跑到最後居然是鎖我帳號？？更別說我在試用時三不五時被登出，不然就是怎麼按 Application 都沒顯示東西，也不知道怎麼回到我剛剛的設定頁面。<br><a id="more"></a><br>後來過了幾個月回去看又好了（<a href="https://heroku.com/" target="_blank" rel="external">Heroku</a> 這段期間我還是看不懂），但 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 速成 script 還是不能用，至少官方 Node 是可行的，於是就把 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 給弄起來了（中間在 Build 時還是爆掉幾次）。之後要把 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 給升級時，說要額外加 Gear（就是要收錢的意思），我就給他加了，反正一個月只有收大概幾塊錢。</p>
-<p>最近幾個月，<a href="https://letsencrypt.org/" target="_blank" rel="external">Let’s Encrypt</a> 開放後熱了起來，想說看能不能在自己的 Blog 弄上去，然後找到了<a href="https://blog.mobiushorizons.com/letsencrypt-ghost/" target="_blank" rel="external">這篇</a>文章，做到替換 <code>index.js</code> 來進行認證的階段怎樣就是失敗，後來又開了社群的 script 來試，結果居然可以跑了，而且替換 <code>index.js</code> 再認證的部份是 OK 的，雖然後面的步驟我沒做，但我也不想弄了。</p>
-<p>這兩天把上面幾篇比較重要的文章搬到 <a href="https://github.com/" target="_blank" rel="external">Github</a>，改用 <a href="https://hexo.io/zh-tw/" target="_blank" rel="external">Hexo</a> 管理後，想把 <a href="https://www.openshift.com/" target="_blank" rel="external">OpenShift</a> 上的砍掉重架當備份，無奈這次 script 又不能跑了，既然這樣也不強求了，隨他去吧，砍了帳號，別再收我錢就好。</p>
-<p>現在 domain 改用 <a href="https://www.cloudflare.com/" target="_blank" rel="external">CloudFlare</a> 管理，免費方案也有 SSL，這樣搞還比較省事。</p>
-]]></content>
+    
+    <content type="html">&lt;p&gt;去年決定將 Blog 從 &lt;a href=&quot;http://logdown.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Logdown&lt;/a&gt; 換成自架 &lt;a href=&quot;https://ghost.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ghost&lt;/a&gt; 後，就想找一個線上空間來管理。但 &lt;a href=&quot;https://www.linode.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Linode&lt;/a&gt; 或 &lt;a href=&quot;https://www.digitalocean.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Digital Ocean&lt;/a&gt; 要從頭來覺得麻煩，而 &lt;a href=&quot;https://heroku.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Heroku&lt;/a&gt; 不知道為何怎樣就是看不懂，後來看到 &lt;a href=&quot;https://www.openshift.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OpenShift&lt;/a&gt; 設定似乎挺簡單，於是就辦來試試看。&lt;/p&gt;
+&lt;p&gt;無奈 &lt;a href=&quot;https://www.openshift.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OpenShift&lt;/a&gt; 根本 Bug 滿天飛，社群的 &lt;a href=&quot;https://ghost.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ghost&lt;/a&gt; 架設速成 script 根本不能用就算了，連從官方的 Node.js 重頭架也常設定跑失敗，跑到最後居然是鎖我帳號？？更別說我在試用時三不五時被登出，不然就是怎麼按 Application 都沒顯示東西，也不知道怎麼回到我剛剛的設定頁面。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;後來過了幾個月回去看又好了（&lt;a href=&quot;https://heroku.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Heroku&lt;/a&gt; 這段期間我還是看不懂），但 &lt;a href=&quot;https://ghost.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ghost&lt;/a&gt; 速成 script 還是不能用，至少官方 Node 是可行的，於是就把 &lt;a href=&quot;https://ghost.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ghost&lt;/a&gt; 給弄起來了（中間在 Build 時還是爆掉幾次）。之後要把 &lt;a href=&quot;https://ghost.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ghost&lt;/a&gt; 給升級時，說要額外加 Gear（就是要收錢的意思），我就給他加了，反正一個月只有收大概幾塊錢。&lt;/p&gt;
+&lt;p&gt;最近幾個月，&lt;a href=&quot;https://letsencrypt.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Let’s Encrypt&lt;/a&gt; 開放後熱了起來，想說看能不能在自己的 Blog 弄上去，然後找到了&lt;a href=&quot;https://blog.mobiushorizons.com/letsencrypt-ghost/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;這篇&lt;/a&gt;文章，做到替換 &lt;code&gt;index.js&lt;/code&gt; 來進行認證的階段怎樣就是失敗，後來又開了社群的 script 來試，結果居然可以跑了，而且替換 &lt;code&gt;index.js&lt;/code&gt; 再認證的部份是 OK 的，雖然後面的步驟我沒做，但我也不想弄了。&lt;/p&gt;
+&lt;p&gt;這兩天把上面幾篇比較重要的文章搬到 &lt;a href=&quot;https://github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt;，改用 &lt;a href=&quot;https://hexo.io/zh-tw/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt; 管理後，想把 &lt;a href=&quot;https://www.openshift.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OpenShift&lt;/a&gt; 上的砍掉重架當備份，無奈這次 script 又不能跑了，既然這樣也不強求了，隨他去吧，砍了帳號，別再收我錢就好。&lt;/p&gt;
+&lt;p&gt;現在 domain 改用 &lt;a href=&quot;https://www.cloudflare.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CloudFlare&lt;/a&gt; 管理，免費方案也有 SSL，這樣搞還比較省事。&lt;/p&gt;
+</content>
+    
     <summary type="html">
-    <![CDATA[抱怨一下 OpenShift 的使用感想]]>
+    
+      抱怨一下 OpenShift 的使用感想
     
     </summary>
     
-      <category term="ghost" scheme="https://notes.knovour.ninja/tags/ghost/"/>
     
       <category term="openshift" scheme="https://notes.knovour.ninja/tags/openshift/"/>
     
-  </entry>
-  
-  <entry>
-    <title><![CDATA[關於]]></title>
-    <link href="https://notes.knovour.ninja/2016/01/10/about/"/>
-    <id>https://notes.knovour.ninja/2016/01/10/about/</id>
-    <published>2016-01-10T08:21:35.000Z</published>
-    <updated>2016-01-11T14:39:48.390Z</updated>
-    <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1656/23668295773_6a48840818_h.jpg" alt=""></p>
-<ul>
-<li><a href="https://github.com/Knovour" target="_blank" rel="external">Github</a></li>
-<li><a href="https://share.readmoo.com/mooer/612883g92/bookshelf/Knovour/total" target="_blank" rel="external">個人書櫃</a></li>
-</ul>
-<h3 id="u4E4B_u524D_u5F85_u904E_u7684_Blog"><a href="#u4E4B_u524D_u5F85_u904E_u7684_Blog" class="headerlink" title="之前待過的 Blog"></a>之前待過的 Blog</h3><ul>
-<li><a href="http://qwert535286.pixnet.net/blog" target="_blank" rel="external">Pixnet</a></li>
-<li><a href="http://novathinking.blogspot.tw" target="_blank" rel="external">Blogger</a></li>
-<li><a href="http://knovourland.logdown.com" target="_blank" rel="external">Logdown</a></li>
-</ul>
-<h3 id="u53CB_u7AD9_u9023_u7D50"><a href="#u53CB_u7AD9_u9023_u7D50" class="headerlink" title="友站連結"></a>友站連結</h3><ul>
-<li><a href="http://immortalnova.hatenablog.com" target="_blank" rel="external">遊戲王的反主流學院</a></li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[關於 Knovour Notes]]>
-    
-    </summary>
-    
-      <category term="about" scheme="https://notes.knovour.ninja/tags/about/"/>
+      <category term="ghost" scheme="https://notes.knovour.ninja/tags/ghost/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[在 Linux 上執行 Path of Exile (PoE)]]></title>
+    <title>在 Linux 上執行 Path of Exile (PoE)</title>
     <link href="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/"/>
     <id>https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/</id>
     <published>2015-09-16T13:26:00.000Z</published>
-    <updated>2016-01-20T17:23:33.572Z</updated>
-    <content type="html"><![CDATA[<p><img src="https://farm1.staticflickr.com/621/21000960109_98f4415f3d_c.jpg" alt="poe on wine"></p>
-<p>之前在 Wine 上跑過一陣子 PoE，但經過幾次更新後，loading 畫面除了狂閃外基本上就是完全進不去的狀態，然而當時也是有點膩了，所以也懶得折騰（基本上都是在講把 Wine 降級或是裝 PlayOnLinux，不過不想這樣搞）。</p>
-<p>現在 2.0 出了，「據說」修好了錯位，也偶然發現有一篇比較不那麼麻煩的設定<a href="https://russell.cc/path-of-exile-linux/" target="_blank" rel="external">文章</a>，試一試還真的成功了，在這邊紀錄一下。<br><a id="more"></a><br>註：文章裡似乎是把 PoE 另外裝其他地方，再外帶參數啟動（我的理解啦），但我沒有用 Wine 模擬其他東西的需要，所以就把覺得可以跳過的部份跳過，下面的紀錄基本上就是個精簡後的設定步驟。</p>
-<h2 id="u74B0_u5883"><a href="#u74B0_u5883" class="headerlink" title="環境"></a>環境</h2><ul>
-<li><a href="https://manjaro.github.io/" target="_blank" rel="external">Manjaro Linux</a></li>
-<li><a href="https://www.kde.org/" target="_blank" rel="external">KDE Plasma 5</a></li>
-<li>NVIDIA 顯卡</li>
-</ul>
-<h2 id="u57F7_u884C_winecfg"><a href="#u57F7_u884C_winecfg" class="headerlink" title="執行 winecfg"></a>執行 winecfg</h2><ol>
-<li>選定 windows 版本（原文是 8 不過選 10 也沒差）。</li>
-<li>將 <code>openal32</code> 加進函式庫裡。</li>
-<li>勾選虛擬桌面，解析度自己根據需求調整。</li>
-</ol>
-<p><img src="https://farm1.staticflickr.com/577/21195623851_4c22a1dc13_b.jpg" alt="winecfg"></p>
-<h2 id="u5B89_u88DD_windows__u76F8_u95DC_u5957_u4EF6"><a href="#u5B89_u88DD_windows__u76F8_u95DC_u5957_u4EF6" class="headerlink" title="安裝 windows 相關套件"></a>安裝 windows 相關套件</h2><p>執行 <code>winetricks directx9 vcrun2010 riched20 usp10</code></p>
-<h2 id="u5B89_u88DD_u904A_u6232"><a href="#u5B89_u88DD_u904A_u6232" class="headerlink" title="安裝遊戲"></a>安裝遊戲</h2><p>執行 PoE 安裝檔，之後再開啟下載主程式，這部份不會有問題，但主程式裝完後先關掉不要按 Launch，不然 wine 會當掉。</p>
-<h2 id="u57F7_u884C_wine_regedit"><a href="#u57F7_u884C_wine_regedit" class="headerlink" title="執行 wine regedit"></a>執行 <code>wine regedit</code></h2><p>安裝期間可以先處理這部份（在 regedit 裡移到對應的路徑）</p>
-<ol>
-<li><code>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes</code>：新增一個字串值叫 <code>Fontin SmallCaps</code>，數值為 <code>Fontin</code>。</li>
-<li><code>HKEY_CURRENT_USER\Software\Wine\Direct3D</code>：若沒有 <code>Direct3D</code> 的資料夾則自行新增一個。在底下新增以下資料：<ol>
-<li><code>OffscreenRenderingMode</code>：字串值為 <code>backbuffer</code>。</li>
-<li><code>VideoMemorySize</code>：這是你的顯卡記憶體大小，以 MB 計，我的是 2048。</li>
-<li><code>UseGLSL</code>：NVIDIA 顯卡限定，值為 <code>disabled</code>，若執行時覺得有問題可以把這個值移除看看。</li>
-</ol>
-</li>
-</ol>
-<p><img src="https://farm1.staticflickr.com/738/20999863178_1337f3d5a8_b.jpg" alt="regedit"></p>
-<h2 id="u8A2D_u5B9A_PoE"><a href="#u8A2D_u5B9A_PoE" class="headerlink" title="設定 PoE"></a>設定 PoE</h2><p>到 <code>~/文件/My Games/Path of Exile/</code>（不同發行版位置可能不大一樣），開啟 <code>production_Config.ini</code>，在 <code>[DISPLAY]</code> 底下新增或替換以下設定：</p>
-<ol>
-<li><code>fullscreen=true</code></li>
-<li><code>borderless_windowed_fullscreen=false</code></li>
-<li><code>resolution_height=虛擬桌面高度</code></li>
-<li><code>resolution_width=虛擬桌面寬度</code></li>
-</ol>
-<h2 id="u7D50_u675F"><a href="#u7D50_u675F" class="headerlink" title="結束"></a>結束</h2><p>等 PoE 主程式載完就可以啟動了。</p>
-<p><img src="https://farm6.staticflickr.com/5805/21197789131_d983728162_o.jpg" alt="play"></p>
-<h2 id="u611F_u60F3"><a href="#u611F_u60F3" class="headerlink" title="感想"></a>感想</h2><ol>
-<li>基本上不會像以前那樣 FPS 掉很重了，但偶爾會破圖。</li>
-<li>地圖亮度偏暗，地穴根本是黑的，使用冰系或雷系技能擊中或發動瞬間會照亮地圖（火焰反而沒法照亮…），招喚 Golem（2.0 新技能）可以永久照亮。</li>
-<li>音效要在設定裡選擇 <code>Generic Software on out</code> 開頭的才有聲音。</li>
-<li>只有 Act4 沒錯位就算了，Act123 + Map 的錯位感覺更嚴重了是怎樣，新增的 Map 也是一樣慘。</li>
-</ol>
-<h2 id="u53C3_u8003_u4F86_u6E90"><a href="#u53C3_u8003_u4F86_u6E90" class="headerlink" title="參考來源"></a>參考來源</h2><p><a href="https://russell.cc/path-of-exile-linux/" target="_blank" rel="external">Path of Exile on Linux</a></p>
-]]></content>
+    <updated>2016-03-21T13:20:24.649Z</updated>
+    
+    <content type="html">&lt;p&gt;之前在 Wine 上跑過一陣子 PoE，但經過幾次更新後，loading 畫面除了狂閃外基本上就是完全進不去的狀態，然而當時也是有點膩了，所以也懶得折騰（基本上都是在講把 Wine 降級或是裝 PlayOnLinux，不過不想這樣搞）。&lt;/p&gt;
+&lt;p&gt;現在 2.0 出了，「據說」修好了錯位，也偶然發現有一篇比較不那麼麻煩的設定&lt;a href=&quot;https://russell.cc/path-of-exile-linux/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;文章&lt;/a&gt;，試一試還真的成功了，在這邊紀錄一下。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;註：文章裡似乎是把 PoE 另外裝其他地方，再外帶參數啟動（我的理解啦），但我沒有用 Wine 模擬其他東西的需要，所以就把覺得可以跳過的部份跳過，下面的紀錄基本上就是個精簡後的設定步驟。&lt;/p&gt;
+&lt;h2 id=&quot;環境&quot;&gt;&lt;a href=&quot;#環境&quot; class=&quot;headerlink&quot; title=&quot;環境&quot;&gt;&lt;/a&gt;環境&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://manjaro.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Manjaro Linux&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.kde.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;KDE Plasma 5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;NVIDIA 顯卡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;執行-winecfg&quot;&gt;&lt;a href=&quot;#執行-winecfg&quot; class=&quot;headerlink&quot; title=&quot;執行 winecfg&quot;&gt;&lt;/a&gt;執行 winecfg&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;選定 windows 版本（原文是 8 不過選 10 也沒差）。&lt;/li&gt;
+&lt;li&gt;將 &lt;code&gt;openal32&lt;/code&gt; 加進函式庫裡。&lt;/li&gt;
+&lt;li&gt;勾選虛擬桌面，解析度自己根據需求調整。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://farm1.staticflickr.com/577/21195623851_4c22a1dc13_b.jpg&quot; alt=&quot;winecfg&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;安裝-windows-相關套件&quot;&gt;&lt;a href=&quot;#安裝-windows-相關套件&quot; class=&quot;headerlink&quot; title=&quot;安裝 windows 相關套件&quot;&gt;&lt;/a&gt;安裝 windows 相關套件&lt;/h2&gt;&lt;p&gt;執行 &lt;code&gt;winetricks directx9 vcrun2010 riched20 usp10&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;安裝遊戲&quot;&gt;&lt;a href=&quot;#安裝遊戲&quot; class=&quot;headerlink&quot; title=&quot;安裝遊戲&quot;&gt;&lt;/a&gt;安裝遊戲&lt;/h2&gt;&lt;p&gt;執行 PoE 安裝檔，之後再開啟下載主程式，這部份不會有問題，但主程式裝完後先關掉不要按 Launch，不然 wine 會當掉。&lt;/p&gt;
+&lt;h2 id=&quot;執行-wine-regedit&quot;&gt;&lt;a href=&quot;#執行-wine-regedit&quot; class=&quot;headerlink&quot; title=&quot;執行 wine regedit&quot;&gt;&lt;/a&gt;執行 &lt;code&gt;wine regedit&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;安裝期間可以先處理這部份（在 regedit 裡移到對應的路徑）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes&lt;/code&gt;：新增一個字串值叫 &lt;code&gt;Fontin SmallCaps&lt;/code&gt;，數值為 &lt;code&gt;Fontin&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;HKEY_CURRENT_USER\Software\Wine\Direct3D&lt;/code&gt;：若沒有 &lt;code&gt;Direct3D&lt;/code&gt; 的資料夾則自行新增一個。在底下新增以下資料：&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;OffscreenRenderingMode&lt;/code&gt;：字串值為 &lt;code&gt;backbuffer&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;VideoMemorySize&lt;/code&gt;：這是你的顯卡記憶體大小，以 MB 計，我的是 2048。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;UseGLSL&lt;/code&gt;：NVIDIA 顯卡限定，值為 &lt;code&gt;disabled&lt;/code&gt;，若執行時覺得有問題可以把這個值移除看看。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://farm1.staticflickr.com/738/20999863178_1337f3d5a8_b.jpg&quot; alt=&quot;regedit&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;設定-PoE&quot;&gt;&lt;a href=&quot;#設定-PoE&quot; class=&quot;headerlink&quot; title=&quot;設定 PoE&quot;&gt;&lt;/a&gt;設定 PoE&lt;/h2&gt;&lt;p&gt;到 &lt;code&gt;~/文件/My Games/Path of Exile/&lt;/code&gt;（不同發行版位置可能不大一樣），開啟 &lt;code&gt;production_Config.ini&lt;/code&gt;，在 &lt;code&gt;[DISPLAY]&lt;/code&gt; 底下新增或替換以下設定：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;fullscreen=true&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;borderless_windowed_fullscreen=false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;resolution_height=虛擬桌面高度&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;resolution_width=虛擬桌面寬度&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;結束&quot;&gt;&lt;a href=&quot;#結束&quot; class=&quot;headerlink&quot; title=&quot;結束&quot;&gt;&lt;/a&gt;結束&lt;/h2&gt;&lt;p&gt;等 PoE 主程式載完就可以啟動了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://farm6.staticflickr.com/5805/21197789131_d983728162_o.jpg&quot; alt=&quot;play&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;感想&quot;&gt;&lt;a href=&quot;#感想&quot; class=&quot;headerlink&quot; title=&quot;感想&quot;&gt;&lt;/a&gt;感想&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;基本上不會像以前那樣 FPS 掉很重了，但偶爾會破圖。&lt;/li&gt;
+&lt;li&gt;地圖亮度偏暗，地穴根本是黑的，使用冰系或雷系技能擊中或發動瞬間會照亮地圖（火焰反而沒法照亮…），招喚 Golem（2.0 新技能）可以永久照亮。&lt;/li&gt;
+&lt;li&gt;音效要在設定裡選擇 &lt;code&gt;Generic Software on out&lt;/code&gt; 開頭的才有聲音。&lt;/li&gt;
+&lt;li&gt;只有 Act4 沒錯位就算了，Act123 + Map 的錯位感覺更嚴重了是怎樣，新增的 Map 也是一樣慘。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;參考來源&quot;&gt;&lt;a href=&quot;#參考來源&quot; class=&quot;headerlink&quot; title=&quot;參考來源&quot;&gt;&lt;/a&gt;參考來源&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://russell.cc/path-of-exile-linux/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Path of Exile on Linux&lt;/a&gt;&lt;/p&gt;
+</content>
+    
     <summary type="html">
-    <![CDATA[用 Wine 執行 PoE，無須降級、免裝 PlayOnLinux。]]>
+    
+      用 Wine 執行 PoE，無須降級、免裝 PlayOnLinux。
     
     </summary>
     
-      <category term="game" scheme="https://notes.knovour.ninja/tags/game/"/>
     
       <category term="linux" scheme="https://notes.knovour.ninja/tags/linux/"/>
     
       <category term="wine" scheme="https://notes.knovour.ninja/tags/wine/"/>
     
+      <category term="game" scheme="https://notes.knovour.ninja/tags/game/"/>
+    
   </entry>
   
   <entry>
-    <title><![CDATA[用 PM2 部署 node server]]></title>
+    <title>用 PM2 部署 node server</title>
     <link href="https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/"/>
     <id>https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/</id>
     <published>2015-08-12T18:38:00.000Z</published>
     <updated>2016-01-11T15:48:49.371Z</updated>
-    <content type="html"><![CDATA[<h2 id="u524D_u7F6E_u4F5C_u696D"><a href="#u524D_u7F6E_u4F5C_u696D" class="headerlink" title="前置作業"></a>前置作業</h2><p>首先先設定完<a href="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/">這篇文</a>的前置作業。</p>
-<p><strong>部署與開發用的機器都要安裝 PM2</strong>：<code>sudo npm i pm2 -g</code></p>
-<h2 id="u90E8_u7F72_u8A2D_u5B9A"><a href="#u90E8_u7F72_u8A2D_u5B9A" class="headerlink" title="部署設定"></a>部署設定</h2><p>於專案資料夾底下執行 <code>pm2 ecosystem</code> 生成 <code>ecosystem.json5</code>，修改副檔名為 json 檔以便顯示語法 hightlight。</p>
-<p>將裡面的內容做修改</p>
-<script src="https://gist.github.com/Knovour/f27c0cf743e991973f57.js"></script>
+    
+    <content type="html">&lt;h2 id=&quot;前置作業&quot;&gt;&lt;a href=&quot;#前置作業&quot; class=&quot;headerlink&quot; title=&quot;前置作業&quot;&gt;&lt;/a&gt;前置作業&lt;/h2&gt;&lt;p&gt;首先先設定完&lt;a href=&quot;https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/&quot;&gt;這篇文&lt;/a&gt;的前置作業。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;部署與開發用的機器都要安裝 PM2&lt;/strong&gt;：&lt;code&gt;sudo npm i pm2 -g&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;部署設定&quot;&gt;&lt;a href=&quot;#部署設定&quot; class=&quot;headerlink&quot; title=&quot;部署設定&quot;&gt;&lt;/a&gt;部署設定&lt;/h2&gt;&lt;p&gt;於專案資料夾底下執行 &lt;code&gt;pm2 ecosystem&lt;/code&gt; 生成 &lt;code&gt;ecosystem.json5&lt;/code&gt;，修改副檔名為 json 檔以便顯示語法 hightlight。&lt;/p&gt;
+&lt;p&gt;將裡面的內容做修改&lt;/p&gt;
+&lt;script src=&quot;https://gist.github.com/Knovour/f27c0cf743e991973f57.js&quot;&gt;&lt;/script&gt;
 
-<p>注意最後一句裡 <code>pm2 startOrRestart ecosystem.json</code> 的副檔名是否相同。<br><a id="more"></a></p>
-<h2 id="u958B_u59CB_u90E8_u7F72"><a href="#u958B_u59CB_u90E8_u7F72" class="headerlink" title="開始部署"></a>開始部署</h2><p>第一次部署時先執行 setup</p>
-<p><code>pm2 deploy ecosystem.json production setup</code></p>
-<p>成功後就可以正式部署了</p>
-<p><code>pm2 deploy ecosystem.json production</code></p>
-<p>之後專案更新時只要執行第二句即可。</p>
-<p>一切順利的話 PM2 就會在 server 端開始執行了。</p>
-<h2 id="u984D_u5916_u6307_u4EE4"><a href="#u984D_u5916_u6307_u4EE4" class="headerlink" title="額外指令"></a>額外指令</h2><p>開機啟動：<code>pm2 startup -u DEPLOY_SERVER_USER_ACCOUNT</code></p>
-<p>不設 <code>-u</code>（user）的話，在開機時預設就會以 root 權限執行。</p>
-<p>其他指令或設定請至 <a href="https://github.com/Unitech/pm2" target="_blank" rel="external">PM2</a> 檢視說明文件</p>
-<h2 id="u53C3_u8003_u4F86_u6E90"><a href="#u53C3_u8003_u4F86_u6E90" class="headerlink" title="參考來源"></a>參考來源</h2><ul>
-<li><a href="https://github.com/Unitech/pm2" target="_blank" rel="external">PM2</a></li>
-<li><a href="https://github.com/Unitech/PM2/blob/master/ADVANCED_README.md" target="_blank" rel="external">PM2 Advance Readme</a></li>
-<li><a href="http://www.toobug.net/article/using_pm2_deploy.html" target="_blank" rel="external">使用 PM2 Deploy 部署基于 Git 版本管理的网站应用</a></li>
-<li><a href="https://www.gitbook.com/book/wohugb/pm2/details" target="_blank" rel="external">PM2 GitBook</a></li>
-<li><a href="http://nicmitchell.com/2015/04/deploying-node-js-applications-with-pm2/" target="_blank" rel="external">Deploying Node.js Applications with PM2</a></li>
-</ul>
-]]></content>
+&lt;p&gt;注意最後一句裡 &lt;code&gt;pm2 startOrRestart ecosystem.json&lt;/code&gt; 的副檔名是否相同。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;開始部署&quot;&gt;&lt;a href=&quot;#開始部署&quot; class=&quot;headerlink&quot; title=&quot;開始部署&quot;&gt;&lt;/a&gt;開始部署&lt;/h2&gt;&lt;p&gt;第一次部署時先執行 setup&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pm2 deploy ecosystem.json production setup&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;成功後就可以正式部署了&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pm2 deploy ecosystem.json production&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;之後專案更新時只要執行第二句即可。&lt;/p&gt;
+&lt;p&gt;一切順利的話 PM2 就會在 server 端開始執行了。&lt;/p&gt;
+&lt;h2 id=&quot;額外指令&quot;&gt;&lt;a href=&quot;#額外指令&quot; class=&quot;headerlink&quot; title=&quot;額外指令&quot;&gt;&lt;/a&gt;額外指令&lt;/h2&gt;&lt;p&gt;開機啟動：&lt;code&gt;pm2 startup -u DEPLOY_SERVER_USER_ACCOUNT&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;不設 &lt;code&gt;-u&lt;/code&gt;（user）的話，在開機時預設就會以 root 權限執行。&lt;/p&gt;
+&lt;p&gt;其他指令或設定請至 &lt;a href=&quot;https://github.com/Unitech/pm2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PM2&lt;/a&gt; 檢視說明文件&lt;/p&gt;
+&lt;h2 id=&quot;參考來源&quot;&gt;&lt;a href=&quot;#參考來源&quot; class=&quot;headerlink&quot; title=&quot;參考來源&quot;&gt;&lt;/a&gt;參考來源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Unitech/pm2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PM2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Unitech/PM2/blob/master/ADVANCED_README.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PM2 Advance Readme&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.toobug.net/article/using_pm2_deploy.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;使用 PM2 Deploy 部署基于 Git 版本管理的网站应用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gitbook.com/book/wohugb/pm2/details&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PM2 GitBook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://nicmitchell.com/2015/04/deploying-node-js-applications-with-pm2/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deploying Node.js Applications with PM2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
     <summary type="html">
-    <![CDATA[用 PM2 進行 node.js server 佈署。]]>
+    
+      用 PM2 進行 node.js server 佈署。
     
     </summary>
     
-      <category term="deploy" scheme="https://notes.knovour.ninja/tags/deploy/"/>
     
       <category term="node.js" scheme="https://notes.knovour.ninja/tags/node-js/"/>
+    
+      <category term="deploy" scheme="https://notes.knovour.ninja/tags/deploy/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[用 Shipit 部署 node server]]></title>
+    <title>用 Shipit 部署 node server</title>
     <link href="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/"/>
     <id>https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/</id>
     <published>2015-07-17T15:42:00.000Z</published>
     <updated>2016-01-10T16:31:14.553Z</updated>
-    <content type="html"><![CDATA[<h2 id="u524D_u7F6E_u4F5C_u696D"><a href="#u524D_u7F6E_u4F5C_u696D" class="headerlink" title="前置作業"></a>前置作業</h2><p><strong>假設是全新的 Linux，帳號為 deploy</strong></p>
-<ol>
-<li>在 github 等託管服務中登錄 deploy server 的 ssh public key。</li>
-<li>設定 ssh 免密碼遠端登入：在 <code>.ssh/authorized_keys</code> 裡貼上開發機的 ssh public key。</li>
-<li>如有需要，將 server 裡的 global package 裝好，如 bower、sails、grunt-cli 等等。</li>
-<li>設定 server 裡程式碼的存放位置，假設為 <code>/usr/src</code>。</li>
-</ol>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/src/<span class="keyword">my</span>-project-<span class="property">name</span></span><br><span class="line">chown deploy:deploy /usr/src/<span class="keyword">my</span>-project-<span class="property">name</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="u5728_u958B_u767C_u6A5F_u5B89_u88DD_u76F8_u95DC_u5957_u4EF6"><a href="#u5728_u958B_u767C_u6A5F_u5B89_u88DD_u76F8_u95DC_u5957_u4EF6" class="headerlink" title="在開發機安裝相關套件"></a>在開發機安裝相關套件</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm <span class="tag">i</span> shipit-cli -g</span><br><span class="line">npm <span class="tag">i</span> shipit-deploy shipit-npm --save-dev</span><br></pre></td></tr></table></figure>
-<h2 id="ShipIt_21"><a href="#ShipIt_21" class="headerlink" title="ShipIt!"></a>ShipIt!</h2><p>在專案資料夾目錄產生 <code>shipitfile.js</code></p>
-<p>內容如下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params">shipit</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">require</span>(<span class="string">'shipit-deploy'</span>)(shipit);  <span class="comment">// remote deploy</span></span><br><span class="line">  <span class="built_in">require</span>(<span class="string">'shipit-npm'</span>)(shipit);      <span class="comment">// remote auto install npm packages</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> config = &#123;</span><br><span class="line">    <span class="keyword">default</span>: &#123;</span><br><span class="line">      workspace: <span class="string">'/tmp/project-name-in-deploy-server'</span>,</span><br><span class="line">      deployTo: <span class="string">'/usr/src/project-name-in-deploy-server'</span>,</span><br><span class="line">      repositoryUrl: <span class="string">'your git remote url (github, bitbucket, etc...)'</span>,</span><br><span class="line">      ignores: [<span class="string">'.git'</span>, <span class="string">'node_modules'</span>],</span><br><span class="line">      keepReleases: <span class="number">2</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    staging: &#123;</span><br><span class="line">      servers: <span class="string">'deploy@your-deploy-server-ip'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  shipit.initConfig(config);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>輸入 <code>shipit staging deploy</code> 開始部署</p>
-<h2 id="u984D_u5916_u547D_u4EE4"><a href="#u984D_u5916_u547D_u4EE4" class="headerlink" title="額外命令"></a>額外命令</h2><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">shipit.initConfig(config);</span><br><span class="line"><span class="comment">// code 加在這行之後</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> current = config.<span class="keyword">default</span>.deployTo + <span class="string">'/current'</span>;</span><br><span class="line"><span class="comment">// shipit 會將 source code 放在 deploy server 專案資料夾裡的 current 中</span></span><br><span class="line">shipit.task(<span class="string">'server-on'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> shipit.remote(<span class="string">'cd '</span> + current + <span class="string">' &amp;&amp; bower i &amp;&amp; npm start'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">shipit.task(<span class="string">'start'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  shipit.start([<span class="string">'deploy'</span>, <span class="string">'server-on'</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>執行 <code>shipit staging start</code></p>
-<h2 id="u57FA_u672C_u8A2D_u5B9A_u7684_u6A23_u5B50"><a href="#u57FA_u672C_u8A2D_u5B9A_u7684_u6A23_u5B50" class="headerlink" title="基本設定的樣子"></a>基本設定的樣子</h2><script src="https://gist.github.com/Knovour/97760c466552c2ed12db.js"></script>
+    
+    <content type="html">&lt;h2 id=&quot;前置作業&quot;&gt;&lt;a href=&quot;#前置作業&quot; class=&quot;headerlink&quot; title=&quot;前置作業&quot;&gt;&lt;/a&gt;前置作業&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;假設是全新的 Linux，帳號為 deploy&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 github 等託管服務中登錄 deploy server 的 ssh public key。&lt;/li&gt;
+&lt;li&gt;設定 ssh 免密碼遠端登入：在 &lt;code&gt;.ssh/authorized_keys&lt;/code&gt; 裡貼上開發機的 ssh public key。&lt;/li&gt;
+&lt;li&gt;如有需要，將 server 裡的 global package 裝好，如 bower、sails、grunt-cli 等等。&lt;/li&gt;
+&lt;li&gt;設定 server 裡程式碼的存放位置，假設為 &lt;code&gt;/usr/src&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight applescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir -p /usr/src/&lt;span class=&quot;keyword&quot;&gt;my&lt;/span&gt;-project-&lt;span class=&quot;built_in&quot;&gt;name&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;chown deploy:deploy /usr/src/&lt;span class=&quot;keyword&quot;&gt;my&lt;/span&gt;-project-&lt;span class=&quot;built_in&quot;&gt;name&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;在開發機安裝相關套件&quot;&gt;&lt;a href=&quot;#在開發機安裝相關套件&quot; class=&quot;headerlink&quot; title=&quot;在開發機安裝相關套件&quot;&gt;&lt;/a&gt;在開發機安裝相關套件&lt;/h2&gt;&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo npm &lt;span class=&quot;selector-tag&quot;&gt;i&lt;/span&gt; shipit-cli -g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm &lt;span class=&quot;selector-tag&quot;&gt;i&lt;/span&gt; shipit-deploy shipit-npm --save-dev&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;ShipIt&quot;&gt;&lt;a href=&quot;#ShipIt&quot; class=&quot;headerlink&quot; title=&quot;ShipIt!&quot;&gt;&lt;/a&gt;ShipIt!&lt;/h2&gt;&lt;p&gt;在專案資料夾目錄產生 &lt;code&gt;shipitfile.js&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;內容如下&lt;/p&gt;
+&lt;figure class=&quot;highlight qml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.exports = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;shipit&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;shipit-deploy&#39;&lt;/span&gt;)(shipit);  &lt;span class=&quot;comment&quot;&gt;// remote deploy&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;shipit-npm&#39;&lt;/span&gt;)(shipit);      &lt;span class=&quot;comment&quot;&gt;// remote auto install npm packages&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;var&lt;/span&gt; config = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;default&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;attribute&quot;&gt;workspace&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;/tmp/project-name-in-deploy-server&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;attribute&quot;&gt;deployTo&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;/usr/src/project-name-in-deploy-server&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;attribute&quot;&gt;repositoryUrl&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;your git remote url (github, bitbucket, etc...)&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;attribute&quot;&gt;ignores&lt;/span&gt;: [&lt;span class=&quot;string&quot;&gt;&#39;.git&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;node_modules&#39;&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;attribute&quot;&gt;keepReleases&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;staging&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;attribute&quot;&gt;servers&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;deploy@your-deploy-server-ip&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  shipit.initConfig(config);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;輸入 &lt;code&gt;shipit staging deploy&lt;/code&gt; 開始部署&lt;/p&gt;
+&lt;h2 id=&quot;額外命令&quot;&gt;&lt;a href=&quot;#額外命令&quot; class=&quot;headerlink&quot; title=&quot;額外命令&quot;&gt;&lt;/a&gt;額外命令&lt;/h2&gt;&lt;figure class=&quot;highlight haxe&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;shipit.initConfig(config);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// code 加在這行之後&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; current = config.&lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt;.deployTo + &lt;span class=&quot;string&quot;&gt;&#39;/current&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// shipit 會將 source code 放在 deploy server 專案資料夾裡的 current 中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;shipit.task(&lt;span class=&quot;string&quot;&gt;&#39;server-on&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; shipit.remote(&lt;span class=&quot;string&quot;&gt;&#39;cd &#39;&lt;/span&gt; + current + &lt;span class=&quot;string&quot;&gt;&#39; &amp;amp;&amp;amp; bower i &amp;amp;&amp;amp; npm start&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;shipit.task(&lt;span class=&quot;string&quot;&gt;&#39;start&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  shipit.start([&lt;span class=&quot;string&quot;&gt;&#39;deploy&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;server-on&#39;&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;執行 &lt;code&gt;shipit staging start&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;基本設定的樣子&quot;&gt;&lt;a href=&quot;#基本設定的樣子&quot; class=&quot;headerlink&quot; title=&quot;基本設定的樣子&quot;&gt;&lt;/a&gt;基本設定的樣子&lt;/h2&gt;&lt;script src=&quot;https://gist.github.com/Knovour/97760c466552c2ed12db.js&quot;&gt;&lt;/script&gt;
 
 
 
-<h2 id="u53C3_u8003_u4F86_u6E90"><a href="#u53C3_u8003_u4F86_u6E90" class="headerlink" title="參考來源"></a>參考來源</h2><ul>
-<li><a href="http://www.therightcode.net/deploy-nodejs-application-using-shipit/" target="_blank" rel="external">Forget Capistrano and deploy your node.js application using Shipit</a>（裡面是用 grunt 當範例，但我用 grunt 的方式跑不起來）</li>
-<li><a href="https://github.com/shipitjs/shipit" target="_blank" rel="external">Shipit</a></li>
-<li><a href="https://github.com/shipitjs/shipit-deploy" target="_blank" rel="external">shipit-deploy</a></li>
-</ul>
-]]></content>
+&lt;h2 id=&quot;參考來源&quot;&gt;&lt;a href=&quot;#參考來源&quot; class=&quot;headerlink&quot; title=&quot;參考來源&quot;&gt;&lt;/a&gt;參考來源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.therightcode.net/deploy-nodejs-application-using-shipit/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Forget Capistrano and deploy your node.js application using Shipit&lt;/a&gt;（裡面是用 grunt 當範例，但我用 grunt 的方式跑不起來）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/shipitjs/shipit&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Shipit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/shipitjs/shipit-deploy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;shipit-deploy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
     <summary type="html">
-    <![CDATA[用 Shipit 做簡單的 node.js server 佈署。]]>
+    
+      用 Shipit 做簡單的 node.js server 佈署。
     
     </summary>
     
-      <category term="deploy" scheme="https://notes.knovour.ninja/tags/deploy/"/>
     
       <category term="node.js" scheme="https://notes.knovour.ninja/tags/node-js/"/>
+    
+      <category term="deploy" scheme="https://notes.knovour.ninja/tags/deploy/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[記錄幾個 Google 搜尋技巧]]></title>
+    <title>記錄幾個 Google 搜尋技巧</title>
     <link href="https://notes.knovour.ninja/2015/04/15/some-google-search-skills/"/>
     <id>https://notes.knovour.ninja/2015/04/15/some-google-search-skills/</id>
     <published>2015-04-15T13:43:00.000Z</published>
-    <updated>2016-01-11T16:43:28.661Z</updated>
-    <content type="html"><![CDATA[<p><img src="https://farm6.staticflickr.com/5728/20759258074_6b108b0dac_c.jpg" alt="Google"></p>
-<p>記錄幾個自己在搜尋時常用到的方式</p>
-<h2 id="u4E00_u822C_u65B9_u5F0F"><a href="#u4E00_u822C_u65B9_u5F0F" class="headerlink" title="一般方式"></a>一般方式</h2><ul>
-<li><code>-</code>：排除某個關鍵字。例：<code>ui -jquery</code></li>
-<li><code>site:</code>：搜尋特定網站內容。例：<code>site:medium.com node.js</code></li>
-<li><code>&quot;關鍵字&quot;</code>：限定搜尋結果包含引號內完整字串。</li>
-</ul>
-<h2 id="u984D_u5916_u95DC_u9375_u5B57"><a href="#u984D_u5916_u95DC_u9375_u5B57" class="headerlink" title="額外關鍵字"></a>額外關鍵字</h2><ul>
-<li><code>alternative(s)</code>：搜尋某個軟體或 library 有沒有類似的東西。若搜尋的是 library 相關的，搜尋結果裡的 <a href="http://alternativeto.net/" target="_blank" rel="external">AlternativeTo</a> 網站則可以不用管，因為裡面舉的例子還是以軟體為主。</li>
-<li><code>how (to)</code>：搜尋一些 server 或開發環境架設時會用到</li>
-<li><code>附近</code>：搜尋 Map 時會用到。如：<code>101 附近 餐廳</code></li>
-</ul>
-<a id="more"></a>
-<h2 id="u4E00_u4E9B_u7279_u6B8A_u7B26_u865F_u7684_u82F1_u6587"><a href="#u4E00_u4E9B_u7279_u6B8A_u7B26_u865F_u7684_u82F1_u6587" class="headerlink" title="一些特殊符號的英文"></a>一些特殊符號的英文</h2><p>主要是以前剛接觸 CSS3 跟 HTML 時會找的符號 (sign 或 symbol)</p>
-<ul>
-<li><code>&gt;</code>：greater than</li>
-<li><code>~</code>：tilde</li>
-<li><code>+</code>：plus</li>
-<li><code>:</code>：colon</li>
-<li><code>;</code>：semicolon</li>
-<li><code>-</code>：dash、minus</li>
-<li><code>_</code>：underline</li>
-<li><code>,</code>：comma</li>
-<li><code>.</code>：dot</li>
-<li><code>•</code>：bullet point</li>
-<li><code>·</code>：middot</li>
-<li><code>$</code>：dollar</li>
-<li><code>#</code>：number、pound (美式)</li>
-</ul>
-<h2 id="u5E7E_u500B_UI__u76F8_u95DC_u5143_u4EF6_u7684_u82F1_u6587"><a href="#u5E7E_u500B_UI__u76F8_u95DC_u5143_u4EF6_u7684_u82F1_u6587" class="headerlink" title="幾個 UI 相關元件的英文"></a>幾個 UI 相關元件的英文</h2><ul>
-<li><code>hamburger menu</code>：就是本 blog 左上角那三條線。</li>
-<li><code>ghost button</code>：只有 border 沒有 background-color 的按鈕。</li>
-</ul>
-]]></content>
+    <updated>2016-03-21T13:25:06.558Z</updated>
+    
+    <content type="html">&lt;p&gt;記錄幾個自己在搜尋時常用到的方式&lt;/p&gt;
+&lt;h2 id=&quot;一般方式&quot;&gt;&lt;a href=&quot;#一般方式&quot; class=&quot;headerlink&quot; title=&quot;一般方式&quot;&gt;&lt;/a&gt;一般方式&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-&lt;/code&gt;：排除某個關鍵字。例：&lt;code&gt;ui -jquery&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;site:&lt;/code&gt;：搜尋特定網站內容。例：&lt;code&gt;site:medium.com node.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;關鍵字&amp;quot;&lt;/code&gt;：限定搜尋結果包含引號內完整字串。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;額外關鍵字&quot;&gt;&lt;a href=&quot;#額外關鍵字&quot; class=&quot;headerlink&quot; title=&quot;額外關鍵字&quot;&gt;&lt;/a&gt;額外關鍵字&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;alternative(s)&lt;/code&gt;：搜尋某個軟體或 library 有沒有類似的東西。若搜尋的是 library 相關的，搜尋結果裡的 &lt;a href=&quot;http://alternativeto.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;AlternativeTo&lt;/a&gt; 網站則可以不用管，因為裡面舉的例子還是以軟體為主。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;how (to)&lt;/code&gt;：搜尋一些 server 或開發環境架設時會用到&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;附近&lt;/code&gt;：搜尋 Map 時會用到。如：&lt;code&gt;101 附近 餐廳&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;一些特殊符號的英文&quot;&gt;&lt;a href=&quot;#一些特殊符號的英文&quot; class=&quot;headerlink&quot; title=&quot;一些特殊符號的英文&quot;&gt;&lt;/a&gt;一些特殊符號的英文&lt;/h2&gt;&lt;p&gt;主要是以前剛接觸 CSS3 跟 HTML 時會找的符號 (sign 或 symbol)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;：greater than&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;~&lt;/code&gt;：tilde&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;+&lt;/code&gt;：plus&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:&lt;/code&gt;：colon&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;;&lt;/code&gt;：semicolon&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-&lt;/code&gt;：dash、minus&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_&lt;/code&gt;：underline&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;,&lt;/code&gt;：comma&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.&lt;/code&gt;：dot&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;•&lt;/code&gt;：bullet point&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;·&lt;/code&gt;：middot&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$&lt;/code&gt;：dollar&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#&lt;/code&gt;：number、pound (美式)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;幾個-UI-相關元件的英文&quot;&gt;&lt;a href=&quot;#幾個-UI-相關元件的英文&quot; class=&quot;headerlink&quot; title=&quot;幾個 UI 相關元件的英文&quot;&gt;&lt;/a&gt;幾個 UI 相關元件的英文&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;hamburger menu&lt;/code&gt;：就是本 blog 左上角那三條線。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ghost button&lt;/code&gt;：只有 border 沒有 background-color 的按鈕。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
     <summary type="html">
-    <![CDATA[紀錄幾個自己在搜尋時常用到的方式（符號、關鍵字、某些符號的英文單字等）]]>
+    
+      紀錄幾個自己在搜尋時常用到的方式（符號、關鍵字、某些符號的英文單字等）
     
     </summary>
+    
     
       <category term="google" scheme="https://notes.knovour.ninja/tags/google/"/>
     

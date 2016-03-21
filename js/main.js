@@ -1,4 +1,7 @@
 (function($){
+    if(location.protocol !== 'https:' && (!location.host.includes('0.0.0.0') && !location.host.includes('localhost') && !location.host.includes('127.0.0.1')))
+      location.protocol = 'https';
+
     var toTop = $('#toTop').length ? $('#toTop').offset().top - $(window).height() + 20 : 0;
 
     // Caption

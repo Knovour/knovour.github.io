@@ -23,13 +23,6 @@
     </url>
 
     <url>
-        <loc>https://notes.knovour.ninja/tags/node-js/</loc>
-        <lastmod>2016-02-27T21:03:14.854Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://notes.knovour.ninja/tags/linux/</loc>
         <lastmod>2016-03-21T13:20:24.649Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -74,6 +67,20 @@
     <url>
         <loc>https://notes.knovour.ninja/tags/p5-js/</loc>
         <lastmod>2016-03-22T10:15:00.049Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/node-js/</loc>
+        <lastmod>2016-03-22T20:06:00.800Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/sails-js/</loc>
+        <lastmod>2016-03-22T20:06:00.800Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

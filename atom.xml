@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-03-22T20:00:48.853Z</updated>
+  <updated>2016-03-22T20:06:00.800Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://notes.knovour.ninja/2016/03/23/problems-about-sails-js/"/>
     <id>https://notes.knovour.ninja/2016/03/23/problems-about-sails-js/</id>
     <published>2016-03-22T16:00:06.000Z</published>
-    <updated>2016-03-22T20:00:48.853Z</updated>
+    <updated>2016-03-22T20:06:00.800Z</updated>
     
     <content type="html">&lt;p&gt;本來標題想寫「Sails.js 算不算死了」，不過這樣似乎太過分了，這篇主要是講講之前用它來開發的感受。&lt;/p&gt;
 &lt;h2 id=&quot;TL-DR-不負責任懶人包&quot;&gt;&lt;a href=&quot;#TL-DR-不負責任懶人包&quot; class=&quot;headerlink&quot; title=&quot;TL;DR - 不負責任懶人包&quot;&gt;&lt;/a&gt;TL;DR - 不負責任懶人包&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://sailsjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sails.js&lt;/a&gt; 主要維護者 &lt;a href=&quot;https://github.com/mikermcneil&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;mikermcneil&lt;/a&gt; 與其中一位成員 &lt;a href=&quot;https://github.com/tjwebb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;tjwebb&lt;/a&gt; 有「理念上的問題」，導致開發停滯了超過半年之久，之後後者離開另外建立了 &lt;a href=&quot;https://github.com/trailsjs&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Trails.js&lt;/a&gt;，而 &lt;a href=&quot;http://sailsjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sails.js&lt;/a&gt; 在今年繼續維護。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -44,11 +44,14 @@
     
     <summary type="html">
     
-      &lt;p&gt;本來標題想寫「Sails.js 算不算死了」，不過這樣似乎太過分了，這篇主要是講講之前用它來開發的感受。&lt;/p&gt;
-&lt;h2 id=&quot;TL-DR-不負責任懶人包&quot;&gt;&lt;a href=&quot;#TL-DR-不負責任懶人包&quot; class=&quot;headerlink&quot; title=&quot;TL;DR - 不負責任懶人包&quot;&gt;&lt;/a&gt;TL;DR - 不負責任懶人包&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://sailsjs.org/&quot;&gt;Sails.js&lt;/a&gt; 主要維護者 &lt;a href=&quot;https://github.com/mikermcneil&quot;&gt;mikermcneil&lt;/a&gt; 與其中一位成員 &lt;a href=&quot;https://github.com/tjwebb&quot;&gt;tjwebb&lt;/a&gt; 有「理念上的問題」，導致開發停滯了超過半年之久，之後後者離開另外建立了 &lt;a href=&quot;https://github.com/trailsjs&quot;&gt;Trails.js&lt;/a&gt;，而 &lt;a href=&quot;http://sailsjs.org/&quot;&gt;Sails.js&lt;/a&gt; 在今年繼續維護。&lt;br&gt;
+      講講之前使用 Sail.js 的一些感受，以及這幾個月 Sails 官方的一些問題？
     
     </summary>
     
+    
+      <category term="node.js" scheme="https://notes.knovour.ninja/tags/node-js/"/>
+    
+      <category term="sails.js" scheme="https://notes.knovour.ninja/tags/sails-js/"/>
     
   </entry>
   

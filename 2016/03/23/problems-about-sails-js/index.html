@@ -5,20 +5,17 @@
     
     <title>Sails.js 的一些問題及現況 | Knovour Notes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="本來標題想寫「Sails.js 算不算死了」，不過這樣似乎太過分了，這篇主要是講講之前用它來開發的感受。
-TL;DR - 不負責任懶人包Sails.js 主要維護者 mikermcneil 與其中一位成員 tjwebb 有「理念上的問題」，導致開發停滯了超過半年之久，之後後者離開另外建立了 Trails.js，而 Sails.js 在今年繼續維護。">
+    <meta name="description" content="講講之前使用 Sail.js 的一些感受，以及這幾個月 Sails 官方的一些問題？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sails.js 的一些問題及現況">
 <meta property="og:url" content="https://notes.knovour.ninja/2016/03/23/problems-about-sails-js/index.html">
 <meta property="og:site_name" content="Knovour Notes">
-<meta property="og:description" content="本來標題想寫「Sails.js 算不算死了」，不過這樣似乎太過分了，這篇主要是講講之前用它來開發的感受。
-TL;DR - 不負責任懶人包Sails.js 主要維護者 mikermcneil 與其中一位成員 tjwebb 有「理念上的問題」，導致開發停滯了超過半年之久，之後後者離開另外建立了 Trails.js，而 Sails.js 在今年繼續維護。">
+<meta property="og:description" content="講講之前使用 Sail.js 的一些感受，以及這幾個月 Sails 官方的一些問題？">
 <meta property="og:image" content="https://farm2.staticflickr.com/1570/25992008245_bc315d092b_o.jpg">
-<meta property="og:updated_time" content="2016-03-22T20:00:48.853Z">
+<meta property="og:updated_time" content="2016-03-22T20:06:00.800Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sails.js 的一些問題及現況">
-<meta name="twitter:description" content="本來標題想寫「Sails.js 算不算死了」，不過這樣似乎太過分了，這篇主要是講講之前用它來開發的感受。
-TL;DR - 不負責任懶人包Sails.js 主要維護者 mikermcneil 與其中一位成員 tjwebb 有「理念上的問題」，導致開發停滯了超過半年之久，之後後者離開另外建立了 Trails.js，而 Sails.js 在今年繼續維護。">
+<meta name="twitter:description" content="講講之前使用 Sail.js 的一些感受，以及這幾個月 Sails 官方的一些問題？">
 <meta name="twitter:image" content="https://farm2.staticflickr.com/1570/25992008245_bc315d092b_o.jpg">
 <meta name="twitter:creator" content="@261262114">
     <script type="text/javascript">var _jf = _jf || [];_jf.push(['p','40489']);_jf.push(['_setFont','xingothic-tc-w4','css','.xingothic-tc-w4']);_jf.push(['_setFont','xingothic-tc-w4','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w4','weight',400]);_jf.push(['_setFont','xingothic-tc-w3','css','.xingothic-tc-w3']);_jf.push(['_setFont','xingothic-tc-w3','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w3','weight',300]);_jf.push(['_setFont','cwtexqhei','css','.cwtexqhei']);_jf.push(['_setFont','cwtexqhei','alias','cwtexqhei']);_jf.push(['_setFont','cwtexqhei','weight',700]);(function(f,q,c,h,e,i,r,d){var k=f._jf;if(k.constructor===Object){return}var l,t=q.getElementsByTagName("html")[0],a=function(u){for(var v in k){if(k[v][0]==u){if(false===k[v][1].call(k)){break}}}},j=/\S+/g,o=/[\t\r\n\f]/g,b=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,g="".trim,s=g&&!g.call("\uFEFF\xA0")?function(u){return u==null?"":g.call(u)}:function(u){return u==null?"":(u+"").replace(b,"")},m=function(y){var w,z,v,u,x=typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):" ";if(z){u=0;while((v=w[u++])){if(z.indexOf(" "+v+" ")<0){z+=v+" "}}t[c]=s(z)}}},p=function(y){var w,z,v,u,x=arguments.length===0||typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):"";if(z){u=0;while((v=w[u++])){while(z.indexOf(" "+v+" ")>=0){z=z.replace(" "+v+" "," ")}}t[c]=y?s(z):""}}},n;k.push(["_eventActived",function(){p(h);m(e)}]);k.push(["_eventInactived",function(){p(h);m(i)}]);k.addScript=n=function(u,A,w,C,E,B){E=E||function(){};B=B||function(){};var x=q.createElement("script"),z=q.getElementsByTagName("script")[0],v,y=false,D=function(){x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;a("_eventInactived");B()};if(C){v=setTimeout(function(){D()},C)}x.type=A||"text/javascript";x.async=w;x.onload=x.onreadystatechange=function(G,F){if(!y&&(!x.readyState||/loaded|complete/.test(x.readyState))){y=true;if(C){clearTimeout(v)}x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;if(!F){setTimeout(function(){E()},200)}}};x.onerror=function(H,G,F){if(C){clearTimeout(v)}D();return true};x.src=u;z.parentNode.insertBefore(x,z)};a("_eventPreload");m(h);n(r,"text/javascript",false,3000)})(this,this.document,"className","jf-loading","jf-active","jf-inactive","//d3gc6cgx8oosp4.cloudfront.net/js/stable/v/4.9.7/id/171273672556");</script>
@@ -136,7 +133,7 @@ ga('send', 'pageview');
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                11
+                12
                 <span>標籤</span>
             </div>
         </div>
@@ -210,6 +207,11 @@ ga('send', 'pageview');
 
                     
                     
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/node-js/">node.js</a>, <a class="tag-link" href="/tags/sails-js/">sails.js</a>
+    </div>
+
                 </div>
             </header>
         
@@ -362,7 +364,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">標籤</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/D3/">D3</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/">deploy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/">game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ghost/">ghost</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google/">google</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openshift/">openshift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/p5-js/">p5.js</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/search/">search</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wine/">wine</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/D3/">D3</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/">deploy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/">game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ghost/">ghost</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google/">google</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openshift/">openshift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/p5-js/">p5.js</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sails-js/">sails.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/search/">search</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wine/">wine</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 

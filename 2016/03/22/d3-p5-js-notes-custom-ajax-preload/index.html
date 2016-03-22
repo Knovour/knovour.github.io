@@ -3,17 +3,18 @@
 <head>
     <meta charset="utf-8">
     
-    <title>歸檔: 2016/1 | Knovour Notes</title>
+    <title>D3 + p5.js 筆記 - 自訂 preload 的 Ajax | Knovour Notes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="個人筆記、心得">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Knovour Notes">
-<meta property="og:url" content="https://notes.knovour.ninja/archives/2016/01/index.html">
+    <meta name="description" content="給 p5.js 的 preload function 增加自訂的 ajax 請求。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="D3 + p5.js 筆記 - 自訂 preload 的 Ajax">
+<meta property="og:url" content="https://notes.knovour.ninja/2016/03/22/d3-p5-js-notes-custom-ajax-preload/index.html">
 <meta property="og:site_name" content="Knovour Notes">
-<meta property="og:description" content="個人筆記、心得">
+<meta property="og:description" content="給 p5.js 的 preload function 增加自訂的 ajax 請求。">
+<meta property="og:updated_time" content="2016-03-22T10:14:28.956Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Knovour Notes">
-<meta name="twitter:description" content="個人筆記、心得">
+<meta name="twitter:title" content="D3 + p5.js 筆記 - 自訂 preload 的 Ajax">
+<meta name="twitter:description" content="給 p5.js 的 preload function 增加自訂的 ajax 請求。">
 <meta name="twitter:creator" content="@261262114">
     <script type="text/javascript">var _jf = _jf || [];_jf.push(['p','40489']);_jf.push(['_setFont','xingothic-tc-w4','css','.xingothic-tc-w4']);_jf.push(['_setFont','xingothic-tc-w4','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w4','weight',400]);_jf.push(['_setFont','xingothic-tc-w3','css','.xingothic-tc-w3']);_jf.push(['_setFont','xingothic-tc-w3','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w3','weight',300]);_jf.push(['_setFont','cwtexqhei','css','.cwtexqhei']);_jf.push(['_setFont','cwtexqhei','alias','cwtexqhei']);_jf.push(['_setFont','cwtexqhei','weight',700]);(function(f,q,c,h,e,i,r,d){var k=f._jf;if(k.constructor===Object){return}var l,t=q.getElementsByTagName("html")[0],a=function(u){for(var v in k){if(k[v][0]==u){if(false===k[v][1].call(k)){break}}}},j=/\S+/g,o=/[\t\r\n\f]/g,b=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,g="".trim,s=g&&!g.call("\uFEFF\xA0")?function(u){return u==null?"":g.call(u)}:function(u){return u==null?"":(u+"").replace(b,"")},m=function(y){var w,z,v,u,x=typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):" ";if(z){u=0;while((v=w[u++])){if(z.indexOf(" "+v+" ")<0){z+=v+" "}}t[c]=s(z)}}},p=function(y){var w,z,v,u,x=arguments.length===0||typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):"";if(z){u=0;while((v=w[u++])){while(z.indexOf(" "+v+" ")>=0){z=z.replace(" "+v+" "," ")}}t[c]=y?s(z):""}}},n;k.push(["_eventActived",function(){p(h);m(e)}]);k.push(["_eventInactived",function(){p(h);m(i)}]);k.addScript=n=function(u,A,w,C,E,B){E=E||function(){};B=B||function(){};var x=q.createElement("script"),z=q.getElementsByTagName("script")[0],v,y=false,D=function(){x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;a("_eventInactived");B()};if(C){v=setTimeout(function(){D()},C)}x.type=A||"text/javascript";x.async=w;x.onload=x.onreadystatechange=function(G,F){if(!y&&(!x.readyState||/loaded|complete/.test(x.readyState))){y=true;if(C){clearTimeout(v)}x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;if(!F){setTimeout(function(){E()},200)}}};x.onerror=function(H,G,F){if(C){clearTimeout(v)}D();return true};x.src=u;z.parentNode.insertBefore(x,z)};a("_eventPreload");m(h);n(r,"text/javascript",false,3000)})(this,this.document,"className","jf-loading","jf-active","jf-inactive","//d3gc6cgx8oosp4.cloudfront.net/js/stable/v/4.9.7/id/171273672556");</script>
     
@@ -171,20 +172,16 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2016</h1>
-            </div>
+            <section id="main"><article id="post-d3-p5-js-notes-custom-ajax-preload" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/01/12/sequelize-notes/">Sequelize 踩坑筆記</a>
+        <h1 class="article-title" itemprop="name">
+            D3 + p5.js 筆記 - 自訂 preload 的 Ajax
         </h1>
     
 
@@ -192,8 +189,8 @@ ga('send', 'pageview');
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/01/12/sequelize-notes/">
-            <time datetime="2016-01-12T15:44:32.000Z" itemprop="datePublished">2016-01-12</time>
+        <a href="/2016/03/22/d3-p5-js-notes-custom-ajax-preload/">
+            <time datetime="2016-03-22T08:17:20.000Z" itemprop="datePublished">2016-03-22</time>
         </a>
     </div>
 
@@ -202,45 +199,133 @@ ga('send', 'pageview');
                     
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/node-js/">node.js</a>
+        <a class="tag-link" href="/tags/D3/">D3</a>, <a class="tag-link" href="/tags/p5-js/">p5.js</a>
     </div>
 
                 </div>
-            </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><a href="http://p5js.org/" target="_blank" rel="external">p5.js</a> 已經內建數種檔案請求的方式，這邊紀錄一下自己建立 ajax 請求註冊到 <code>preload()</code> 的方式（以 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 為例）。</p>
+<script src="https://gist.github.com/Knovour/57b761d08ff758396ab6.js?file=p5-private-preload.js"></script>
+
+<p>這邊要注意的是，在第 10 行的部份，請求後的資料不能直接指定給預先宣告的變數，否則 <code>setup()</code> 取資料時會是 <code>undefined</code>，或者可以這樣宣告：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// customPreload</span></span><br><span class="line"><span class="keyword">let</span> tmp = &#123; list: [] &#125;;</span><br><span class="line"><span class="comment">// ---</span></span><br></pre></td></tr></table></figure>
+<p>在取得資料後直接將資料指定給 <code>tmp.list</code>，在 <code>setup()</code> 裡直接以 <code>data.list</code> 的方式取值即可，而範例裡的 <code>return</code> 跟 <code>callback</code> 都是必要的，省略任何一樣都會出現 <code>undefined</code>。</p>
+<p>不用 <code>new</code> 的方式可以到<a href="https://gist.github.com/Knovour/57b761d08ff758396ab6" target="_blank" rel="external">這裡</a>檢視。</p>
+
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/01/11/change-blog-from-openshift-to-github/">放棄在 OpenShift 上管理部落格</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/01/11/change-blog-from-openshift-to-github/">
-            <time datetime="2016-01-11T15:40:12.000Z" itemprop="datePublished">2016-01-11</time>
-        </a>
-    </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/ghost/">ghost</a>, <a class="tag-link" href="/tags/openshift/">openshift</a>
-    </div>
 
-                </div>
-            </div>
-        </div>
-    
 </div>
+
+    <a data-url="https://notes.knovour.ninja/2016/03/22/d3-p5-js-notes-custom-ajax-preload/" data-id="cim38vo5400043on3icmap3h4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://notes.knovour.ninja/2016/03/22/d3-p5-js-notes-custom-ajax-preload/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/03/22/d3-p5-js-notes-custom-ajax-preload/">評論</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/03/03/d3-p5-js-notes-area-chart/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">D3 + p5.js 筆記 - Area Chart</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
@@ -297,11 +382,13 @@ ga('send', 'pageview');
     var disqus_shortname = 'knovour-notes';
     
     
+    var disqus_url = 'https://notes.knovour.ninja/2016/03/22/d3-p5-js-notes-custom-ajax-preload/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>

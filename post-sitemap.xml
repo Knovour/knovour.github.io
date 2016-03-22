@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://notes.knovour.ninja/2016/03/23/problems-about-sails-js/</loc>
+        <lastmod>2016-03-22T20:00:48.853Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://notes.knovour.ninja/2016/03/22/d3-p5-js-notes-custom-ajax-preload/</loc>
         <lastmod>2016-03-22T10:15:00.049Z</lastmod>
         <changefreq>weekly</changefreq>

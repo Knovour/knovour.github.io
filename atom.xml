@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-03-22T10:15:00.049Z</updated>
+  <updated>2016-03-22T20:00:48.853Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Sails.js 的一些問題及現況</title>
+    <link href="https://notes.knovour.ninja/2016/03/23/problems-about-sails-js/"/>
+    <id>https://notes.knovour.ninja/2016/03/23/problems-about-sails-js/</id>
+    <published>2016-03-22T16:00:06.000Z</published>
+    <updated>2016-03-22T20:00:48.853Z</updated>
+    
+    <content type="html">&lt;p&gt;本來標題想寫「Sails.js 算不算死了」，不過這樣似乎太過分了，這篇主要是講講之前用它來開發的感受。&lt;/p&gt;
+&lt;h2 id=&quot;TL-DR-不負責任懶人包&quot;&gt;&lt;a href=&quot;#TL-DR-不負責任懶人包&quot; class=&quot;headerlink&quot; title=&quot;TL;DR - 不負責任懶人包&quot;&gt;&lt;/a&gt;TL;DR - 不負責任懶人包&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://sailsjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sails.js&lt;/a&gt; 主要維護者 &lt;a href=&quot;https://github.com/mikermcneil&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;mikermcneil&lt;/a&gt; 與其中一位成員 &lt;a href=&quot;https://github.com/tjwebb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;tjwebb&lt;/a&gt; 有「理念上的問題」，導致開發停滯了超過半年之久，之後後者離開另外建立了 &lt;a href=&quot;https://github.com/trailsjs&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Trails.js&lt;/a&gt;，而 &lt;a href=&quot;http://sailsjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sails.js&lt;/a&gt; 在今年繼續維護。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;長篇抱怨文&quot;&gt;&lt;a href=&quot;#長篇抱怨文&quot; class=&quot;headerlink&quot; title=&quot;長篇抱怨文&quot;&gt;&lt;/a&gt;長篇抱怨文&lt;/h2&gt;&lt;p&gt;去年的時候，&lt;a href=&quot;http://sailsjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sails.js&lt;/a&gt; 的版本停在 0.12.0-rcX（忘記哪個號碼）超過半年之久；在這段期間，issue 上面的回應也零零落落的，而我那時才知道，開發團隊其實有養一隻 &lt;a href=&quot;https://github.com/sailsbot&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub robot&lt;/a&gt;，太久沒回應的 issue 會強制關掉，這到是讓我感到不滿。&lt;/p&gt;
+&lt;p&gt;當初 &lt;a href=&quot;https://nodejs.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Node.js&lt;/a&gt; 入門時是從 &lt;a href=&quot;http://expressjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Express.js&lt;/a&gt; 開始的，也很習慣從這樣一個基礎的 framework 再自己安裝其他 plugin 兜成自己需要的東西，但每建一個新的專案就要重新兜一次，久了其實也挺煩的，當時也不知道 &lt;a href=&quot;http://yeoman.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Yeoman&lt;/a&gt; 這種工具。&lt;/p&gt;
+&lt;p&gt;後來試了 &lt;a href=&quot;http://krakenjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Kraken.js&lt;/a&gt; 以及 &lt;a href=&quot;http://sailsjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sails.js&lt;/a&gt; 這兩個比較屬於包山包海的 framework，而且都是以 &lt;a href=&quot;http://expressjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Express.js&lt;/a&gt; 為基底再包上一層，在使用一段時間後卻覺得這反而讓我更加麻煩，表面上似乎是幫你解決了一些雜事，反之要面對的卻是一長串看似方便其實很亂的 &lt;code&gt;config&lt;/code&gt; 參數。&lt;/p&gt;
+&lt;p&gt;當時用了 Kraken 1.x 的版本，就像是包上了一層薄薄的蝦殼，薄到讓我覺得多包這一層沒什麼太大的意義，原本 &lt;code&gt;middleware&lt;/code&gt; 的載入方式改成透過 &lt;code&gt;config&lt;/code&gt; 反而變得很難用，加上當時在折騰 &lt;a href=&quot;http://socket.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Socket.IO&lt;/a&gt;，而 &lt;a href=&quot;http://krakenjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Kraken.js&lt;/a&gt; 並沒有往這方面做進一步整合，導致不論是在 &lt;a href=&quot;http://expressjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Express.js&lt;/a&gt; 或是 &lt;a href=&quot;http://krakenjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Kraken.js&lt;/a&gt; 裡加上 &lt;a href=&quot;http://socket.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Socket.IO&lt;/a&gt; 的方式是差不多的，但後者還得多繞一點彎路，本末倒置。&lt;/p&gt;
+&lt;p&gt;而 &lt;a href=&quot;http://sailsjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sails.js&lt;/a&gt; 有將之另外整合，並打包成了 sails.io.js，相比之下方便不少，所以最後採用它來寫了幾個專案，但一段時間後也開始有了一些怨氣，一個是預設作為自動化排程的 &lt;a href=&quot;http://gruntjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Grunt&lt;/a&gt; 非常難用，相關設定又臭又長而且不盡相同，我曾為了某個 plugin 設定搞不定而折騰很長一段時間，最後卻是參考其他不相關的 plugin 的設定方式照著改過去才成功。&lt;/p&gt;
+&lt;p&gt;另一方面是作為核心的 &lt;a href=&quot;http://expressjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Express.js&lt;/a&gt; 的版本問題，&lt;a href=&quot;http://krakenjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Kraken.js&lt;/a&gt; 因為有 &lt;a href=&quot;https://www.paypal.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PayPal&lt;/a&gt; 罩著，所以遷移到 Express 4.x 的速度很快，但 &lt;a href=&quot;http://sailsjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sails.js&lt;/a&gt; 就不是這麼一回事了，官方一直停在 3.x 版，開發又停滯了一段時間，使得以 &lt;a href=&quot;http://expressjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Express.js&lt;/a&gt; 為主的 plugin 也得限制版本號才能使用，本來這不是什麼大問題，因為當時連 &lt;a href=&quot;https://nodejs.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Node.js&lt;/a&gt; 的更新也很緩慢，也是在 0.12 上卡了很長一段時間，後來在用 &lt;a href=&quot;http://sailsjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sails.js&lt;/a&gt; 寫最後一個專案時，&lt;a href=&quot;https://nodejs.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Node.js&lt;/a&gt; 突然直接跳到了 4 版，不久 5 版也跟著推出了。這下感受就大不同了（還是可以動，主要是奇蒙子問題），那時也才開始在意 &lt;a href=&quot;http://sailsjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sails.js&lt;/a&gt; 停滯很長一段時間這件事；在這段時間裡，也造成一些 issue 因為沒有後續回應的關係而被官方的 bot 自動關掉，最後決定趁著專案的開發時間還不算久的情況下，直接改用 &lt;a href=&quot;http://koajs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Koa.js&lt;/a&gt; 重新開發，不再碰 &lt;a href=&quot;http://sailsjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sails.js&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;在遷移一陣子之後，發現了 &lt;a href=&quot;https://github.com/trailsjs&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Trails.js&lt;/a&gt; 的存在，這是 &lt;a href=&quot;http://sailsjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sails.js&lt;/a&gt; 的其中一個成員離開之後建立的專案，看裡面的專案數量，似乎是以 &lt;a href=&quot;http://koajs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Koa.js&lt;/a&gt;、&lt;a href=&quot;http://expressjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Express.js&lt;/a&gt;、&lt;a href=&quot;http://hapijs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hapi.js&lt;/a&gt; 等各個基礎 framework 為底，再分別客製打包而成，在安裝時就可以選自己順手的為底來往上建立，選擇上比較靈活，但官方維護的心力應該也多了不少，目前還在 1.0 alpha，能不能取代 &lt;a href=&quot;http://sailsjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sails.js&lt;/a&gt; 還得再觀察。&lt;/p&gt;
+&lt;h2 id=&quot;相關網址&quot;&gt;&lt;a href=&quot;#相關網址&quot; class=&quot;headerlink&quot; title=&quot;相關網址&quot;&gt;&lt;/a&gt;相關網址&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/langateam/sails-permissions/issues/200&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ending Sails.js Support. Migrating sails-permissions to Trails&lt;/a&gt;（裡面有列一些相關討論的 issue 連結，包含雙方各自的說法）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://knovourland.logdown.com/posts/search?utf8=%E2%9C%93&amp;amp;q=kraken.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;以前 Blog 寫的 Kraken.js 筆記&lt;/a&gt;（不過現在都 2.0 了，應該比較沒參考價值了）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Trails-js-介紹影片&quot;&gt;&lt;a href=&quot;#Trails-js-介紹影片&quot; class=&quot;headerlink&quot; title=&quot;Trails.js 介紹影片&quot;&gt;&lt;/a&gt;Trails.js 介紹影片&lt;/h2&gt;&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/AbSp8jqFDAY&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;h2 id=&quot;自肥區&quot;&gt;&lt;a href=&quot;#自肥區&quot; class=&quot;headerlink&quot; title=&quot;自肥區&quot;&gt;&lt;/a&gt;自肥區&lt;/h2&gt;&lt;p&gt;我把在使用 &lt;a href=&quot;http://koajs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Koa.js&lt;/a&gt; 這段期間用到的 plugins 以自己覺得合適的架構打包，並用 &lt;a href=&quot;http://yeoman.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Yeoman&lt;/a&gt; 來做自動化安裝，不過目前只有做將整個專案架構複製到自己的資料夾裡這件事而已，更多客製化的方式還得研究研究，另外之後會先把 plugins 刪掉一大部分，並將 &lt;a href=&quot;http://gulpjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gulp.js&lt;/a&gt; 改成單純的用 npm script 來自動化管理專案，等這些基本問題弄好後，再把其他 plugins 加回去。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Knovour/generator-koat&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;專案網址&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本來標題想寫「Sails.js 算不算死了」，不過這樣似乎太過分了，這篇主要是講講之前用它來開發的感受。&lt;/p&gt;
+&lt;h2 id=&quot;TL-DR-不負責任懶人包&quot;&gt;&lt;a href=&quot;#TL-DR-不負責任懶人包&quot; class=&quot;headerlink&quot; title=&quot;TL;DR - 不負責任懶人包&quot;&gt;&lt;/a&gt;TL;DR - 不負責任懶人包&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://sailsjs.org/&quot;&gt;Sails.js&lt;/a&gt; 主要維護者 &lt;a href=&quot;https://github.com/mikermcneil&quot;&gt;mikermcneil&lt;/a&gt; 與其中一位成員 &lt;a href=&quot;https://github.com/tjwebb&quot;&gt;tjwebb&lt;/a&gt; 有「理念上的問題」，導致開發停滯了超過半年之久，之後後者離開另外建立了 &lt;a href=&quot;https://github.com/trailsjs&quot;&gt;Trails.js&lt;/a&gt;，而 &lt;a href=&quot;http://sailsjs.org/&quot;&gt;Sails.js&lt;/a&gt; 在今年繼續維護。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>D3 + p5.js 筆記 - 自訂 preload 的 Ajax</title>

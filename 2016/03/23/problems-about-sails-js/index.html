@@ -3,18 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>D3 + p5.js 筆記 - 自訂 preload 的 Ajax | Knovour Notes</title>
+    <title>Sails.js 的一些問題及現況 | Knovour Notes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="給 p5.js 的 preload function 增加自訂的 ajax 請求。">
+    <meta name="description" content="本來標題想寫「Sails.js 算不算死了」，不過這樣似乎太過分了，這篇主要是講講之前用它來開發的感受。
+TL;DR - 不負責任懶人包Sails.js 主要維護者 mikermcneil 與其中一位成員 tjwebb 有「理念上的問題」，導致開發停滯了超過半年之久，之後後者離開另外建立了 Trails.js，而 Sails.js 在今年繼續維護。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="D3 + p5.js 筆記 - 自訂 preload 的 Ajax">
-<meta property="og:url" content="https://notes.knovour.ninja/2016/03/22/d3-p5-js-notes-custom-ajax-preload/index.html">
+<meta property="og:title" content="Sails.js 的一些問題及現況">
+<meta property="og:url" content="https://notes.knovour.ninja/2016/03/23/problems-about-sails-js/index.html">
 <meta property="og:site_name" content="Knovour Notes">
-<meta property="og:description" content="給 p5.js 的 preload function 增加自訂的 ajax 請求。">
-<meta property="og:updated_time" content="2016-03-22T10:15:00.049Z">
+<meta property="og:description" content="本來標題想寫「Sails.js 算不算死了」，不過這樣似乎太過分了，這篇主要是講講之前用它來開發的感受。
+TL;DR - 不負責任懶人包Sails.js 主要維護者 mikermcneil 與其中一位成員 tjwebb 有「理念上的問題」，導致開發停滯了超過半年之久，之後後者離開另外建立了 Trails.js，而 Sails.js 在今年繼續維護。">
+<meta property="og:image" content="https://farm2.staticflickr.com/1570/25992008245_bc315d092b_o.jpg">
+<meta property="og:updated_time" content="2016-03-22T20:00:48.853Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="D3 + p5.js 筆記 - 自訂 preload 的 Ajax">
-<meta name="twitter:description" content="給 p5.js 的 preload function 增加自訂的 ajax 請求。">
+<meta name="twitter:title" content="Sails.js 的一些問題及現況">
+<meta name="twitter:description" content="本來標題想寫「Sails.js 算不算死了」，不過這樣似乎太過分了，這篇主要是講講之前用它來開發的感受。
+TL;DR - 不負責任懶人包Sails.js 主要維護者 mikermcneil 與其中一位成員 tjwebb 有「理念上的問題」，導致開發停滯了超過半年之久，之後後者離開另外建立了 Trails.js，而 Sails.js 在今年繼續維護。">
+<meta name="twitter:image" content="https://farm2.staticflickr.com/1570/25992008245_bc315d092b_o.jpg">
 <meta name="twitter:creator" content="@261262114">
     <script type="text/javascript">var _jf = _jf || [];_jf.push(['p','40489']);_jf.push(['_setFont','xingothic-tc-w4','css','.xingothic-tc-w4']);_jf.push(['_setFont','xingothic-tc-w4','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w4','weight',400]);_jf.push(['_setFont','xingothic-tc-w3','css','.xingothic-tc-w3']);_jf.push(['_setFont','xingothic-tc-w3','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w3','weight',300]);_jf.push(['_setFont','cwtexqhei','css','.cwtexqhei']);_jf.push(['_setFont','cwtexqhei','alias','cwtexqhei']);_jf.push(['_setFont','cwtexqhei','weight',700]);(function(f,q,c,h,e,i,r,d){var k=f._jf;if(k.constructor===Object){return}var l,t=q.getElementsByTagName("html")[0],a=function(u){for(var v in k){if(k[v][0]==u){if(false===k[v][1].call(k)){break}}}},j=/\S+/g,o=/[\t\r\n\f]/g,b=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,g="".trim,s=g&&!g.call("\uFEFF\xA0")?function(u){return u==null?"":g.call(u)}:function(u){return u==null?"":(u+"").replace(b,"")},m=function(y){var w,z,v,u,x=typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):" ";if(z){u=0;while((v=w[u++])){if(z.indexOf(" "+v+" ")<0){z+=v+" "}}t[c]=s(z)}}},p=function(y){var w,z,v,u,x=arguments.length===0||typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):"";if(z){u=0;while((v=w[u++])){while(z.indexOf(" "+v+" ")>=0){z=z.replace(" "+v+" "," ")}}t[c]=y?s(z):""}}},n;k.push(["_eventActived",function(){p(h);m(e)}]);k.push(["_eventInactived",function(){p(h);m(i)}]);k.addScript=n=function(u,A,w,C,E,B){E=E||function(){};B=B||function(){};var x=q.createElement("script"),z=q.getElementsByTagName("script")[0],v,y=false,D=function(){x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;a("_eventInactived");B()};if(C){v=setTimeout(function(){D()},C)}x.type=A||"text/javascript";x.async=w;x.onload=x.onreadystatechange=function(G,F){if(!y&&(!x.readyState||/loaded|complete/.test(x.readyState))){y=true;if(C){clearTimeout(v)}x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;if(!F){setTimeout(function(){E()},200)}}};x.onerror=function(H,G,F){if(C){clearTimeout(v)}D();return true};x.src=u;z.parentNode.insertBefore(x,z)};a("_eventPreload");m(h);n(r,"text/javascript",false,3000)})(this,this.document,"className","jf-loading","jf-active","jf-inactive","//d3gc6cgx8oosp4.cloudfront.net/js/stable/v/4.9.7/id/171273672556");</script>
     
@@ -172,8 +177,16 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><article id="post-d3-p5-js-notes-custom-ajax-preload" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-problems-about-sails-js" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
+        
+            
+	
+		<img src="https://farm2.staticflickr.com/1570/25992008245_bc315d092b_o.jpg" class="article-banner" />
+	
+
+
+
         
         
         
@@ -181,7 +194,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-            D3 + p5.js 筆記 - 自訂 preload 的 Ajax
+            Sails.js 的一些問題及現況
         </h1>
     
 
@@ -189,32 +202,38 @@ ga('send', 'pageview');
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/03/22/d3-p5-js-notes-custom-ajax-preload/">
-            <time datetime="2016-03-22T08:17:20.000Z" itemprop="datePublished">2016-03-22</time>
+        <a href="/2016/03/23/problems-about-sails-js/">
+            <time datetime="2016-03-22T16:00:06.000Z" itemprop="datePublished">2016-03-23</time>
         </a>
     </div>
 
 
                     
                     
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/D3/">D3</a>, <a class="tag-link" href="/tags/p5-js/">p5.js</a>
-    </div>
-
                 </div>
             </header>
         
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p><a href="http://p5js.org/" target="_blank" rel="external">p5.js</a> 已經內建數種檔案請求的方式，這邊紀錄一下自己建立 ajax 請求註冊到 <code>preload()</code> 的方式（以 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 為例）。</p>
-<script src="https://gist.github.com/Knovour/57b761d08ff758396ab6.js?file=p5-private-preload.js"></script>
-
-<p>這邊要注意的是，在第 10 行的部份，請求後的資料不能直接指定給預先宣告的變數，否則 <code>setup()</code> 取資料時會是 <code>undefined</code>，或者可以這樣宣告：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// load function</span></span><br><span class="line"><span class="keyword">let</span> tmp = &#123; list: [] &#125;;</span><br><span class="line"><span class="comment">// ---</span></span><br></pre></td></tr></table></figure>
-<p>在取得資料後直接將資料指定給 <code>tmp.list</code>，在 <code>setup()</code> 裡直接以 <code>data.list</code> 的方式取值即可，而範例裡的 <code>return</code> 跟 <code>callback</code> 都是必要的，省略任何一樣都會出現 <code>undefined</code>。</p>
-<p>不用 <code>new</code> 的方式可以到<a href="https://gist.github.com/Knovour/57b761d08ff758396ab6" target="_blank" rel="external">這裡</a>檢視。</p>
+            <p>本來標題想寫「Sails.js 算不算死了」，不過這樣似乎太過分了，這篇主要是講講之前用它來開發的感受。</p>
+<h2 id="TL-DR-不負責任懶人包"><a href="#TL-DR-不負責任懶人包" class="headerlink" title="TL;DR - 不負責任懶人包"></a>TL;DR - 不負責任懶人包</h2><p><a href="http://sailsjs.org/" target="_blank" rel="external">Sails.js</a> 主要維護者 <a href="https://github.com/mikermcneil" target="_blank" rel="external">mikermcneil</a> 與其中一位成員 <a href="https://github.com/tjwebb" target="_blank" rel="external">tjwebb</a> 有「理念上的問題」，導致開發停滯了超過半年之久，之後後者離開另外建立了 <a href="https://github.com/trailsjs" target="_blank" rel="external">Trails.js</a>，而 <a href="http://sailsjs.org/" target="_blank" rel="external">Sails.js</a> 在今年繼續維護。<br><a id="more"></a></p>
+<h2 id="長篇抱怨文"><a href="#長篇抱怨文" class="headerlink" title="長篇抱怨文"></a>長篇抱怨文</h2><p>去年的時候，<a href="http://sailsjs.org/" target="_blank" rel="external">Sails.js</a> 的版本停在 0.12.0-rcX（忘記哪個號碼）超過半年之久；在這段期間，issue 上面的回應也零零落落的，而我那時才知道，開發團隊其實有養一隻 <a href="https://github.com/sailsbot" target="_blank" rel="external">GitHub robot</a>，太久沒回應的 issue 會強制關掉，這到是讓我感到不滿。</p>
+<p>當初 <a href="https://nodejs.org" target="_blank" rel="external">Node.js</a> 入門時是從 <a href="http://expressjs.com/" target="_blank" rel="external">Express.js</a> 開始的，也很習慣從這樣一個基礎的 framework 再自己安裝其他 plugin 兜成自己需要的東西，但每建一個新的專案就要重新兜一次，久了其實也挺煩的，當時也不知道 <a href="http://yeoman.io/" target="_blank" rel="external">Yeoman</a> 這種工具。</p>
+<p>後來試了 <a href="http://krakenjs.com/" target="_blank" rel="external">Kraken.js</a> 以及 <a href="http://sailsjs.org/" target="_blank" rel="external">Sails.js</a> 這兩個比較屬於包山包海的 framework，而且都是以 <a href="http://expressjs.com/" target="_blank" rel="external">Express.js</a> 為基底再包上一層，在使用一段時間後卻覺得這反而讓我更加麻煩，表面上似乎是幫你解決了一些雜事，反之要面對的卻是一長串看似方便其實很亂的 <code>config</code> 參數。</p>
+<p>當時用了 Kraken 1.x 的版本，就像是包上了一層薄薄的蝦殼，薄到讓我覺得多包這一層沒什麼太大的意義，原本 <code>middleware</code> 的載入方式改成透過 <code>config</code> 反而變得很難用，加上當時在折騰 <a href="http://socket.io/" target="_blank" rel="external">Socket.IO</a>，而 <a href="http://krakenjs.com/" target="_blank" rel="external">Kraken.js</a> 並沒有往這方面做進一步整合，導致不論是在 <a href="http://expressjs.com/" target="_blank" rel="external">Express.js</a> 或是 <a href="http://krakenjs.com/" target="_blank" rel="external">Kraken.js</a> 裡加上 <a href="http://socket.io/" target="_blank" rel="external">Socket.IO</a> 的方式是差不多的，但後者還得多繞一點彎路，本末倒置。</p>
+<p>而 <a href="http://sailsjs.org/" target="_blank" rel="external">Sails.js</a> 有將之另外整合，並打包成了 sails.io.js，相比之下方便不少，所以最後採用它來寫了幾個專案，但一段時間後也開始有了一些怨氣，一個是預設作為自動化排程的 <a href="http://gruntjs.com/" target="_blank" rel="external">Grunt</a> 非常難用，相關設定又臭又長而且不盡相同，我曾為了某個 plugin 設定搞不定而折騰很長一段時間，最後卻是參考其他不相關的 plugin 的設定方式照著改過去才成功。</p>
+<p>另一方面是作為核心的 <a href="http://expressjs.com/" target="_blank" rel="external">Express.js</a> 的版本問題，<a href="http://krakenjs.com/" target="_blank" rel="external">Kraken.js</a> 因為有 <a href="https://www.paypal.com" target="_blank" rel="external">PayPal</a> 罩著，所以遷移到 Express 4.x 的速度很快，但 <a href="http://sailsjs.org/" target="_blank" rel="external">Sails.js</a> 就不是這麼一回事了，官方一直停在 3.x 版，開發又停滯了一段時間，使得以 <a href="http://expressjs.com/" target="_blank" rel="external">Express.js</a> 為主的 plugin 也得限制版本號才能使用，本來這不是什麼大問題，因為當時連 <a href="https://nodejs.org" target="_blank" rel="external">Node.js</a> 的更新也很緩慢，也是在 0.12 上卡了很長一段時間，後來在用 <a href="http://sailsjs.org/" target="_blank" rel="external">Sails.js</a> 寫最後一個專案時，<a href="https://nodejs.org" target="_blank" rel="external">Node.js</a> 突然直接跳到了 4 版，不久 5 版也跟著推出了。這下感受就大不同了（還是可以動，主要是奇蒙子問題），那時也才開始在意 <a href="http://sailsjs.org/" target="_blank" rel="external">Sails.js</a> 停滯很長一段時間這件事；在這段時間裡，也造成一些 issue 因為沒有後續回應的關係而被官方的 bot 自動關掉，最後決定趁著專案的開發時間還不算久的情況下，直接改用 <a href="http://koajs.com/" target="_blank" rel="external">Koa.js</a> 重新開發，不再碰 <a href="http://sailsjs.org/" target="_blank" rel="external">Sails.js</a>。</p>
+<p>在遷移一陣子之後，發現了 <a href="https://github.com/trailsjs" target="_blank" rel="external">Trails.js</a> 的存在，這是 <a href="http://sailsjs.org/" target="_blank" rel="external">Sails.js</a> 的其中一個成員離開之後建立的專案，看裡面的專案數量，似乎是以 <a href="http://koajs.com/" target="_blank" rel="external">Koa.js</a>、<a href="http://expressjs.com/" target="_blank" rel="external">Express.js</a>、<a href="http://hapijs.com/" target="_blank" rel="external">Hapi.js</a> 等各個基礎 framework 為底，再分別客製打包而成，在安裝時就可以選自己順手的為底來往上建立，選擇上比較靈活，但官方維護的心力應該也多了不少，目前還在 1.0 alpha，能不能取代 <a href="http://sailsjs.org/" target="_blank" rel="external">Sails.js</a> 還得再觀察。</p>
+<h2 id="相關網址"><a href="#相關網址" class="headerlink" title="相關網址"></a>相關網址</h2><ul>
+<li><a href="https://github.com/langateam/sails-permissions/issues/200" target="_blank" rel="external">Ending Sails.js Support. Migrating sails-permissions to Trails</a>（裡面有列一些相關討論的 issue 連結，包含雙方各自的說法）</li>
+<li><a href="http://knovourland.logdown.com/posts/search?utf8=%E2%9C%93&amp;q=kraken.js" target="_blank" rel="external">以前 Blog 寫的 Kraken.js 筆記</a>（不過現在都 2.0 了，應該比較沒參考價值了）</li>
+</ul>
+<h2 id="Trails-js-介紹影片"><a href="#Trails-js-介紹影片" class="headerlink" title="Trails.js 介紹影片"></a>Trails.js 介紹影片</h2><div class="video-container"><iframe src="//www.youtube.com/embed/AbSp8jqFDAY" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="自肥區"><a href="#自肥區" class="headerlink" title="自肥區"></a>自肥區</h2><p>我把在使用 <a href="http://koajs.com/" target="_blank" rel="external">Koa.js</a> 這段期間用到的 plugins 以自己覺得合適的架構打包，並用 <a href="http://yeoman.io/" target="_blank" rel="external">Yeoman</a> 來做自動化安裝，不過目前只有做將整個專案架構複製到自己的資料夾裡這件事而已，更多客製化的方式還得研究研究，另外之後會先把 plugins 刪掉一大部分，並將 <a href="http://gulpjs.com/" target="_blank" rel="external">Gulp.js</a> 改成單純的用 npm script 來自動化管理專案，等這些基本問題弄好後，再把其他 plugins 加回去。</p>
+<ul>
+<li><a href="https://github.com/Knovour/generator-koat" target="_blank" rel="external">專案網址</a></li>
+</ul>
 
         
         </div>
@@ -225,7 +244,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2016/03/22/d3-p5-js-notes-custom-ajax-preload/" data-id="cim3oblqm0004wzn3n0axezfv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2016/03/23/problems-about-sails-js/" data-id="cim3oblqu000bwzn3c796wknm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -293,7 +312,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="https://notes.knovour.ninja/2016/03/22/d3-p5-js-notes-custom-ajax-preload/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/03/22/d3-p5-js-notes-custom-ajax-preload/">評論</a>
+        <a href="https://notes.knovour.ninja/2016/03/23/problems-about-sails-js/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/03/23/problems-about-sails-js/">評論</a>
     
 
         </footer>
@@ -302,19 +321,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2016/03/23/problems-about-sails-js/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    Sails.js 的一些問題及現況
-                
-            </div>
-        </a>
     
-    
-        <a href="/2016/03/03/d3-p5-js-notes-area-chart/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2016/03/22/d3-p5-js-notes-custom-ajax-preload/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">D3 + p5.js 筆記 - Area Chart</div>
+            <div class="article-nav-title">D3 + p5.js 筆記 - 自訂 preload 的 Ajax</div>
         </a>
     
 </nav>
@@ -391,7 +401,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'knovour-notes';
     
     
-    var disqus_url = 'https://notes.knovour.ninja/2016/03/22/d3-p5-js-notes-custom-ajax-preload/';
+    var disqus_url = 'https://notes.knovour.ninja/2016/03/23/problems-about-sails-js/';
     
     (function() {
     var dsq = document.createElement('script');

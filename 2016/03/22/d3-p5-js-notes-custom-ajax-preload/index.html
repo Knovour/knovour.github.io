@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://notes.knovour.ninja/2016/03/22/d3-p5-js-notes-custom-ajax-preload/index.html">
 <meta property="og:site_name" content="Knovour Notes">
 <meta property="og:description" content="給 p5.js 的 preload function 增加自訂的 ajax 請求。">
-<meta property="og:updated_time" content="2016-03-22T10:14:28.956Z">
+<meta property="og:updated_time" content="2016-03-22T10:15:00.049Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="D3 + p5.js 筆記 - 自訂 preload 的 Ajax">
 <meta name="twitter:description" content="給 p5.js 的 preload function 增加自訂的 ajax 請求。">
@@ -212,7 +212,7 @@ ga('send', 'pageview');
 <script src="https://gist.github.com/Knovour/57b761d08ff758396ab6.js?file=p5-private-preload.js"></script>
 
 <p>這邊要注意的是，在第 10 行的部份，請求後的資料不能直接指定給預先宣告的變數，否則 <code>setup()</code> 取資料時會是 <code>undefined</code>，或者可以這樣宣告：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// customPreload</span></span><br><span class="line"><span class="keyword">let</span> tmp = &#123; list: [] &#125;;</span><br><span class="line"><span class="comment">// ---</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// load function</span></span><br><span class="line"><span class="keyword">let</span> tmp = &#123; list: [] &#125;;</span><br><span class="line"><span class="comment">// ---</span></span><br></pre></td></tr></table></figure>
 <p>在取得資料後直接將資料指定給 <code>tmp.list</code>，在 <code>setup()</code> 裡直接以 <code>data.list</code> 的方式取值即可，而範例裡的 <code>return</code> 跟 <code>callback</code> 都是必要的，省略任何一樣都會出現 <code>undefined</code>。</p>
 <p>不用 <code>new</code> 的方式可以到<a href="https://gist.github.com/Knovour/57b761d08ff758396ab6" target="_blank" rel="external">這裡</a>檢視。</p>
 

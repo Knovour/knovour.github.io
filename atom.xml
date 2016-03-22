@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-03-22T10:14:28.956Z</updated>
+  <updated>2016-03-22T10:15:00.049Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="https://notes.knovour.ninja/2016/03/22/d3-p5-js-notes-custom-ajax-preload/"/>
     <id>https://notes.knovour.ninja/2016/03/22/d3-p5-js-notes-custom-ajax-preload/</id>
     <published>2016-03-22T08:17:20.000Z</published>
-    <updated>2016-03-22T10:14:28.956Z</updated>
+    <updated>2016-03-22T10:15:00.049Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;http://p5js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5.js&lt;/a&gt; 已經內建數種檔案請求的方式，這邊紀錄一下自己建立 ajax 請求註冊到 &lt;code&gt;preload()&lt;/code&gt; 的方式（以 &lt;a href=&quot;https://d3js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;D3&lt;/a&gt; 為例）。&lt;/p&gt;
 &lt;script src=&quot;https://gist.github.com/Knovour/57b761d08ff758396ab6.js?file=p5-private-preload.js&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;這邊要注意的是，在第 10 行的部份，請求後的資料不能直接指定給預先宣告的變數，否則 &lt;code&gt;setup()&lt;/code&gt; 取資料時會是 &lt;code&gt;undefined&lt;/code&gt;，或者可以這樣宣告：&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&#39;use strict&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// customPreload&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; tmp = &amp;#123; list: [] &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// ---&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&#39;use strict&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// load function&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; tmp = &amp;#123; list: [] &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// ---&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;在取得資料後直接將資料指定給 &lt;code&gt;tmp.list&lt;/code&gt;，在 &lt;code&gt;setup()&lt;/code&gt; 裡直接以 &lt;code&gt;data.list&lt;/code&gt; 的方式取值即可，而範例裡的 &lt;code&gt;return&lt;/code&gt; 跟 &lt;code&gt;callback&lt;/code&gt; 都是必要的，省略任何一樣都會出現 &lt;code&gt;undefined&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;不用 &lt;code&gt;new&lt;/code&gt; 的方式可以到&lt;a href=&quot;https://gist.github.com/Knovour/57b761d08ff758396ab6&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;這裡&lt;/a&gt;檢視。&lt;/p&gt;
 </content>

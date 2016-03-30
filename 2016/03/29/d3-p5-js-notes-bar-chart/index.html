@@ -3,18 +3,29 @@
 <head>
     <meta charset="utf-8">
     
-    <title>D3 + p5.js 筆記 - 前言 | Knovour Notes</title>
+    <title>d3-p5.js-notes-bar-chart | Knovour Notes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="往後會用 [D3] 官方範例來練習，並用 [p5.js] 繪製而成，程式碼會放到 GitHub 上。">
+    <meta name="description" content="程式碼
+範例來源
+
+程式碼說明這次範例來源有 hover 的顏色變化，為了省略寫作標判定的部份，我另外載入了 p5.play.js。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="D3 + p5.js 筆記 - 前言">
-<meta property="og:url" content="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/index.html">
+<meta property="og:title" content="d3-p5.js-notes-bar-chart">
+<meta property="og:url" content="https://notes.knovour.ninja/2016/03/29/d3-p5-js-notes-bar-chart/index.html">
 <meta property="og:site_name" content="Knovour Notes">
-<meta property="og:description" content="往後會用 [D3] 官方範例來練習，並用 [p5.js] 繪製而成，程式碼會放到 GitHub 上。">
-<meta property="og:updated_time" content="2016-03-02T19:04:02.176Z">
+<meta property="og:description" content="程式碼
+範例來源
+
+程式碼說明這次範例來源有 hover 的顏色變化，為了省略寫作標判定的部份，我另外載入了 p5.play.js。">
+<meta property="og:image" content="https://farm2.staticflickr.com/1649/25528810634_018358eb4d_o.png">
+<meta property="og:updated_time" content="2016-03-30T14:35:15.111Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="D3 + p5.js 筆記 - 前言">
-<meta name="twitter:description" content="往後會用 [D3] 官方範例來練習，並用 [p5.js] 繪製而成，程式碼會放到 GitHub 上。">
+<meta name="twitter:title" content="d3-p5.js-notes-bar-chart">
+<meta name="twitter:description" content="程式碼
+範例來源
+
+程式碼說明這次範例來源有 hover 的顏色變化，為了省略寫作標判定的部份，我另外載入了 p5.play.js。">
+<meta name="twitter:image" content="https://farm2.staticflickr.com/1649/25528810634_018358eb4d_o.png">
 <meta name="twitter:creator" content="@261262114">
     <script type="text/javascript">var _jf = _jf || [];_jf.push(['p','40489']);_jf.push(['_setFont','xingothic-tc-w4','css','.xingothic-tc-w4']);_jf.push(['_setFont','xingothic-tc-w4','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w4','weight',400]);_jf.push(['_setFont','xingothic-tc-w3','css','.xingothic-tc-w3']);_jf.push(['_setFont','xingothic-tc-w3','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w3','weight',300]);_jf.push(['_setFont','cwtexqhei','css','.cwtexqhei']);_jf.push(['_setFont','cwtexqhei','alias','cwtexqhei']);_jf.push(['_setFont','cwtexqhei','weight',700]);(function(f,q,c,h,e,i,r,d){var k=f._jf;if(k.constructor===Object){return}var l,t=q.getElementsByTagName("html")[0],a=function(u){for(var v in k){if(k[v][0]==u){if(false===k[v][1].call(k)){break}}}},j=/\S+/g,o=/[\t\r\n\f]/g,b=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,g="".trim,s=g&&!g.call("\uFEFF\xA0")?function(u){return u==null?"":g.call(u)}:function(u){return u==null?"":(u+"").replace(b,"")},m=function(y){var w,z,v,u,x=typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):" ";if(z){u=0;while((v=w[u++])){if(z.indexOf(" "+v+" ")<0){z+=v+" "}}t[c]=s(z)}}},p=function(y){var w,z,v,u,x=arguments.length===0||typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):"";if(z){u=0;while((v=w[u++])){while(z.indexOf(" "+v+" ")>=0){z=z.replace(" "+v+" "," ")}}t[c]=y?s(z):""}}},n;k.push(["_eventActived",function(){p(h);m(e)}]);k.push(["_eventInactived",function(){p(h);m(i)}]);k.addScript=n=function(u,A,w,C,E,B){E=E||function(){};B=B||function(){};var x=q.createElement("script"),z=q.getElementsByTagName("script")[0],v,y=false,D=function(){x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;a("_eventInactived");B()};if(C){v=setTimeout(function(){D()},C)}x.type=A||"text/javascript";x.async=w;x.onload=x.onreadystatechange=function(G,F){if(!y&&(!x.readyState||/loaded|complete/.test(x.readyState))){y=true;if(C){clearTimeout(v)}x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;if(!F){setTimeout(function(){E()},200)}}};x.onerror=function(H,G,F){if(C){clearTimeout(v)}D();return true};x.src=u;z.parentNode.insertBefore(x,z)};a("_eventPreload");m(h);n(r,"text/javascript",false,3000)})(this,this.document,"className","jf-loading","jf-active","jf-inactive","//d3gc6cgx8oosp4.cloudfront.net/js/stable/v/4.9.7/id/171273672556");</script>
     
@@ -172,8 +183,16 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><article id="post-d3-p5-js-notes" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-d3-p5-js-notes-bar-chart" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
+        
+            
+	
+		<img src="https://farm2.staticflickr.com/1649/25528810634_018358eb4d_o.png" class="article-banner" />
+	
+
+
+
         
         
         
@@ -181,7 +200,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-            D3 + p5.js 筆記 - 前言
+            d3-p5.js-notes-bar-chart
         </h1>
     
 
@@ -189,32 +208,30 @@ ga('send', 'pageview');
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/03/01/d3-p5-js-notes/">
-            <time datetime="2016-03-01T01:20:14.000Z" itemprop="datePublished">2016-03-01</time>
+        <a href="/2016/03/29/d3-p5-js-notes-bar-chart/">
+            <time datetime="2016-03-29T15:36:17.000Z" itemprop="datePublished">2016-03-29</time>
         </a>
     </div>
 
 
                     
                     
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/D3/">D3</a>, <a class="tag-link" href="/tags/p5-js/">p5.js</a>
-    </div>
-
                 </div>
             </header>
         
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>這陣子看了點 <a href="https://d3js.org/" target="_blank" rel="external">D3</a>，並找了官方 wiki 的<a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>來試試，不過不是用 SVG，而是用 canvas 來畫。</p>
-<p>之前要寫的網站要生成簡易的圖表，但因為沒學過 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 的經驗（當時也來不及），所以找了現成的 <a href="http://www.chartjs.org/" target="_blank" rel="external">Chart.js</a> 來用，除了這套之外，之後也在 feedly 看了不少圖表生成的套件介紹，蠻多都是用 canvas 的。不過這倒也不是什麼選擇 canvas 的原因。</p>
-<blockquote>
-<p>單純犯賤罷了…</p>
-</blockquote>
-<p>然而，<a href="https://d3js.org/" target="_blank" rel="external">D3</a> 對 canvas 的支援不好，不過這也不是很意外。問題在於要怎麼用 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 把處理後的資料給 canvas 畫，根據<a href="http://blog.infographics.tw/2015/07/optimize-d3-with-canvas/" target="_blank" rel="external">這裡</a>的介紹，第三種方式算是我在網路上最常看見的，基本上就是處理資料並創建虛假的元素，假裝自己在操作 SVG，然後再把這些<strong>假元素</strong>吐出來再用 canvas 的方式畫出來，怎麼看都覺得…蠻蠢的。所以我比較偏好第二種方式，讓 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 負責處理資料、生成刻度等等，再用 <a href="http://p5js.org/" target="_blank" rel="external">p5.js</a> 直接畫上去。</p>
-<p>總之，之後會加減從 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 官方的<a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>裡面先挑簡單的例子來練習，也會原始碼放到 GitHub 上。</p>
+            <ul>
+<li><a href="https://github.com/Knovour/d3-p5-practice/tree/master/example/bar" target="_blank" rel="external">程式碼</a></li>
+<li><a href="http://bl.ocks.org/mbostock/3885304" target="_blank" rel="external">範例來源</a></li>
+</ul>
+<h2 id="程式碼說明"><a href="#程式碼說明" class="headerlink" title="程式碼說明"></a>程式碼說明</h2><p>這次範例來源有 hover 的顏色變化，為了省略寫作標判定的部份，我另外載入了 <a href="http://p5play.molleindustria.org/" target="_blank" rel="external">p5.play.js</a>。<br><a id="more"></a></p>
+<p>大部分的區塊應該不用特別講了，大概提一下 <a href="http://p5play.molleindustria.org/" target="_blank" rel="external">p5.play.js</a> 的一點坑就好。</p>
+<p><code>createSprite</code> 的座標指的是每個 bar 的中心點，向外畫出矩形，所以不會像一般畫長方形一樣，座標在左上角，若不額外調整位置會跑掉。然而，這種畫法是不是最終定案不清楚，畢竟 <a href="http://p5play.molleindustria.org/" target="_blank" rel="external">p5.play.js</a> 還不是正式版。</p>
+<h2 id="題外話"><a href="#題外話" class="headerlink" title="題外話"></a>題外話</h2><p>用 <code>canvas</code> 畫圖其中一個麻煩的地方大概就是游標判定了，<a href="http://p5play.molleindustria.org/" target="_blank" rel="external">p5.play.js</a> 的游標判定功能不算強大，只有支援圓跟矩形，圖片則是有另外的判定方式（游標底下是不是透明背景之類），跟其他遊戲引擎類的差不多。</p>
+<p>像百度的 <a href="http://echarts.baidu.com/" target="_blank" rel="external">ECharts</a> 的範例互動多半也是用比較折衷的做法。</p>
+<p>不過之前看到了 [Paper.js] 這個東西，在游標測試的<a href="http://paperjs.org/examples/hit-testing/" target="_blank" rel="external">範例</a>裡看起來運作得很完美，改天來試試看。</p>
 
         
         </div>
@@ -225,7 +242,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/" data-id="cimeyfqh90005zxn376u3y4nc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2016/03/29/d3-p5-js-notes-bar-chart/" data-id="cimeyfqh70003zxn35k68u3ue" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -293,7 +310,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/">評論</a>
+        <a href="https://notes.knovour.ninja/2016/03/29/d3-p5-js-notes-bar-chart/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/03/29/d3-p5-js-notes-bar-chart/">評論</a>
     
 
         </footer>
@@ -302,19 +319,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2016/03/03/d3-p5-js-notes-introduce-p5/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    D3 + p5.js 筆記 - 介紹 p5
-                
-            </div>
-        </a>
     
-    
-        <a href="/2016/02/21/koa-notes/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2016/03/23/problems-about-sails-js/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Koa.js 踩坑筆記</div>
+            <div class="article-nav-title">Sails.js 的一些問題及現況</div>
         </a>
     
 </nav>
@@ -391,7 +399,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'knovour-notes';
     
     
-    var disqus_url = 'https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/';
+    var disqus_url = 'https://notes.knovour.ninja/2016/03/29/d3-p5-js-notes-bar-chart/';
     
     (function() {
     var dsq = document.createElement('script');

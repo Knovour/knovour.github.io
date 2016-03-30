@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-03-23T11:38:48.557Z</updated>
+  <updated>2016-03-30T14:35:15.111Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>d3-p5.js-notes-bar-chart</title>
+    <link href="https://notes.knovour.ninja/2016/03/29/d3-p5-js-notes-bar-chart/"/>
+    <id>https://notes.knovour.ninja/2016/03/29/d3-p5-js-notes-bar-chart/</id>
+    <published>2016-03-29T15:36:17.000Z</published>
+    <updated>2016-03-30T14:35:15.111Z</updated>
+    
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Knovour/d3-p5-practice/tree/master/example/bar&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;程式碼&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://bl.ocks.org/mbostock/3885304&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;範例來源&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;程式碼說明&quot;&gt;&lt;a href=&quot;#程式碼說明&quot; class=&quot;headerlink&quot; title=&quot;程式碼說明&quot;&gt;&lt;/a&gt;程式碼說明&lt;/h2&gt;&lt;p&gt;這次範例來源有 hover 的顏色變化，為了省略寫作標判定的部份，我另外載入了 &lt;a href=&quot;http://p5play.molleindustria.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5.play.js&lt;/a&gt;。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;大部分的區塊應該不用特別講了，大概提一下 &lt;a href=&quot;http://p5play.molleindustria.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5.play.js&lt;/a&gt; 的一點坑就好。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;createSprite&lt;/code&gt; 的座標指的是每個 bar 的中心點，向外畫出矩形，所以不會像一般畫長方形一樣，座標在左上角，若不額外調整位置會跑掉。然而，這種畫法是不是最終定案不清楚，畢竟 &lt;a href=&quot;http://p5play.molleindustria.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5.play.js&lt;/a&gt; 還不是正式版。&lt;/p&gt;
+&lt;h2 id=&quot;題外話&quot;&gt;&lt;a href=&quot;#題外話&quot; class=&quot;headerlink&quot; title=&quot;題外話&quot;&gt;&lt;/a&gt;題外話&lt;/h2&gt;&lt;p&gt;用 &lt;code&gt;canvas&lt;/code&gt; 畫圖其中一個麻煩的地方大概就是游標判定了，&lt;a href=&quot;http://p5play.molleindustria.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;p5.play.js&lt;/a&gt; 的游標判定功能不算強大，只有支援圓跟矩形，圖片則是有另外的判定方式（游標底下是不是透明背景之類），跟其他遊戲引擎類的差不多。&lt;/p&gt;
+&lt;p&gt;像百度的 &lt;a href=&quot;http://echarts.baidu.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ECharts&lt;/a&gt; 的範例互動多半也是用比較折衷的做法。&lt;/p&gt;
+&lt;p&gt;不過之前看到了 [Paper.js] 這個東西，在游標測試的&lt;a href=&quot;http://paperjs.org/examples/hit-testing/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;範例&lt;/a&gt;裡看起來運作得很完美，改天來試試看。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Knovour/d3-p5-practice/tree/master/example/bar&quot;&gt;程式碼&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://bl.ocks.org/mbostock/3885304&quot;&gt;範例來源&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;程式碼說明&quot;&gt;&lt;a href=&quot;#程式碼說明&quot; class=&quot;headerlink&quot; title=&quot;程式碼說明&quot;&gt;&lt;/a&gt;程式碼說明&lt;/h2&gt;&lt;p&gt;這次範例來源有 hover 的顏色變化，為了省略寫作標判定的部份，我另外載入了 &lt;a href=&quot;http://p5play.molleindustria.org/&quot;&gt;p5.play.js&lt;/a&gt;。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Sails.js 的一些問題及現況</title>

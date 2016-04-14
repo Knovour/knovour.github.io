@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-03-30T15:31:45.912Z</updated>
+  <updated>2016-04-14T13:44:00.913Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>記憶中看過最不尊重設計的一件事</title>
+    <link href="https://notes.knovour.ninja/2016/04/14/one-thing-about-disrespect-design-in-my-memory/"/>
+    <id>https://notes.knovour.ninja/2016/04/14/one-thing-about-disrespect-design-in-my-memory/</id>
+    <published>2016-04-14T12:41:48.000Z</published>
+    <updated>2016-04-14T13:44:00.913Z</updated>
+    
+    <content type="html">&lt;p&gt;這件事其實很久了，只是最近又想到它，所以乾脆紀錄下來好了。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/adobe-fonts/source-han-sans&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;思源黑體&lt;/a&gt;，一套完整的中文字體，可以在網頁上完整顯示，不會因為找不到字而出現豆腐框為主要目標，現在應該很多人都知道這個字體了；Google 那邊則另外命名叫 &lt;a href=&quot;https://www.google.com/get/noto/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Noto Sans&lt;/a&gt;，不過重點不在這，這邊只是要紀錄一下思源黑體剛發佈時發生的事。&lt;/p&gt;
+&lt;p&gt;在 &lt;a href=&quot;http://blog.typekit.com/alternate/source-han-sans-cht/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Adobe Typekit Blog&lt;/a&gt; 上，官方介紹了這個字體的誕生，談了一下設計的人員，以及講解一些中文字在使用漢字的國家之間寫法的差異。&lt;/p&gt;
+&lt;p&gt;但有個傢伙卻開始在留言中大談古字的真善美，談台灣教育部的不是，義正辭嚴的要求遵循「正統」繁體中文的字體寫法，鬧了一輪後還去辦了個 GitHub 帳號跑去發 &lt;a href=&quot;https://github.com/adobe-fonts/source-han-sans/issues/6&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;issue&lt;/a&gt; 再來一次，硬要這群國外設計團隊也該當個考古學者；在這串上面大放厥詞拍拍屁股後，直到現在再也沒有在任何 issue 裡出現過。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;網路留言看久了之後，那種習慣把自己叫「在下」的人，要馬只是單純宅了點，要馬就是個白目。&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      紀錄一下思源黑體剛發佈時發生的事
+    
+    </summary>
+    
+    
+      <category term="雜談" scheme="https://notes.knovour.ninja/tags/%E9%9B%9C%E8%AB%87/"/>
+    
+  </entry>
   
   <entry>
     <title>D3 + p5.js 筆記 - Bar Chart</title>

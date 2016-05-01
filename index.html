@@ -126,11 +126,11 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                14
+                15
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                13
+                16
                 <span>標籤</span>
             </div>
         </div>
@@ -172,6 +172,134 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-react-flux-short-explain" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/05/02/react-flux-short-explain/">React.js 筆記 - Flux 的個人理解</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/05/02/react-flux-short-explain/">
+            <time datetime="2016-05-01T18:01:07.000Z" itemprop="datePublished">2016-05-02</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/flux/">flux</a>, <a class="tag-link" href="/tags/react-js/">react.js</a>, <a class="tag-link" href="/tags/redux/">redux</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p><a href="https://facebook.github.io/react/">React.js</a> 的 <a href="https://facebook.github.io/flux/">Flux</a> 的部份我看了好久還是不太能理解他的意思，這幾天總算理出點頭緒（雖然不知道對不對…），在這邊做一點紀錄。</p>
+<h2 id="用-jQuery-當範例"><a href="#用-jQuery-當範例" class="headerlink" title="用 jQuery 當範例"></a>用 jQuery 當範例</h2><p>以點擊按鈕就新增一張卡片為例，在寫 jQuery 的時候，一開始剛學時，大概會像下面這樣子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#addCard'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//- 新增數據</span></span><br><span class="line">  <span class="comment">/* do something */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//- 生成 html 並放進網頁裡</span></span><br><span class="line">  <span class="comment">/* do something */</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+            <p class="article-more-link">
+                <a href="/2016/05/02/react-flux-short-explain/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://notes.knovour.ninja/2016/05/02/react-flux-short-explain/" data-id="cinoy80sf000cfdn3rrkxc782" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://notes.knovour.ninja/2016/05/02/react-flux-short-explain/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/05/02/react-flux-short-explain/">評論</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-one-thing-about-disrespect-design-in-my-memory" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -235,7 +363,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2016/04/14/one-thing-about-disrespect-design-in-my-memory/" data-id="cin0bqn140008nln36tsdl4gp" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2016/04/14/one-thing-about-disrespect-design-in-my-memory/" data-id="cinoy80sa0008fdn3m7jambpi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -370,7 +498,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2016/03/29/d3-p5-js-notes-bar-chart/" data-id="cin0bqn1d000fnln3blwrvb8k" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2016/03/29/d3-p5-js-notes-bar-chart/" data-id="cinoy80ty001sfdn32470x3i3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -507,7 +635,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2016/03/23/problems-about-sails-js/" data-id="cin0bqn16000anln3wfytq6lx" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2016/03/23/problems-about-sails-js/" data-id="cinoy80sb000afdn3js4wefm9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -638,7 +766,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2016/03/22/d3-p5-js-notes-custom-ajax-preload/" data-id="cin0bqn110004nln3p7tmnqa4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2016/03/22/d3-p5-js-notes-custom-ajax-preload/" data-id="cinoy80s80004fdn30a3oj04q" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -778,7 +906,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-area-chart/" data-id="cin0bqn1c000enln378d9flep" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-area-chart/" data-id="cinoy80s30001fdn320dtc4ul" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -909,7 +1037,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-introduce-p5/" data-id="cin0bqn100003nln3zrp8oabg" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-introduce-p5/" data-id="cinoy80s70003fdn3ijkjsw7h" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1040,7 +1168,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/" data-id="cin0bqn120005nln3xdv7cr2f" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/" data-id="cinoy80s80005fdn3hjv3n5q6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1170,7 +1298,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2016/02/21/koa-notes/" data-id="cin0bqn140007nln34520maut" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2016/02/21/koa-notes/" data-id="cinoy80s90006fdn3k06aff1u" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1300,7 +1428,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2016/01/12/sequelize-notes/" data-id="cin0bqn1a000cnln3jo9540le" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2016/01/12/sequelize-notes/" data-id="cinoy80sg000dfdn3j1suotpv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1378,133 +1506,6 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-change-blog-from-openshift-to-github" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/01/11/change-blog-from-openshift-to-github/">放棄在 OpenShift 上管理部落格</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/01/11/change-blog-from-openshift-to-github/">
-            <time datetime="2016-01-11T15:40:12.000Z" itemprop="datePublished">2016-01-11</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/ghost/">ghost</a>, <a class="tag-link" href="/tags/openshift/">openshift</a>
-    </div>
-
-                </div>
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>去年決定將 Blog 從 <a href="http://logdown.com/">Logdown</a> 換成自架 <a href="https://ghost.org/">Ghost</a> 後，就想找一個線上空間來管理。但 <a href="https://www.linode.com/">Linode</a> 或 <a href="https://www.digitalocean.com/">Digital Ocean</a> 要從頭來覺得麻煩，而 <a href="https://heroku.com/">Heroku</a> 不知道為何怎樣就是看不懂，後來看到 <a href="https://www.openshift.com/">OpenShift</a> 設定似乎挺簡單，於是就辦來試試看。</p>
-<p>無奈 <a href="https://www.openshift.com/">OpenShift</a> 根本 Bug 滿天飛，社群的 <a href="https://ghost.org/">Ghost</a> 架設速成 script 根本不能用就算了，連從官方的 Node.js 重頭架也常設定跑失敗，跑到最後居然是鎖我帳號？？更別說我在試用時三不五時被登出，不然就是怎麼按 Application 都沒顯示東西，也不知道怎麼回到我剛剛的設定頁面。<br></p>
-            <p class="article-more-link">
-                <a href="/2016/01/11/change-blog-from-openshift-to-github/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/" data-id="cin0bqn0w0001nln3jabufmgp" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/">評論</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一頁 &raquo;</a>
     </nav>
@@ -1516,7 +1517,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">歸檔</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1525,7 +1526,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">標籤</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/D3/">D3</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/">deploy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/">game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ghost/">ghost</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google/">google</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openshift/">openshift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/p5-js/">p5.js</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sails-js/">sails.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/search/">search</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wine/">wine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/雜談/">雜談</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/D3/">D3</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/">deploy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flux/">flux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/">game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ghost/">ghost</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google/">google</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openshift/">openshift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/p5-js/">p5.js</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-js/">react.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redux/">redux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sails-js/">sails.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/search/">search</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wine/">wine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/雜談/">雜談</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 

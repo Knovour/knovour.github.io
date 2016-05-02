@@ -11,12 +11,12 @@
 <meta property="og:url" content="https://notes.knovour.ninja/2016/05/02/react-flux-short-explain/index.html">
 <meta property="og:site_name" content="Knovour Notes">
 <meta property="og:description" content="用 jQuery 來籠統講解 Flux 的流程。">
-<meta property="og:image" content="https://i.imgur.com/2IBUum7.gif">
-<meta property="og:updated_time" content="2016-05-01T19:18:04.811Z">
+<meta property="og:image" content="https://farm2.staticflickr.com/1490/26164008694_dbb0df5f80_o.png">
+<meta property="og:updated_time" content="2016-05-02T11:08:25.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React.js 筆記 - Flux 的個人理解">
 <meta name="twitter:description" content="用 jQuery 來籠統講解 Flux 的流程。">
-<meta name="twitter:image" content="https://i.imgur.com/2IBUum7.gif">
+<meta name="twitter:image" content="https://farm2.staticflickr.com/1490/26164008694_dbb0df5f80_o.png">
 <meta name="twitter:creator" content="@261262114">
     <script type="text/javascript">var _jf = _jf || [];_jf.push(['p','40489']);_jf.push(['_setFont','xingothic-tc-w4','css','.xingothic-tc-w4']);_jf.push(['_setFont','xingothic-tc-w4','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w4','weight',400]);_jf.push(['_setFont','xingothic-tc-w3','css','.xingothic-tc-w3']);_jf.push(['_setFont','xingothic-tc-w3','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w3','weight',300]);_jf.push(['_setFont','cwtexqhei','css','.cwtexqhei']);_jf.push(['_setFont','cwtexqhei','alias','cwtexqhei']);_jf.push(['_setFont','cwtexqhei','weight',700]);(function(f,q,c,h,e,i,r,d){var k=f._jf;if(k.constructor===Object){return}var l,t=q.getElementsByTagName("html")[0],a=function(u){for(var v in k){if(k[v][0]==u){if(false===k[v][1].call(k)){break}}}},j=/\S+/g,o=/[\t\r\n\f]/g,b=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,g="".trim,s=g&&!g.call("\uFEFF\xA0")?function(u){return u==null?"":g.call(u)}:function(u){return u==null?"":(u+"").replace(b,"")},m=function(y){var w,z,v,u,x=typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):" ";if(z){u=0;while((v=w[u++])){if(z.indexOf(" "+v+" ")<0){z+=v+" "}}t[c]=s(z)}}},p=function(y){var w,z,v,u,x=arguments.length===0||typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):"";if(z){u=0;while((v=w[u++])){while(z.indexOf(" "+v+" ")>=0){z=z.replace(" "+v+" "," ")}}t[c]=y?s(z):""}}},n;k.push(["_eventActived",function(){p(h);m(e)}]);k.push(["_eventInactived",function(){p(h);m(i)}]);k.addScript=n=function(u,A,w,C,E,B){E=E||function(){};B=B||function(){};var x=q.createElement("script"),z=q.getElementsByTagName("script")[0],v,y=false,D=function(){x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;a("_eventInactived");B()};if(C){v=setTimeout(function(){D()},C)}x.type=A||"text/javascript";x.async=w;x.onload=x.onreadystatechange=function(G,F){if(!y&&(!x.readyState||/loaded|complete/.test(x.readyState))){y=true;if(C){clearTimeout(v)}x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;if(!F){setTimeout(function(){E()},200)}}};x.onerror=function(H,G,F){if(C){clearTimeout(v)}D();return true};x.src=u;z.parentNode.insertBefore(x,z)};a("_eventPreload");m(h);n(r,"text/javascript",false,3000)})(this,this.document,"className","jf-loading","jf-active","jf-inactive","//d3gc6cgx8oosp4.cloudfront.net/js/stable/v/4.9.7/id/171273672556");</script>
     
@@ -177,6 +177,14 @@ ga('send', 'pageview');
             <section id="main"><article id="post-react-flux-short-explain" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
+            
+	
+		<img src="https://farm2.staticflickr.com/1490/26164008694_dbb0df5f80_o.png" class="article-banner" />
+	
+
+
+
+        
         
         
             <header class="article-header">
@@ -211,7 +219,15 @@ ga('send', 'pageview');
         
             
             <p><a href="https://facebook.github.io/react/" target="_blank" rel="external">React.js</a> 的 <a href="https://facebook.github.io/flux/" target="_blank" rel="external">Flux</a> 的部份我看了好久還是不太能理解他的意思，這幾天總算理出點頭緒（雖然不知道對不對…），在這邊做一點紀錄。</p>
-<h2 id="用-jQuery-當範例"><a href="#用-jQuery-當範例" class="headerlink" title="用 jQuery 當範例"></a>用 jQuery 當範例</h2><p>以點擊按鈕就新增一張卡片為例，在寫 jQuery 的時候，一開始剛學時，大概會像下面這樣子：</p>
+<h2 id="簡單介紹"><a href="#簡單介紹" class="headerlink" title="簡單介紹"></a>簡單介紹</h2><p><a href="https://facebook.github.io/flux/" target="_blank" rel="external">Flux</a> 算是一套前端的處理流程，一般的講法就是前端版的 MVC，主要分四大部份：</p>
+<ul>
+<li>Action: 事件觸發或是跟後端溝通後，發送資料給 Dispatcher。</li>
+<li>Dispatcher: 根據資料內容，分派至對應的函式做處理（通常是參照資料裡面的一個 <code>type</code> 屬性）。</li>
+<li>Store: 儲存負責處理資料的函式，向 Dispatcher 註冊後，再由 Dispatcher 負責分發。</li>
+<li>View: 接收處理後的結果並更新頁面。</li>
+</ul>
+<p>這邊所指的資料在 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React.js</a> 裡叫作 <code>state</code>，當 <code>state</code> 更新之後 View 就會對頁面做相對應的更新</p>
+<h2 id="用-jQuery-當範例"><a href="#用-jQuery-當範例" class="headerlink" title="用 jQuery 當範例"></a>用 jQuery 當範例</h2><p>以點擊按鈕就新增一張卡片為例，一開始用 jQuery 寫時，大概會像下面這樣子：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#addCard'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//- 新增數據</span></span><br><span class="line">  <span class="comment">/* do something */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//- 生成 html 並放進網頁裡</span></span><br><span class="line">  <span class="comment">/* do something */</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>隨著按鈕或其他元件的增加，要新增的事件也會變多，例如再增加一個刪除卡片：</p>

@@ -175,6 +175,16 @@ ga('send', 'pageview');
     <article id="post-react-flux-short-explain" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
+            
+	
+		<a href="/2016/05/02/react-flux-short-explain/" itemprop="url">
+            <img src="https://farm2.staticflickr.com/1490/26164008694_dbb0df5f80_o.png" class="article-banner" />
+        </a>
+	
+
+
+
+        
         
         
             <header class="article-header">
@@ -208,7 +218,15 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             <p><p><a href="https://facebook.github.io/react/">React.js</a> 的 <a href="https://facebook.github.io/flux/">Flux</a> 的部份我看了好久還是不太能理解他的意思，這幾天總算理出點頭緒（雖然不知道對不對…），在這邊做一點紀錄。</p>
-<h2 id="用-jQuery-當範例"><a href="#用-jQuery-當範例" class="headerlink" title="用 jQuery 當範例"></a>用 jQuery 當範例</h2><p>以點擊按鈕就新增一張卡片為例，在寫 jQuery 的時候，一開始剛學時，大概會像下面這樣子：</p>
+<h2 id="簡單介紹"><a href="#簡單介紹" class="headerlink" title="簡單介紹"></a>簡單介紹</h2><p><a href="https://facebook.github.io/flux/">Flux</a> 算是一套前端的處理流程，一般的講法就是前端版的 MVC，主要分四大部份：</p>
+<ul>
+<li>Action: 事件觸發或是跟後端溝通後，發送資料給 Dispatcher。</li>
+<li>Dispatcher: 根據資料內容，分派至對應的函式做處理（通常是參照資料裡面的一個 <code>type</code> 屬性）。</li>
+<li>Store: 儲存負責處理資料的函式，向 Dispatcher 註冊後，再由 Dispatcher 負責分發。</li>
+<li>View: 接收處理後的結果並更新頁面。</li>
+</ul>
+<p>這邊所指的資料在 <a href="https://facebook.github.io/react/">React.js</a> 裡叫作 <code>state</code>，當 <code>state</code> 更新之後 View 就會對頁面做相對應的更新</p>
+<h2 id="用-jQuery-當範例"><a href="#用-jQuery-當範例" class="headerlink" title="用 jQuery 當範例"></a>用 jQuery 當範例</h2><p>以點擊按鈕就新增一張卡片為例，一開始用 jQuery 寫時，大概會像下面這樣子：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#addCard'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//- 新增數據</span></span><br><span class="line">  <span class="comment">/* do something */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//- 生成 html 並放進網頁裡</span></span><br><span class="line">  <span class="comment">/* do something */</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
             <p class="article-more-link">
                 <a href="/2016/05/02/react-flux-short-explain/#more">Read More</a>

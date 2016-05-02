@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-05-01T19:18:04.811Z</updated>
+  <updated>2016-05-02T11:08:25.375Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -20,10 +20,18 @@
     <link href="https://notes.knovour.ninja/2016/05/02/react-flux-short-explain/"/>
     <id>https://notes.knovour.ninja/2016/05/02/react-flux-short-explain/</id>
     <published>2016-05-01T18:01:07.000Z</published>
-    <updated>2016-05-01T19:18:04.811Z</updated>
+    <updated>2016-05-02T11:08:25.375Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React.js&lt;/a&gt; 的 &lt;a href=&quot;https://facebook.github.io/flux/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Flux&lt;/a&gt; 的部份我看了好久還是不太能理解他的意思，這幾天總算理出點頭緒（雖然不知道對不對…），在這邊做一點紀錄。&lt;/p&gt;
-&lt;h2 id=&quot;用-jQuery-當範例&quot;&gt;&lt;a href=&quot;#用-jQuery-當範例&quot; class=&quot;headerlink&quot; title=&quot;用 jQuery 當範例&quot;&gt;&lt;/a&gt;用 jQuery 當範例&lt;/h2&gt;&lt;p&gt;以點擊按鈕就新增一張卡片為例，在寫 jQuery 的時候，一開始剛學時，大概會像下面這樣子：&lt;/p&gt;
+&lt;h2 id=&quot;簡單介紹&quot;&gt;&lt;a href=&quot;#簡單介紹&quot; class=&quot;headerlink&quot; title=&quot;簡單介紹&quot;&gt;&lt;/a&gt;簡單介紹&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://facebook.github.io/flux/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Flux&lt;/a&gt; 算是一套前端的處理流程，一般的講法就是前端版的 MVC，主要分四大部份：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Action: 事件觸發或是跟後端溝通後，發送資料給 Dispatcher。&lt;/li&gt;
+&lt;li&gt;Dispatcher: 根據資料內容，分派至對應的函式做處理（通常是參照資料裡面的一個 &lt;code&gt;type&lt;/code&gt; 屬性）。&lt;/li&gt;
+&lt;li&gt;Store: 儲存負責處理資料的函式，向 Dispatcher 註冊後，再由 Dispatcher 負責分發。&lt;/li&gt;
+&lt;li&gt;View: 接收處理後的結果並更新頁面。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這邊所指的資料在 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React.js&lt;/a&gt; 裡叫作 &lt;code&gt;state&lt;/code&gt;，當 &lt;code&gt;state&lt;/code&gt; 更新之後 View 就會對頁面做相對應的更新&lt;/p&gt;
+&lt;h2 id=&quot;用-jQuery-當範例&quot;&gt;&lt;a href=&quot;#用-jQuery-當範例&quot; class=&quot;headerlink&quot; title=&quot;用 jQuery 當範例&quot;&gt;&lt;/a&gt;用 jQuery 當範例&lt;/h2&gt;&lt;p&gt;以點擊按鈕就新增一張卡片為例，一開始用 jQuery 寫時，大概會像下面這樣子：&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;string&quot;&gt;&#39;#addCard&#39;&lt;/span&gt;).click(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;//- 新增數據&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;/* do something */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;//- 生成 html 並放進網頁裡&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;/* do something */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;隨著按鈕或其他元件的增加，要新增的事件也會變多，例如再增加一個刪除卡片：&lt;/p&gt;

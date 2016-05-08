@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-05-02T11:10:24.019Z</updated>
+  <updated>2016-05-08T04:50:10.428Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>收到 Docker Beta 的通知信了！</title>
+    <link href="https://notes.knovour.ninja/2016/05/08/docker-beta/"/>
+    <id>https://notes.knovour.ninja/2016/05/08/docker-beta/</id>
+    <published>2016-05-08T03:52:01.000Z</published>
+    <updated>2016-05-08T04:50:10.428Z</updated>
+    
+    <content type="html">&lt;p&gt;前兩天終於收到 Docker Beta for Mac 的通知信了，這次的 Docker Beta 在 Mac 和 Windows 底下擺脫了 VirtualBox 的依賴，並且在 Unikernel 技術的加持下，未來每個 container 只會留下需要的部份，打包成最小化的獨立作業系統。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7745/26881682915_ee03a23196_o.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;以後找個時間試試看用 &lt;a href=&quot;http://rancher.com/rancher-os/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RancherOS&lt;/a&gt; 或 &lt;a href=&quot;https://www.weave.works/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Weave&lt;/a&gt; 來組織 MicroService 好了。&lt;/p&gt;
+&lt;h2 id=&quot;延伸閱讀&quot;&gt;&lt;a href=&quot;#延伸閱讀&quot; class=&quot;headerlink&quot; title=&quot;延伸閱讀&quot;&gt;&lt;/a&gt;延伸閱讀&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dockone.io/article/855&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;到底什么是 Unikernel？&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前兩天終於收到 Docker Beta for Mac 的通知信了，這次的 Docker Beta 在 Mac 和 Windows 底下擺脫了 VirtualBox 的依賴，並且在 Unikernel 技術的加持下，未來每個 container 只會留下需要的部份，打包成最
+    
+    </summary>
+    
+    
+      <category term="docker" scheme="https://notes.knovour.ninja/tags/docker/"/>
+    
+  </entry>
   
   <entry>
     <title>React.js 筆記 - Flux 的個人理解</title>

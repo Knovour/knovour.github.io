@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://notes.knovour.ninja/2016/05/08/docker-beta/</loc>
+        <lastmod>2016-05-08T04:50:10.428Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://notes.knovour.ninja/2016/05/02/react-flux-short-explain/</loc>
         <lastmod>2016-05-02T11:10:24.019Z</lastmod>
         <changefreq>weekly</changefreq>

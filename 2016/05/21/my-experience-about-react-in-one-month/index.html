@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>React 一個月的開發感想 | Knovour Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="React 的函數式編程是一個很不錯的體驗，js 本身也勉強算個函數式語言（畢竟發明時有參照一點 Scheme），但 js 結構鬆散，以前用 jQuery 的時期就常覺得自己程式碼寫的有點亂。React 帶來不一樣的思維，雖然有了 ES6 程式碼還是亂（跟 jsx 混在一起實在無法忽視），但至少有個規範在，不會像以前那樣看起來鬆鬆散散的，比較有整體性。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React 一個月的開發感想">
+<meta property="og:url" content="https://notes.knovour.ninja/2016/05/21/my-experience-about-react-in-one-month/index.html">
+<meta property="og:site_name" content="Knovour Notes">
+<meta property="og:description" content="React 的函數式編程是一個很不錯的體驗，js 本身也勉強算個函數式語言（畢竟發明時有參照一點 Scheme），但 js 結構鬆散，以前用 jQuery 的時期就常覺得自己程式碼寫的有點亂。React 帶來不一樣的思維，雖然有了 ES6 程式碼還是亂（跟 jsx 混在一起實在無法忽視），但至少有個規範在，不會像以前那樣看起來鬆鬆散散的，比較有整體性。">
+<meta property="og:image" content="http://i.imgur.com/dQE29dn.png">
+<meta property="og:updated_time" content="2016-05-21T11:54:02.875Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React 一個月的開發感想">
+<meta name="twitter:description" content="React 的函數式編程是一個很不錯的體驗，js 本身也勉強算個函數式語言（畢竟發明時有參照一點 Scheme），但 js 結構鬆散，以前用 jQuery 的時期就常覺得自己程式碼寫的有點亂。React 帶來不一樣的思維，雖然有了 ES6 程式碼還是亂（跟 jsx 混在一起實在無法忽視），但至少有個規範在，不會像以前那樣看起來鬆鬆散散的，比較有整體性。">
+<meta name="twitter:image" content="http://i.imgur.com/dQE29dn.png">
+<meta name="twitter:creator" content="@261262114">
+    <script type="text/javascript">var _jf = _jf || [];_jf.push(['p','40489']);_jf.push(['_setFont','xingothic-tc-w4','css','.xingothic-tc-w4']);_jf.push(['_setFont','xingothic-tc-w4','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w4','weight',400]);_jf.push(['_setFont','xingothic-tc-w3','css','.xingothic-tc-w3']);_jf.push(['_setFont','xingothic-tc-w3','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w3','weight',300]);_jf.push(['_setFont','cwtexqhei','css','.cwtexqhei']);_jf.push(['_setFont','cwtexqhei','alias','cwtexqhei']);_jf.push(['_setFont','cwtexqhei','weight',700]);(function(f,q,c,h,e,i,r,d){var k=f._jf;if(k.constructor===Object){return}var l,t=q.getElementsByTagName("html")[0],a=function(u){for(var v in k){if(k[v][0]==u){if(false===k[v][1].call(k)){break}}}},j=/\S+/g,o=/[\t\r\n\f]/g,b=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,g="".trim,s=g&&!g.call("\uFEFF\xA0")?function(u){return u==null?"":g.call(u)}:function(u){return u==null?"":(u+"").replace(b,"")},m=function(y){var w,z,v,u,x=typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):" ";if(z){u=0;while((v=w[u++])){if(z.indexOf(" "+v+" ")<0){z+=v+" "}}t[c]=s(z)}}},p=function(y){var w,z,v,u,x=arguments.length===0||typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):"";if(z){u=0;while((v=w[u++])){while(z.indexOf(" "+v+" ")>=0){z=z.replace(" "+v+" "," ")}}t[c]=y?s(z):""}}},n;k.push(["_eventActived",function(){p(h);m(e)}]);k.push(["_eventInactived",function(){p(h);m(i)}]);k.addScript=n=function(u,A,w,C,E,B){E=E||function(){};B=B||function(){};var x=q.createElement("script"),z=q.getElementsByTagName("script")[0],v,y=false,D=function(){x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;a("_eventInactived");B()};if(C){v=setTimeout(function(){D()},C)}x.type=A||"text/javascript";x.async=w;x.onload=x.onreadystatechange=function(G,F){if(!y&&(!x.readyState||/loaded|complete/.test(x.readyState))){y=true;if(C){clearTimeout(v)}x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;if(!F){setTimeout(function(){E()},200)}}};x.onerror=function(H,G,F){if(C){clearTimeout(v)}D();return true};x.src=u;z.parentNode.insertBefore(x,z)};a("_eventPreload");m(h);n(r,"text/javascript",false,3000)})(this,this.document,"className","jf-loading","jf-active","jf-inactive","//d3gc6cgx8oosp4.cloudfront.net/js/stable/v/4.9.7/id/171273672556");</script>
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/avatar.png# path to favicon" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-25128269-5', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+    
+
+</head>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Knovour Notes</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜尋"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="https://notes.knovour.ninja"></form>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜尋"><input type="hidden" name="sitesearch" value="https://notes.knovour.ninja"></form>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">Knovour</h2>
+            <h3 id="title">Web Developer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Taipei, Taiwan</span>
+            <a id="follow" target="_blank" href="https://resume.knovour.ninja/">RESUME</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                18
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                17
+                <span>標籤</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    <td>
+                      <a href="https://github.com/Knovour" target="_blank" title="github">
+                        <i class="fa fa-github"></i>
+                      </a>
+                    </td>
+                    
+                    <td>
+                      <a href="https://share.readmoo.com/mooer/612883g92/bookshelf/Knovour/total" target="_blank" title="bookshelf">
+                        <i class="fa fa-book"></i>
+                      </a>
+                    </td>
+                    
+                    <td>
+                      <a href="https://twitter.com/Knovour" target="_blank" title="twitter">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </td>
+                    
+                    <td>
+                      <a href="/atom.xml" target="_blank" title="rss">
+                        <i class="fa fa-rss"></i>
+                      </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-my-experience-about-react-in-one-month" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<img src="http://i.imgur.com/dQE29dn.png" class="article-banner" />
+	
+
+
+
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            React 一個月的開發感想
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/05/21/my-experience-about-react-in-one-month/">
+            <time datetime="2016-05-21T02:05:22.000Z" itemprop="datePublished">2016-05-21</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/react-js/">react.js</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><p>React 是以函數式編程為原則來做開發，函數式編程幾個簡單的重點如：</p>
+<ul>
+<li><strong>數值不可變</strong>：在一些比較嚴格規定的語言如 <a href="https://www.haskell.org/" target="_blank" rel="external">Haskell</a> 的每個變數都是強制不可變的，而大部分的語言都是折衷分為可變與不可變。</li>
+<li><strong>一個函數只做一件事</strong>：這表示函數要單純，所以要把處理的事情分的很清楚，對不是從函數式語言入門的人來說，要分多清楚端看過往寫程式的經驗以及潔癖程度。</li>
+<li><strong>每次回傳都是一筆新的資料</strong>：基於數值不可變的特性。</li>
+<li><strong>一樣的參數 =&gt; 一樣的結果</strong>：這點也包括不該改變參數原本的值，比如 <code>slice</code> 與 <code>splice</code> 這兩個函數都能夠回傳一個陣列指定範圍的切片，但 <code>splice</code> 不屬於純函數。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fruits = [<span class="string">'Banana'</span>, <span class="string">'Orange'</span>, <span class="string">'Lemon'</span>, <span class="string">'Apple'</span>, <span class="string">'Mango'</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 純函數</span></span><br><span class="line">fruits.slice(<span class="number">1</span>, <span class="number">3</span>);  <span class="comment">// ["Orange", "Lemon"]</span></span><br><span class="line">fruits.slice(<span class="number">1</span>, <span class="number">3</span>);  <span class="comment">// ["Orange", "Lemon"]</span></span><br><span class="line">fruits.slice(<span class="number">1</span>, <span class="number">3</span>);  <span class="comment">// ["Orange", "Lemon"]</span></span><br><span class="line"><span class="built_in">console</span>.log(fruits); <span class="comment">// ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 非純函數</span></span><br><span class="line">fruits.splice(<span class="number">1</span>, <span class="number">3</span>);  <span class="comment">// ["Orange", "Lemon", "Apple"]</span></span><br><span class="line"><span class="built_in">console</span>.log(fruits);  <span class="comment">// ["Banana", "Mango"]</span></span><br><span class="line"></span><br><span class="line">fruits.splice(<span class="number">1</span>, <span class="number">3</span>);  <span class="comment">// ["Mango"]</span></span><br><span class="line"><span class="built_in">console</span>.log(fruits);  <span class="comment">// ["Banana"]</span></span><br><span class="line"></span><br><span class="line">fruits.splice(<span class="number">1</span>, <span class="number">3</span>);  <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
+<p>這會帶來什麼好處？</p>
+<ul>
+<li><strong>耦合度低</strong>：每個函數都很單純，程式碼簡短（通常）。</li>
+<li><strong>容易測試</strong>：沒有副作用，傳入與傳出的結果是可預測的。</li>
+<li><strong>效率</strong>：有一個叫 <a href="https://github.com/omcljs/om" target="_blank" rel="external">Om</a> 的項目，是以 <a href="https://github.com/clojure/clojurescript" target="_blank" rel="external">ClojureScript</a> 來寫 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 再轉成純 js，轉換後發現執行效率比用純 js 編寫高出了三倍，其中數值不可變是比較大的主因，促使 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 官方寫了 <a href="https://facebook.github.io/immutable-js/" target="_blank" rel="external">Immutable.js</a> 以達成一樣的結果。<a id="more"></a>
+<h2 id="結構"><a href="#結構" class="headerlink" title="結構"></a>結構</h2></li>
+</ul>
+<p>React 專案一般會分成兩個資料夾：</p>
+<ul>
+<li><code>components</code>：存放網頁單一元素的地方，比如按鈕、表單、卡片等會重複使用到的東西，程式碼會儘量保持簡單乾淨。</li>
+<li><code>containers</code>：載入各個 component 組合出一個頁面、進行數據傳遞以及一些事件綁定的函式建立等等，簡單講就是骯髒事儘量先在這邊處理再傳遞到各個 component。</li>
+</ul>
+<p>建立一個 component 有三種方法：</p>
+<ul>
+<li><strong>單一 function</strong>：最單純的方式，不需要做額外處理，只是單純回傳一個 component 時建議使用。</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Section</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &lt;section className="section"&gt;&lt;/section&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>createClass</strong>：ES5 時的作法，官方範例也是以這種寫法為主，但在 ES6 的 <code>class</code> 成為主流後不再建議使用。</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Section = React.createClass(&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;section className="section"&gt;&lt;/section&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>ES6 class</strong>：現在主流作法，但 ES6 的 class 實現不算完全，寫起來沒有 <code>createClass</code> 那樣有一體性的感覺。</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Section</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;section className="section"&gt;&lt;/section&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="簡單入門"><a href="#簡單入門" class="headerlink" title="簡單入門"></a>簡單入門</h2><p>這是一個快樂的 html 片斷</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"description"</span>&gt;</span>blablabla<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>讓我們分屍他，把屍塊都分開裝起來</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// components</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Section.jsx</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Section</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">section</span> <span class="attr">className</span>=<span class="string">"section"</span>&gt;</span>&#123;this.props.children&#125;<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Header.jsx</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Header</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;this.props.title&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Content.jsx</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Content</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"content"</span>&gt;</span>&#123;this.props.children&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Description.jsx</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Description</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">className</span>=<span class="string">"description"</span>&gt;</span>&#123;this.props.text&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最後再連箱子一起釘回去</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// container</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// App.jsx</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;Section&gt;</span><br><span class="line">        &lt;Header title="Title" /&gt;</span><br><span class="line">        &lt;Content&gt;</span><br><span class="line">          &lt;Description text="blablabla" /&gt;</span><br><span class="line">        &lt;/Content&gt;</span><br><span class="line">      &lt;/Section&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>簡單、清楚、明瞭，與原本 html tag 相比，視覺上好了很多，搭配 <a href="http://rscss.io/" target="_blank" rel="external">rscss</a> 的命名結構我想會是個不錯的選擇。</p>
+<p>在把箱子釘回去之後，魔術師打開箱子，一個完整的 html 片斷又回來了。</p>
+<blockquote>
+<p>一切都看起來都很美好，是吧？</p>
+</blockquote>
+<h4 id="日子久了，需求多了"><a href="#日子久了，需求多了" class="headerlink" title="日子久了，需求多了"></a>日子久了，需求多了</h4><p>我需要事件處理、上面還得有參數紀錄狀態，喔對了我還多了幾個 components，裝上去吧！</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// App.jsx</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">super</span>();</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      hideAlert: <span class="literal">true</span>,</span><br><span class="line">      hideModal: <span class="literal">true</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.openModal = <span class="keyword">this</span>.openModal.bind(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">this</span>.closeModal = <span class="keyword">this</span>.closeModal.bind(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="comment">// do something if you need</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  openModal() &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      hideModal: <span class="literal">false</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  closeModal() &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      hideModal: <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> links = [&#123;</span><br><span class="line">      href: <span class="string">'#'</span>,</span><br><span class="line">      text: <span class="string">'Link1'</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      href: <span class="string">'#'</span>,</span><br><span class="line">      text: <span class="string">'Link2'</span></span><br><span class="line">    &#125;];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;Main&gt;</span><br><span class="line">        &lt;Nav&gt;</span><br><span class="line">          &#123;links.map((&#123; href, text &#125;, i) =&gt;</span><br><span class="line">            &lt;Link key=&#123;i&#125; href=&#123;href&#125; text=&#123;text&#125; /&gt;;</span><br><span class="line">          )&#125;</span><br><span class="line">        &lt;/Nav&gt;</span><br><span class="line">        &lt;Section&gt;</span><br><span class="line">          &lt;Header title="Title" /&gt;</span><br><span class="line">          &lt;Content&gt;</span><br><span class="line">            &lt;Description text="blablabla" /&gt;</span><br><span class="line">            &lt;Button primary onClick=&#123;this.openModal&#125; /&gt;</span><br><span class="line">          &lt;/Content&gt;</span><br><span class="line">          &lt;Alert hide=&#123;this.state.hideAlert&#125; text="You Idiot!!" /&gt;</span><br><span class="line">        &lt;/Section&gt;</span><br><span class="line">        &lt;Modal hide=&#123;this.state.hideModal&#125; header="Modal Header" description="blablabla" onClose=&#123;this.closeModal&#125; /&gt;</span><br><span class="line">      &lt;/Main&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>WTF YOU #@!#$^<em>%^&amp;</em>((*#$…</p>
+</blockquote>
+<h2 id="寫-React-期間會面臨的幾個問題"><a href="#寫-React-期間會面臨的幾個問題" class="headerlink" title="寫 React 期間會面臨的幾個問題"></a>寫 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 期間會面臨的幾個問題</h2><h4 id="觀念落差"><a href="#觀念落差" class="headerlink" title="觀念落差"></a>觀念落差</h4><p>以前的共識是 html、css、js 各自獨立不混雜，而 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 的事件綁定就是綁在 DOM 上（正確來講是 Virtual DOM），這點我其實還能接受；但鼓吹連 css 都要塞進去，卻讓我很難接受，尤其在看到像 <a href="http://www.material-ui.com/" target="_blank" rel="external">Material-UI</a> 這種一打開 console 就看到一大票的 inline css 實在很吐血。</p>
+<p>但這也不是沒有好處，以往載入如 <a href="http://getbootstrap.com/" target="_blank" rel="external">Bootstrap</a> 等的 framework 時，如果不考慮直接修改原始碼來改變樣式時，很常需要另外寫 css 來覆蓋原本的設計，必要時還得補上 <code>!important</code>，如果用上如 [emantic U] 這種小元件很多又彼此有關聯的，那就有如一場災難。</p>
+<p>jsx 裡的 css 以 jsON 格式儲存，如果想改變或新增部份的 <a href="http://www.material-ui.com/" target="_blank" rel="external">Material-UI</a> 裡的 css，只要寫進參數就可以直接替換。</p>
+<h4 id="程式碼難看"><a href="#程式碼難看" class="headerlink" title="程式碼難看"></a>程式碼難看</h4><p>在 js 與 jsx 交雜的情況下，看程式碼是一件頗難過的事，怎麼寫麼排都覺得很難看。一部份原因是 ES6 的 class 只做了半套，如果想讓 class 的程式碼看起來更有一體性，引入審核中的 ES7 語法是個選擇。事實上，現在很多 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 相關的套件，很多在 example 都用上了 ES7 的語法糖，如果自己在開發時沒有用 ES7，那麼在看這些範例時，思維上常要做一點切換。</p>
+<h4 id="事件處理"><a href="#事件處理" class="headerlink" title="事件處理"></a>事件處理</h4><p>絕大部分的事件綁定都沒有很大的問題，但如果是要偵測瀏覽器事件（比如視窗縮放）時就會有點麻煩了，在參考相關 plugins 的解法後，目前自己的作法是這樣：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Container</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">super</span>();</span><br><span class="line">    <span class="keyword">this</span>.handleResize = <span class="keyword">this</span>.handleResize.bind(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, <span class="keyword">this</span>.handleResize);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    <span class="built_in">window</span>.removeEventListener(<span class="string">'resize'</span>, <span class="keyword">this</span>.handleResize);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleResize() &#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="程式碼真的很難弄好看"><a href="#程式碼真的很難弄好看" class="headerlink" title="程式碼真的很難弄好看"></a>程式碼真的很難弄好看</h4><p>看慣了 jsx 的 tag 之後，在編寫一個 component 時常會有個天人交戰的念頭，比如以 Modal.jsx 的程式碼為例</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Modal.jsx</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Modal</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; hide, header, description, onClose &#125; = <span class="keyword">this</span>.props;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"modal"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">"modal-close"</span> <span class="attr">onClick</span>=<span class="string">&#123;onClose&#125;)</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"modal-header"</span>&gt;</span>&#123;header&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"modal-content"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"modal-description"</span>&gt;</span>&#123;description&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"modal-footer"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>嗯…<br><img src="http://i.imgur.com/8XzWMst.jpg" alt=""></p>
+<p>如果我這樣子寫呢？</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Modal.jsx</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Close</span>(<span class="params">&#123; onClick &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">"modal-close"</span> <span class="attr">onClick</span>=<span class="string">&#123;onClick&#125;)</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Header</span>(<span class="params">&#123; header &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"modal-header"</span>&gt;</span>&#123;header&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Content</span>(<span class="params">&#123; children &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"modal-content"</span>&gt;</span>&#123;children&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Description</span>(<span class="params">&#123; text &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"modal-description"</span>&gt;</span>&#123;text&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Footer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"modal-footer"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Modal</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; hide, header, description, onClose &#125; = <span class="keyword">this</span>.props;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className="modal"&gt;</span><br><span class="line">        &lt;Close onClick=&#123;onClose&#125; /&gt;</span><br><span class="line">        &lt;Header header=&#123;header&#125; /&gt;</span><br><span class="line">        &lt;Content&gt;</span><br><span class="line">          &lt;Description text=&#123;description&#125; /&gt;</span><br><span class="line">        &lt;/Content&gt;</span><br><span class="line">        &lt;Footer /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>…當我沒說</p>
+<p>如果我再把最外圍的另外包起來就太過火了對吧？<br><img src="http://i.imgur.com/59N3dsW.png" alt=""></p>
+<p>換個方式看看</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Modal.jsx</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Modal</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  renderClose() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; onClose &#125; = <span class="keyword">this</span>.props;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">"modal-close"</span> <span class="attr">onClick</span>=<span class="string">&#123;onClose&#125;)</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  renderHeader() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; header &#125; = <span class="keyword">this</span>.props;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"modal-header"</span>&gt;</span>&#123;header&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  renderDescription() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; description &#125; = <span class="keyword">this</span>.props;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"modal-description"</span>&gt;</span>&#123;description&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; hide &#125; = <span class="keyword">this</span>.props;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"modal"</span>&gt;</span></span><br><span class="line">        &#123;this.renderClose()&#125;</span><br><span class="line">        &#123;this.renderHeader()&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"modal-content"</span>&gt;</span></span><br><span class="line">          &#123;this.renderDescription()&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"modal-footer"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>…就…就先這樣吧…</p>
+<h4 id="ES7-要不要給他用下去？"><a href="#ES7-要不要給他用下去？" class="headerlink" title="ES7 要不要給他用下去？"></a>ES7 要不要給他用下去？</h4><p>舉個簡單的例子，React 有 PropTypes 可以檢測傳進來的參數是否有錯誤，ES6 的寫法是這樣：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Modal</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="comment">// ......</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Modal.propTypes = &#123;</span><br><span class="line">  hide:        React.PropTypes.bool.isRequired,</span><br><span class="line">  header:      React.PropTypes.string.isRequired,</span><br><span class="line">  description: React.PropTypes.string.isRequired,</span><br><span class="line">  onClose:     React.PropTypes.func.isRequired</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>ES7：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Modal</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> propTypes = &#123;</span><br><span class="line">    hide:        React.PropTypes.bool.isRequired,</span><br><span class="line">    header:      React.PropTypes.string.isRequired,</span><br><span class="line">    description: React.PropTypes.string.isRequired,</span><br><span class="line">    onClose:     React.PropTypes.func.isRequired</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="comment">// ......</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p><a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 的函數式編程是一個很不錯的體驗，js 本身也勉強算個函數式語言（畢竟發明時有參照一點 Scheme），但 js 結構鬆散，以前用 jQuery <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 帶來不一樣的思維，雖然有了 ES6 程式碼還是亂（跟 jsx 混在一起實在無法忽視），但至少有個規範在，不會像以前那樣看起來鬆鬆散散的，比較有整體性。</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://notes.knovour.ninja/2016/05/21/my-experience-about-react-in-one-month/" data-id="cioh1drod00042kn3o867yyzt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://notes.knovour.ninja/2016/05/21/my-experience-about-react-in-one-month/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/05/21/my-experience-about-react-in-one-month/">評論</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/05/21/my-experience-about-react-redux-in-one-month/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    React/Redux 一個月的開發感想
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2016/05/08/docker-beta/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">收到 Docker Beta 的通知信了！</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">歸檔</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">標籤</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/D3/">D3</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/">deploy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flux/">flux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/">game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ghost/">ghost</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google/">google</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openshift/">openshift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/p5-js/">p5.js</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-js/">react.js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redux/">redux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sails-js/">sails.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/search/">search</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wine/">wine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/雜談/">雜談</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">連結</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://immortalnova.hatenablog.com">遊戲王的反主流學院</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            <i class="fa fa-copyright"></i> 2016 Knovour Zheng<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'knovour-notes';
+    
+    
+    var disqus_url = 'https://notes.knovour.ninja/2016/05/21/my-experience-about-react-in-one-month/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-05-21T13:07:09.607Z</updated>
+  <updated>2016-05-21T13:36:02.648Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://notes.knovour.ninja/2016/05/21/my-experience-about-react-redux-in-one-month/"/>
     <id>https://notes.knovour.ninja/2016/05/21/my-experience-about-react-redux-in-one-month/</id>
     <published>2016-05-21T02:05:22.000Z</published>
-    <updated>2016-05-21T13:07:09.607Z</updated>
+    <updated>2016-05-21T13:36:02.648Z</updated>
     
     <content type="html">&lt;p&gt;之前自學 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt; 時寫了一個簡單的線上簡歷，而我也確實靠他加分而拿到了工作，之後進去也是開始用 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt; 建立頁面，之後加上了 &lt;a href=&quot;http://redux.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Redux&lt;/a&gt;；雖然這兩個總天數加起來大概就一個月，不敢說自己有摸清這些東西，不過還是就開發經驗來寫一些感想。&lt;/p&gt;
 &lt;h2 id=&quot;先講結論&quot;&gt;&lt;a href=&quot;#先講結論&quot; class=&quot;headerlink&quot; title=&quot;先講結論&quot;&gt;&lt;/a&gt;先講結論&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;喜歡嗎？&lt;/strong&gt;其實不討厭，還算是喜歡的；但若是要我向別人推荐的話，我會建議學 &lt;a href=&quot;https://vuejs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Vue.js&lt;/a&gt; 入門，熟了再考慮要不要碰 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt;。若是不排斥用其他語言轉換成 js 的話，&lt;a href=&quot;http://elm-lang.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Elm&lt;/a&gt; 看起來是個不錯的選擇，但 ES6 開始普及之後我對這方面的興趣不大，所以這個建議比較不負責任一點。&lt;/p&gt;
@@ -31,15 +31,19 @@
 &lt;li&gt;&lt;a href=&quot;/2016/05/21/my-experience-about-react-in-one-month/&quot;&gt;React 一個月的開發感想&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Redux 一個月的開發感想（還在寫）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;學習與開發重點&quot;&gt;&lt;a href=&quot;#學習與開發重點&quot; class=&quot;headerlink&quot; title=&quot;學習與開發重點&quot;&gt;&lt;/a&gt;學習與開發重點&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/airbnb/javascript&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Airbnb JavaScript Style Guide&lt;/a&gt; 可以當成一個不錯的 ES6 入門文件，之後再閱讀 &lt;a href=&quot;http://es6.ruanyifeng.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ECMAScript 6 入门&lt;/a&gt;做更進一步的了解。&lt;/li&gt;
+&lt;h2 id=&quot;學習與開發重點&quot;&gt;&lt;a href=&quot;#學習與開發重點&quot; class=&quot;headerlink&quot; title=&quot;學習與開發重點&quot;&gt;&lt;/a&gt;學習與開發重點&lt;/h2&gt;&lt;h4 id=&quot;ES6&quot;&gt;&lt;a href=&quot;#ES6&quot; class=&quot;headerlink&quot; title=&quot;ES6&quot;&gt;&lt;/a&gt;ES6&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/airbnb/javascript&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Airbnb JavaScript Style Guide&lt;/a&gt; 可以當成一個不錯的 ES6 入門文件，之後再閱讀 &lt;a href=&quot;http://es6.ruanyifeng.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ECMAScript 6 入门&lt;/a&gt;做更進一步的了解。&lt;/p&gt;
+&lt;h4 id=&quot;React&quot;&gt;&lt;a href=&quot;#React&quot; class=&quot;headerlink&quot; title=&quot;React&quot;&gt;&lt;/a&gt;React&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;能用 css 解決的就用 css。&lt;/li&gt;
 &lt;li&gt;能用 Virtual DOM 解決的就不要用原生操作。&lt;/li&gt;
-&lt;li&gt;Say goodbye to jQuery&lt;/li&gt;
-&lt;li&gt;跨 component 的事件處理如果數量不多，不妨可以不用考慮 Redux。&lt;/li&gt;
-&lt;li&gt;React/Redux 大部分的 plugins 程式碼都不多，使用前不妨看一下原始碼，或許你只需要擷取出一部份，不用再多載一個就能自己實現。&lt;/li&gt;
+&lt;li&gt;Say goodbye to jQuery.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/airbnb/javascript/tree/master/react&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Airbnb React/JSX Style Guide&lt;/a&gt; 在 React 稍微懂一些後可以參考看看。&lt;/li&gt;
+&lt;li&gt;React 大部分的 plugins 程式碼都不多，使用前不妨看一下原始碼，或許你只需要擷取出一部份，不用再多載一個就能自己實現。&lt;/li&gt;
 &lt;li&gt;ES7 給他用下去。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Redux&quot;&gt;&lt;a href=&quot;#Redux&quot; class=&quot;headerlink&quot; title=&quot;Redux&quot;&gt;&lt;/a&gt;Redux&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;如果只是改變 component 自身狀態，不要考慮用。&lt;/li&gt;
+&lt;li&gt;跨 component 的事件處理如果數量不多，不妨可以考慮不用。&lt;/li&gt;
+&lt;li&gt;第一次用建議不要用太多額外的 plugins，先知道基本用法是怎樣，之後再去考慮這件事。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;後記&quot;&gt;&lt;a href=&quot;#後記&quot; class=&quot;headerlink&quot; title=&quot;後記&quot;&gt;&lt;/a&gt;後記&lt;/h2&gt;&lt;p&gt;我想我下個階段會研究 &lt;a href=&quot;https://github.com/Reactive-Extensions/RxJS&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RxJS&lt;/a&gt; 與 &lt;a href=&quot;http://cycle.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Cycle.js&lt;/a&gt; 看看吧。&lt;/p&gt;
 &lt;h2 id=&quot;延伸閱讀&quot;&gt;&lt;a href=&quot;#延伸閱讀&quot; class=&quot;headerlink&quot; title=&quot;延伸閱讀&quot;&gt;&lt;/a&gt;延伸閱讀&lt;/h2&gt;&lt;ul&gt;

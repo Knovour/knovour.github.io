@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-05-21T13:36:02.648Z</updated>
+  <updated>2016-05-21T14:54:11.240Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title>React/Redux 一個月的開發感想</title>
     <link href="https://notes.knovour.ninja/2016/05/21/my-experience-about-react-redux-in-one-month/"/>
     <id>https://notes.knovour.ninja/2016/05/21/my-experience-about-react-redux-in-one-month/</id>
-    <published>2016-05-21T02:05:22.000Z</published>
-    <updated>2016-05-21T13:36:02.648Z</updated>
+    <published>2016-05-21T10:05:22.000Z</published>
+    <updated>2016-05-21T14:54:11.240Z</updated>
     
     <content type="html">&lt;p&gt;之前自學 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt; 時寫了一個簡單的線上簡歷，而我也確實靠他加分而拿到了工作，之後進去也是開始用 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt; 建立頁面，之後加上了 &lt;a href=&quot;http://redux.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Redux&lt;/a&gt;；雖然這兩個總天數加起來大概就一個月，不敢說自己有摸清這些東西，不過還是就開發經驗來寫一些感想。&lt;/p&gt;
 &lt;h2 id=&quot;先講結論&quot;&gt;&lt;a href=&quot;#先講結論&quot; class=&quot;headerlink&quot; title=&quot;先講結論&quot;&gt;&lt;/a&gt;先講結論&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;喜歡嗎？&lt;/strong&gt;其實不討厭，還算是喜歡的；但若是要我向別人推荐的話，我會建議學 &lt;a href=&quot;https://vuejs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Vue.js&lt;/a&gt; 入門，熟了再考慮要不要碰 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt;。若是不排斥用其他語言轉換成 js 的話，&lt;a href=&quot;http://elm-lang.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Elm&lt;/a&gt; 看起來是個不錯的選擇，但 ES6 開始普及之後我對這方面的興趣不大，所以這個建議比較不負責任一點。&lt;/p&gt;
@@ -29,7 +29,7 @@
 &lt;h2 id=&quot;文章列表&quot;&gt;&lt;a href=&quot;#文章列表&quot; class=&quot;headerlink&quot; title=&quot;文章列表&quot;&gt;&lt;/a&gt;文章列表&lt;/h2&gt;&lt;p&gt;編寫時發現意外的長，就分開來寫了。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;/2016/05/21/my-experience-about-react-in-one-month/&quot;&gt;React 一個月的開發感想&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Redux 一個月的開發感想（還在寫）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/2016/05/21/my-experience-about-redux-in-one-month/&quot;&gt;Redux 一個月的開發感想&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;學習與開發重點&quot;&gt;&lt;a href=&quot;#學習與開發重點&quot; class=&quot;headerlink&quot; title=&quot;學習與開發重點&quot;&gt;&lt;/a&gt;學習與開發重點&lt;/h2&gt;&lt;h4 id=&quot;ES6&quot;&gt;&lt;a href=&quot;#ES6&quot; class=&quot;headerlink&quot; title=&quot;ES6&quot;&gt;&lt;/a&gt;ES6&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/airbnb/javascript&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Airbnb JavaScript Style Guide&lt;/a&gt; 可以當成一個不錯的 ES6 入門文件，之後再閱讀 &lt;a href=&quot;http://es6.ruanyifeng.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ECMAScript 6 入门&lt;/a&gt;做更進一步的了解。&lt;/p&gt;
 &lt;h4 id=&quot;React&quot;&gt;&lt;a href=&quot;#React&quot; class=&quot;headerlink&quot; title=&quot;React&quot;&gt;&lt;/a&gt;React&lt;/h4&gt;&lt;ul&gt;
@@ -38,15 +38,15 @@
 &lt;li&gt;Say goodbye to jQuery.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/airbnb/javascript/tree/master/react&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Airbnb React/JSX Style Guide&lt;/a&gt; 在 React 稍微懂一些後可以參考看看。&lt;/li&gt;
 &lt;li&gt;React 大部分的 plugins 程式碼都不多，使用前不妨看一下原始碼，或許你只需要擷取出一部份，不用再多載一個就能自己實現。&lt;/li&gt;
-&lt;li&gt;ES7 給他用下去。&lt;/li&gt;
+&lt;li&gt;有一定程度了解後，ES7 不妨給他用下去。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&quot;Redux&quot;&gt;&lt;a href=&quot;#Redux&quot; class=&quot;headerlink&quot; title=&quot;Redux&quot;&gt;&lt;/a&gt;Redux&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;如果只是改變 component 自身狀態，不要考慮用。&lt;/li&gt;
-&lt;li&gt;跨 component 的事件處理如果數量不多，不妨可以考慮不用。&lt;/li&gt;
+&lt;li&gt;跨 component 的事件處理如果數量不多，可以考慮不用。&lt;/li&gt;
 &lt;li&gt;第一次用建議不要用太多額外的 plugins，先知道基本用法是怎樣，之後再去考慮這件事。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;後記&quot;&gt;&lt;a href=&quot;#後記&quot; class=&quot;headerlink&quot; title=&quot;後記&quot;&gt;&lt;/a&gt;後記&lt;/h2&gt;&lt;p&gt;我想我下個階段會研究 &lt;a href=&quot;https://github.com/Reactive-Extensions/RxJS&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RxJS&lt;/a&gt; 與 &lt;a href=&quot;http://cycle.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Cycle.js&lt;/a&gt; 看看吧。&lt;/p&gt;
-&lt;h2 id=&quot;延伸閱讀&quot;&gt;&lt;a href=&quot;#延伸閱讀&quot; class=&quot;headerlink&quot; title=&quot;延伸閱讀&quot;&gt;&lt;/a&gt;延伸閱讀&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&quot;線上課程&quot;&gt;&lt;a href=&quot;#線上課程&quot; class=&quot;headerlink&quot; title=&quot;線上課程&quot;&gt;&lt;/a&gt;線上課程&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.reactjsprogram.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React.js Program&lt;/a&gt;: React 線上教學，其中 &lt;strong&gt;React.js Fundamentals&lt;/strong&gt; 這個入門課程是免費的，推荐。&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://egghead.io/series/getting-started-with-redux&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Getting Started with Redux&lt;/a&gt;: Redux 入門課程。&lt;/li&gt;
 &lt;/ul&gt;
@@ -66,11 +66,54 @@
   </entry>
   
   <entry>
+    <title>Redux 一個月的開發感想</title>
+    <link href="https://notes.knovour.ninja/2016/05/21/my-experience-about-redux-in-one-month/"/>
+    <id>https://notes.knovour.ninja/2016/05/21/my-experience-about-redux-in-one-month/</id>
+    <published>2016-05-21T08:05:22.000Z</published>
+    <updated>2016-05-21T14:53:40.377Z</updated>
+    
+    <content type="html">&lt;p&gt;以前看了好幾次 Flux 跟 &lt;a href=&quot;http://redux.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Redux&lt;/a&gt; 的文章，總是無法弄懂他的概念，&lt;code&gt;actions&lt;/code&gt;、&lt;code&gt;reducers&lt;/code&gt;、&lt;code&gt;store&lt;/code&gt; 等等沒辦法在腦中兜出一個概念出來，當時 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt; 也才剛入門，所以對於 &lt;a href=&quot;http://redux.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Redux&lt;/a&gt; 也只有看看文章即止。後來用 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt; 來開發產品中途決定引入 &lt;a href=&quot;http://redux.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Redux&lt;/a&gt; 來處理事件流程，這篇文章是初次開發時的感想，或許某些地方上的觀念不太對請見諒。&lt;/p&gt;
+&lt;p&gt;引入後就按照官方的 example 新增了 &lt;code&gt;actions&lt;/code&gt;、&lt;code&gt;reducers&lt;/code&gt;、&lt;code&gt;store&lt;/code&gt; 三個資料夾，一步一步搞懂 &lt;a href=&quot;http://redux.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Redux&lt;/a&gt; 到底是什麼，為了要了解基本用法，也決定不引入 &lt;a href=&quot;http://redux.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Redux&lt;/a&gt; 太多額外的 plugins。&lt;/p&gt;
+&lt;h2 id=&quot;初次感想&quot;&gt;&lt;a href=&quot;#初次感想&quot; class=&quot;headerlink&quot; title=&quot;初次感想&quot;&gt;&lt;/a&gt;初次感想&lt;/h2&gt;&lt;p&gt;剛開始用的時候自我感覺很良好，很喜歡這種事件流傳遞數據的處理的方式，把事件處理流程清楚拆分，但不久之後這種感覺就淡了。&lt;/p&gt;
+&lt;p&gt;如果我要為 button 新增一個事件的時候，我需要做這些事：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 reducers 的 &lt;code&gt;button.js&lt;/code&gt; 新增一個事件常數（比如 &lt;code&gt;CLICK&lt;/code&gt;）進 switch case 裡。&lt;/li&gt;
+&lt;li&gt;在 actions 的 &lt;code&gt;button.js&lt;/code&gt; 新增一個函數（比如 &lt;code&gt;click()&lt;/code&gt;），負責傳遞這個常數以及資料過去給 reducer。&lt;/li&gt;
+&lt;li&gt;在 container 裡把 actions 裡的函數引進來，再傳給 Button component 做事件綁定。&lt;/li&gt;
+&lt;li&gt;Button component 接收到這個函數後，綁定在 DOM 事件上。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;為了新增一個事件，一個沒有要幹什麼大事的事件，我得跑過四個資料夾才算完成！！&lt;/p&gt;
+&lt;p&gt;如果是新增其他 component 事件，就得在 reducer 跟 action 裡新增一個檔案（比如 &lt;code&gt;form.js&lt;/code&gt;），裏面塞進差不多的程式碼，然後再跟 &lt;code&gt;combineReducer&lt;/code&gt; 註冊這個新的 component 事件。&lt;/p&gt;
+&lt;p&gt;把事件變成事件流傳遞數據這件事我是覺得挺好的，看起來也簡單，問題在於重複的事太多而且煩瑣。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我真希望有個超級 creator 可以搞定這些，不過似乎沒有，找個時間弄好了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;一些坑&quot;&gt;&lt;a href=&quot;#一些坑&quot; class=&quot;headerlink&quot; title=&quot;一些坑&quot;&gt;&lt;/a&gt;一些坑&lt;/h2&gt;&lt;p&gt;container 負責綁定 &lt;a href=&quot;http://redux.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Redux&lt;/a&gt;，綁定之後事件處理過後的參數就會從 container 接收再往下派給 component。&lt;/p&gt;
+&lt;p&gt;通常一個 component 在接收到新的或修改了資訊，從他以下的所有 component 都會重新 render 一遍。既然參數會從 container 接收，那就代表從 container 到以下所有包含的 component 都會被重繪一遍。如果到了覺得會影響效能的地步，就要靈活使用 &lt;code&gt;shouldComponentUpdate&lt;/code&gt; 這個參數來阻止更新。&lt;/p&gt;
+&lt;h2 id=&quot;延伸閱讀&quot;&gt;&lt;a href=&quot;#延伸閱讀&quot; class=&quot;headerlink&quot; title=&quot;延伸閱讀&quot;&gt;&lt;/a&gt;延伸閱讀&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://react-china.org/t/redux/2687&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这段时间研究了下Redux，写写自己对它的感觉&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      React 的函數式編程是一個很不錯的體驗，js 本身也勉強算個函數式語言（畢竟發明時有參照一點 Scheme），但 js 結構鬆散，以前用 jQuery 的時期就常覺得自己程式碼寫的有點亂。React 帶來不一樣的思維，雖然有了 ES6 程式碼還是亂（跟 jsx 混在一起實在無法忽視），但至少有個規範在，不會像以前那樣看起來鬆鬆散散的，比較有整體性。
+    
+    </summary>
+    
+    
+      <category term="react.js" scheme="https://notes.knovour.ninja/tags/react-js/"/>
+    
+      <category term="redux" scheme="https://notes.knovour.ninja/tags/redux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React 一個月的開發感想</title>
     <link href="https://notes.knovour.ninja/2016/05/21/my-experience-about-react-in-one-month/"/>
     <id>https://notes.knovour.ninja/2016/05/21/my-experience-about-react-in-one-month/</id>
     <published>2016-05-21T02:05:22.000Z</published>
-    <updated>2016-05-21T13:15:36.584Z</updated>
+    <updated>2016-05-21T14:28:30.660Z</updated>
     
     <content type="html">&lt;h2 id=&quot;簡介&quot;&gt;&lt;a href=&quot;#簡介&quot; class=&quot;headerlink&quot; title=&quot;簡介&quot;&gt;&lt;/a&gt;簡介&lt;/h2&gt;&lt;p&gt;React 是以函數式編程為原則來做開發，函數式編程幾個簡單的重點如：&lt;/p&gt;
 &lt;ul&gt;
@@ -125,6 +168,9 @@
 &lt;p&gt;但這也不是沒有好處，以往載入如 &lt;a href=&quot;http://getbootstrap.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Bootstrap&lt;/a&gt; 等的 framework 時，如果不考慮直接修改原始碼來改變樣式時，很常需要另外寫 css 來覆蓋原本的設計，必要時還得補上 &lt;code&gt;!important&lt;/code&gt;，如果用上如 &lt;a href=&quot;http://semantic-ui.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Semantic UI&lt;/a&gt; 這種小元件很多又彼此有關聯的，那就有如一場災難。&lt;/p&gt;
 &lt;p&gt;jsx 裡的 css 以 JSON 格式儲存，如果想改變或新增部份的 &lt;a href=&quot;http://www.material-ui.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Material-UI&lt;/a&gt; 裡的 css，只要寫進參數就可以直接替換。&lt;/p&gt;
 &lt;h4 id=&quot;程式碼難看&quot;&gt;&lt;a href=&quot;#程式碼難看&quot; class=&quot;headerlink&quot; title=&quot;程式碼難看&quot;&gt;&lt;/a&gt;程式碼難看&lt;/h4&gt;&lt;p&gt;在 js 與 jsx 交雜的情況下，看程式碼是一件頗難過的事，怎麼寫麼排都覺得很難看。一部份原因是 ES6 的 class 只做了半套，如果想讓 class 的程式碼看起來更有一體性，引入審核中的 ES7 語法是個選擇。事實上，現在很多 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt; 相關的套件，在 example 都用上了 ES7 的語法糖，如果自己在開發時沒有用 ES7，那麼在看這些範例時，思維上常要做一點切換。&lt;/p&gt;
+&lt;h4 id=&quot;重複性工作多&quot;&gt;&lt;a href=&quot;#重複性工作多&quot; class=&quot;headerlink&quot; title=&quot;重複性工作多&quot;&gt;&lt;/a&gt;重複性工作多&lt;/h4&gt;&lt;p&gt;React 很常做重複的事，新增一個 jsx 檔案後，勢必要先補上下面的架構：&lt;/p&gt;
+&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; React, &amp;#123; Component &amp;#125; &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;react&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  render() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// return dom;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt; App;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;我曾嘗試找過有沒有工具讓我可以方便新增一個檔案，但似乎沒有這種東西，真的沒有大概就要自己想辦法來了。&lt;/p&gt;
 &lt;h4 id=&quot;事件處理&quot;&gt;&lt;a href=&quot;#事件處理&quot; class=&quot;headerlink&quot; title=&quot;事件處理&quot;&gt;&lt;/a&gt;事件處理&lt;/h4&gt;&lt;p&gt;絕大部分的事件綁定都沒有很大的問題，但如果是要偵測瀏覽器事件（比如視窗縮放）時就會有點麻煩了，在參考相關 plugins 的解法後，目前自己的作法是這樣：&lt;/p&gt;
 &lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Container&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;React&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;constructor&lt;/span&gt;() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.handleResize = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.handleResize.bind(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  componentDidMount() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.addEventListener(&lt;span class=&quot;string&quot;&gt;&#39;resize&#39;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.handleResize);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  componentWillUnmount() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.removeEventListener(&lt;span class=&quot;string&quot;&gt;&#39;resize&#39;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.handleResize);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  handleResize() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// do something&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  render() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// do something&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h4 id=&quot;程式碼真的很難弄好看&quot;&gt;&lt;a href=&quot;#程式碼真的很難弄好看&quot; class=&quot;headerlink&quot; title=&quot;程式碼真的很難弄好看&quot;&gt;&lt;/a&gt;程式碼真的很難弄好看&lt;/h4&gt;&lt;p&gt;看慣了 jsx 的 tag 之後，在編寫一個 component 時常會有個天人交戰的念頭，比如以 Modal.jsx 的程式碼為例&lt;/p&gt;

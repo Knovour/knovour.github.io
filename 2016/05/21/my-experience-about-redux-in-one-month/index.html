@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Knovour Notes">
 <meta property="og:description" content="React 的函數式編程是一個很不錯的體驗，js 本身也勉強算個函數式語言（畢竟發明時有參照一點 Scheme），但 js 結構鬆散，以前用 jQuery 的時期就常覺得自己程式碼寫的有點亂。React 帶來不一樣的思維，雖然有了 ES6 程式碼還是亂（跟 jsx 混在一起實在無法忽視），但至少有個規範在，不會像以前那樣看起來鬆鬆散散的，比較有整體性。">
 <meta property="og:image" content="http://i.imgur.com/dQE29dn.png">
-<meta property="og:updated_time" content="2016-05-21T14:53:40.377Z">
+<meta property="og:updated_time" content="2016-05-21T14:55:44.231Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redux 一個月的開發感想">
 <meta name="twitter:description" content="React 的函數式編程是一個很不錯的體驗，js 本身也勉強算個函數式語言（畢竟發明時有參照一點 Scheme），但 js 結構鬆散，以前用 jQuery 的時期就常覺得自己程式碼寫的有點亂。React 帶來不一樣的思維，雖然有了 ES6 程式碼還是亂（跟 jsx 混在一起實在無法忽視），但至少有個規範在，不會像以前那樣看起來鬆鬆散散的，比較有整體性。">
@@ -229,7 +229,7 @@ ga('send', 'pageview');
 <li>Button component 接收到這個函數後，綁定在 DOM 事件上。</li>
 </ol>
 <p>為了新增一個事件，一個沒有要幹什麼大事的事件，我得跑過四個資料夾才算完成！！</p>
-<p>如果是新增其他 component 事件，就得在 reducer 跟 action 裡新增一個檔案（比如 <code>form.js</code>），裏面塞進差不多的程式碼，然後再跟 <code>combineReducer</code> 註冊這個新的 component 事件。</p>
+<p>如果是新增其他 component 事件，就得在 reducer 跟 action 裡新增一個檔案（比如 <code>form.js</code>），裏面塞進差不多的程式碼，然後再跟 <code>combineReducers</code> 註冊這個新的 component 事件。</p>
 <p>把事件變成事件流傳遞數據這件事我是覺得挺好的，看起來也簡單，問題在於重複的事太多而且煩瑣。</p>
 <blockquote>
 <p>我真希望有個超級 creator 可以搞定這些，不過似乎沒有，找個時間弄好了。</p>

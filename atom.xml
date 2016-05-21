@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-05-21T14:54:11.240Z</updated>
+  <updated>2016-05-21T14:56:17.494Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="https://notes.knovour.ninja/2016/05/21/my-experience-about-react-redux-in-one-month/"/>
     <id>https://notes.knovour.ninja/2016/05/21/my-experience-about-react-redux-in-one-month/</id>
     <published>2016-05-21T10:05:22.000Z</published>
-    <updated>2016-05-21T14:54:11.240Z</updated>
+    <updated>2016-05-21T14:56:17.494Z</updated>
     
     <content type="html">&lt;p&gt;之前自學 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt; 時寫了一個簡單的線上簡歷，而我也確實靠他加分而拿到了工作，之後進去也是開始用 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt; 建立頁面，之後加上了 &lt;a href=&quot;http://redux.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Redux&lt;/a&gt;；雖然這兩個總天數加起來大概就一個月，不敢說自己有摸清這些東西，不過還是就開發經驗來寫一些感想。&lt;/p&gt;
 &lt;h2 id=&quot;先講結論&quot;&gt;&lt;a href=&quot;#先講結論&quot; class=&quot;headerlink&quot; title=&quot;先講結論&quot;&gt;&lt;/a&gt;先講結論&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;喜歡嗎？&lt;/strong&gt;其實不討厭，還算是喜歡的；但若是要我向別人推荐的話，我會建議學 &lt;a href=&quot;https://vuejs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Vue.js&lt;/a&gt; 入門，熟了再考慮要不要碰 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt;。若是不排斥用其他語言轉換成 js 的話，&lt;a href=&quot;http://elm-lang.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Elm&lt;/a&gt; 看起來是個不錯的選擇，但 ES6 開始普及之後我對這方面的興趣不大，所以這個建議比較不負責任一點。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;網路上的範例能幫到多少？&lt;/strong&gt;在我決定 ES6 + &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt; 一次學的時候，卻發現網路上的範例已經開始塞 ES7 在裏面，在沒有大致摸過 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt; 跟 &lt;a href=&quot;http://redux.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Redux&lt;/a&gt; 的狀況下，看到有塞 ES7 語法加上許多 plugins 的範例時，這幫助實在不大。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;開發過程的感受如何？&lt;/strong&gt;摸新東西當然都會面臨挫折、觀念轉變以及學習曲線的問題，但老實說，不把前後分離這件事考慮進去的話（畢竟這是前端 framework 最主要的目的），失去的不會比獲得的感受來的少多少，頂多接近打平，剩下的端看你的 M 體質點多高來去彌補。說實在的，當初把玩 Rust 語言被摧殘到躺地板時我覺得還比較快樂一些。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;開發過程的感受如何？&lt;/strong&gt;摸新東西當然都會面臨挫折、觀念轉變以及學習曲線的問題，但老實說，不把前後分離這件事考慮進去的話（畢竟這是前端 framework 最主要的目的），失去的不會比獲得的感受來的少多少，頂多接近打平，剩下的端看你的 M 體質點多高來去彌補。說實在的，當初把玩 &lt;a href=&quot;https://www.rust-lang.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Rust&lt;/a&gt; 語言被摧殘到躺地板時我覺得還比較爽一點。&lt;/p&gt;
 &lt;h2 id=&quot;文章列表&quot;&gt;&lt;a href=&quot;#文章列表&quot; class=&quot;headerlink&quot; title=&quot;文章列表&quot;&gt;&lt;/a&gt;文章列表&lt;/h2&gt;&lt;p&gt;編寫時發現意外的長，就分開來寫了。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;/2016/05/21/my-experience-about-react-in-one-month/&quot;&gt;React 一個月的開發感想&lt;/a&gt;&lt;/li&gt;
@@ -70,7 +70,7 @@
     <link href="https://notes.knovour.ninja/2016/05/21/my-experience-about-redux-in-one-month/"/>
     <id>https://notes.knovour.ninja/2016/05/21/my-experience-about-redux-in-one-month/</id>
     <published>2016-05-21T08:05:22.000Z</published>
-    <updated>2016-05-21T14:53:40.377Z</updated>
+    <updated>2016-05-21T14:55:44.231Z</updated>
     
     <content type="html">&lt;p&gt;以前看了好幾次 Flux 跟 &lt;a href=&quot;http://redux.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Redux&lt;/a&gt; 的文章，總是無法弄懂他的概念，&lt;code&gt;actions&lt;/code&gt;、&lt;code&gt;reducers&lt;/code&gt;、&lt;code&gt;store&lt;/code&gt; 等等沒辦法在腦中兜出一個概念出來，當時 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt; 也才剛入門，所以對於 &lt;a href=&quot;http://redux.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Redux&lt;/a&gt; 也只有看看文章即止。後來用 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt; 來開發產品中途決定引入 &lt;a href=&quot;http://redux.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Redux&lt;/a&gt; 來處理事件流程，這篇文章是初次開發時的感想，或許某些地方上的觀念不太對請見諒。&lt;/p&gt;
 &lt;p&gt;引入後就按照官方的 example 新增了 &lt;code&gt;actions&lt;/code&gt;、&lt;code&gt;reducers&lt;/code&gt;、&lt;code&gt;store&lt;/code&gt; 三個資料夾，一步一步搞懂 &lt;a href=&quot;http://redux.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Redux&lt;/a&gt; 到底是什麼，為了要了解基本用法，也決定不引入 &lt;a href=&quot;http://redux.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Redux&lt;/a&gt; 太多額外的 plugins。&lt;/p&gt;
@@ -83,7 +83,7 @@
 &lt;li&gt;Button component 接收到這個函數後，綁定在 DOM 事件上。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;為了新增一個事件，一個沒有要幹什麼大事的事件，我得跑過四個資料夾才算完成！！&lt;/p&gt;
-&lt;p&gt;如果是新增其他 component 事件，就得在 reducer 跟 action 裡新增一個檔案（比如 &lt;code&gt;form.js&lt;/code&gt;），裏面塞進差不多的程式碼，然後再跟 &lt;code&gt;combineReducer&lt;/code&gt; 註冊這個新的 component 事件。&lt;/p&gt;
+&lt;p&gt;如果是新增其他 component 事件，就得在 reducer 跟 action 裡新增一個檔案（比如 &lt;code&gt;form.js&lt;/code&gt;），裏面塞進差不多的程式碼，然後再跟 &lt;code&gt;combineReducers&lt;/code&gt; 註冊這個新的 component 事件。&lt;/p&gt;
 &lt;p&gt;把事件變成事件流傳遞數據這件事我是覺得挺好的，看起來也簡單，問題在於重複的事太多而且煩瑣。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;我真希望有個超級 creator 可以搞定這些，不過似乎沒有，找個時間弄好了。&lt;/p&gt;

@@ -8,11 +8,11 @@
     <meta name="description" content="之前自學 React 時寫了一個簡單的線上簡歷，而我也確實靠他加分而拿到了工作，之後進去也是開始用 [React] 建立頁面，之後加上了 Redux；雖然這兩個總天數加起來大概就一個月，不敢說自己有摸清這些東西，不過還是就開發經驗來寫一些感想。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React/Redux 一個月的開發感想">
-<meta property="og:url" content="https://notes.knovour.ninja/2016/05/21/my-experience-about-react-redux-in-one-month/index.html">
+<meta property="og:url" content="https://notes.knovour.ninja/2016/05/23/my-experience-about-react-redux-in-one-month/index.html">
 <meta property="og:site_name" content="Knovour Notes">
 <meta property="og:description" content="之前自學 React 時寫了一個簡單的線上簡歷，而我也確實靠他加分而拿到了工作，之後進去也是開始用 [React] 建立頁面，之後加上了 Redux；雖然這兩個總天數加起來大概就一個月，不敢說自己有摸清這些東西，不過還是就開發經驗來寫一些感想。">
 <meta property="og:image" content="http://i.imgur.com/dQE29dn.png">
-<meta property="og:updated_time" content="2016-05-23T15:22:13.484Z">
+<meta property="og:updated_time" content="2016-05-23T15:51:41.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React/Redux 一個月的開發感想">
 <meta name="twitter:description" content="之前自學 React 時寫了一個簡單的線上簡歷，而我也確實靠他加分而拿到了工作，之後進去也是開始用 [React] 建立頁面，之後加上了 Redux；雖然這兩個總天數加起來大概就一個月，不敢說自己有摸清這些東西，不過還是就開發經驗來寫一些感想。">
@@ -199,8 +199,8 @@ ga('send', 'pageview');
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/05/21/my-experience-about-react-redux-in-one-month/">
-            <time datetime="2016-05-21T10:05:22.000Z" itemprop="datePublished">2016-05-21</time>
+        <a href="/2016/05/23/my-experience-about-react-redux-in-one-month/">
+            <time datetime="2016-05-23T12:05:22.000Z" itemprop="datePublished">2016-05-23</time>
         </a>
     </div>
 
@@ -238,7 +238,7 @@ ga('send', 'pageview');
 </ul>
 <h2 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h2><p>入門不算困難，只要知道兩個資料夾的分工、怎麼組合起來，你就入門了。</p>
 <h4 id="components"><a href="#components" class="headerlink" title="components"></a>components</h4><p>存放網頁單一元素的地方，比如按鈕、表單、卡片等會重複使用到的東西，程式碼會儘量保持簡單乾淨。</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Section.jsx</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Section</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">section</span> <span class="attr">className</span>=<span class="string">"section"</span>&gt;</span>&#123;this.props.children&#125;<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Header.jsx</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Header</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;this.props.title&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Description.jsx</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Description</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">className</span>=<span class="string">"description"</span>&gt;</span>&#123;this.props.text&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Section.jsx</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Section</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;section className="section"&gt;&#123;this.props.children&#125;&lt;/section&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Header.jsx</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Header</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;header&gt;</span><br><span class="line">        &lt;h1&gt;&#123;this.props.title&#125;&lt;/h1&gt;</span><br><span class="line">      &lt;/header&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Description.jsx</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Description</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;p className="description"&gt;&#123;this.props.text&#125;&lt;/p&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="containers"><a href="#containers" class="headerlink" title="containers"></a>containers</h4><p>載入各個 component 組合出一個頁面、進行數據傳遞以及一些事件綁定的函式建立等等，簡單講就是骯髒事儘量先在這邊處理再傳遞到各個 component。</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// App.jsx</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;Section&gt;</span><br><span class="line">        &lt;Header title="Title" /&gt;</span><br><span class="line">        &lt;Description text="blablabla" /&gt;</span><br><span class="line">      &lt;/Section&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>最終會生成這段 html：</p>
@@ -309,7 +309,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2016/05/21/my-experience-about-react-redux-in-one-month/" data-id="ciok66csc000in9n31teb8wck" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2016/05/23/my-experience-about-react-redux-in-one-month/" data-id="ciok66csc000in9n31teb8wck" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -377,7 +377,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="https://notes.knovour.ninja/2016/05/21/my-experience-about-react-redux-in-one-month/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/05/21/my-experience-about-react-redux-in-one-month/">評論</a>
+        <a href="https://notes.knovour.ninja/2016/05/23/my-experience-about-react-redux-in-one-month/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/05/23/my-experience-about-react-redux-in-one-month/">評論</a>
     
 
         </footer>
@@ -466,7 +466,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'knovour-notes';
     
     
-    var disqus_url = 'https://notes.knovour.ninja/2016/05/21/my-experience-about-react-redux-in-one-month/';
+    var disqus_url = 'https://notes.knovour.ninja/2016/05/23/my-experience-about-react-redux-in-one-month/';
     
     (function() {
     var dsq = document.createElement('script');

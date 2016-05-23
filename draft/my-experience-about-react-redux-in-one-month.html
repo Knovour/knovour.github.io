@@ -3,17 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>標籤: flux | Knovour Notes</title>
+    <title>React/Redux 一個月的開發感想 | Knovour Notes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="個人筆記、心得">
+    <meta name="description" content="之前自學 React 時寫了一個簡單的線上簡歷，而我也確實靠他加分而拿到了工作，之後進去也是開始用 React 建立頁面，之後加上了 Redux；雖然這兩個總天數加起來大概就一個月，不敢說自己有摸清這些東西，不過還是就開發經驗來寫一些感想。">
+<meta name="keywords">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Knovour Notes">
-<meta property="og:url" content="https://notes.knovour.ninja/tags/flux/index.html">
+<meta property="og:title" content="React/Redux 一個月的開發感想">
+<meta property="og:url" content="https://notes.knovour.ninja/draft/my-experience-about-react-redux-in-one-month.html">
 <meta property="og:site_name" content="Knovour Notes">
-<meta property="og:description" content="個人筆記、心得">
+<meta property="og:description" content="之前自學 React 時寫了一個簡單的線上簡歷，而我也確實靠他加分而拿到了工作，之後進去也是開始用 React 建立頁面，之後加上了 Redux；雖然這兩個總天數加起來大概就一個月，不敢說自己有摸清這些東西，不過還是就開發經驗來寫一些感想。">
+<meta property="og:image" content="http://i.imgur.com/dQE29dn.png">
+<meta property="og:updated_time" content="2016-05-23T14:29:49.809Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Knovour Notes">
-<meta name="twitter:description" content="個人筆記、心得">
+<meta name="twitter:title" content="React/Redux 一個月的開發感想">
+<meta name="twitter:description" content="之前自學 React 時寫了一個簡單的線上簡歷，而我也確實靠他加分而拿到了工作，之後進去也是開始用 React 建立頁面，之後加上了 Redux；雖然這兩個總天數加起來大概就一個月，不敢說自己有摸清這些東西，不過還是就開發經驗來寫一些感想。">
+<meta name="twitter:image" content="http://i.imgur.com/dQE29dn.png">
 <meta name="twitter:creator" content="@261262114">
     <script type="text/javascript">var _jf = _jf || [];_jf.push(['p','40489']);_jf.push(['_setFont','xingothic-tc-w4','css','.xingothic-tc-w4']);_jf.push(['_setFont','xingothic-tc-w4','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w4','weight',400]);_jf.push(['_setFont','xingothic-tc-w3','css','.xingothic-tc-w3']);_jf.push(['_setFont','xingothic-tc-w3','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w3','weight',300]);_jf.push(['_setFont','cwtexqhei','css','.cwtexqhei']);_jf.push(['_setFont','cwtexqhei','alias','cwtexqhei']);_jf.push(['_setFont','cwtexqhei','weight',700]);(function(f,q,c,h,e,i,r,d){var k=f._jf;if(k.constructor===Object){return}var l,t=q.getElementsByTagName("html")[0],a=function(u){for(var v in k){if(k[v][0]==u){if(false===k[v][1].call(k)){break}}}},j=/\S+/g,o=/[\t\r\n\f]/g,b=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,g="".trim,s=g&&!g.call("\uFEFF\xA0")?function(u){return u==null?"":g.call(u)}:function(u){return u==null?"":(u+"").replace(b,"")},m=function(y){var w,z,v,u,x=typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):" ";if(z){u=0;while((v=w[u++])){if(z.indexOf(" "+v+" ")<0){z+=v+" "}}t[c]=s(z)}}},p=function(y){var w,z,v,u,x=arguments.length===0||typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):"";if(z){u=0;while((v=w[u++])){while(z.indexOf(" "+v+" ")>=0){z=z.replace(" "+v+" "," ")}}t[c]=y?s(z):""}}},n;k.push(["_eventActived",function(){p(h);m(e)}]);k.push(["_eventInactived",function(){p(h);m(i)}]);k.addScript=n=function(u,A,w,C,E,B){E=E||function(){};B=B||function(){};var x=q.createElement("script"),z=q.getElementsByTagName("script")[0],v,y=false,D=function(){x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;a("_eventInactived");B()};if(C){v=setTimeout(function(){D()},C)}x.type=A||"text/javascript";x.async=w;x.onload=x.onreadystatechange=function(G,F){if(!y&&(!x.readyState||/loaded|complete/.test(x.readyState))){y=true;if(C){clearTimeout(v)}x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;if(!F){setTimeout(function(){E()},200)}}};x.onerror=function(H,G,F){if(C){clearTimeout(v)}D();return true};x.src=u;z.parentNode.insertBefore(x,z)};a("_eventPreload");m(h);n(r,"text/javascript",false,3000)})(this,this.document,"className","jf-loading","jf-active","jf-inactive","//d3gc6cgx8oosp4.cloudfront.net/js/stable/v/4.9.7/id/171273672556");</script>
     
@@ -171,20 +175,24 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-tag"></i></span>
-        <h1 class="title">#flux</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<img src="http://i.imgur.com/dQE29dn.png" class="article-banner" />
+	
+
+
+
+        
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/05/02/react-flux-short-explain/">React.js 筆記 - Flux 的個人理解</a>
+        <h1 class="article-title" itemprop="name">
+            React/Redux 一個月的開發感想
         </h1>
     
 
@@ -192,8 +200,8 @@ ga('send', 'pageview');
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/05/02/react-flux-short-explain/">
-            <time datetime="2016-05-01T18:01:07.000Z" itemprop="datePublished">2016-05-02</time>
+        <a href="/draft/my-experience-about-react-redux-in-one-month.html">
+            <time datetime="2016-05-21T10:05:22.000Z" itemprop="datePublished">2016-05-21</time>
         </a>
     </div>
 
@@ -202,14 +210,144 @@ ga('send', 'pageview');
                     
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/flux/">flux</a>, <a class="tag-link" href="/tags/react-js/">react.js</a>, <a class="tag-link" href="/tags/redux/">redux</a>
+        <a class="tag-link" href="/">undefined</a>, <a class="tag-link" href="/">undefined</a>
     </div>
 
                 </div>
-            </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>之前自學 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 時寫了一個簡單的線上簡歷，而我也確實靠他加分而拿到了工作，之後進去也是開始用 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 建立頁面，之後加上了 <a href="http://redux.js.org/" target="_blank" rel="external">Redux</a>；雖然這兩個總天數加起來大概就一個月，不敢說自己有摸清這些東西，不過還是就開發經驗來寫一些感想。</p>
+<h2 id="先講結論"><a href="#先講結論" class="headerlink" title="先講結論"></a>先講結論</h2><h4 id="喜歡嗎？"><a href="#喜歡嗎？" class="headerlink" title="喜歡嗎？"></a>喜歡嗎？</h4><p>其實不討厭，還算是喜歡的；但若是要我向別人推荐的話，我會建議學 <a href="https://vuejs.org/" target="_blank" rel="external">Vue.js</a> 入門，熟了再考慮要不要碰 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a>。若是不排斥用其他語言轉換成 js 的話，<a href="http://elm-lang.org/" target="_blank" rel="external">Elm</a> 看起來是個不錯的選擇，但 ES6 開始普及之後我對這方面的興趣不大，所以這個建議比較不負責任一點。</p>
+<h4 id="網路上的範例能幫到多少？"><a href="#網路上的範例能幫到多少？" class="headerlink" title="網路上的範例能幫到多少？"></a>網路上的範例能幫到多少？</h4><p>在我決定 ES6 + <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 一次學的時候，卻發現網路上的範例已經開始塞 ES7 在裏面，在沒有大致摸過 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 跟 <a href="http://redux.js.org/" target="_blank" rel="external">Redux</a> 的狀況下，看到有塞 ES7 語法加上許多 plugins 的範例時，這幫助實在不大。</p>
+<h4 id="開發過程的感受如何？"><a href="#開發過程的感受如何？" class="headerlink" title="開發過程的感受如何？"></a>開發過程的感受如何？</h4><p>摸新東西當然都會面臨挫折、觀念轉變以及學習曲線的問題，但老實說，不把前後分離這件事考慮進去的話（畢竟這是前端 framework 最主要的目的），失去的不會比獲得的感受來的少多少，頂多接近打平，剩下的端看你的 M 體質點多高來去彌補。說實在的，當初把玩 <a href="https://www.rust-lang.org/" target="_blank" rel="external">Rust</a> 語言被摧殘到躺地板時我覺得還比較爽一點。<br><a id="more"></a></p>
+<h2 id="文章列表"><a href="#文章列表" class="headerlink" title="文章列表"></a>文章列表</h2><p>編寫時發現意外的長，就分開來寫了。</p>
+<ul>
+<li><a href="/2016/05/21/my-experience-about-react-in-one-month/">React 一個月的開發感想</a></li>
+<li><a href="/2016/05/21/my-experience-about-redux-in-one-month/">Redux 一個月的開發感想</a></li>
+</ul>
+<h2 id="學習與開發重點"><a href="#學習與開發重點" class="headerlink" title="學習與開發重點"></a>學習與開發重點</h2><h4 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h4><p><a href="https://github.com/airbnb/javascript" target="_blank" rel="external">Airbnb JavaScript Style Guide</a> 可以當成一個不錯的 ES6 入門文件，之後再閱讀 <a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript 6 入门</a>做更進一步的了解。</p>
+<h4 id="React"><a href="#React" class="headerlink" title="React"></a>React</h4><ul>
+<li>能用 css 解決的就用 css。</li>
+<li>能用 Virtual DOM 解決的就不要用原生操作。</li>
+<li>Say goodbye to jQuery.</li>
+<li><a href="https://github.com/airbnb/javascript/tree/master/react" target="_blank" rel="external">Airbnb React/JSX Style Guide</a> 在 React 稍微懂一些後可以參考看看。</li>
+<li>React 大部分的 plugins 程式碼都不多，使用前不妨看一下原始碼，或許你只需要擷取出一部份，不用再多載一個就能自己實現。</li>
+<li>有一定程度了解後，ES7 不妨給他用下去。</li>
+</ul>
+<h4 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h4><ul>
+<li>如果只是改變 component 自身狀態，不要考慮用。</li>
+<li>跨 component 的事件處理如果數量不多，可以考慮不用。</li>
+<li>第一次用建議不要用太多額外的 plugins，先知道基本用法是怎樣，之後再去考慮這件事。</li>
+</ul>
+<h2 id="後記"><a href="#後記" class="headerlink" title="後記"></a>後記</h2><p>我想我下個階段會研究 <a href="https://github.com/Reactive-Extensions/RxJS" target="_blank" rel="external">RxJS</a> 與 <a href="http://cycle.js.org/" target="_blank" rel="external">Cycle.js</a> 看看吧。</p>
+<h2 id="線上課程"><a href="#線上課程" class="headerlink" title="線上課程"></a>線上課程</h2><ul>
+<li><a href="http://www.reactjsprogram.com/" target="_blank" rel="external">React.js Program</a>: React 線上教學，其中 <strong>React.js Fundamentals</strong> 這個入門課程是免費的，推荐。</li>
+<li><a href="https://egghead.io/series/getting-started-with-redux" target="_blank" rel="external">Getting Started with Redux</a>: Redux 入門課程。</li>
+</ul>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="https://notes.knovour.ninja/draft/my-experience-about-react-redux-in-one-month.html" data-id="ciok40dx2000453n3pivo60iz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://notes.knovour.ninja/draft/my-experience-about-react-redux-in-one-month.html#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/draft/my-experience-about-react-redux-in-one-month.html">評論</a>
+    
+
+        </footer>
+    </div>
+    
+        
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
@@ -266,11 +404,13 @@ ga('send', 'pageview');
     var disqus_shortname = 'knovour-notes';
     
     
+    var disqus_url = 'https://notes.knovour.ninja/draft/my-experience-about-react-redux-in-one-month.html';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>

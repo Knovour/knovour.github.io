@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-07-17T13:47:11.648Z</updated>
+  <updated>2016-07-17T13:49:57.702Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://notes.knovour.ninja/2016/07/08/years-of-using-linux/"/>
     <id>https://notes.knovour.ninja/2016/07/08/years-of-using-linux/</id>
     <published>2016-07-08T04:19:39.000Z</published>
-    <updated>2016-07-17T13:47:11.648Z</updated>
+    <updated>2016-07-17T13:49:57.702Z</updated>
     
     <content type="html">&lt;p&gt;上圖是我的 Linux 現在的樣子：&lt;/p&gt;
 &lt;ul&gt;
@@ -83,7 +83,7 @@
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/stanfieldr/ghetto-skype/develop/assets/screenshot.png&quot; alt=&quot;Ghetto Skype, base on Electron（人家還可以選佈景勒）&quot;&gt;&lt;/p&gt;
 &lt;p&gt;很多時候，在 Linux 上使用軟體真的覺得自己像個次等公民一樣，但現在 web 技術愈來愈發達，很多東西已經都是改在網頁上完成，所以這個隔閡就顯得比較不那麼嚴重了（但微軟還是該死）。&lt;/p&gt;
 &lt;h2 id=&quot;遊戲&quot;&gt;&lt;a href=&quot;#遊戲&quot; class=&quot;headerlink&quot; title=&quot;遊戲&quot;&gt;&lt;/a&gt;遊戲&lt;/h2&gt;&lt;p&gt;拜 &lt;a href=&quot;http://doom.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DOOM&lt;/a&gt; 系列遊戲 Open Source 所賜，以前 Linux 上 3D 大型遊戲裡佔絕大多數的就是 FPS 類遊戲，其他的就是一些像 &lt;a href=&quot;https://supertux.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SuperTux&lt;/a&gt; 之類的 2D 小遊戲，沒有什麼能夠提起興趣的，主要還是開 Windows 打魔獸三國之類的遊戲。&lt;/p&gt;
-&lt;p&gt;後來 &lt;a href=&quot;http://www.heroesofnewerth.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HoN&lt;/a&gt; 推出，第一款不用魔獸三就能獨立執行的 Dota 類遊戲，而且還支援 Linux，在玩過幾次之後就慫恿朋友也跟著跳坑，但無奈官方希望能夠用收費的方式經營，在一年多的免費暢玩後，在收費的第一天，人氣直跌谷底，分別回流到原本的魔獸與那時剛推出不久的 &lt;a href=&quot;http://na.leagueoflegends.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;LoL&lt;/a&gt;，過幾年後 &lt;a href=&quot;http://blog.dota2.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dota2&lt;/a&gt; 推出，我也就這樣轉戰過去了。幾年之後，&lt;a href=&quot;http://www.heroesofnewerth.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HoN&lt;/a&gt; 默默改回免費模式，但已不再吸引人了。&lt;/p&gt;
+&lt;p&gt;後來 &lt;a href=&quot;http://www.heroesofnewerth.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HoN&lt;/a&gt; 推出，第一款不用魔獸三就能獨立執行的 Dota 類遊戲，而且還支援 Linux，在玩過幾次之後就慫恿朋友也跟著跳坑，但無奈官方希望能夠用收費的方式經營，在歷經一年多的免費暢玩後，遊戲收費的第一天，人氣直跌谷底，分別回流到原本的魔獸與那時剛推出不久的 &lt;a href=&quot;http://na.leagueoflegends.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;LoL&lt;/a&gt;，過幾年後 &lt;a href=&quot;http://blog.dota2.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dota2&lt;/a&gt; 推出，我也就這樣轉戰過去了。幾年之後，&lt;a href=&quot;http://www.heroesofnewerth.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HoN&lt;/a&gt; 默默改回免費模式，但已不再吸引人了。&lt;/p&gt;
 &lt;p&gt;之後開始工作時，玩的遊戲也變少了，通常都是周末時才會開 Windows 打一下 &lt;a href=&quot;https://www.pathofexile.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PoE&lt;/a&gt; 或 &lt;a href=&quot;http://blog.dota2.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dota2&lt;/a&gt;，當時我跟我朋友開玩笑說：「如果兩款其中一款出了 Linux 版，那我大概就不會再切到 Windows 了」。在大約又快一年之後，&lt;a href=&quot;http://www.valvesoftware.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Valve&lt;/a&gt; 開始全力推廣 Linux 遊戲，首先就將 &lt;a href=&quot;http://blog.dota2.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dota2&lt;/a&gt; 與 &lt;a href=&quot;http://blog.counter-strike.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CS:GO&lt;/a&gt; 等旗下遊戲轉移到 Linux 上，從那時起，我自己的電腦就再也沒開過 Windows。&lt;/p&gt;
 &lt;p&gt;時至今日，Steam 上面的 Linux 遊戲愈來愈多，個人的收藏庫裡有過半是有支援 Linux，之後有空再來考慮怎麼玩那些 Windows 的遊戲。&lt;/p&gt;
 &lt;p&gt;以下是我遊戲收藏庫裡支援 Linux 的部份：&lt;/p&gt;

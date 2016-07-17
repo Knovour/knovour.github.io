@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-07-17T13:24:10.057Z</updated>
+  <updated>2016-07-17T13:43:11.692Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://notes.knovour.ninja/2016/07/08/years-of-using-linux/"/>
     <id>https://notes.knovour.ninja/2016/07/08/years-of-using-linux/</id>
     <published>2016-07-08T04:19:39.000Z</published>
-    <updated>2016-07-17T13:24:10.057Z</updated>
+    <updated>2016-07-17T13:43:11.692Z</updated>
     
     <content type="html">&lt;p&gt;上圖是我的 Linux 現在的樣子：&lt;/p&gt;
 &lt;ul&gt;
@@ -54,7 +54,7 @@
 &lt;p&gt;這些佈景在試用後的感想是：&lt;strong&gt;深色系的普遍都不好看也不耐看，淺色系的有些雖不好看但還算耐看。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;而那時在我的作業系統上留最久的佈景應該是 &lt;a href=&quot;https://www.gnome-look.org/content/show.php/Bamboo+Zen?content=85860&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Bamboo Zen&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://cn.pling.com/img//hive/content-pre2/85860-2.jpg&quot; alt=&quot;來源：GNOME-LOOK.ORG&quot;&gt;&lt;/p&gt;
-&lt;p&gt;當時有一部份 Gnome 的淺色系佈景上喜歡打上一種噱頭：&lt;strong&gt;像 Mac 一樣&lt;/strong&gt;。我不懂為什麼很多人想要讓作業系統看起來「像 Mac 一樣」，但他真的發生了。他們把色彩調成淺銀色或銀白色，加上點光澤，換掉圖標（我覺得在這當中最可憐的是 Firefox，因為他常被迫換上 Safari 的圖標），一個 Mac Like 介面就誕生了。在這段期間，最嚴重的莫過於誕生了 Pear OS 這個發行版。&lt;/p&gt;
+&lt;p&gt;當時有一部份 Gnome 的淺色系佈景很喜歡打上一種噱頭：&lt;strong&gt;像 Mac 一樣&lt;/strong&gt;。我不懂為什麼很多人想要讓作業系統看起來「像 Mac 一樣」，但他真的發生了。他們把色彩調成淺銀色或銀白色，加上點光澤，換掉圖標（我覺得在這當中最可憐的是 Firefox，因為他常被迫換上 Safari 的圖標），一個 Mac Like 介面就誕生了。在這段期間，最嚴重的莫過於誕生了 Pear OS 這個發行版。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://i1-news.softpedia-static.com/images/news2/Pear-OS-Is-Making-a-Comeback-Rumor-468670-3.jpg&quot; alt=&quot;來源：Softpedia&quot;&gt;&lt;/p&gt;
 &lt;p&gt;不論這些&lt;strong&gt;像 Mac 一樣&lt;/strong&gt;的佈景有多麼強調這件事，他們唯一不會跟你講的就是：「當你裝好之後，切記！盯著桌面看就好，不要做任何事，不要打開任何東西。」，因為隨便點開一個視窗就徹底破功了。這種事在 Android 上也在發生，只是模仿對象變成了 iOS。&lt;/p&gt;
 &lt;p&gt;不過 Pear OS 已經收掉了，目前的 Mac Like 發行版變成 &lt;a href=&quot;https://sourceforge.net/projects/gmaclinux/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GMac Linux&lt;/a&gt;。&lt;/p&gt;

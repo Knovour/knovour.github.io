@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-07-17T13:43:11.692Z</updated>
+  <updated>2016-07-17T13:47:11.648Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://notes.knovour.ninja/2016/07/08/years-of-using-linux/"/>
     <id>https://notes.knovour.ninja/2016/07/08/years-of-using-linux/</id>
     <published>2016-07-08T04:19:39.000Z</published>
-    <updated>2016-07-17T13:43:11.692Z</updated>
+    <updated>2016-07-17T13:47:11.648Z</updated>
     
     <content type="html">&lt;p&gt;上圖是我的 Linux 現在的樣子：&lt;/p&gt;
 &lt;ul&gt;
@@ -78,7 +78,7 @@
 &lt;p&gt;&lt;img src=&quot;http://downloads.xara.com/opensource/images/screenshots/technical/05.jpg&quot; alt=&quot;圖片來源：Xara Xtreme&quot;&gt;&lt;/p&gt;
 &lt;p&gt;在這幾年裡，&lt;a href=&quot;http://electron.atom.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Electron&lt;/a&gt; 開始流行，很多服務開始用「包著網頁當軟體」的方式來實現跨平台，如果打一開始就這樣推出的話到不是什麼問題，但如果是中途變更可能反而會造成反效果。&lt;/p&gt;
 &lt;p&gt;比如像 Linux 上的 Skype，簡直就像是半個僵屍一般，在 Linux 上破破爛爛的，當 Windows 跟 Mac 都換上新介面的時候，只有 Linux 版在被收購那一陣子換上微軟大大所有、加上微軟帳號登入後就不再有任何更新，不論官方論壇上的人有多憤怒，聽不到就是聽不到。&lt;/p&gt;
-&lt;p&gt;然而前幾天微軟突然發佈一個好消息，宣佈 Linux Skype 版重新製作的 Alpha 版測試，這基本上就是個大消息，之前在他表面上說自己有多麼積極擁抱 Linux 的時候，Linux 版的 Skype 默默的躺在一邊啜泣，而現在卻又重獲關注，多麼棒的消息！&lt;/p&gt;
+&lt;p&gt;然而前幾天微軟突然發佈一個好消息，宣佈 Linux 版 Skype 重新製作的 Alpha 版測試，這基本上就是個大消息，之前在他表面上說自己有多麼積極擁抱 Linux 的時候，Linux 版的 Skype 默默的躺在一邊啜泣，而現在卻又重獲關注，多麼棒的消息！&lt;/p&gt;
 &lt;p&gt;Skype 的 GUI 是基於 Qt，但是在裝上 Alpha 版之後發現，怎麼捨棄了 Qt 用上 GTK 了？打開後的直覺是這應該是 &lt;a href=&quot;http://electron.atom.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Electron&lt;/a&gt; 打包的（&lt;a href=&quot;http://electron.atom.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Electron&lt;/a&gt; 基於 Chromium，Chromium 基於 GTK），Reddit 以及一些文章也有提到這件事；雖然 &lt;a href=&quot;https://code.visualstudio.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Visual Studio Code&lt;/a&gt; 也是 &lt;a href=&quot;http://electron.atom.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Electron&lt;/a&gt; 打包的，用起來也不錯，但 Skype 這種作法實在是太忽悠人，畢竟有四五年沒有任何更新。尤其在這之前已經有許多人嘗試用這種方式打包網頁版了，其中有些運作得還不錯，微軟真的沒有直接拿別人的程式碼來改？再一次，微軟又讓人失望了。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/stanfieldr/ghetto-skype/develop/assets/screenshot.png&quot; alt=&quot;Ghetto Skype, base on Electron（人家還可以選佈景勒）&quot;&gt;&lt;/p&gt;
 &lt;p&gt;很多時候，在 Linux 上使用軟體真的覺得自己像個次等公民一樣，但現在 web 技術愈來愈發達，很多東西已經都是改在網頁上完成，所以這個隔閡就顯得比較不那麼嚴重了（但微軟還是該死）。&lt;/p&gt;

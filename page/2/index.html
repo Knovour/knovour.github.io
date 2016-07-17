@@ -126,11 +126,11 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                17
+                18
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                17
+                18
                 <span>標籤</span>
             </div>
         </div>
@@ -172,6 +172,137 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-d3-p5-js-notes" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/01/d3-p5-js-notes/">D3 + p5.js 筆記 - 前言</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/01/d3-p5-js-notes/">
+            <time datetime="2016-03-01T01:20:14.000Z" itemprop="datePublished">2016-03-01</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/D3/">D3</a>, <a class="tag-link" href="/tags/p5-js/">p5.js</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>這陣子看了點 <a href="https://d3js.org/" target="_blank" rel="external">D3</a>，並找了官方 wiki 的<a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>來試試，不過不是用 SVG，而是用 canvas 來畫。</p>
+<p>之前要寫的網站要生成簡易的圖表，但因為沒學過 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 的經驗（當時也來不及），所以找了現成的 <a href="http://www.chartjs.org/" target="_blank" rel="external">Chart.js</a> 來用，除了這套之外，之後也在 feedly 看了不少圖表生成的套件介紹，蠻多都是用 canvas 的。不過這倒也不是什麼選擇 canvas 的原因。</p>
+<blockquote>
+<p>單純犯賤罷了…</p>
+</blockquote>
+<p>然而，<a href="https://d3js.org/" target="_blank" rel="external">D3</a> 對 canvas 的支援不好，不過這也不是很意外。問題在於要怎麼用 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 把處理後的資料給 canvas 畫，根據<a href="http://blog.infographics.tw/2015/07/optimize-d3-with-canvas/" target="_blank" rel="external">這裡</a>的介紹，第三種方式算是我在網路上最常看見的，基本上就是處理資料並創建虛假的元素，假裝自己在操作 SVG，然後再把這些<strong>假元素</strong>吐出來再用 canvas 的方式畫出來，怎麼看都覺得…蠻蠢的。所以我比較偏好第二種方式，讓 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 負責處理資料、生成刻度等等，再用 <a href="http://p5js.org/" target="_blank" rel="external">p5.js</a> 直接畫上去。</p>
+<p>總之，之後會加減從 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 官方的<a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>裡面先挑簡單的例子來練習，也會原始碼放到 GitHub 上。</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/" data-id="ciqp6y8xq0005jqn38s677zsq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/">評論</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-koa-notes" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -210,9 +341,9 @@ ga('send', 'pageview');
             
             <p><strong> 以 <a href="https://github.com/koajs/koa/tree/v2.x" target="_blank" rel="external">Koa.js 2.0.0-alpha.3</a> 版本為主。 </strong></p>
 <h2 id="ctx-body-沒反應"><a href="#ctx-body-沒反應" class="headerlink" title="ctx.body 沒反應"></a><code>ctx.body</code> 沒反應</h2><p>當 <code>ctx.body</code> 在 Promise 的函式裡時（如 co）則不會對頁面有任何反應，需在該函式前加上 <code>return</code>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">index(ctx) &#123;</span><br><span class="line">  <span class="keyword">return</span> co(<span class="function"><span class="keyword">function</span>*(<span class="params"></span>) </span>&#123; <span class="comment">// &lt;- Must have `return`</span></span><br><span class="line">    ctx.body = <span class="string">'success'</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">index(ctx) &#123;</div><div class="line">  <span class="keyword">return</span> co(<span class="function"><span class="keyword">function</span>*(<span class="params"></span>) </span>&#123; <span class="comment">// &lt;- Must have `return`</span></div><div class="line">    ctx.body = <span class="string">'success'</span>;</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>自訂 <code>middleware</code> 的時候也是如此</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.use((ctx, next) =&gt; &#123;</span><br><span class="line">  ctx.msg = <span class="string">'hello'</span>;</span><br><span class="line">  <span class="keyword">return</span> next(); <span class="comment">// &lt;- Must have `return`</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">app.use((ctx, next) =&gt; &#123;</div><div class="line">  ctx.msg = <span class="string">'hello'</span>;</div><div class="line">  <span class="keyword">return</span> next(); <span class="comment">// &lt;- Must have `return`</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h2 id="1-0-與-2-0-版本問題"><a href="#1-0-與-2-0-版本問題" class="headerlink" title="1.0 與 2.0 版本問題"></a>1.0 與 2.0 版本問題</h2><p><a href="https://github.com/koajs/koa" target="_blank" rel="external">Koa.js</a> 的大部分 middleware 都已經開始支援 <a href="https://github.com/koajs/koa/tree/v2.x" target="_blank" rel="external">2.0</a>，鑑於是 alpha 的關係，要安裝這些元件時要加 <code>@next</code> 的 tag，尚未支援的在使用時可以安裝 <code>koa-convert</code> 來轉換。</p>
 
         
@@ -224,7 +355,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2016/02/21/koa-notes/" data-id="ciok66cs7000bn9n3ayf502lr" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2016/02/21/koa-notes/" data-id="ciqp6y8xx000ejqn3lk7ixiq7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -354,7 +485,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2016/01/12/sequelize-notes/" data-id="ciok66csa000hn9n3rtkgu4zk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2016/01/12/sequelize-notes/" data-id="ciqp6y8yx001ajqn3diawncqf" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -481,7 +612,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/" data-id="ciok66crw0001n9n3bcpbwd48" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/" data-id="ciqp6y8xp0004jqn3zvusiscf" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -618,7 +749,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/" data-id="ciok66cs8000en9n3rucg4s86" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/" data-id="ciqp6y8yt0016jqn3rx2mvpzz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -750,7 +881,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/" data-id="ciok66cs30009n9n3za0m5e7y" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/" data-id="ciqp6y8xs0008jqn3x5n4w2c9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -870,7 +1001,7 @@ ga('send', 'pageview');
 <li>如有需要，將 server 裡的 global package 裝好，如 bower、sails、grunt-cli 等等。</li>
 <li>設定 server 裡程式碼的存放位置，假設為 <code>/usr/src</code>。</li>
 </ol>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/src/<span class="keyword">my</span>-project-<span class="built_in">name</span></span><br><span class="line">chown deploy:deploy /usr/src/<span class="keyword">my</span>-project-<span class="built_in">name</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir -p /usr/src/<span class="keyword">my</span>-project-<span class="built_in">name</span></div><div class="line">chown deploy:deploy /usr/src/<span class="keyword">my</span>-project-<span class="built_in">name</span></div></pre></td></tr></table></figure></p>
             <p class="article-more-link">
                 <a href="/2015/07/17/deploy-node-js-by-shipit/#more">Read More</a>
             </p>
@@ -883,7 +1014,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/" data-id="ciok66cs30008n9n3r7d2fskr" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/" data-id="ciqp6y8xu0009jqn3wxelqnws" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1029,7 +1160,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2015/04/15/some-google-search-skills/" data-id="ciok66cs9000fn9n3oa1tus8b" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2015/04/15/some-google-search-skills/" data-id="ciqp6y8yz001ejqn3h7tess7b" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1118,7 +1249,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">歸檔</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1127,7 +1258,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">標籤</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/D3/">D3</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/">deploy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flux/">flux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/">game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ghost/">ghost</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google/">google</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openshift/">openshift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/p5-js/">p5.js</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-js/">react.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redux/">redux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sails-js/">sails.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/search/">search</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wine/">wine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/雜談/">雜談</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/D3/">D3</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/">deploy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flux/">flux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/">game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ghost/">ghost</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google/">google</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openshift/">openshift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/p5-js/">p5.js</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-js/">react.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redux/">redux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sails-js/">sails.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/search/">search</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wine/">wine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/雜談/">雜談</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 

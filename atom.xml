@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-07-17T13:21:23.316Z</updated>
+  <updated>2016-07-17T13:24:10.057Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://notes.knovour.ninja/2016/07/08/years-of-using-linux/"/>
     <id>https://notes.knovour.ninja/2016/07/08/years-of-using-linux/</id>
     <published>2016-07-08T04:19:39.000Z</published>
-    <updated>2016-07-17T13:21:23.316Z</updated>
+    <updated>2016-07-17T13:24:10.057Z</updated>
     
     <content type="html">&lt;p&gt;上圖是我的 Linux 現在的樣子：&lt;/p&gt;
 &lt;ul&gt;
@@ -66,6 +66,7 @@
 &lt;p&gt;後來 KDE 5 Plasma 推出，整體而言又更上了一層，但還是一樣，他從來沒有真正穩定過，至少現在問題已經少非常多了。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://c2.staticflickr.com/8/7788/28077094630_326e5dd9b8_o.png&quot; alt=&quot;這是 KDE 5 Plasma 的預設佈景&quot;&gt;&lt;/p&gt;
 &lt;p&gt;有一個主打 Material Design 的桌面環境 &lt;a href=&quot;http://papyros.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Papyros&lt;/a&gt; 還在開發中，等穩定的時候再來試試看。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.ytimg.com/vi/6XSyBV0h2n4/maxresdefault.jpg&quot; alt=&quot;來源：YouTube&quot;&gt;&lt;/p&gt;
 &lt;p&gt;題外話：如果想要找個節省資源的桌面環境，比起 &lt;a href=&quot;http://www.xfce.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Xfce&lt;/a&gt;，我會比較推荐 &lt;a href=&quot;http://lxqt.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;LXQt&lt;/a&gt;，至於其他一些比較硬派的桌面環境，我的興趣就不大了。&lt;/p&gt;
 &lt;h2 id=&quot;開發工具&quot;&gt;&lt;a href=&quot;#開發工具&quot; class=&quot;headerlink&quot; title=&quot;開發工具&quot;&gt;&lt;/a&gt;開發工具&lt;/h2&gt;&lt;p&gt;一開始把玩過一下 &lt;a href=&quot;https://www.gnu.org/software/emacs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Emacs&lt;/a&gt;，後來在 &lt;a href=&quot;http://www.vim.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Vim&lt;/a&gt; 上使用了一段不算短的時間，然而最終我還是沒能掌握那一堆快捷鍵以及指令的精髓，要是逼我使用 60% 鍵盤，我大概會瘋掉。那時大學時學的語言還是以 Java 為主，所以 Eclipse 等 IDE 還是比較常使用的，曾經看過一名同學在 Eclipse 上用快捷鍵用得嚇嚇叫，讓我十分佩服，雖然最後他被當了。&lt;/p&gt;
 &lt;p&gt;工作之後開始使用 Mac 跟 &lt;a href=&quot;https://www.sublimetext.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sublime Text&lt;/a&gt;，在開發 web 挺方便，缺點是在 Linux 底下無法打中文，不管打什麼補丁、用什麼方法都不管用，不過當時也沒有比較好的替代品，所以在 Linux 底下還是只能將就。之後 &lt;a href=&quot;https://atom.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Atom&lt;/a&gt; 推出 Beta 測試，不算上他用起來像 Alpha 這件事，光是能好好打中文就謝天謝地了，在推出測試之後就立馬換上。再之後推出正式版時，&lt;a href=&quot;https://code.visualstudio.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Visual Studio Code&lt;/a&gt; 推出了，這編輯器在使用上感覺比 &lt;a href=&quot;https://atom.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Atom&lt;/a&gt; 舒服不少，所以在試用一陣子之後就又換了。將來會不會又想跳哪個編輯器我也不知道，不過 &lt;a href=&quot;http://spacemacs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Spacemacs&lt;/a&gt; 頗讓我感興趣的，前題是我有沒有心想記那一堆快捷鍵…&lt;/p&gt;

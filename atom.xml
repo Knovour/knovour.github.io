@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-07-17T16:43:31.054Z</updated>
+  <updated>2016-07-20T12:41:41.351Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://notes.knovour.ninja/2016/07/08/years-of-using-linux/"/>
     <id>https://notes.knovour.ninja/2016/07/08/years-of-using-linux/</id>
     <published>2016-07-08T04:19:39.000Z</published>
-    <updated>2016-07-17T16:43:31.054Z</updated>
+    <updated>2016-07-20T12:41:41.351Z</updated>
     
     <content type="html">&lt;p&gt;上圖是我的 Linux 現在的樣子：&lt;/p&gt;
 &lt;ul&gt;
@@ -31,6 +31,7 @@
 &lt;p&gt;Linux 在我大學期間就開始嘗試拿來作為一般的作業系統使用，但那段期間其實一直都在 Windows 跟 Linux 之間切換（你知道的，遊戲），後來這兩年開始固定用 Linux，工作時用 Mac，基本上已經沒怎麼碰 Windows 了。&lt;/p&gt;
 &lt;p&gt;當然，這個過程並沒有讓我成為什麼 Linux 大師，我也沒有這個打算，只是嘗試能在日常生活中使用而已。前一陣子看到&lt;a href=&quot;https://lex.sh/linux10khrs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;這篇文章&lt;/a&gt;後覺得很有趣，於是決定也來寫篇自己的經歷以及感受。以下我會將這篇文章分成數個大項目來做探討。&lt;/p&gt;
 &lt;p&gt;裏面一些資訊可能與印象有所不同，請見諒。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;作業系統&quot;&gt;&lt;a href=&quot;#作業系統&quot; class=&quot;headerlink&quot; title=&quot;作業系統&quot;&gt;&lt;/a&gt;作業系統&lt;/h2&gt;&lt;p&gt;我第一個用的 Linux 發行版是 Ubuntu 7.10，當時 &lt;a href=&quot;http://www.compiz.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Compiz Fusion&lt;/a&gt; 這個桌面特效大補帖的相關影片出現時小紅了一陣子，我也是在那時候知道 Linux 以及其中的 Ubuntu。我已經忘記當時看到的影片是哪個了，不過就是如下面的影片所呈現的那樣。&lt;/p&gt;
 &lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/4QokOwvPxrE&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
 &lt;p&gt;那段期間打開 Ubuntu 之後，也不過就是玩一玩特效、隨便打幾個指令、開 Firefox 晃一下就切回去玩遊戲了，沒辦法，這就是 Windows 最大的優勢。&lt;/p&gt;

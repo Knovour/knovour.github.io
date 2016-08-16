@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2016-08-16T17:07:20.936Z</updated>
+  <updated>2016-08-16T17:08:41.928Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://notes.knovour.ninja/2016/07/08/years-of-using-linux/"/>
     <id>https://notes.knovour.ninja/2016/07/08/years-of-using-linux/</id>
     <published>2016-07-08T04:19:39.000Z</published>
-    <updated>2016-08-16T17:07:20.936Z</updated>
+    <updated>2016-08-16T17:08:41.928Z</updated>
     
     <content type="html">&lt;p&gt;上圖是我的 Linux 現在的樣子：&lt;/p&gt;
 &lt;ul&gt;
@@ -38,7 +38,7 @@
 &lt;p&gt;到大二的時候，原本的電腦寄回老家，我再另外買一台基本配備的套裝主機，那時候 Vista 剛推出，而我也不疑有他直接用預設的。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;誰知道這正是噩夢的開始。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;當時那台主機記憶體只有 1GB，但光 Vista 本身居然就吃了 70% ~ 80% 的記憶體，隨便晃個滑鼠、開個視窗，記憶體要過 90% 都不是問題。在這情況下，這作業系統根本是沒辦法用的，不只吃記憶體，而且極端的不穩定，雖然後來多插了記憶體以及幾次系統更新後症狀逐漸減輕，但從那時候開始，我在空閒時折騰 Ubuntu 的次數反而大幅增加了。&lt;/p&gt;
-&lt;p&gt;比起 Vista，Ubuntu 裝上之後記憶體只吃了 20% ~ 30% 左右，開特效也沒有什麼大問題，但自從 8.04、8.10 版本推出之後，問題也開始多了。我還蠻執著於軟體什麼都要到最新版才行，所以新版本推出之後我也就升級了，但版本上到 8 之後，一切都不那麼美好了。半年一次的版本升級基本上就是個災難，直接升級的後果會讓 Ubuntu 有一堆奇奇怪怪的問題，與其花時間找方法解決這些問題，直接用新版重灌取代升級反而是最好的方法；當然，如果只要半年重灌一次就可以解決那到還好，怎樣都比我重灌 Vista 的次數多。但 Ubuntu 的軟體、library 版本不上不下，也稱不上穩定，在系統更新個幾次之後又開始有奇怪的問題了。&lt;/p&gt;
+&lt;p&gt;比起 Vista，Ubuntu 裝上之後記憶體只吃了 20% ~ 30% 左右，開特效也沒有什麼大問題，但自從 8.04、8.10 版本推出之後，問題也開始多了。我還蠻執著於軟體什麼都要到最新版才行，所以新版本推出之後我也就升級了，但版本上到 8 之後，一切都不那麼美好了。半年一次的版本升級基本上就是個災難，直接升級的後果會讓 Ubuntu 有一堆奇奇怪怪的問題，與其花時間找方法解決這些問題，直接用新版重灌取代升級反而是最好的方法；當然，如果只要半年重灌一次就可以解決那到還好，怎樣都不會比我重灌 Vista 的次數多。但 Ubuntu 的軟體、library 版本不上不下，也稱不上穩定，在系統更新個幾次之後又開始有奇怪的問題了。&lt;/p&gt;
 &lt;p&gt;那時 Ubuntu 給我的感受是：&lt;strong&gt;我有的問題別人不一定有，別人有的問題我基本上都會有，但別人提供的解決方式起碼有一半在我這邊行不通。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;拜這所賜，當時我覺得我的 Google 搜尋能力得到了提升，而主打一般人也能使用的 Linux 反而變得很常與指令、系統 config 打交道。所以想學好 Linux 基礎的話，去被 Ubuntu 惡整搞不好是最快的方式，這是我折騰到後面的感想。也因為如此，在我心目中最穩定的 Ubuntu 版本是 7.10（當然我也不算是很頻繁的用他），而在架伺服器時，我通常會先考慮 &lt;a href=&quot;https://www.centos.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CentOS&lt;/a&gt; 或 &lt;a href=&quot;https://www.scientificlinux.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Scientific Linux&lt;/a&gt;，Ubuntu Server 反而不會是我優先考慮的發行版。&lt;/p&gt;
 &lt;p&gt;後來有次在 Ubuntu 上當一次機之後，每重開機一次就有某個系統設定或某個軟體設定被初始化，重開越多次，就會越像系統剛裝好的樣子。在那場悲劇之後，一怒之下我就跳槽到 &lt;a href=&quot;https://www.archlinux.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ArchLinux&lt;/a&gt; 了。&lt;/p&gt;

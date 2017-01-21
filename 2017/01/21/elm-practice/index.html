@@ -22,7 +22,7 @@ GitHub
 
 選 Elm 的原因很大一部份其實是逃避現實，由於 JavaScript 的 framework 跟 library 大量出現，而且不僅是前後端，還延伸到桌面軟體、APP 甚至是 IoT 上。以前只是將 ES6 轉成 ES5">
 <meta property="og:image" content="http://i.imgur.com/FZm8bjP.png">
-<meta property="og:updated_time" content="2017-01-21T14:09:22.825Z">
+<meta property="og:updated_time" content="2017-01-21T16:53:45.882Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="摸索 Elm">
 <meta name="twitter:description" content="前陣子在考慮摸索 Elm，剛好在那時候也在找當季蔬果的資料，後來想想，乾脆用這些資料來當作摸索的題材，於是這網站就誕生了，以下來大概講一下感想。
@@ -241,6 +241,7 @@ ga('send', 'pageview');
 <h2 id="選-Elm-的原因"><a href="#選-Elm-的原因" class="headerlink" title="選 Elm 的原因"></a>選 Elm 的原因</h2><p>很大一部份其實是逃避現實，由於 JavaScript 的 framework 跟 library 大量出現，而且不僅是前後端，還延伸到桌面軟體、APP 甚至是 IoT 上。以前只是將 ES6 轉成 ES5 的 Babel，現在除了將可能會有的 ECMAScript 語法轉換以外，還可以讓 JS 支援一些不存在的語法（比如 Flow），再配上 webpack 還可以進一步定義更深的語法結構，雖然不是說非得全包全學不可，但五花八門的輪子不斷冒出，當下感覺是非常的吃不消。</p>
 <p>當時摸的是 React，雖然我個人挺喜歡這 framework，但 JSX 語法我很討厭，加上圍繞著 React 衍生的各種 library，輕則只是加點功能，重則有如在這之上又加了自創的語法一般，導致整個檔案看起來就像是三四種語言或語法風格的大雜燴，但不得不說，React 生態系真的把 JS 玩得很溜，比如 <a href="https://github.com/styled-components/styled-components" target="_blank" rel="external">styled-components</a> 又是一絕，但又要多塞一種風格在裡面我得考慮考慮。</p>
 <p>原本下一個想碰的是 <a href="https://cycle.js.org/" target="_blank" rel="external">Cycle.js</a>，但後來想想，Redux 跟 <a href="https://cycle.js.org/" target="_blank" rel="external">Cycle.js</a> 都有跟 Elm 借鑒一些東西，加上繼 Redux 出現之後，Elm 被關注的程度似乎有上升的趨勢，不如就直接學 Elm 看看，而這也是我第一個學的轉 JS 的語言。</p>
+<a id="more"></a>
 <h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><p>除了剛開始完全不知道怎麼下手外，整體寫起來的感受還算是不錯的，一開始讓我最欣賞的就是程式的引入方式，免去了引入時要寫 <code>../../</code> 之類相對路徑的麻煩。</p>
 <figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Components/Header.elm</span></div><div class="line"><span class="keyword">module</span> Components.Header <span class="keyword">exposing</span> (..)</div></pre></td></tr></table></figure>
 <figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Somewhere else</span></div><div class="line"><span class="keyword">import</span> Components.Header <span class="keyword">exposing</span> (..)</div></pre></td></tr></table></figure>

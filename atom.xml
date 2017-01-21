@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2017-01-21T14:07:16.090Z</updated>
+  <updated>2017-01-21T14:09:22.825Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://notes.knovour.ninja/2017/01/21/elm-practice/"/>
     <id>https://notes.knovour.ninja/2017/01/21/elm-practice/</id>
     <published>2017-01-21T13:50:05.000Z</published>
-    <updated>2017-01-21T14:07:16.090Z</updated>
+    <updated>2017-01-21T14:09:22.825Z</updated>
     
     <content type="html"><![CDATA[<p>前陣子在考慮摸索 Elm，剛好在那時候也在找當季蔬果的資料，後來想想，乾脆用這些資料來當作摸索的題材，於是這<a href="https://notes.knovour.ninja/food/">網站</a>就誕生了，以下來大概講一下感想。</p>
 <ul>
@@ -39,7 +39,6 @@
 <p>Elm 既是一門語言，也是一個 framework，所以建立 HTML 的部份也不會顯得突兀，這部份也是 <a href="https://cycle.js.org/" target="_blank" rel="external">Cycle.js</a> 參考的地方，跟 JSX 比起來，也比較不會有那種 JS 跟 XML 塞在一起充滿嚴重違和感的感覺。</p>
 <figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="title">div</span> [ class <span class="string">"search-bar"</span> ]</div><div class="line">  [ label [ class <span class="string">"label material-icons"</span>, for <span class="string">"search"</span> ] [ text <span class="string">"search"</span> ]</div><div class="line">  , input</div><div class="line">    [ id <span class="string">"search"</span></div><div class="line">    , type_ "search"</div><div class="line">    , name <span class="string">"search"</span></div><div class="line">    , placeholder <span class="string">"Search..."</span></div><div class="line">    , onInput (\value -&gt; <span class="type">SearchMsg</span> &lt;| <span class="type">Name</span> value)</div><div class="line">    ] []</div><div class="line">  ]</div></pre></td></tr></table></figure>
 <p>而 Redux 則是參考了 Elm 的事件處理方式，也就是 <a href="https://guide.elm-lang.org/architecture/" target="_blank" rel="external">The Elm Architecture</a> 的部份。</p>
-<p>Json 取值方面，當時我愣了很久，最後才理出頭緒，</p>
 <h2 id="一些困擾的地方"><a href="#一些困擾的地方" class="headerlink" title="一些困擾的地方"></a>一些困擾的地方</h2><h4 id="額外的-library-太少，或沒跟上新的版本"><a href="#額外的-library-太少，或沒跟上新的版本" class="headerlink" title="額外的 library 太少，或沒跟上新的版本"></a>額外的 library 太少，或沒跟上新的版本</h4><p>這大概是冷門語言最現實的地方，當初想找個線上資料庫之類的服務把當季蔬果的資訊存進去，本來找了 Firebase，但相對應的 <a href="https://github.com/ThomasWeiser/elmfire" target="_blank" rel="external">elmfire</a> 卻是卡在支援 Elm 0.16 版遲遲未更新。之後想改找 GraphQL 的服務，但 <a href="https://github.com/jahewson/elm-graphql" target="_blank" rel="external">elm-graphql</a> 不管試了幾個服務都沒法接上。由於希望能先把網站做出來，所以後來直接丟 <a href="https://www.contentful.com/" target="_blank" rel="external">Contentful CMS</a> 用直接 call 網址的方式取資料。</p>
 <h4 id="View-自訂-component-時，語法風格沒法統一"><a href="#View-自訂-component-時，語法風格沒法統一" class="headerlink" title="View 自訂 component 時，語法風格沒法統一"></a>View 自訂 component 時，語法風格沒法統一</h4><p>我在寫 React 時都盡量讓 XML 的區域只出現 XML，而不是中間又插個 JS 搞得更不倫不類，而 Vue 已經把兩個分開，所以不太需要擔心這種事，但 Elm 的一個標籤兩個陣列的寫法我反而很難配合寫出一樣的銜接 component 的方式。</p>
 <p>如果只是單純的資料傳遞還算勉強有方法，但加上事件處理流程後就很難這樣辦了。</p>

@@ -177,8 +177,8 @@ ga('send', 'pageview');
         
             
 	
-		<a href="/2016/09/30/elm-practice/" itemprop="url">
-            <img src="http://i.imgur.com/LYTfnon.png" class="article-banner" />
+		<a href="/2017/01/21/elm-practice/" itemprop="url">
+            <img src="http://i.imgur.com/FZm8bjP.png" class="article-banner" />
         </a>
 	
 
@@ -191,7 +191,7 @@ ga('send', 'pageview');
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2016/09/30/elm-practice/">摸索 Elm</a>
+            <a class="article-title" href="/2017/01/21/elm-practice/">摸索 Elm</a>
         </h1>
     
 
@@ -199,8 +199,8 @@ ga('send', 'pageview');
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/09/30/elm-practice/">
-            <time datetime="2016-09-29T17:35:05.000Z" itemprop="datePublished">2016-09-30</time>
+        <a href="/2017/01/21/elm-practice/">
+            <time datetime="2017-01-21T13:50:05.000Z" itemprop="datePublished">2017-01-21</time>
         </a>
     </div>
 
@@ -218,11 +218,40 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>這陣子摸了一下 Elm，用他做了個小<a href="https://notes.knovour.ninja/food/">網站</a>，光是怎麼弄事件流程跟資料夾結構就花了我好幾個晚上才摸索出一點頭緒，之後就再把功能慢慢補齊吧。</p>
+            <p>前陣子在考慮摸索 Elm，剛好在那時候也在找當季蔬果的資料，後來想想，乾脆用這些資料來當作摸索的題材，於是這<a href="https://notes.knovour.ninja/food/">網站</a>就誕生了，以下來大概講一下感想。</p>
 <ul>
 <li><a href="https://notes.knovour.ninja/food/">當季蔬果一覽</a></li>
 <li><a href="https://github.com/Knovour/food" target="_blank" rel="external">GitHub</a></li>
 </ul>
+<h2 id="選-Elm-的原因"><a href="#選-Elm-的原因" class="headerlink" title="選 Elm 的原因"></a>選 Elm 的原因</h2><p>很大一部份其實是逃避現實，由於 JavaScript 的 framework 跟 library 大量出現，而且不僅是前後端，還延伸到桌面軟體、APP 甚至是 IoT 上。以前只是將 ES6 轉成 ES5 的 Babel，現在除了將可能會有的 ECMAScript 語法轉換以外，還可以讓 JS 支援一些不存在的語法（比如 Flow），再配上 webpack 還可以進一步定義更深的語法結構，雖然不是說非得全包全學不可，但五花八門的輪子不斷冒出，當下感覺是非常的吃不消。</p>
+<p>當時摸的是 React，雖然我個人挺喜歡這 framework，但 JSX 語法我很討厭，加上圍繞著 React 衍生的各種 library，輕則只是加點功能，重則有如在這之上又加了自創的語法一般，導致整個檔案看起來就像是三四種語言或語法風格的大雜燴，但不得不說，React 生態系真的把 JS 玩得很溜，比如 <a href="https://github.com/styled-components/styled-components" target="_blank" rel="external">styled-components</a> 又是一絕，但又要多塞一種風格在裡面我得考慮考慮。</p>
+<p>原本下一個想碰的是 <a href="https://cycle.js.org/" target="_blank" rel="external">Cycle.js</a>，但後來想想，Redux 跟 <a href="https://cycle.js.org/" target="_blank" rel="external">Cycle.js</a> 都有跟 Elm 借鑒一些東西，加上繼 Redux 出現之後，Elm 被關注的程度似乎有上升的趨勢，不如就直接學 Elm 看看，而這也是我第一個學的轉 JS 的語言。</p>
+<h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><p>除了剛開始完全不知道怎麼下手外，整體寫起來的感受還算是不錯的，一開始讓我最欣賞的就是程式的引入方式，免去了引入時要寫 <code>../../</code> 之類相對路徑的麻煩。</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Components/Header.elm</span></div><div class="line"><span class="keyword">module</span> Components.Header <span class="keyword">exposing</span> (..)</div></pre></td></tr></table></figure>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Somewhere else</span></div><div class="line"><span class="keyword">import</span> Components.Header <span class="keyword">exposing</span> (..)</div></pre></td></tr></table></figure>
+<p>Pipeline 似乎是大部分函數式語言都會有的東西，不過第一次使用時是覺得也是挺有趣的部份，避免掉小括號連包的情況。在 JS 底下類似鏈式寫法，只是某些地方可能得再自己寫個 prototype 接起來或是直接用 lodash 之類的比較快。</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">num</span> = <span class="number">1</span></div><div class="line"><span class="title">multiply</span>(<span class="number">4</span>, add(<span class="number">1</span>, num))</div></pre></td></tr></table></figure>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Same as</span></div><div class="line"><span class="title">num</span></div><div class="line">  |&gt; add <span class="number">1</span></div><div class="line">  |&gt; multiply <span class="number">4</span></div></pre></td></tr></table></figure>
+<p>Elm 既是一門語言，也是一個 framework，所以建立 HTML 的部份也不會顯得突兀，這部份也是 <a href="https://cycle.js.org/" target="_blank" rel="external">Cycle.js</a> 參考的地方，跟 JSX 比起來，也比較不會有那種 JS 跟 XML 塞在一起充滿嚴重違和感的感覺。</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="title">div</span> [ class <span class="string">"search-bar"</span> ]</div><div class="line">  [ label [ class <span class="string">"label material-icons"</span>, for <span class="string">"search"</span> ] [ text <span class="string">"search"</span> ]</div><div class="line">  , input</div><div class="line">    [ id <span class="string">"search"</span></div><div class="line">    , type_ "search"</div><div class="line">    , name <span class="string">"search"</span></div><div class="line">    , placeholder <span class="string">"Search..."</span></div><div class="line">    , onInput (\value -&gt; <span class="type">SearchMsg</span> &lt;| <span class="type">Name</span> value)</div><div class="line">    ] []</div><div class="line">  ]</div></pre></td></tr></table></figure>
+<p>而 Redux 則是參考了 Elm 的事件處理方式，也就是 <a href="https://guide.elm-lang.org/architecture/" target="_blank" rel="external">The Elm Architecture</a> 的部份。</p>
+<p>Json 取值方面，當時我愣了很久，最後才理出頭緒，</p>
+<h2 id="一些困擾的地方"><a href="#一些困擾的地方" class="headerlink" title="一些困擾的地方"></a>一些困擾的地方</h2><h4 id="額外的-library-太少，或沒跟上新的版本"><a href="#額外的-library-太少，或沒跟上新的版本" class="headerlink" title="額外的 library 太少，或沒跟上新的版本"></a>額外的 library 太少，或沒跟上新的版本</h4><p>這大概是冷門語言最現實的地方，當初想找個線上資料庫之類的服務把當季蔬果的資訊存進去，本來找了 Firebase，但相對應的 <a href="https://github.com/ThomasWeiser/elmfire" target="_blank" rel="external">elmfire</a> 卻是卡在支援 Elm 0.16 版遲遲未更新。之後想改找 GraphQL 的服務，但 <a href="https://github.com/jahewson/elm-graphql" target="_blank" rel="external">elm-graphql</a> 不管試了幾個服務都沒法接上。由於希望能先把網站做出來，所以後來直接丟 <a href="https://www.contentful.com/" target="_blank" rel="external">Contentful CMS</a> 用直接 call 網址的方式取資料。</p>
+<h4 id="View-自訂-component-時，語法風格沒法統一"><a href="#View-自訂-component-時，語法風格沒法統一" class="headerlink" title="View 自訂 component 時，語法風格沒法統一"></a>View 自訂 component 時，語法風格沒法統一</h4><p>我在寫 React 時都盡量讓 XML 的區域只出現 XML，而不是中間又插個 JS 搞得更不倫不類，而 Vue 已經把兩個分開，所以不太需要擔心這種事，但 Elm 的一個標籤兩個陣列的寫法我反而很難配合寫出一樣的銜接 component 的方式。</p>
+<p>如果只是單純的資料傳遞還算勉強有方法，但加上事件處理流程後就很難這樣辦了。</p>
+<h4 id="沒有-null"><a href="#沒有-null" class="headerlink" title="沒有 null"></a>沒有 null</h4><p>有些語言回傳空值是沒在用 null 的，取而代之的是用額外的 package（Elm 是取名叫 <code>Result</code>）再包裝一遍，然後再把值取出來。這事已經在 Rust 見試過一次了，雖不討厭但還沒適應這寫法就是。</p>
+<h4 id="一點點觀感問題"><a href="#一點點觀感問題" class="headerlink" title="一點點觀感問題"></a>一點點觀感問題</h4><p><strong>這問題其實在 0.18 被拿掉了，由於我是從 0.17 開始接觸，所以還是想挖出來吐槽一下</strong></p>
+<p>拿 <code>String.contains</code> 這個 function 來舉例（後面會把 String 省略），這個功能跟 JS 的 includes 一樣。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// JavaScript</span></div><div class="line"><span class="string">'Make America Great Again!'</span>.includes(<span class="string">'Great'</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">contains</span> <span class="string">"Great"</span> <span class="string">"Make America Great Again!"</span></div></pre></td></tr></table></figure>
+<p>在 0.17 可以把 function 塞在兩個變數之間，變成：</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 0.17</span></div><div class="line"><span class="string">"Great"</span> `contains` <span class="string">"Make America Great Again!"</span></div></pre></td></tr></table></figure>
+<p>這看起來就好像把 JS 版本的呼叫方式的兩個變數前後互換一樣，看起來非常的怪，但這功能在 0.18 被拿掉了，一律改用 pipeline 的方式代替。</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 0.18</span></div><div class="line"><span class="string">"Make America Great Again!"</span> |&gt; contains <span class="string">"Great"</span></div></pre></td></tr></table></figure>
+<p>雖然多了個箭頭，但至少順眼一些。</p>
+<h2 id="後話"><a href="#後話" class="headerlink" title="後話"></a>後話</h2><p>Elm 會不會變流行？我覺得不會，畢竟 JS 的生態圈裡不只 framework 跟 library 氾濫，連可以轉成 JS 的語言數量也氾濫無比，隨著 ES6 正式上線，以及後續的新語法開始規劃支援後，選用非 JS 的語言再轉換的必要性就沒像以前那麼重要，更何況那一票 framework 都還要用自己的 webpack loader 做轉換才能動了！</p>
+<p>但如果 <a href="http://webassembly.org/" target="_blank" rel="external">WebAssembly</a> 開始正式推行的話，或許會有不一樣的氣象也說不定，我想到時除了為了寫遊戲而使用 <a href="http://webassembly.org/" target="_blank" rel="external">WebAssembly</a> 的語言外，像 Elm 這種獨立語言 + framework 的語言也會跟著變多吧！</p>
+<p>至少我不太會想拿來寫第二個網站就是…</p>
 
         
         </div>
@@ -233,7 +262,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2016/09/30/elm-practice/" data-id="citomirlo000kyfn34fj6zvi5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2017/01/21/elm-practice/" data-id="citomirlo000kyfn34fj6zvi5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -301,7 +330,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="https://notes.knovour.ninja/2016/09/30/elm-practice/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2016/09/30/elm-practice/">評論</a>
+        <a href="https://notes.knovour.ninja/2017/01/21/elm-practice/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2017/01/21/elm-practice/">評論</a>
     
 
         </footer>
@@ -1574,7 +1603,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">歸檔</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1611,7 +1640,7 @@ ga('send', 'pageview');
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            <i class="fa fa-copyright"></i> 2016 Knovour Zheng<br>
+            <i class="fa fa-copyright"></i> 2017 Knovour Zheng<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
         </div>
     </div>

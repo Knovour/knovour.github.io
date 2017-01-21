@@ -3,20 +3,35 @@
 <head>
     <meta charset="utf-8">
     
-    <title>在 Linux 上執行 Path of Exile (PoE) | Knovour Notes</title>
+    <title>摸索 Elm | Knovour Notes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="用 Wine 執行 PoE，無須降級、免裝 PlayOnLinux。">
+    <meta name="description" content="前陣子在考慮摸索 Elm，剛好在那時候也在找當季蔬果的資料，後來想想，乾脆用這些資料來當作摸索的題材，於是這網站就誕生了，以下來大概講一下感想。
+
+當季蔬果一覽
+GitHub
+
+選 Elm 的原因很大一部份其實是逃避現實，由於 JavaScript 的 framework 跟 library 大量出現，而且不僅是前後端，還延伸到桌面軟體、APP 甚至是 IoT 上。以前只是將 ES6 轉成 ES5">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在 Linux 上執行 Path of Exile (PoE)">
-<meta property="og:url" content="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/index.html">
+<meta property="og:title" content="摸索 Elm">
+<meta property="og:url" content="https://notes.knovour.ninja/2017/01/21/elm-practice/index.html">
 <meta property="og:site_name" content="Knovour Notes">
-<meta property="og:description" content="用 Wine 執行 PoE，無須降級、免裝 PlayOnLinux。">
-<meta property="og:image" content="https://farm1.staticflickr.com/621/21000960109_98f4415f3d_c.jpg">
-<meta property="og:updated_time" content="2016-03-21T13:20:24.649Z">
+<meta property="og:description" content="前陣子在考慮摸索 Elm，剛好在那時候也在找當季蔬果的資料，後來想想，乾脆用這些資料來當作摸索的題材，於是這網站就誕生了，以下來大概講一下感想。
+
+當季蔬果一覽
+GitHub
+
+選 Elm 的原因很大一部份其實是逃避現實，由於 JavaScript 的 framework 跟 library 大量出現，而且不僅是前後端，還延伸到桌面軟體、APP 甚至是 IoT 上。以前只是將 ES6 轉成 ES5">
+<meta property="og:image" content="http://i.imgur.com/FZm8bjP.png">
+<meta property="og:updated_time" content="2017-01-21T13:50:51.841Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在 Linux 上執行 Path of Exile (PoE)">
-<meta name="twitter:description" content="用 Wine 執行 PoE，無須降級、免裝 PlayOnLinux。">
-<meta name="twitter:image" content="https://farm1.staticflickr.com/621/21000960109_98f4415f3d_c.jpg">
+<meta name="twitter:title" content="摸索 Elm">
+<meta name="twitter:description" content="前陣子在考慮摸索 Elm，剛好在那時候也在找當季蔬果的資料，後來想想，乾脆用這些資料來當作摸索的題材，於是這網站就誕生了，以下來大概講一下感想。
+
+當季蔬果一覽
+GitHub
+
+選 Elm 的原因很大一部份其實是逃避現實，由於 JavaScript 的 framework 跟 library 大量出現，而且不僅是前後端，還延伸到桌面軟體、APP 甚至是 IoT 上。以前只是將 ES6 轉成 ES5">
+<meta name="twitter:image" content="http://i.imgur.com/FZm8bjP.png">
 <meta name="twitter:creator" content="@261262114">
     <script type="text/javascript">var _jf = _jf || [];_jf.push(['p','40489']);_jf.push(['_setFont','xingothic-tc-w4','css','.xingothic-tc-w4']);_jf.push(['_setFont','xingothic-tc-w4','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w4','weight',400]);_jf.push(['_setFont','xingothic-tc-w3','css','.xingothic-tc-w3']);_jf.push(['_setFont','xingothic-tc-w3','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w3','weight',300]);_jf.push(['_setFont','cwtexqhei','css','.cwtexqhei']);_jf.push(['_setFont','cwtexqhei','alias','cwtexqhei']);_jf.push(['_setFont','cwtexqhei','weight',700]);(function(f,q,c,h,e,i,r,d){var k=f._jf;if(k.constructor===Object){return}var l,t=q.getElementsByTagName("html")[0],a=function(u){for(var v in k){if(k[v][0]==u){if(false===k[v][1].call(k)){break}}}},j=/\S+/g,o=/[\t\r\n\f]/g,b=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,g="".trim,s=g&&!g.call("\uFEFF\xA0")?function(u){return u==null?"":g.call(u)}:function(u){return u==null?"":(u+"").replace(b,"")},m=function(y){var w,z,v,u,x=typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):" ";if(z){u=0;while((v=w[u++])){if(z.indexOf(" "+v+" ")<0){z+=v+" "}}t[c]=s(z)}}},p=function(y){var w,z,v,u,x=arguments.length===0||typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):"";if(z){u=0;while((v=w[u++])){while(z.indexOf(" "+v+" ")>=0){z=z.replace(" "+v+" "," ")}}t[c]=y?s(z):""}}},n;k.push(["_eventActived",function(){p(h);m(e)}]);k.push(["_eventInactived",function(){p(h);m(i)}]);k.addScript=n=function(u,A,w,C,E,B){E=E||function(){};B=B||function(){};var x=q.createElement("script"),z=q.getElementsByTagName("script")[0],v,y=false,D=function(){x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;a("_eventInactived");B()};if(C){v=setTimeout(function(){D()},C)}x.type=A||"text/javascript";x.async=w;x.onload=x.onreadystatechange=function(G,F){if(!y&&(!x.readyState||/loaded|complete/.test(x.readyState))){y=true;if(C){clearTimeout(v)}x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;if(!F){setTimeout(function(){E()},200)}}};x.onerror=function(H,G,F){if(C){clearTimeout(v)}D();return true};x.src=u;z.parentNode.insertBefore(x,z)};a("_eventPreload");m(h);n(r,"text/javascript",false,3000)})(this,this.document,"className","jf-loading","jf-active","jf-inactive","//d3gc6cgx8oosp4.cloudfront.net/js/stable/v/4.9.7/id/171273672556");</script>
     
@@ -174,12 +189,12 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><article id="post-path-of-exile-on-linux" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-elm-practice" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             
 	
-		<img src="https://farm1.staticflickr.com/621/21000960109_98f4415f3d_c.jpg" class="article-banner" />
+		<img src="http://i.imgur.com/FZm8bjP.png" class="article-banner" />
 	
 
 
@@ -191,7 +206,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-            在 Linux 上執行 Path of Exile (PoE)
+            摸索 Elm
         </h1>
     
 
@@ -199,8 +214,8 @@ ga('send', 'pageview');
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2015/09/16/path-of-exile-on-linux/">
-            <time datetime="2015-09-16T13:26:00.000Z" itemprop="datePublished">2015-09-16</time>
+        <a href="/2017/01/21/elm-practice/">
+            <time datetime="2017-01-21T13:50:05.000Z" itemprop="datePublished">2017-01-21</time>
         </a>
     </div>
 
@@ -209,7 +224,7 @@ ga('send', 'pageview');
                     
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/game/">game</a>, <a class="tag-link" href="/tags/linux/">linux</a>, <a class="tag-link" href="/tags/wine/">wine</a>
+        <a class="tag-link" href="/tags/elm/">elm</a>
     </div>
 
                 </div>
@@ -218,48 +233,40 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>之前在 Wine 上跑過一陣子 PoE，但經過幾次更新後，loading 畫面除了狂閃外基本上就是完全進不去的狀態，然而當時也是有點膩了，所以也懶得折騰（基本上都是在講把 Wine 降級或是裝 PlayOnLinux，不過不想這樣搞）。</p>
-<p>現在 2.0 出了，「據說」修好了錯位，也偶然發現有一篇比較不那麼麻煩的設定<a href="https://russell.cc/path-of-exile-linux/" target="_blank" rel="external">文章</a>，試一試還真的成功了，在這邊紀錄一下。<br><a id="more"></a><br>註：文章裡似乎是把 PoE 另外裝其他地方，再外帶參數啟動（我的理解啦），但我沒有用 Wine 模擬其他東西的需要，所以就把覺得可以跳過的部份跳過，下面的紀錄基本上就是個精簡後的設定步驟。</p>
-<h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><ul>
-<li><a href="https://manjaro.github.io/" target="_blank" rel="external">Manjaro Linux</a></li>
-<li><a href="https://www.kde.org/" target="_blank" rel="external">KDE Plasma 5</a></li>
-<li>NVIDIA 顯卡</li>
+            <p>前陣子在考慮摸索 Elm，剛好在那時候也在找當季蔬果的資料，後來想想，乾脆用這些資料來當作摸索的題材，於是這<a href="https://notes.knovour.ninja/food/">網站</a>就誕生了，以下來大概講一下感想。</p>
+<ul>
+<li><a href="https://notes.knovour.ninja/food/">當季蔬果一覽</a></li>
+<li><a href="https://github.com/Knovour/food" target="_blank" rel="external">GitHub</a></li>
 </ul>
-<h2 id="執行-winecfg"><a href="#執行-winecfg" class="headerlink" title="執行 winecfg"></a>執行 winecfg</h2><ol>
-<li>選定 windows 版本（原文是 8 不過選 10 也沒差）。</li>
-<li>將 <code>openal32</code> 加進函式庫裡。</li>
-<li>勾選虛擬桌面，解析度自己根據需求調整。</li>
-</ol>
-<p><img src="https://farm1.staticflickr.com/577/21195623851_4c22a1dc13_b.jpg" alt="winecfg"></p>
-<h2 id="安裝-windows-相關套件"><a href="#安裝-windows-相關套件" class="headerlink" title="安裝 windows 相關套件"></a>安裝 windows 相關套件</h2><p>執行 <code>winetricks directx9 vcrun2010 riched20 usp10</code></p>
-<h2 id="安裝遊戲"><a href="#安裝遊戲" class="headerlink" title="安裝遊戲"></a>安裝遊戲</h2><p>執行 PoE 安裝檔，之後再開啟下載主程式，這部份不會有問題，但主程式裝完後先關掉不要按 Launch，不然 wine 會當掉。</p>
-<h2 id="執行-wine-regedit"><a href="#執行-wine-regedit" class="headerlink" title="執行 wine regedit"></a>執行 <code>wine regedit</code></h2><p>安裝期間可以先處理這部份（在 regedit 裡移到對應的路徑）</p>
-<ol>
-<li><code>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes</code>：新增一個字串值叫 <code>Fontin SmallCaps</code>，數值為 <code>Fontin</code>。</li>
-<li><code>HKEY_CURRENT_USER\Software\Wine\Direct3D</code>：若沒有 <code>Direct3D</code> 的資料夾則自行新增一個。在底下新增以下資料：<ol>
-<li><code>OffscreenRenderingMode</code>：字串值為 <code>backbuffer</code>。</li>
-<li><code>VideoMemorySize</code>：這是你的顯卡記憶體大小，以 MB 計，我的是 2048。</li>
-<li><code>UseGLSL</code>：NVIDIA 顯卡限定，值為 <code>disabled</code>，若執行時覺得有問題可以把這個值移除看看。</li>
-</ol>
-</li>
-</ol>
-<p><img src="https://farm1.staticflickr.com/738/20999863178_1337f3d5a8_b.jpg" alt="regedit"></p>
-<h2 id="設定-PoE"><a href="#設定-PoE" class="headerlink" title="設定 PoE"></a>設定 PoE</h2><p>到 <code>~/文件/My Games/Path of Exile/</code>（不同發行版位置可能不大一樣），開啟 <code>production_Config.ini</code>，在 <code>[DISPLAY]</code> 底下新增或替換以下設定：</p>
-<ol>
-<li><code>fullscreen=true</code></li>
-<li><code>borderless_windowed_fullscreen=false</code></li>
-<li><code>resolution_height=虛擬桌面高度</code></li>
-<li><code>resolution_width=虛擬桌面寬度</code></li>
-</ol>
-<h2 id="結束"><a href="#結束" class="headerlink" title="結束"></a>結束</h2><p>等 PoE 主程式載完就可以啟動了。</p>
-<p><img src="https://farm6.staticflickr.com/5805/21197789131_d983728162_o.jpg" alt="play"></p>
-<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><ol>
-<li>基本上不會像以前那樣 FPS 掉很重了，但偶爾會破圖。</li>
-<li>地圖亮度偏暗，地穴根本是黑的，使用冰系或雷系技能擊中或發動瞬間會照亮地圖（火焰反而沒法照亮…），招喚 Golem（2.0 新技能）可以永久照亮。</li>
-<li>音效要在設定裡選擇 <code>Generic Software on out</code> 開頭的才有聲音。</li>
-<li>只有 Act4 沒錯位就算了，Act123 + Map 的錯位感覺更嚴重了是怎樣，新增的 Map 也是一樣慘。</li>
-</ol>
-<h2 id="參考來源"><a href="#參考來源" class="headerlink" title="參考來源"></a>參考來源</h2><p><a href="https://russell.cc/path-of-exile-linux/" target="_blank" rel="external">Path of Exile on Linux</a></p>
+<h2 id="選-Elm-的原因"><a href="#選-Elm-的原因" class="headerlink" title="選 Elm 的原因"></a>選 Elm 的原因</h2><p>很大一部份其實是逃避現實，由於 JavaScript 的 framework 跟 library 大量出現，而且不僅是前後端，還延伸到桌面軟體、APP 甚至是 IoT 上。以前只是將 ES6 轉成 ES5 的 Babel，現在除了將可能會有的 ECMAScript 語法轉換以外，還可以讓 JS 支援一些不存在的語法（比如 Flow），再配上 webpack 還可以進一步定義更深的語法結構，雖然不是說非得全包全學不可，但五花八門的輪子不斷冒出，當下感覺是非常的吃不消。</p>
+<p>當時摸的是 React，雖然我個人挺喜歡這 framework，但 JSX 語法我很討厭，加上圍繞著 React 衍生的各種 library，輕則只是加點功能，重則有如在這之上又加了自創的語法一般，導致整個檔案看起來就像是三四種語言或語法風格的大雜燴，但不得不說，React 生態系真的把 JS 玩得很溜，比如 <a href="https://github.com/styled-components/styled-components" target="_blank" rel="external">styled-components</a> 又是一絕，但又要多塞一種風格在裡面我得考慮考慮。</p>
+<p>原本下一個想碰的是 <a href="https://cycle.js.org/" target="_blank" rel="external">Cycle.js</a>，但後來想想，Redux 跟 <a href="https://cycle.js.org/" target="_blank" rel="external">Cycle.js</a> 都有跟 Elm 借鑒一些東西，加上繼 Redux 出現之後，Elm 被關注的程度似乎有上升的趨勢，不如就直接學 Elm 看看，而這也是我第一個學的轉 JS 的語言。</p>
+<h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><p>除了剛開始完全不知道怎麼下手外，整體寫起來的感受還算是不錯的，一開始讓我最欣賞的就是程式的引入方式，免去了引入時要寫 <code>../../</code> 之類相對路徑的麻煩。</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Components/Header.elm</span></div><div class="line"><span class="keyword">module</span> Components.Header <span class="keyword">exposing</span> (..)</div></pre></td></tr></table></figure>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Somewhere else</span></div><div class="line"><span class="keyword">import</span> Components.Header <span class="keyword">exposing</span> (..)</div></pre></td></tr></table></figure>
+<p>Pipeline 似乎是大部分函數式語言都會有的東西，不過第一次使用時是覺得也是挺有趣的部份，避免掉小括號連包的情況。在 JS 底下類似鏈式寫法，只是某些地方可能得再自己寫個 prototype 接起來或是直接用 lodash 之類的比較快。</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">num</span> = <span class="number">1</span></div><div class="line"><span class="title">multiply</span>(<span class="number">4</span>, add(<span class="number">1</span>, num))</div></pre></td></tr></table></figure>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Same as</span></div><div class="line"><span class="title">num</span></div><div class="line">  |&gt; add <span class="number">1</span></div><div class="line">  |&gt; multiply <span class="number">4</span></div></pre></td></tr></table></figure>
+<p>Elm 既是一門語言，也是一個 framework，所以建立 HTML 的部份也不會顯得突兀，這部份也是 <a href="https://cycle.js.org/" target="_blank" rel="external">Cycle.js</a> 參考的地方，跟 JSX 比起來，也比較不會有那種 JS 跟 XML 塞在一起充滿嚴重違和感的感覺。</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="title">div</span> [ class <span class="string">"search-bar"</span> ]</div><div class="line">  [ label [ class <span class="string">"label material-icons"</span>, for <span class="string">"search"</span> ] [ text <span class="string">"search"</span> ]</div><div class="line">  , input</div><div class="line">    [ id <span class="string">"search"</span></div><div class="line">    , type_ "search"</div><div class="line">    , name <span class="string">"search"</span></div><div class="line">    , placeholder <span class="string">"Search..."</span></div><div class="line">    , onInput (\value -&gt; <span class="type">SearchMsg</span> &lt;| <span class="type">Name</span> value)</div><div class="line">    ] []</div><div class="line">  ]</div></pre></td></tr></table></figure>
+<p>而 Redux 則是參考了 Elm 的事件處理方式，也就是 <a href="https://guide.elm-lang.org/architecture/" target="_blank" rel="external">The Elm Architecture</a> 的部份。</p>
+<p>Json 取值方面，當時我愣了很久，最後才理出頭緒，</p>
+<h2 id="一些困擾的地方"><a href="#一些困擾的地方" class="headerlink" title="一些困擾的地方"></a>一些困擾的地方</h2><h4 id="額外的-library-太少，或沒跟上新的版本"><a href="#額外的-library-太少，或沒跟上新的版本" class="headerlink" title="額外的 library 太少，或沒跟上新的版本"></a>額外的 library 太少，或沒跟上新的版本</h4><p>這大概是冷門語言最現實的地方，當初想找個線上資料庫之類的服務把當季蔬果的資訊存進去，本來找了 Firebase，但相對應的 <a href="https://github.com/ThomasWeiser/elmfire" target="_blank" rel="external">elmfire</a> 卻是卡在支援 Elm 0.16 版遲遲未更新。之後想改找 GraphQL 的服務，但 <a href="https://github.com/jahewson/elm-graphql" target="_blank" rel="external">elm-graphql</a> 不管試了幾個服務都沒法接上。由於希望能先把網站做出來，所以後來直接丟 <a href="https://www.contentful.com/" target="_blank" rel="external">Contentful CMS</a> 用直接 call 網址的方式取資料。</p>
+<h4 id="View-自訂-component-時，語法風格沒法統一"><a href="#View-自訂-component-時，語法風格沒法統一" class="headerlink" title="View 自訂 component 時，語法風格沒法統一"></a>View 自訂 component 時，語法風格沒法統一</h4><p>我在寫 React 時都盡量讓 XML 的區域只出現 XML，而不是中間又插個 JS 搞得更不倫不類，而 Vue 已經把兩個分開，所以不太需要擔心這種事，但 Elm 的一個標籤兩個陣列的寫法我反而很難配合寫出一樣的銜接 component 的方式。</p>
+<p>如果只是單純的資料傳遞還算勉強有方法，但加上事件處理流程後就很難這樣辦了。</p>
+<h4 id="沒有-null"><a href="#沒有-null" class="headerlink" title="沒有 null"></a>沒有 null</h4><p>有些語言回傳空值是沒在用 null 的，取而代之的是用額外的 package（Elm 是取名叫 <code>Result</code>）再包裝一遍，然後再把值取出來。這事已經在 Rust 見試過一次了，雖不討厭但還沒適應這寫法就是。</p>
+<h4 id="一點點觀感問題"><a href="#一點點觀感問題" class="headerlink" title="一點點觀感問題"></a>一點點觀感問題</h4><p><strong>這問題其實在 0.18 被拿掉了，由於我是從 0.17 開始接觸，所以還是想挖出來吐槽一下</strong></p>
+<p>拿 <code>String.contains</code> 這個 function 來舉例（後面會把 String 省略），這個功能跟 JS 的 includes 一樣。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// JavaScript</span></div><div class="line"><span class="string">'Make America Great Again!'</span>.includes(<span class="string">'Great'</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">contains</span> <span class="string">"Great"</span> <span class="string">"Make America Great Again!"</span></div></pre></td></tr></table></figure>
+<p>在 0.17 可以把 function 塞在兩個變數之間，變成：</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 0.17</span></div><div class="line"><span class="string">"Great"</span> `contains` <span class="string">"Make America Great Again!"</span></div></pre></td></tr></table></figure>
+<p>這看起來就好像把 JS 版本的呼叫方式的兩個變數前後互換一樣，看起來非常的怪，但這功能在 0.18 被拿掉了，一律改用 pipeline 的方式代替。</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 0.18</span></div><div class="line"><span class="string">"Make America Great Again!"</span> |&gt; contains <span class="string">"Great"</span></div></pre></td></tr></table></figure>
+<p>雖然多了個箭頭，但至少順眼一些。</p>
+<h2 id="後話"><a href="#後話" class="headerlink" title="後話"></a>後話</h2><p>Elm 會不會變流行？我覺得不會，畢竟 JS 的生態圈裡不只 framework 跟 library 氾濫，連可以轉成 JS 的語言數量也氾濫無比，隨著 ES6 正式上線，以及後續的新語法開始規劃支援後，選用非 JS 的語言再轉換的必要性就沒像以前那麼重要，更何況那一票 framework 都還要用自己的 webpack loader 做轉換才能動了！</p>
+<p>但如果 <a href="http://webassembly.org/" target="_blank" rel="external">WebAssembly</a> 開始正式推行的話，或許會有不一樣的氣象也說不定，我想到時除了為了寫遊戲而使用 <a href="http://webassembly.org/" target="_blank" rel="external">WebAssembly</a> 的語言外，像 Elm 這種獨立語言 + framework 的語言也會跟著變多吧！</p>
+<p>至少我不太會想拿來寫第二個網站就是…</p>
 
         
         </div>
@@ -270,7 +277,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/" data-id="citomirlu000qyfn3bckewf88" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://notes.knovour.ninja/2017/01/21/elm-practice/" data-id="citomirlo000kyfn34fj6zvi5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -338,7 +345,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/">評論</a>
+        <a href="https://notes.knovour.ninja/2017/01/21/elm-practice/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://notes.knovour.ninja/2017/01/21/elm-practice/">評論</a>
     
 
         </footer>
@@ -347,19 +354,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2016/01/11/change-blog-from-openshift-to-github/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    放棄在 OpenShift 上管理部落格
-                
-            </div>
-        </a>
     
-    
-        <a href="/2015/08/13/deploy-node-js-by-pm2/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2016/07/08/years-of-using-linux/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">用 PM2 部署 node server</div>
+            <div class="article-nav-title">這幾年使用 Linux 當一般作業系統的感受</div>
         </a>
     
 </nav>
@@ -436,7 +434,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'knovour-notes';
     
     
-    var disqus_url = 'https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/';
+    var disqus_url = 'https://notes.knovour.ninja/2017/01/21/elm-practice/';
     
     (function() {
     var dsq = document.createElement('script');

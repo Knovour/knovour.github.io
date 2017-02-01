@@ -21,8 +21,8 @@ GitHub
 GitHub
 
 選 Elm 的原因很大一部份其實是逃避現實，由於 JavaScript 的 framework 跟 library 大量出現，而且不僅是前後端，還延伸到桌面軟體、APP 甚至是 IoT 上。以前只是將 ES6 轉成 ES5">
-<meta property="og:image" content="http://i.imgur.com/FZm8bjP.png">
-<meta property="og:updated_time" content="2017-01-21T16:53:45.882Z">
+<meta property="og:image" content="http://i.imgur.com/7WTNc3K.png">
+<meta property="og:updated_time" content="2017-02-01T20:16:34.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="摸索 Elm">
 <meta name="twitter:description" content="前陣子在考慮摸索 Elm，剛好在那時候也在找當季蔬果的資料，後來想想，乾脆用這些資料來當作摸索的題材，於是這網站就誕生了，以下來大概講一下感想。
@@ -31,7 +31,7 @@ GitHub
 GitHub
 
 選 Elm 的原因很大一部份其實是逃避現實，由於 JavaScript 的 framework 跟 library 大量出現，而且不僅是前後端，還延伸到桌面軟體、APP 甚至是 IoT 上。以前只是將 ES6 轉成 ES5">
-<meta name="twitter:image" content="http://i.imgur.com/FZm8bjP.png">
+<meta name="twitter:image" content="http://i.imgur.com/7WTNc3K.png">
 <meta name="twitter:creator" content="@261262114">
     <script type="text/javascript">var _jf = _jf || [];_jf.push(['p','40489']);_jf.push(['_setFont','xingothic-tc-w4','css','.xingothic-tc-w4']);_jf.push(['_setFont','xingothic-tc-w4','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w4','weight',400]);_jf.push(['_setFont','xingothic-tc-w3','css','.xingothic-tc-w3']);_jf.push(['_setFont','xingothic-tc-w3','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w3','weight',300]);_jf.push(['_setFont','cwtexqhei','css','.cwtexqhei']);_jf.push(['_setFont','cwtexqhei','alias','cwtexqhei']);_jf.push(['_setFont','cwtexqhei','weight',700]);(function(f,q,c,h,e,i,r,d){var k=f._jf;if(k.constructor===Object){return}var l,t=q.getElementsByTagName("html")[0],a=function(u){for(var v in k){if(k[v][0]==u){if(false===k[v][1].call(k)){break}}}},j=/\S+/g,o=/[\t\r\n\f]/g,b=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,g="".trim,s=g&&!g.call("\uFEFF\xA0")?function(u){return u==null?"":g.call(u)}:function(u){return u==null?"":(u+"").replace(b,"")},m=function(y){var w,z,v,u,x=typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):" ";if(z){u=0;while((v=w[u++])){if(z.indexOf(" "+v+" ")<0){z+=v+" "}}t[c]=s(z)}}},p=function(y){var w,z,v,u,x=arguments.length===0||typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):"";if(z){u=0;while((v=w[u++])){while(z.indexOf(" "+v+" ")>=0){z=z.replace(" "+v+" "," ")}}t[c]=y?s(z):""}}},n;k.push(["_eventActived",function(){p(h);m(e)}]);k.push(["_eventInactived",function(){p(h);m(i)}]);k.addScript=n=function(u,A,w,C,E,B){E=E||function(){};B=B||function(){};var x=q.createElement("script"),z=q.getElementsByTagName("script")[0],v,y=false,D=function(){x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;a("_eventInactived");B()};if(C){v=setTimeout(function(){D()},C)}x.type=A||"text/javascript";x.async=w;x.onload=x.onreadystatechange=function(G,F){if(!y&&(!x.readyState||/loaded|complete/.test(x.readyState))){y=true;if(C){clearTimeout(v)}x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;if(!F){setTimeout(function(){E()},200)}}};x.onerror=function(H,G,F){if(C){clearTimeout(v)}D();return true};x.src=u;z.parentNode.insertBefore(x,z)};a("_eventPreload");m(h);n(r,"text/javascript",false,3000)})(this,this.document,"className","jf-loading","jf-active","jf-inactive","//d3gc6cgx8oosp4.cloudfront.net/js/stable/v/4.9.7/id/171273672556");</script>
     
@@ -194,7 +194,7 @@ ga('send', 'pageview');
         
             
 	
-		<img src="http://i.imgur.com/FZm8bjP.png" class="article-banner" />
+		<img src="http://i.imgur.com/7WTNc3K.png" class="article-banner" />
 	
 
 
@@ -255,18 +255,17 @@ ga('send', 'pageview');
 <h4 id="View-自訂-component-時，語法風格沒法統一"><a href="#View-自訂-component-時，語法風格沒法統一" class="headerlink" title="View 自訂 component 時，語法風格沒法統一"></a>View 自訂 component 時，語法風格沒法統一</h4><p>我在寫 React 時都盡量讓 XML 的區域只出現 XML，而不是中間又插個 JS 搞得更不倫不類，而 Vue 已經把兩個分開，所以不太需要擔心這種事，但 Elm 的一個標籤兩個陣列的寫法我反而很難配合寫出一樣的銜接 component 的方式。</p>
 <p>如果只是單純的資料傳遞還算勉強有方法，但加上事件處理流程後就很難這樣辦了。</p>
 <h4 id="沒有-null"><a href="#沒有-null" class="headerlink" title="沒有 null"></a>沒有 null</h4><p>有些語言回傳空值是沒在用 null 的，取而代之的是用額外的 package（Elm 是取名叫 <code>Result</code>）再包裝一遍，然後再把值取出來。這事已經在 Rust 見試過一次了，雖不討厭但還沒適應這寫法就是。</p>
-<h4 id="一點點觀感問題"><a href="#一點點觀感問題" class="headerlink" title="一點點觀感問題"></a>一點點觀感問題</h4><p><strong>這問題其實在 0.18 被拿掉了，由於我是從 0.17 開始接觸，所以還是想挖出來吐槽一下</strong></p>
-<p>拿 <code>String.contains</code> 這個 function 來舉例（後面會把 String 省略），這個功能跟 JS 的 includes 一樣。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// JavaScript</span></div><div class="line"><span class="string">'Make America Great Again!'</span>.includes(<span class="string">'Great'</span>);</div></pre></td></tr></table></figure>
-<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">contains</span> <span class="string">"Great"</span> <span class="string">"Make America Great Again!"</span></div></pre></td></tr></table></figure>
-<p>在 0.17 可以把 function 塞在兩個變數之間，變成：</p>
-<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 0.17</span></div><div class="line"><span class="string">"Great"</span> `contains` <span class="string">"Make America Great Again!"</span></div></pre></td></tr></table></figure>
-<p>這看起來就好像把 JS 版本的呼叫方式的兩個變數前後互換一樣，看起來非常的怪，但這功能在 0.18 被拿掉了，一律改用 pipeline 的方式代替。</p>
-<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 0.18</span></div><div class="line"><span class="string">"Make America Great Again!"</span> |&gt; contains <span class="string">"Great"</span></div></pre></td></tr></table></figure>
-<p>雖然多了個箭頭，但至少順眼一些。</p>
-<h2 id="後話"><a href="#後話" class="headerlink" title="後話"></a>後話</h2><p>Elm 會不會變流行？我覺得不會，畢竟 JS 的生態圈裡不只 framework 跟 library 氾濫，連可以轉成 JS 的語言數量也氾濫無比，隨著 ES6 正式上線，以及後續的新語法開始規劃支援後，選用非 JS 的語言再轉換這件事就更沒有必要了，更何況那一票 framework 也是都要用自己的 webpack loader 做轉換才能動了！</p>
+<h4 id="其他一些晦澀的地方"><a href="#其他一些晦澀的地方" class="headerlink" title="其他一些晦澀的地方"></a>其他一些晦澀的地方</h4><p>文件有些地方沒有付範例還蠻難看懂的，比如當我想用 <code>Dict.map</code> 這個函式時，描述所寫的：</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="title">map</span></div><div class="line">    :  (comparable -&gt; a -&gt; b)</div><div class="line">    -&gt; <span class="type">Dict</span> comparable a</div><div class="line">    -&gt; <span class="type">Dict</span> comparable b</div></pre></td></tr></table></figure>
+<p>我是怎樣也看不明白，後來翻到<a href="https://medium.com/@blogscot/learning-elm-data-types-6a25420a1b7b" target="_blank" rel="external">這篇文章</a>時才知道原來 a 跟 b 是 <code>key</code> 跟 <code>value</code> 的意思：</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="type">Dict</span>.map (\key value -&gt; do something) data</div></pre></td></tr></table></figure>
+<p>另外像程式碼報錯的部份，我最常被指出的錯誤是函數的接收或回傳的型態描述不對，而他會很貼心的建議你應該是要寫另外一種，但他建議的照做之後有時又會錯得更厲害，彷彿被愚弄了一樣，尤其 Elm 的型態不是只有 <code>Int</code>、<code>String</code>、<code>List</code> 之類常見的型態，還可以自訂其他的型態，再加上 The Elm Architecture 的架構，初學時在多方來往之間，有時一個小地方搞混可能得找老半天才知道真正的問題是什麼，而那個答案也不會是當初 Elm 檢查時所給你的建議。</p>
+<p>其他一些像 main program 的 <code>Program Never Model Msg</code> 這奇怪的描述，到最後是完全不想懂了。</p>
+<h2 id="後話"><a href="#後話" class="headerlink" title="後話"></a>後話</h2><p>老實說，在寫的期間，曾有數度想要推掉用 JS 重寫的衝動，並不是越寫越討厭的關係，而是一方面從 JS 這類語言回頭去學嚴謹的語言會有不少困難，另一方面還是會有「反正到頭來都是轉回去 JS，學這幹麻？」的念頭在。但在寫的過程中，文件的描述以及途中尋找一些 library，期待他至少「堪用」但沒想到是「沒法用」的情況下，也是加深重寫的想法的原因之一。</p>
+<p>至於 Elm 會不會變流行？我覺得不會，畢竟 JS 的生態圈裡不只 framework 跟 library 氾濫，連可以轉成 JS 的語言數量也氾濫無比，隨著 ES6 正式上線，以及後續的新語法開始規劃支援後，選用非 JS 的語言再轉換這件事就更沒有必要了，更何況那一票 framework 也是都要用自己的 webpack loader 做轉換才能動了！</p>
 <p>但如果 <a href="http://webassembly.org/" target="_blank" rel="external">WebAssembly</a> 開始正式推行的話，或許會有不一樣的氣象也說不定，我想到時除了為了寫遊戲而使用 <a href="http://webassembly.org/" target="_blank" rel="external">WebAssembly</a> 的語言外，像 Elm 這種獨立語言 + framework 的語言也會跟著變多吧！</p>
 <p>至少我不太會想拿來寫第二個網站就是…</p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>Always bet on js - by Brendan Eich（JS 之父）。</p>
 
         
         </div>

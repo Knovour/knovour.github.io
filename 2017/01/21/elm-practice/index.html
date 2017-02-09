@@ -22,7 +22,7 @@ GitHub
 
 選 Elm 的原因很大一部份其實是逃避現實，由於 JavaScript 的 framework 跟 library 大量出現，而且不僅是前後端，還延伸到桌面軟體、APP 甚至是 IoT 上。以前只是將 ES6 轉成 ES5">
 <meta property="og:image" content="http://i.imgur.com/7WTNc3K.png">
-<meta property="og:updated_time" content="2017-02-01T20:18:23.095Z">
+<meta property="og:updated_time" content="2017-02-09T17:32:10.866Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="摸索 Elm">
 <meta name="twitter:description" content="前陣子在考慮摸索 Elm，剛好在那時候也在找當季蔬果的資料，後來想想，乾脆用這些資料來當作摸索的題材，於是這網站就誕生了，以下來大概講一下感想。
@@ -262,7 +262,8 @@ ga('send', 'pageview');
 <p>另外像程式碼報錯的部份，我最常被指出的錯誤是函數的接收或回傳的型態描述不對，而他會很貼心的建議你應該是要寫另外一種，但他建議的照做之後有時又會錯得更厲害，彷彿被愚弄了一樣，尤其 Elm 的型態不是只有 <code>Int</code>、<code>String</code>、<code>List</code> 之類常見的型態，還可以自訂其他的型態，再加上 The Elm Architecture 的架構，初學時在多方來往之間，有時一個小地方搞混可能得找老半天才知道真正的問題是什麼，而那個答案也不會是當初 Elm 檢查時所給你的建議。</p>
 <p>其他一些像 main program 的 <code>Program Never Model Msg</code> 這奇怪的描述，到最後是完全不想懂了。</p>
 <h2 id="後話"><a href="#後話" class="headerlink" title="後話"></a>後話</h2><p>老實說，在寫的期間，曾有數度想要推掉用 JS 重寫的衝動，並不是越寫越討厭的關係，而是一方面從 JS 這類語言回頭去學嚴謹的語言會有不少困難，另一方面還是會有「反正到頭來都是轉回去 JS，學這幹麻？」的念頭在。但在寫的過程中，文件的描述以及途中尋找一些 library，期待他至少「堪用」但沒想到是「沒法用」的情況下，也是加深重寫的想法的原因之一。</p>
-<p>至於 Elm 會不會變流行？我覺得不會，畢竟 JS 的生態圈裡不只 framework 跟 library 氾濫，連可以轉成 JS 的語言數量也氾濫無比，隨著 ES6 正式上線，以及後續的新語法開始規劃支援後，選用非 JS 的語言再轉換這件事就更沒有必要了，更何況那一票 framework 也是都要用自己的 webpack loader 做轉換才能動了！</p>
+<p>最大的收穫大概是對函數式的寫法有更多的經驗，雖然平常寫 js 就會盡量以函數式的方式寫，但不會每個 function 都拆分得乾乾淨淨，離嚴格遵守有很大的距離，在被 Elm 逼著你這樣思考這樣寫之後，對往後寫 js 的程式架構分配也會有很大的幫助。</p>
+<p>至於 Elm 會不會變流行？我覺得不會，畢竟 JS 的生態圈裡不只 framework 跟 library 氾濫，連可以轉成 JS 的語言數量也氾濫無比，隨著 ES6/7 正式上線，以及 ES8 開始規劃支援後，選用非 JS 的語言再轉換這件事就更加沒有必要了，更何況那一票 framework 也是都要用自己的 webpack loader 做轉換才能動了！</p>
 <p>但如果 <a href="http://webassembly.org/" target="_blank" rel="external">WebAssembly</a> 開始正式推行的話，或許會有不一樣的氣象也說不定，我想到時除了為了寫遊戲而使用 <a href="http://webassembly.org/" target="_blank" rel="external">WebAssembly</a> 的語言外，像 Elm 這種獨立語言 + framework 的語言也會跟著變多吧！</p>
 <p>至少我不太會想拿來寫第二個網站就是…</p>
 <h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>Always bet on js - by Brendan Eich（JS 之父）。</p>

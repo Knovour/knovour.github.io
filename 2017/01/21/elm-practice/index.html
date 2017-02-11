@@ -22,7 +22,7 @@ GitHub
 
 選 Elm 的原因很大一部份其實是逃避現實，由於 JavaScript 的 framework 跟 library 大量出現，而且不僅是前後端，還延伸到桌面軟體、APP 甚至是 IoT 上。以前只是將 ES6 轉成 ES5">
 <meta property="og:image" content="http://i.imgur.com/7WTNc3K.png">
-<meta property="og:updated_time" content="2017-02-09T17:32:10.866Z">
+<meta property="og:updated_time" content="2017-02-11T16:48:49.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="摸索 Elm">
 <meta name="twitter:description" content="前陣子在考慮摸索 Elm，剛好在那時候也在找當季蔬果的資料，後來想想，乾脆用這些資料來當作摸索的題材，於是這網站就誕生了，以下來大概講一下感想。
@@ -257,7 +257,7 @@ ga('send', 'pageview');
 <h4 id="沒有-null"><a href="#沒有-null" class="headerlink" title="沒有 null"></a>沒有 null</h4><p>有些語言回傳空值是沒在用 null 的，取而代之的是用額外的 package（Elm 是取名叫 <code>Result</code>）再包裝一遍，然後再把值取出來。這事已經在 Rust 見試過一次了，雖不討厭但還沒適應這寫法就是。</p>
 <h4 id="其他一些晦澀的地方"><a href="#其他一些晦澀的地方" class="headerlink" title="其他一些晦澀的地方"></a>其他一些晦澀的地方</h4><p>文件有些地方沒有付範例還蠻難看懂的，比如當我想用 <code>Dict.map</code> 這個函式時，描述所寫的：</p>
 <figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="title">map</span></div><div class="line">    :  (comparable -&gt; a -&gt; b)</div><div class="line">    -&gt; <span class="type">Dict</span> comparable a</div><div class="line">    -&gt; <span class="type">Dict</span> comparable b</div></pre></td></tr></table></figure>
-<p>我是怎樣也看不明白，後來翻到<a href="https://medium.com/@blogscot/learning-elm-data-types-6a25420a1b7b" target="_blank" rel="external">這篇文章</a>時才知道原來 a 跟 b 是 <code>key</code> 跟 <code>value</code> 的意思：</p>
+<p>我是怎樣也看不明白，後來翻到<a href="https://medium.com/@blogscot/learning-elm-data-types-6a25420a1b7b" target="_blank" rel="external">這篇文章</a>時才知道原來是要這樣子寫：</p>
 <figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="type">Dict</span>.map (\key value -&gt; do something) data</div></pre></td></tr></table></figure>
 <p>另外像程式碼報錯的部份，我最常被指出的錯誤是函數的接收或回傳的型態描述不對，而他會很貼心的建議你應該是要寫另外一種，但他建議的照做之後有時又會錯得更厲害，彷彿被愚弄了一樣，尤其 Elm 的型態不是只有 <code>Int</code>、<code>String</code>、<code>List</code> 之類常見的型態，還可以自訂其他的型態，再加上 The Elm Architecture 的架構，初學時在多方來往之間，有時一個小地方搞混可能得找老半天才知道真正的問題是什麼，而那個答案也不會是當初 Elm 檢查時所給你的建議。</p>
 <p>其他一些像 main program 的 <code>Program Never Model Msg</code> 這奇怪的描述，到最後是完全不想懂了。</p>

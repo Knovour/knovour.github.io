@@ -81,7 +81,7 @@
     <link href="https://notes.knovour.ninja/2016/07/08/years-of-using-linux/"/>
     <id>https://notes.knovour.ninja/2016/07/08/years-of-using-linux/</id>
     <published>2016-07-08T04:19:39.000Z</published>
-    <updated>2016-08-16T17:15:05.638Z</updated>
+    <updated>2017-05-07T15:32:06.964Z</updated>
     
     <content type="html"><![CDATA[<p>上圖是我的 Linux 現在的樣子：</p>
 <ul>
@@ -142,7 +142,7 @@
 <p>比如像 Linux 上的 Skype，簡直就像是半個僵屍一般，在 Linux 上破破爛爛的，當 Windows 跟 Mac 都換上新介面的時候，只有 Linux 版在被收購那一陣子換上微軟大大所有、加上微軟帳號登入後就不再有任何更新，不論官方論壇上的人有多憤怒，聽不到就是聽不到。</p>
 <p>然而前幾天微軟突然發佈一個好消息，宣佈 Linux 版 Skype 重新製作的 Alpha 版測試，這基本上就是個大消息，之前他在表面上說自己有多麼積極擁抱 Linux 的時候，Linux 版的 Skype 默默的躺在一邊啜泣，而現在卻又重獲關注，多麼棒的消息！</p>
 <p>Skype 的 GUI 是基於 Qt，但是在裝上 Alpha 版之後發現，怎麼捨棄了 Qt 用上 GTK 了？打開後的直覺是這應該是 <a href="http://electron.atom.io/" target="_blank" rel="external">Electron</a> 打包的（<a href="http://electron.atom.io/" target="_blank" rel="external">Electron</a> 基於 Chromium，Chromium 基於 GTK），Reddit 以及一些文章也有提到這件事；雖然 <a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> 也是 <a href="http://electron.atom.io/" target="_blank" rel="external">Electron</a> 打包的，用起來也不錯，但 Skype 這種作法實在是太忽悠人，畢竟有四五年沒有任何更新。尤其在這之前已經有許多人嘗試用這種方式打包網頁版了，其中有些運作得還不錯，微軟真的沒有直接拿別人的程式碼來改？再一次，微軟又讓人失望了。</p>
-<p><img src="https://raw.githubusercontent.com/stanfieldr/ghetto-skype/develop/assets/screenshot.png" alt="Ghetto Skype, base on Electron（人家還可以選佈景勒）"></p>
+<p><img src="http://i.imgur.com/7ypK1jF.png" alt="Ghetto Skype, base on Electron（人家還可以選佈景勒）"></p>
 <p>很多時候，在 Linux 上使用軟體真的覺得自己像個次等公民一樣，但現在 web 技術愈來愈發達，很多東西已經都是改在網頁上完成，所以這個隔閡就顯得比較不那麼嚴重了（但微軟還是該死）。</p>
 <h2 id="遊戲"><a href="#遊戲" class="headerlink" title="遊戲"></a>遊戲</h2><p>拜 <a href="http://doom.com/" target="_blank" rel="external">DOOM</a> 系列遊戲 Open Source 所賜，以前 Linux 上 3D 大型遊戲裡佔絕大多數的就是 FPS 類遊戲，其他的就是一些像 <a href="https://supertux.github.io/" target="_blank" rel="external">SuperTux</a> 之類的 2D 小遊戲，沒有什麼能夠提起興趣的，主要還是開 Windows 打魔獸三國之類的居多。</p>
 <p>後來 <a href="http://www.heroesofnewerth.com/" target="_blank" rel="external">HoN</a> 推出，第一款不用魔獸三就能獨立執行的 Dota 類遊戲，而且還支援 Linux，在玩過幾次之後就慫恿朋友也跟著跳坑，但無奈官方希望能夠用收費的方式經營，在歷經一年多的免費暢玩後，遊戲收費的第一天，人氣直跌谷底，分別回流到原本的魔獸與那時剛推出不久的 <a href="http://na.leagueoflegends.com/" target="_blank" rel="external">LoL</a>，過幾年後 <a href="http://blog.dota2.com/" target="_blank" rel="external">Dota2</a> 推出，我也就這樣轉戰過去了。幾年之後，<a href="http://www.heroesofnewerth.com/" target="_blank" rel="external">HoN</a> 默默改回免費模式，但已不再吸引人了。</p>

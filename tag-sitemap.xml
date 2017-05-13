@@ -23,113 +23,106 @@
     </url>
 
     <url>
-        <loc>https://notes.knovour.ninja/tags/linux/</loc>
-        <lastmod>2016-03-21T13:20:24.649Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/tags/wine/</loc>
-        <lastmod>2016-03-21T13:20:24.649Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/tags/game/</loc>
-        <lastmod>2016-03-21T13:20:24.649Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/tags/google/</loc>
-        <lastmod>2016-03-21T13:25:06.558Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/tags/search/</loc>
-        <lastmod>2016-03-21T13:25:06.558Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://notes.knovour.ninja/tags/D3/</loc>
-        <lastmod>2016-03-22T10:15:00.049Z</lastmod>
+        <lastmod>2017-05-13T11:03:31.178Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://notes.knovour.ninja/tags/p5-js/</loc>
-        <lastmod>2016-03-22T10:15:00.049Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/tags/node-js/</loc>
-        <lastmod>2016-03-23T11:38:48.557Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/tags/sails-js/</loc>
-        <lastmod>2016-03-23T11:38:48.557Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/tags/%E9%9B%9C%E8%AB%87/</loc>
-        <lastmod>2016-04-14T16:21:27.976Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/tags/flux/</loc>
-        <lastmod>2016-05-02T11:10:24.019Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/tags/docker/</loc>
-        <lastmod>2016-05-08T04:50:10.428Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/tags/react-js/</loc>
-        <lastmod>2016-07-20T12:42:51.863Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/tags/redux/</loc>
-        <lastmod>2016-07-20T12:42:51.863Z</lastmod>
+        <lastmod>2017-05-13T11:03:31.178Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://notes.knovour.ninja/tags/elm/</loc>
-        <lastmod>2017-05-07T15:11:30.673Z</lastmod>
+        <lastmod>2017-05-13T11:04:02.224Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/%E9%9B%9C%E8%AB%87/</loc>
+        <lastmod>2017-05-13T11:04:23.831Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/linux/</loc>
+        <lastmod>2017-05-13T11:04:35.054Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/wine/</loc>
+        <lastmod>2017-05-13T11:04:35.054Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/game/</loc>
+        <lastmod>2017-05-13T11:04:35.054Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/node-js/</loc>
+        <lastmod>2017-05-13T11:04:44.460Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/sails-js/</loc>
+        <lastmod>2017-05-13T11:04:44.460Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/react-js/</loc>
+        <lastmod>2017-05-13T11:04:54.523Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/redux/</loc>
+        <lastmod>2017-05-13T11:04:54.523Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/flux/</loc>
+        <lastmod>2017-05-13T11:04:54.523Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/google/</loc>
+        <lastmod>2017-05-13T11:05:03.790Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/search/</loc>
+        <lastmod>2017-05-13T11:05:03.790Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://notes.knovour.ninja/tags/Linux/</loc>
-        <lastmod>2017-05-07T15:32:06.964Z</lastmod>
+        <lastmod>2017-05-13T11:05:13.293Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

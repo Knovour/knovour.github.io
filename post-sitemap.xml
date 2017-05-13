@@ -8,31 +8,15 @@
 
     <url>
         <loc>https://notes.knovour.ninja/2016/07/08/years-of-using-linux/</loc>
-        <lastmod>2017-05-07T15:32:06.964Z</lastmod>
+        <lastmod>2017-05-13T11:05:13.293Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://notes.knovour.ninja/2017/01/21/elm-practice/</loc>
-        <lastmod>2017-05-07T15:11:30.673Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/2016/05/23/my-experience-about-react-redux-in-one-month/</loc>
-        <lastmod>2016-07-20T12:42:51.863Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/2016/05/08/docker-beta/</loc>
-        <lastmod>2016-05-08T04:50:10.428Z</lastmod>
+        <loc>https://notes.knovour.ninja/2015/04/15/some-google-search-skills/</loc>
+        <lastmod>2017-05-13T11:05:03.790Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -40,23 +24,7 @@
 
     <url>
         <loc>https://notes.knovour.ninja/2016/05/02/react-flux-short-explain/</loc>
-        <lastmod>2016-05-02T11:10:24.019Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/2016/04/14/one-thing-about-disrespect-design-in-my-memory/</loc>
-        <lastmod>2016-04-14T16:21:27.976Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/2016/03/29/d3-p5-js-notes-bar-chart/</loc>
-        <lastmod>2016-03-30T15:31:45.912Z</lastmod>
+        <lastmod>2017-05-13T11:04:54.523Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -64,7 +32,55 @@
 
     <url>
         <loc>https://notes.knovour.ninja/2016/03/23/problems-about-sails-js/</loc>
-        <lastmod>2016-03-23T11:38:48.557Z</lastmod>
+        <lastmod>2017-05-13T11:04:44.460Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/</loc>
+        <lastmod>2017-05-13T11:04:35.054Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/2016/04/14/one-thing-about-disrespect-design-in-my-memory/</loc>
+        <lastmod>2017-05-13T11:04:23.831Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/2016/05/23/my-experience-about-react-redux-in-one-month/</loc>
+        <lastmod>2017-05-13T11:04:11.214Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/2017/01/21/elm-practice/</loc>
+        <lastmod>2017-05-13T11:04:02.224Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/2016/03/29/d3-p5-js-notes-bar-chart/</loc>
+        <lastmod>2017-05-13T11:03:43.341Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-area-chart/</loc>
+        <lastmod>2017-05-13T11:03:31.178Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -79,22 +95,6 @@
     </url>
 
     <url>
-        <loc>https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-area-chart/</loc>
-        <lastmod>2016-03-21T14:11:16.378Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/2015/04/15/some-google-search-skills/</loc>
-        <lastmod>2016-03-21T13:25:06.558Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-introduce-p5/</loc>
         <lastmod>2016-03-21T13:21:27.885Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -103,24 +103,8 @@
     </url>
 
     <url>
-        <loc>https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/</loc>
-        <lastmod>2016-03-21T13:20:24.649Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/</loc>
         <lastmod>2016-03-02T19:04:02.176Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/2016/02/21/koa-notes/</loc>
-        <lastmod>2016-02-27T21:03:14.854Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

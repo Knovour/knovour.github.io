@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2017-05-18T17:33:59.721Z</updated>
+  <updated>2017-05-18T17:40:19.068Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://notes.knovour.ninja/2017/05/19/something-about-tientien-frontend-development/"/>
     <id>https://notes.knovour.ninja/2017/05/19/something-about-tientien-frontend-development/</id>
     <published>2017-05-18T17:30:00.000Z</published>
-    <updated>2017-05-18T17:33:59.721Z</updated>
+    <updated>2017-05-18T17:40:19.068Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/Z3hXaNJ.png" alt=""></p>
 <p>歷時數月的田田蔬果終於正式上線了。</p>
@@ -42,7 +42,7 @@
 <p>回報 issue 的當下其實是很想罵人的</p>
 </blockquote>
 <h2 id="個人感想"><a href="#個人感想" class="headerlink" title="個人感想"></a>個人感想</h2><p>在碰 <a href="https://vuejs.org/" target="_blank" rel="external">Vue</a> 之前，我已經用 React 寫過幾個小專案了，所以我對於多學一樣都是 view 方面的 library 興趣實在不大。</p>
-<p>因為之前寫 React 的時候，我才意識到前端最麻煩的其實是事件的流程處理，jQuery、純 js 之類的自然不用說，基本上是最難統整的，但以前寫的時候卻不會對這部份多想；雖然 React 有 Redux，Vue 有 Vuex，對於開發流程也有很大的幫助，但總覺得缺少了什麼，所以有考慮要接觸 RxJS，後來跳去摸 Elm，而 Elm 的方式大概是我目前遇到覺得最好的，可惜是個冷門的領域。</p>
+<p>因為之前寫 React 的時候，我才意識到前端最麻煩的其實是事件的流程處理，jQuery、純 js 之類的自然不用說，基本上是最難統整的，但以前寫的時候卻不會對這部份多想；雖然 React 有 Redux，<a href="https://vuejs.org/" target="_blank" rel="external">Vue</a> 有 <a href="https://vuex.vuejs.org/" target="_blank" rel="external">Vuex</a>，對於開發流程也有很大的幫助，但總覺得缺少了什麼，所以有考慮要接觸 <a href="http://reactivex.io/" target="_blank" rel="external">RxJS</a>，後來跳去摸 Elm，而 Elm 的方式大概是我目前遇到覺得最好的，可惜是個冷門的領域。</p>
 <p>這次專案開發的過程中，不只是上述壞的方面，其他與 <a href="https://vuejs.org/" target="_blank" rel="external">Vue</a> 無關的坑也不少，尤其是 Safari 的種種鳥事，雖然每個功能都有實現，但都只有實現一半，你踩到算你衰。IE 已經不再更新，你只能自己摸摸鼻子，而 Safari 更新緩慢支援又差，在這次專案後已經把他跟 IE 徹底劃上等號了。</p>
 <p>整體來說，我對 <a href="https://vuejs.org/" target="_blank" rel="external">Vue</a> 的感受其實是很差的 XDD，除了容易上手這點外，我覺得也就只有這點了，只能說很抱歉剛好在不上不下的時機進場，結果搞得七葷八素，加上跟他無關的鳥事也超多，每次回想總是會想到一塊，就會覺得很煩躁阿…</p>
 <h2 id="收穫與教訓"><a href="#收穫與教訓" class="headerlink" title="收穫與教訓"></a>收穫與教訓</h2><ol>

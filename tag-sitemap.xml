@@ -2,13 +2,6 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://notes.knovour.ninja/tags/deploy/</loc>
-        <lastmod>2016-01-11T15:48:49.371Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://notes.knovour.ninja/tags/openshift/</loc>
         <lastmod>2016-01-11T16:40:27.854Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -72,13 +65,6 @@
     </url>
 
     <url>
-        <loc>https://notes.knovour.ninja/tags/node-js/</loc>
-        <lastmod>2017-05-13T11:04:44.460Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://notes.knovour.ninja/tags/sails-js/</loc>
         <lastmod>2017-05-13T11:04:44.460Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -121,8 +107,29 @@
     </url>
 
     <url>
+        <loc>https://notes.knovour.ninja/tags/node-js/</loc>
+        <lastmod>2017-05-17T19:42:58.184Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/deploy/</loc>
+        <lastmod>2017-05-17T19:42:58.184Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://notes.knovour.ninja/tags/Linux/</loc>
-        <lastmod>2017-05-13T11:05:13.293Z</lastmod>
+        <lastmod>2017-05-18T16:59:12.192Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/Vue/</loc>
+        <lastmod>2017-05-18T17:33:59.721Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

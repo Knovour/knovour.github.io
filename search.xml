@@ -3,6 +3,50 @@
   
     
     <entry>
+      <title><![CDATA[Vue.js 大型專案開發心得]]></title>
+      <url>/2017/05/19/something-about-tientien-frontend-development/</url>
+      <content type="html"><![CDATA[<p><img src="http://i.imgur.com/Z3hXaNJ.png" alt=""></p>
+<p>歷時數月的田田蔬果終於正式上線了。</p>
+<p>這次專案是用 <a href="https://vuejs.org/" target="_blank" rel="external">Vue</a> 作為主軸來進行開發，對公司以及對我來講，不只是第一次的體驗，也是第一次將此類技術直接用在一個完整專案，來達到前後端分離的目標。</p>
+<a id="more"></a>
+<h2 id="好的方面"><a href="#好的方面" class="headerlink" title="好的方面"></a>好的方面</h2><p>挑選 <a href="https://vuejs.org/" target="_blank" rel="external">Vue</a> 的原因，不外乎是因為容易入門，而 html、js、css 三種語言雖然在同一檔案，但各自分離，對第一次入門的人比較容易看懂。二方面是公司裡的前端，除了我以外都是設計轉工程師，對於轉向更加系統化的開發架構這方面，<a href="https://vuejs.org/" target="_blank" rel="external">Vue</a> 也會是更好的選擇。故在參與開發的同時，我也負責將其他前端帶入門，以及一些 ES6 的基礎教學；<a href="https://vuejs.org/" target="_blank" rel="external">Vue</a> 的文件清晰易讀，函式也容易理解，所以在帶入門後，他們也很容易從文件中獲取他們所需要的資訊。</p>
+<p>在開發期間，有其他工程師進來幫忙一小段時間，也有工程師離職，到最後我得承擔整個前端的開發，在看過並整理其他同事寫的部份花了我不少時間，但跟整理一般的麵條式程式碼比起來，比較不容易攪亂思緒。</p>
+<p><a href="https://nuxtjs.org/" target="_blank" rel="external">Nuxt</a> 的出現是個即時雨，對於各方面來講都有很大的幫助，不僅省下不少折騰 Webpack 的時間，也是社群裡對 SSR 支援最好的方案，加上自動建立 route、code split 等，都是前端 library 開發的痛點之一，轉移到 <a href="https://nuxtjs.org/" target="_blank" rel="external">Nuxt</a> 之後，著實省下不少麻煩。</p>
+<h2 id="壞的方面"><a href="#壞的方面" class="headerlink" title="壞的方面"></a>壞的方面</h2><p>在決定用 <a href="https://vuejs.org/" target="_blank" rel="external">Vue</a> 開發時，第二版大概出了好一陣子，但到後來才發現，有不少套件都停留在第一版沒有跟上，這在當下是個挺大的麻煩，雖然有原生 js 方案可選，但用起來就是比較彆扭；也由於第二版推出時間不算久，所以開發過程中，也會跟著版本進行升級，但有時可能因為一個小變動，而讓一些本來寫好的功能變得無法作用，事情就會變得更麻煩。</p>
+<p><a href="https://nuxtjs.org/" target="_blank" rel="external">Nuxt</a> 雖然幫上很大的忙，但畢竟不是正式版，坑也非常得多。有時 bug 一出現，你很難確定到底是 <a href="https://nuxtjs.org/" target="_blank" rel="external">Nuxt</a> 的問題，亦或是 <a href="https://vuejs.org/" target="_blank" rel="external">Vue</a> 的問題，當下除了幹聲連連外其實也很懶得去追究這件事。不過在許多方面，<a href="https://nuxtjs.org/" target="_blank" rel="external">Nuxt</a> 的出現解決很多問題這是肯定的，所以專案結束後，我也贊助了一些給他們。</p>
+<p>這邊列幾個我遇到的很鳥的 bug</p>
+<ol>
+<li>本來點擊 logo 是回到首頁，但在某些頁面底下，點了 logo 卻會回到上一頁，幸好更新了版本後就沒這鳥事了。</li>
+<li>有些 router link 在 Chrome 的 devtool 底下沒有顯示連結，但點了是有反應的。</li>
+<li><a href="https://nuxtjs.org/" target="_blank" rel="external">Nuxt</a> 在 0.9.7 到 0.9.8 之間多了非常多關於 route 的測試與功能等相關的 commit，結果 0.9.8 出來時，route 是壞的，遇到的當下讓我心情實在是糟到不行。</li>
+</ol>
+<p><img src="https://media.giphy.com/media/GVQ9MHHd4SNFu/giphy.gif?response_id=591dd3476047f17b1471fbfe" alt=""></p>
+<blockquote>
+<p>回報 issue 的當下其實是很想罵人的</p>
+</blockquote>
+<h2 id="個人感想"><a href="#個人感想" class="headerlink" title="個人感想"></a>個人感想</h2><p>在碰 <a href="https://vuejs.org/" target="_blank" rel="external">Vue</a> 之前，我已經用 React 寫過幾個小專案了，所以我對於多學一樣都是 view 方面的 library 興趣實在不大。</p>
+<p>因為之前寫 React 的時候，我才意識到前端最麻煩的其實是事件的流程處理，jQuery、純 js 之類的自然不用說，基本上是最難統整的，但以前寫的時候卻不會對這部份多想；雖然 React 有 Redux，Vue 有 Vuex，對於開發流程也有很大的幫助，但總覺得缺少了什麼，所以有考慮要接觸 RxJS，後來跳去摸 Elm，而 Elm 的方式大概是我目前遇到覺得最好的，可惜是個冷門的領域。</p>
+<p>這次專案開發的過程中，不只是上述壞的方面，其他與 <a href="https://vuejs.org/" target="_blank" rel="external">Vue</a> 無關的坑也不少，尤其是 Safari 的種種鳥事，雖然每個功能都有實現，但都只有實現一半，你踩到算你衰。IE 已經不再更新，你只能自己摸摸鼻子，而 Safari 更新緩慢支援又差，在這次專案後已經把他跟 IE 徹底劃上等號了。</p>
+<p>整體來說，我對 <a href="https://vuejs.org/" target="_blank" rel="external">Vue</a> 的感受其實是很差的 XDD，除了容易上手這點外，我覺得也就只有這點了，只能說很抱歉剛好在不上不下的時機進場，結果搞得七葷八素，加上跟他無關的鳥事也超多，每次回想總是會想到一塊，就會覺得很煩躁阿…</p>
+<h2 id="收穫與教訓"><a href="#收穫與教訓" class="headerlink" title="收穫與教訓"></a>收穫與教訓</h2><ol>
+<li>不要對社群的套件跟上新版本的速度抱持樂觀（不如說這是選新技術時也得考量到的）。</li>
+<li>前後端分離後，RESTful API 的設計以及響應的速度更加重要。</li>
+<li>下次弄個 <a href="https://github.com/prettier/prettier" target="_blank" rel="external">Prettier</a> 好了。</li>
+<li>有些套件還是會暗藏 jQuery，不可不慎（不是說 jQuery 不好，但既然用了其他前端 library，那他就不該是列入的項目）。</li>
+<li>函數式才是往後 js 開發時，最需要了解的核心觀念。</li>
+</ol>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[摸索 Elm]]></title>
       <url>/2017/01/21/elm-practice/</url>
       <content type="html"><![CDATA[<p><img src="http://i.imgur.com/7WTNc3K.png" alt="banner"></p>
@@ -75,32 +119,56 @@
 <p>那時 Ubuntu 給我的感受是：<strong>我有的問題別人不一定有，別人有的問題我基本上都會有，但別人提供的解決方式起碼有一半在我這邊行不通。</strong></p>
 <p>拜這所賜，當時我覺得我的 Google 搜尋能力得到了提升，而主打一般人也能使用的 Linux 反而變得很常與指令、系統 config 打交道。所以想學好 Linux 基礎的話，去被 Ubuntu 惡整搞不好是最快的方式，這是我折騰到後面的感想。也因為如此，在我心目中最穩定的 Ubuntu 版本是 7.10（當然我也不算是很頻繁的用他），而在架伺服器時，我通常會先考慮 <a href="https://www.centos.org/" target="_blank" rel="external">CentOS</a> 或 <a href="https://www.scientificlinux.org/" target="_blank" rel="external">Scientific Linux</a>，Ubuntu Server 反而不會是我優先考慮的發行版。</p>
 <p>後來有次在 Ubuntu 上當一次機之後，每重開機一次就有某個系統設定或某個軟體設定被初始化，重開越多次，就會越像系統剛裝好的樣子。在那場悲劇之後，一怒之下我就跳槽到 <a href="https://www.archlinux.org/" target="_blank" rel="external">ArchLinux</a> 了。</p>
-<p><img src="http://i.imgur.com/g130C.jpg" alt="在此掛上 8.10 的桌布來紀念那段日子（這也是歷來 Ubuntu 版本裡，我最喜歡的預設桌布）"></p>
+<p><img src="http://i.imgur.com/g130C.jpg" alt=""></p>
+<blockquote>
+<p>在此掛上 8.10 的桌布來紀念那段日子（這也是歷來 Ubuntu 版本裡，我最喜歡的預設桌布）</p>
+</blockquote>
 <p>當時看到這篇 <a href="http://antimalicious.blogspot.tw/2009/04/archlinux.html" target="_blank" rel="external">ArchLinux 推廣教學文</a>時就一直考慮要換，看了幾次教學文以及搜尋其他教學文章跟 VM 練習之後才下定了決心。要知道，那時候智慧型手機還沒有推出，手機上網也是件不容易的事，所以當時我把過程抄在紙上後，燒了光碟就開始弄了。當時的安裝過程就跟那篇推廣文的內容差不多，有基本的引導流程，所以沒有很大的麻煩（其實我不小心把 D 槽給格式化了）。</p>
 <p><a href="https://www.archlinux.org/" target="_blank" rel="external">ArchLinux</a> 裝完後問題其實也不少，但有很完整的 Wiki 在，基本上都是可以解決的事，就算要額外搜尋，也不太會有別人的解決方式我行不通的情形發生，雖然安裝過程麻煩了一些，但重灌的次數少了非常多。話雖如此，<a href="https://www.archlinux.org/" target="_blank" rel="external">ArchLinux</a> 的開發者卻覺得應該要提高安裝的難度，所以新版連基本的安裝導引都拿掉了，你得從頭到尾打指令才行。</p>
 <p>第一次重灌時覺得算了，反正久久才會重灌一次，等到那個「久久」的時刻真的來臨時，我反而沒什麼耐心再搞安裝了。在這之前有搜尋過 <a href="https://www.archlinux.org/" target="_blank" rel="external">ArchLinux</a> 的衍生版，其中 <a href="https://chakralinux.org/" target="_blank" rel="external">Chakra</a> 以及 <a href="https://manjaro.github.io/" target="_blank" rel="external">Manjaro Linux</a> 是比較常看到有在討論的，安裝上也比較方便，在試了幾次 <a href="https://chakralinux.org/" target="_blank" rel="external">Chakra</a> 都無法安裝成功後，我選擇了後者直到現在。</p>
 <h2 id="桌面環境"><a href="#桌面環境" class="headerlink" title="桌面環境"></a>桌面環境</h2><p>Linux 的桌面環境基本上就是 Gnome 跟 KDE 這兩個為大宗，前者基於 GTK，後者基於 Qt，一個是以 Mac 桌面環境為參考，一個是以 Windows 為參考；在版本前進到 Gnome 3 以及 KDE 4 之後，兩者都開始走出屬於自己的路了。</p>
 <p>當時 Ubuntu 是以 Gnome 2 為預設環境，8.10 以前是以淺色為基調</p>
-<p><img src="http://i1-linux.softpedia-static.com/screenshots/Ubuntu-Gutsy-Gibbon_1.jpg" alt="來源：Softpedia"></p>
+<p><img src="http://i1-linux.softpedia-static.com/screenshots/Ubuntu-Gutsy-Gibbon_1.jpg" alt=""></p>
+<blockquote>
+<p>來源：Softpedia</p>
+</blockquote>
 <p>基本上看起來就是很無聊的樣子，到 9.04 時換成深色佈景，質感提升了不少。</p>
-<p><img src="http://news.softpedia.com/images/extra/LINUX/large/ubuntu904released-large_001.jpg" alt="來源：Softpedia"></p>
+<p><img src="http://news.softpedia.com/images/extra/LINUX/large/ubuntu904released-large_001.jpg" alt=""></p>
+<blockquote>
+<p>來源：Softpedia</p>
+</blockquote>
 <p>但對我來說他還是有個問題 ― 他很好看，但不耐看，看了差不多三個月之後就看膩了。在那段期間，除了折騰系統上的問題之外，我還深深陷入了更換佈景及調整桌面配置的過程中；只要在 RSS 上看到有什麼 Gnome 佈景推荐的文章，或是像 <a href="https://www.gnome-look.org" target="_blank" rel="external">GNOME-LOOK.ORG</a> 之類的網站看有什麼不錯的佈景，我就會抓下來試一試。</p>
 <p>這些佈景在試用後的感想是：<strong>深色系的普遍都不好看也不耐看，淺色系的有些雖不好看但還算耐看。</strong></p>
 <p>而那時在我的作業系統上留最久的佈景應該是 <a href="https://www.gnome-look.org/content/show.php/Bamboo+Zen?content=85860" target="_blank" rel="external">Bamboo Zen</a>。</p>
-<p><img src="https://cn.pling.com/img//hive/content-pre2/85860-2.jpg" alt="來源：GNOME-LOOK.ORG"></p>
+<p><img src="https://cn.pling.com/img//hive/content-pre2/85860-2.jpg" alt=""></p>
+<blockquote>
+<p>來源：GNOME-LOOK.ORG</p>
+</blockquote>
 <p>當時有一部份 Gnome 的淺色系佈景很喜歡打上一種噱頭：<strong>像 Mac 一樣</strong>。我不懂為什麼很多人想要讓作業系統看起來「像 Mac 一樣」，但他真的發生了。他們把色彩調成淺銀色或銀白色，加上點光澤，換掉圖標（我覺得在這當中最可憐的是 Firefox，因為他常被迫換上 Safari 的圖標），一個 Mac Like 介面就誕生了。在這段期間，最嚴重的莫過於誕生了 Pear OS 這個發行版。</p>
-<p><img src="http://i1-news.softpedia-static.com/images/news2/Pear-OS-Is-Making-a-Comeback-Rumor-468670-3.jpg" alt="來源：Softpedia"></p>
+<p><img src="http://i1-news.softpedia-static.com/images/news2/Pear-OS-Is-Making-a-Comeback-Rumor-468670-3.jpg" alt=""></p>
+<blockquote>
+<p>來源：Softpedia</p>
+</blockquote>
 <p>不論這些<strong>像 Mac 一樣</strong>的佈景有多麼強調這件事，他們唯一不會跟你講的就是：「當你裝好之後，切記！盯著桌面看就好，不要做任何事，不要打開任何東西。」，因為隨便點開一個視窗就徹底破功了。這種事在 Android 上也在發生，只是模仿對象變成了 iOS。</p>
 <p>不過 Pear OS 已經收掉了，目前的 Mac Like 發行版變成 <a href="https://sourceforge.net/projects/gmaclinux/" target="_blank" rel="external">GMac Linux</a>。</p>
 <p><img src="https://a.fsdn.com/con/app/proj/gmaclinux/screenshots/Screenshot%20from%202016-04-30%2014:30:55.png" alt=""></p>
 <p>至於 Ubuntu 自己的 <a href="https://unity.ubuntu.com/" target="_blank" rel="external">Unity</a> 介面我就不知道要說啥了…</p>
 <p>鏡頭切到 KDE 這邊，當時 KDE 3 我覺得沒什麼特色，完全沒有想用的慾望；但是當 KDE 4 推出之後，整個感受都不一樣了，不僅好看，而且耐看。在那之後推出的 Windows 7 更被調侃是「抄襲 KDE 4」，而後來 KDE 也很不客氣的把 Windows 7 上一些特色給抄了過來（比如拖拉標題到邊邊讓他佔半個螢幕）。所以在我跳槽到 <a href="https://www.archlinux.org/" target="_blank" rel="external">ArchLinux</a> 時，我也改用 KDE 作為我的桌面環境。</p>
-<p><img src="http://pic.pimg.tw/qwert535286/4b30ae36828b3.jpg" alt="這是當時的樣子：ArchLinux + KDE 4"></p>
+<p><img src="http://pic.pimg.tw/qwert535286/4b30ae36828b3.jpg" alt=""></p>
+<blockquote>
+<p>這是當時的樣子：ArchLinux + KDE 4</p>
+</blockquote>
 <p>KDE 好看歸好看，但還是得說，他從來沒有穩定過。並不是說用到一半就會全面崩潰之類的（早期倒是很頻繁），但總是會東壞一點西壞一點，雖不影響正常使用，但總是有疙瘩。</p>
 <p>後來 KDE 5 Plasma 推出，整體而言又更上了一層，但還是一樣，他從來沒有真正穩定過，至少現在問題已經少非常多了。</p>
-<p><img src="https://c2.staticflickr.com/8/7788/28077094630_326e5dd9b8_o.png" alt="這是 KDE 5 Plasma 的預設佈景"></p>
+<p><img src="https://c2.staticflickr.com/8/7788/28077094630_326e5dd9b8_o.png" alt=""></p>
+<blockquote>
+<p>這是 KDE 5 Plasma 的預設佈景</p>
+</blockquote>
 <p>有一個主打 Material Design 的桌面環境 <a href="http://papyros.io/" target="_blank" rel="external">Papyros</a> 還在開發中，等穩定的時候再來試試看。</p>
-<p><img src="https://i.ytimg.com/vi/6XSyBV0h2n4/maxresdefault.jpg" alt="來源：YouTube"></p>
+<p><img src="https://i.ytimg.com/vi/6XSyBV0h2n4/maxresdefault.jpg" alt=""></p>
+<blockquote>
+<p>來源：YouTube</p>
+</blockquote>
 <p>題外話：如果想要找個節省資源的桌面環境，比起 <a href="http://www.xfce.org/" target="_blank" rel="external">Xfce</a>，我會比較推荐 <a href="http://lxqt.org/" target="_blank" rel="external">LXQt</a>，至於其他一些比較硬派的桌面環境，我的興趣就不大了。</p>
 <h2 id="開發工具"><a href="#開發工具" class="headerlink" title="開發工具"></a>開發工具</h2><p>一開始把玩過一下 <a href="https://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a>，後來在 <a href="http://www.vim.org/" target="_blank" rel="external">Vim</a> 上使用了一段不算短的時間，然而最終我還是沒能掌握那一堆快捷鍵以及指令的精髓，要是逼我使用 60% 鍵盤，我大概會瘋掉。那時大學時學的語言還是以 Java 為主，所以 Eclipse 等 IDE 還是比較常使用的，曾經看過一名同學在 Eclipse 上用快捷鍵用得嚇嚇叫，讓我十分佩服，雖然最後他被當了。</p>
 <p>工作之後開始使用 Mac 跟 <a href="https://www.sublimetext.com/" target="_blank" rel="external">Sublime Text</a>，在開發 web 挺方便，缺點是在 Linux 底下無法打中文，不管打什麼補丁、用什麼方法都不管用，不過當時也沒有比較好的替代品，所以在 Linux 底下還是只能將就。之後 <a href="https://atom.io/" target="_blank" rel="external">Atom</a> 推出 Beta 測試，不算上他用起來像 Alpha 這件事，光是能好好打中文就謝天謝地了，在推出測試之後就立馬換上。再之後推出正式版時，<a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> 推出了，這編輯器在使用上感覺比 <a href="https://atom.io/" target="_blank" rel="external">Atom</a> 舒服不少，所以在試用一陣子之後就又換了。將來會不會又想跳哪個編輯器我也不知道，不過 <a href="http://spacemacs.org/" target="_blank" rel="external">Spacemacs</a> 頗讓我感興趣的，前提是我有沒有心想記那一堆快捷鍵…</p>
@@ -109,12 +177,18 @@
 <h2 id="軟體"><a href="#軟體" class="headerlink" title="軟體"></a>軟體</h2><p>如同 Gnome 與 KDE 之爭一樣，軟體開發的 GUI Library 也是以 GTK 跟 Qt 為主流，少部份會用 Tcl/Tk 之類的東西。不過不論是用哪種 Library，最困難的一點莫過於跨平台這件事，基本上有跨平台又好用的軟體少之又少，而在跨平台之中，每個都能有一樣的使用體驗更是難上加難。</p>
 <p>一些像 <a href="https://krita.org" target="_blank" rel="external">Krita</a>、<a href="https://www.blender.org/" target="_blank" rel="external">Blender</a> 跟 <a href="https://zh-tw.libreoffice.org/" target="_blank" rel="external">LibreOffice</a> 之類的軟體都能在三個作業系統上有不錯的體驗，而 <a href="https://www.gimp.org/" target="_blank" rel="external">GIMP</a>、<a href="http://mypaint.org/" target="_blank" rel="external">MyPaint</a> 在 Windows 及 Mac 平台上有時會因為編譯問題而延遲發佈，穩定性也稍微低一點，至於 <a href="https://inkscape.org/" target="_blank" rel="external">Inkscape</a>…他連在 Linux 上都不一定穩定了。誠心建議，如果想在非 Linux 平台使用 <a href="https://www.gimp.org/" target="_blank" rel="external">GIMP</a> 跟 <a href="https://inkscape.org/" target="_blank" rel="external">Inkscape</a> 的話，可到<a href="http://www.partha.com/" target="_blank" rel="external">這個網站</a>下載另外編譯打包好的版本，執行起來相對穩定許多。</p>
 <p>而有些企業會突然宣佈產品支援 Linux，比如 <a href="http://www.xaraxtreme.org/" target="_blank" rel="external">Xara Xtreme</a>，在宣佈支援的時候可是歡騰了一小陣子，畢竟除了 <a href="https://inkscape.org/" target="_blank" rel="external">Inkscape</a> 外沒有什麼強大的替代品可供挑選，然而在更新幾個小版本後就已經沒有任何維護了；要不然就是像 <a href="https://www.foxitsoftware.com/products/pdf-reader/comparison.php" target="_blank" rel="external">Foxit Reader</a> 那樣，維持最低限度的更新。</p>
-<p><img src="http://downloads.xara.com/opensource/images/screenshots/technical/05.jpg" alt="圖片來源：Xara Xtreme"></p>
+<p><img src="http://downloads.xara.com/opensource/images/screenshots/technical/05.jpg" alt=""></p>
+<blockquote>
+<p>圖片來源：Xara Xtreme</p>
+</blockquote>
 <p>在這幾年裡，<a href="http://electron.atom.io/" target="_blank" rel="external">Electron</a> 開始流行，很多服務開始用「包著網頁當軟體」的方式來實現跨平台，如果打一開始就這樣推出的話到不是什麼問題，但如果是中途變更可能反而會造成反效果。</p>
 <p>比如像 Linux 上的 Skype，簡直就像是半個僵屍一般，在 Linux 上破破爛爛的，當 Windows 跟 Mac 都換上新介面的時候，只有 Linux 版在被收購那一陣子換上微軟大大所有、加上微軟帳號登入後就不再有任何更新，不論官方論壇上的人有多憤怒，聽不到就是聽不到。</p>
 <p>然而前幾天微軟突然發佈一個好消息，宣佈 Linux 版 Skype 重新製作的 Alpha 版測試，這基本上就是個大消息，之前他在表面上說自己有多麼積極擁抱 Linux 的時候，Linux 版的 Skype 默默的躺在一邊啜泣，而現在卻又重獲關注，多麼棒的消息！</p>
 <p>Skype 的 GUI 是基於 Qt，但是在裝上 Alpha 版之後發現，怎麼捨棄了 Qt 用上 GTK 了？打開後的直覺是這應該是 <a href="http://electron.atom.io/" target="_blank" rel="external">Electron</a> 打包的（<a href="http://electron.atom.io/" target="_blank" rel="external">Electron</a> 基於 Chromium，Chromium 基於 GTK），Reddit 以及一些文章也有提到這件事；雖然 <a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> 也是 <a href="http://electron.atom.io/" target="_blank" rel="external">Electron</a> 打包的，用起來也不錯，但 Skype 這種作法實在是太忽悠人，畢竟有四五年沒有任何更新。尤其在這之前已經有許多人嘗試用這種方式打包網頁版了，其中有些運作得還不錯，微軟真的沒有直接拿別人的程式碼來改？再一次，微軟又讓人失望了。</p>
-<p><img src="http://i.imgur.com/7ypK1jF.png" alt="Ghetto Skype, base on Electron（人家還可以選佈景勒）"></p>
+<p><img src="http://i.imgur.com/7ypK1jF.png" alt=""></p>
+<blockquote>
+<p>Ghetto Skype, base on Electron（人家還可以選佈景勒）</p>
+</blockquote>
 <p>很多時候，在 Linux 上使用軟體真的覺得自己像個次等公民一樣，但現在 web 技術愈來愈發達，很多東西已經都是改在網頁上完成，所以這個隔閡就顯得比較不那麼嚴重了（但微軟還是該死）。</p>
 <h2 id="遊戲"><a href="#遊戲" class="headerlink" title="遊戲"></a>遊戲</h2><p>拜 <a href="http://doom.com/" target="_blank" rel="external">DOOM</a> 系列遊戲 Open Source 所賜，以前 Linux 上 3D 大型遊戲裡佔絕大多數的就是 FPS 類遊戲，其他的就是一些像 <a href="https://supertux.github.io/" target="_blank" rel="external">SuperTux</a> 之類的 2D 小遊戲，沒有什麼能夠提起興趣的，主要還是開 Windows 打魔獸三國之類的居多。</p>
 <p>後來 <a href="http://www.heroesofnewerth.com/" target="_blank" rel="external">HoN</a> 推出，第一款不用魔獸三就能獨立執行的 Dota 類遊戲，而且還支援 Linux，在玩過幾次之後就慫恿朋友也跟著跳坑，但無奈官方希望能夠用收費的方式經營，在歷經一年多的免費暢玩後，遊戲收費的第一天，人氣直跌谷底，分別回流到原本的魔獸與那時剛推出不久的 <a href="http://na.leagueoflegends.com/" target="_blank" rel="external">LoL</a>，過幾年後 <a href="http://blog.dota2.com/" target="_blank" rel="external">Dota2</a> 推出，我也就這樣轉戰過去了。幾年之後，<a href="http://www.heroesofnewerth.com/" target="_blank" rel="external">HoN</a> 默默改回免費模式，但已不再吸引人了。</p>
@@ -366,7 +440,7 @@
 <script src="https://gist.github.com/Knovour/57b761d08ff758396ab6.js?file=p5-private-preload.js"></script>
 
 <p>這邊要注意的是，在第 10 行的部份，請求後的資料不能直接指定給預先宣告的變數，否則 <code>setup()</code> 取資料時會是 <code>undefined</code>，或者可以這樣宣告：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span></div><div class="line"></div><div class="line"><span class="comment">// load function</span></div><div class="line"><span class="keyword">let</span> tmp = &#123; list: [] &#125;;</div><div class="line"><span class="comment">// ---</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span></div><div class="line"></div><div class="line"><span class="comment">// load function</span></div><div class="line"><span class="keyword">let</span> tmp = &#123; <span class="attr">list</span>: [] &#125;;</div><div class="line"><span class="comment">// ---</span></div></pre></td></tr></table></figure>
 <p>在取得資料後直接將資料指定給 <code>tmp.list</code>，在 <code>setup()</code> 裡直接以 <code>data.list</code> 的方式取值即可，而範例裡的 <code>return</code> 跟 <code>callback</code> 都是必要的，省略任何一樣都會出現 <code>undefined</code>。</p>
 <p>不用 <code>new</code> 的方式可以到<a href="https://gist.github.com/Knovour/57b761d08ff758396ab6" target="_blank" rel="external">這裡</a>檢視。</p>
 ]]></content>
@@ -439,7 +513,7 @@
 <h2 id="p5-的問題"><a href="#p5-的問題" class="headerlink" title="p5 的問題"></a>p5 的問題</h2><h3 id="全域變數"><a href="#全域變數" class="headerlink" title="全域變數"></a>全域變數</h3><p><a href="http://p5js.org/" target="_blank" rel="external">p5</a> 的函數都是全域變數，而一個網頁照一般的寫法也只會寫一個 <code>preload</code>、<code>setup</code>、<code>draw</code> 等函數，當需要數個 canvas 時（畫圖表時有多個畫布很正常吧），創建 canvas 的程式碼全都要擠在同一個 setup 裡（無法用匿名函數分開包裝），在繪製時又會全部擠在一起一次，因而造成很大的麻煩。</p>
 <h3 id="編輯器"><a href="#編輯器" class="headerlink" title="編輯器"></a>編輯器</h3><p>正因為 <a href="http://p5js.org/" target="_blank" rel="external">p5</a> 函式都是全域變數不須宣告，所以當你在寫程式碼時，你的編輯器會出現一堆下劃線，提醒你變數未宣告之類的錯誤。</p>
 <h2 id="解決方式"><a href="#解決方式" class="headerlink" title="解決方式"></a>解決方式</h2><p>用 <code>new</code> 宣告一個。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> p5(ctx =&gt; &#123;</div><div class="line">  ctx.setup = () =&gt; &#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  ctx.draw = () =&gt; &#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> p5(<span class="function"><span class="params">ctx</span> =&gt;</span> &#123;</div><div class="line">  ctx.setup = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  ctx.draw = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>在這裡面，不管要使用什麼函數，都要用 <code>ctx.[函數名稱]</code> 才可使用，但也避免了瀏覽器與編輯器的問題。</p>
 <h2 id="其他參考"><a href="#其他參考" class="headerlink" title="其他參考"></a>其他參考</h2><ul>
 <li><a href="http://p5js.sketchpad.cc/sp/padlist/all-portfolio-sketches" target="_blank" rel="external">sketchpad</a>: 網路上有一個 <a href="http://p5js.sketchpad.cc/sp/padlist/all-portfolio-sketches" target="_blank" rel="external">sketchpad</a>，上面列了一些用 <a href="http://p5js.org/" target="_blank" rel="external">p5</a> 繪製的圖片與程式碼，可以大致了解一下怎麼寫出來的。</li>
@@ -493,16 +567,16 @@
 <h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>我們在 <code>getFullName</code> 裡加上以下這段</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> co(<span class="function"><span class="keyword">function</span>*(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> user = <span class="keyword">yield</span> User.findOne();</div><div class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;user.firstName&#125;</span> <span class="subst">$&#123;user.lastName&#125;</span>`</span>;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p><code>getterMethods</code> 裡可以加入一個 <code>fullName</code> 的 function</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">getterMethods: &#123;</div><div class="line">  fullName() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;this.firstName&#125;</span> <span class="subst">$&#123;this.lastName&#125;</span>`</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">getterMethods: &#123;</div><div class="line">  fullName() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.firstName&#125;</span> <span class="subst">$&#123;<span class="keyword">this</span>.lastName&#125;</span>`</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>這樣 <code>getFullName</code> 裡就可以直接寫 <code>user.fullName</code> 獲取全名了。</p>
 <p>在外部使用時可以直接寫</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Models = <span class="built_in">require</span>(<span class="string">'/path/to/models'</span>);  <span class="comment">// 注意範例裡的 index.js 內容</span></div><div class="line"></div><div class="line">co(<span class="function"><span class="keyword">function</span>*(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> fullName = <span class="keyword">yield</span> Models.User.getFullName();</div><div class="line">  <span class="built_in">console</span>.log(fullName);</div><div class="line">&#125;).catch(<span class="built_in">console</span>.error);</div></pre></td></tr></table></figure>
 <h3 id="使用其他-table"><a href="#使用其他-table" class="headerlink" title="使用其他 table"></a>使用其他 table</h3><p>假如我在 <code>User</code> 裡需要用到其他 table（假設叫 <code>Family</code>），我就可以寫 <code>sequelize.models.Family</code> 來呼叫。</p>
 <h2 id="建立關聯（associate）"><a href="#建立關聯（associate）" class="headerlink" title="建立關聯（associate）"></a>建立關聯（associate）</h2><p>假設有個 table 叫 <code>Pet</code>，裡面有個 key 叫 <code>owner</code>，用以紀錄 <code>User</code> 的 id。</p>
 <p>兩邊的關聯性程式如下</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 寫在各自的 associate function 裡</span></div><div class="line"></div><div class="line"><span class="comment">// Pet</span></div><div class="line">Pet.belongsTo(models.User, &#123; foreignKey: <span class="string">'owner'</span> &#125;);</div><div class="line"></div><div class="line"><span class="comment">// User（owner 即為 Pet 裡的 key）</span></div><div class="line">User.hasMany(models.Pet, &#123; foreignKey: <span class="string">'owner'</span> &#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 寫在各自的 associate function 裡</span></div><div class="line"></div><div class="line"><span class="comment">// Pet</span></div><div class="line">Pet.belongsTo(models.User, &#123; <span class="attr">foreignKey</span>: <span class="string">'owner'</span> &#125;);</div><div class="line"></div><div class="line"><span class="comment">// User（owner 即為 Pet 裡的 key）</span></div><div class="line">User.hasMany(models.Pet, &#123; <span class="attr">foreignKey</span>: <span class="string">'owner'</span> &#125;);</div></pre></td></tr></table></figure>
 <h3 id="include"><a href="#include" class="headerlink" title="include"></a>include</h3><p>在查找的 json 中用 include 時，<code>hasMany</code> 與 <code>hasOne</code> 出來的 table 名稱會有單複數差異</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// hasMany</span></div><div class="line">&#123;</div><div class="line">  firstName: <span class="string">'XXXX'</span>,</div><div class="line">  Pets: [&#123;</div><div class="line">    ...</div><div class="line">  &#125;]</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// hasOne</span></div><div class="line">&#123;</div><div class="line">  firstName: <span class="string">'XXXX'</span>,</div><div class="line">  Pet: &#123;</div><div class="line">    ...</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// hasMany</span></div><div class="line">&#123;</div><div class="line">  <span class="attr">firstName</span>: <span class="string">'XXXX'</span>,</div><div class="line">  <span class="attr">Pets</span>: [&#123;</div><div class="line">    ...</div><div class="line">  &#125;]</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// hasOne</span></div><div class="line">&#123;</div><div class="line">  <span class="attr">firstName</span>: <span class="string">'XXXX'</span>,</div><div class="line">  <span class="attr">Pet</span>: &#123;</div><div class="line">    ...</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="group"><a href="#group" class="headerlink" title="group"></a>group</h3><p>要將 include 的資料進行 group 或 order 時，需要連帶寫上 table 名稱，例：<code>Pets.id</code>。</p>
 ]]></content>
       
@@ -646,14 +720,14 @@
 <li>如有需要，將 server 裡的 global package 裝好，如 bower、sails、grunt-cli 等等。</li>
 <li>設定 server 裡程式碼的存放位置，假設為 <code>/usr/src</code>。</li>
 </ol>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir -p /usr/src/<span class="keyword">my</span>-project-<span class="built_in">name</span></div><div class="line">chown deploy:deploy /usr/src/<span class="keyword">my</span>-project-<span class="built_in">name</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir -p /usr/src/my-project-name</div><div class="line">chown deploy:deploy /usr/src/my-project-name</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="在開發機安裝相關套件"><a href="#在開發機安裝相關套件" class="headerlink" title="在開發機安裝相關套件"></a>在開發機安裝相關套件</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo npm <span class="selector-tag">i</span> shipit-cli -g</div><div class="line">npm <span class="selector-tag">i</span> shipit-deploy shipit-npm --save-dev</div></pre></td></tr></table></figure>
+<h2 id="在開發機安裝相關套件"><a href="#在開發機安裝相關套件" class="headerlink" title="在開發機安裝相關套件"></a>在開發機安裝相關套件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo npm i shipit-cli -g</div><div class="line">npm i shipit-deploy shipit-npm --save-dev</div></pre></td></tr></table></figure>
 <h2 id="ShipIt"><a href="#ShipIt" class="headerlink" title="ShipIt!"></a>ShipIt!</h2><p>在專案資料夾目錄產生 <code>shipitfile.js</code></p>
 <p>內容如下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params">shipit</span>) </span>&#123;</div><div class="line">  <span class="built_in">require</span>(<span class="string">'shipit-deploy'</span>)(shipit);  <span class="comment">// remote deploy</span></div><div class="line">  <span class="built_in">require</span>(<span class="string">'shipit-npm'</span>)(shipit);      <span class="comment">// remote auto install npm packages</span></div><div class="line"></div><div class="line">  <span class="keyword">var</span> config = &#123;</div><div class="line">    <span class="keyword">default</span>: &#123;</div><div class="line">      workspace: <span class="string">'/tmp/project-name-in-deploy-server'</span>,</div><div class="line">      deployTo: <span class="string">'/usr/src/project-name-in-deploy-server'</span>,</div><div class="line">      repositoryUrl: <span class="string">'your git remote url (github, bitbucket, etc...)'</span>,</div><div class="line">      ignores: [<span class="string">'.git'</span>, <span class="string">'node_modules'</span>],</div><div class="line">      keepReleases: <span class="number">2</span>,</div><div class="line">    &#125;,</div><div class="line">    staging: &#123;</div><div class="line">      servers: <span class="string">'deploy@your-deploy-server-ip'</span></div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  shipit.initConfig(config);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params">shipit</span>) </span>&#123;</div><div class="line">  <span class="built_in">require</span>(<span class="string">'shipit-deploy'</span>)(shipit);  <span class="comment">// remote deploy</span></div><div class="line">  <span class="built_in">require</span>(<span class="string">'shipit-npm'</span>)(shipit);      <span class="comment">// remote auto install npm packages</span></div><div class="line"></div><div class="line">  <span class="keyword">var</span> config = &#123;</div><div class="line">    <span class="attr">default</span>: &#123;</div><div class="line">      <span class="attr">workspace</span>: <span class="string">'/tmp/project-name-in-deploy-server'</span>,</div><div class="line">      <span class="attr">deployTo</span>: <span class="string">'/usr/src/project-name-in-deploy-server'</span>,</div><div class="line">      <span class="attr">repositoryUrl</span>: <span class="string">'your git remote url (github, bitbucket, etc...)'</span>,</div><div class="line">      <span class="attr">ignores</span>: [<span class="string">'.git'</span>, <span class="string">'node_modules'</span>],</div><div class="line">      <span class="attr">keepReleases</span>: <span class="number">2</span>,</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">staging</span>: &#123;</div><div class="line">      <span class="attr">servers</span>: <span class="string">'deploy@your-deploy-server-ip'</span></div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  shipit.initConfig(config);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>輸入 <code>shipit staging deploy</code> 開始部署</p>
-<h2 id="額外命令"><a href="#額外命令" class="headerlink" title="額外命令"></a>額外命令</h2><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">shipit.initConfig(config);</div><div class="line"><span class="comment">// code 加在這行之後</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> current = config.<span class="keyword">default</span>.deployTo + <span class="string">'/current'</span>;</div><div class="line"><span class="comment">// shipit 會將 source code 放在 deploy server 專案資料夾裡的 current 中</span></div><div class="line">shipit.task(<span class="string">'server-on'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line">  <span class="keyword">return</span> shipit.remote(<span class="string">'cd '</span> + current + <span class="string">' &amp;&amp; bower i &amp;&amp; npm start'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">shipit.task(<span class="string">'start'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line">  shipit.start([<span class="string">'deploy'</span>, <span class="string">'server-on'</span>]);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="額外命令"><a href="#額外命令" class="headerlink" title="額外命令"></a>額外命令</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">shipit.initConfig(config);</div><div class="line"><span class="comment">// code 加在這行之後</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> current = config.default.deployTo + <span class="string">'/current'</span>;</div><div class="line"><span class="comment">// shipit 會將 source code 放在 deploy server 專案資料夾裡的 current 中</span></div><div class="line">shipit.task(<span class="string">'server-on'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> shipit.remote(<span class="string">'cd '</span> + current + <span class="string">' &amp;&amp; bower i &amp;&amp; npm start'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">shipit.task(<span class="string">'start'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  shipit.start([<span class="string">'deploy'</span>, <span class="string">'server-on'</span>]);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>執行 <code>shipit staging start</code></p>
 <h2 id="基本設定的樣子"><a href="#基本設定的樣子" class="headerlink" title="基本設定的樣子"></a>基本設定的樣子</h2><script src="https://gist.github.com/Knovour/97760c466552c2ed12db.js"></script>
 

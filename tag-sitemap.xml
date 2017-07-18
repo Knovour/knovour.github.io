@@ -3,35 +3,35 @@
 
     <url>
         <loc>https://notes.knovour.ninja/tags/openshift/</loc>
-        <lastmod>2016-01-11T16:40:27.854Z</lastmod>
+        <lastmod>2016-01-11T16:40:27.855Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://notes.knovour.ninja/tags/ghost/</loc>
-        <lastmod>2016-01-11T16:40:27.854Z</lastmod>
+        <lastmod>2016-01-11T16:40:27.855Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://notes.knovour.ninja/tags/D3/</loc>
-        <lastmod>2017-05-13T11:03:31.178Z</lastmod>
+        <lastmod>2017-05-13T11:03:31.179Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://notes.knovour.ninja/tags/p5-js/</loc>
-        <lastmod>2017-05-13T11:03:31.178Z</lastmod>
+        <lastmod>2017-05-13T11:03:31.179Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://notes.knovour.ninja/tags/elm/</loc>
-        <lastmod>2017-05-13T11:04:02.224Z</lastmod>
+        <lastmod>2017-05-13T11:04:02.225Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -66,28 +66,21 @@
 
     <url>
         <loc>https://notes.knovour.ninja/tags/sails-js/</loc>
-        <lastmod>2017-05-13T11:04:44.460Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/tags/react-js/</loc>
-        <lastmod>2017-05-13T11:04:54.523Z</lastmod>
+        <lastmod>2017-05-13T11:04:44.461Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://notes.knovour.ninja/tags/redux/</loc>
-        <lastmod>2017-05-13T11:04:54.523Z</lastmod>
+        <lastmod>2017-05-13T11:04:54.524Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://notes.knovour.ninja/tags/flux/</loc>
-        <lastmod>2017-05-13T11:04:54.523Z</lastmod>
+        <lastmod>2017-05-13T11:04:54.524Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -108,21 +101,21 @@
 
     <url>
         <loc>https://notes.knovour.ninja/tags/node-js/</loc>
-        <lastmod>2017-05-17T19:42:58.184Z</lastmod>
+        <lastmod>2017-05-17T19:42:58.185Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://notes.knovour.ninja/tags/deploy/</loc>
-        <lastmod>2017-05-17T19:42:58.184Z</lastmod>
+        <lastmod>2017-05-17T19:42:58.185Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://notes.knovour.ninja/tags/Linux/</loc>
-        <lastmod>2017-05-18T16:59:12.192Z</lastmod>
+        <lastmod>2017-05-18T16:59:12.193Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -130,6 +123,13 @@
     <url>
         <loc>https://notes.knovour.ninja/tags/Vue/</loc>
         <lastmod>2017-05-18T17:40:19.068Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/react-js/</loc>
+        <lastmod>2017-07-18T18:20:45.339Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

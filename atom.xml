@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2017-05-18T17:40:19.068Z</updated>
+  <updated>2017-07-18T18:20:45.339Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -14,6 +14,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Next.js 試用感想</title>
+    <link href="https://notes.knovour.ninja/2017/07/18/try-next-js/"/>
+    <id>https://notes.knovour.ninja/2017/07/18/try-next-js/</id>
+    <published>2017-07-18T15:29:59.000Z</published>
+    <updated>2017-07-18T18:20:45.339Z</updated>
+    
+    <content type="html"><![CDATA[<p>在使用過 Vue 社群的 Nuxt.js 開發過一次專案後，便對 React 方的 Next.js 抱有很大的興趣，尤其在知道 Nuxt 是由此啟發之後，對他抱的期待又更高了，於是在專案上線後，就轉去摸索了 Next 幾天，來試試看能不能把很久之前的 React 專案搬到上面，以下大概講一下那段時間的心得。</p>
+<p><strong>以下以 3.0.1-beta.X 為主</strong><br><a id="more"></a></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>在我翻 Next 的 Readme 大概幾分鐘後，我瞄到了這個：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">href</span>=<span class="string">"/about"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>here<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">Link</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="https://media.giphy.com/media/LyJ6KPlrFdKnK/giphy.gif" alt="WTF"></p>
+<p>我靠，<code>Link</code> 再包 <code>a</code>？認真？沒有人對這有意見嗎？我知道他的 <code>Link</code> 可以包其他元件當作事件綁定用，但有必要因為要讓其他元素也能切換網址就要這樣寫嗎？我得說這大概是第一個讓我在一開始就想放棄的東西。</p>
+<p>後來我決定繼續弄下去，先來看看怎麼使用動態網址，畢竟現在的網站越來越需要這樣做了。結果往下拉之後發現，已經要加入後端套件（Koa、Express）了嗎？我才剛開始半小時耶？什麼都還沒寫到耶？</p>
+<p><img src="https://media.giphy.com/media/Ni4cpi0uUkd6U/giphy.gif" alt="WTF"></p>
+<p>而且官方的 example 只講到兩個網址互換不同的 pages 名稱，並沒有講到動態網址怎麼處理，要看得要到他們的教學網站去看，而且得先登入才能看全部，搞什麼神秘？而且這教學網址只有在 Readme 提個一句就沒了，直接往下拉的話還真不會去注意到。</p>
+<p>總之到最後總算是弄出來了，就像下面這樣：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Koa</span></div><div class="line">router.get(<span class="string">'/jobs/:id'</span>, <span class="keyword">async</span> ctx =&gt; &#123;</div><div class="line">	<span class="keyword">await</span> app.render(ctx.req, ctx.res, <span class="string">'/detail'</span>, ctx.query)</div><div class="line">	ctx.respond = <span class="literal">false</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Next.js --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">href</span>=<span class="string">"/detail?id=123"</span> <span class="attr">as</span>=<span class="string">"/jobs/123"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>job 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Link</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>這看起來就像是為了實現這功能，而得繞了一圈才能回來的感覺，而且 <code>href</code> 跟 <code>as</code> 之間的內容看起來很不搭嘎，搭配後端一起看就像是個硬湊的方案一樣，後來看了一下 SEO 的部份，才知道他還得自己加上 react-helmet 來蓋過他自創的 Head 內容，這邊的實現方式看起來也像是繞了一圈才回來一樣。</p>
+<p><img src="https://media.giphy.com/media/3ohryA9Cg8oHsOK2cw/giphy.gif" alt="no"></p>
+<p>到這邊之後，剩下的我基本上就草草看過就放棄了。後來原本的舊專案就改將他遷移到 react-slingshot 這個 webpack 架構上了，幸好這專案原本就沒有 SSR/SEO 的需求，所以不用太過在意。</p>
+<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>到後來我才想到要去看 Next.js 究竟整合了社群的哪些東西，結果是一個也沒有（不算上 hot loader 那些東西），不論他的具體理由為何，我認為這是一件很蠢的事情。</p>
+<p>開源社群基本上就是有個類似金字塔的模式：每個問題都有數種到數十種方案，到一定程度之後，就會出現幾個整合方案，再之後就會有更大型的多方整合方案，這些整合方案會從各種要解決的問題中取出他們認為適合的套件並使之成為預設功能。少部份不滿意的還是會自行製造一個輪子，但整體來說依然會有不少外部方案整合其中。比如在 Express 之上就有 Kraken.js、Sails.js 等整合方案，就算想自製輪子，至少也要讓他看起來像個樣子（比如 Sail.js 衍生出來的 Waterline）。</p>
+<p>然而 React 社群是如此的活躍，在開發過程中你可能會遇到的問題裡，每個都有非常多的方案可以選，往好處想是選擇很多，但在如何選擇上也是一種困擾。然而在如此豐富的社群資源下，卻依然只做出自己專屬的輪子，而沒有多方整合，我能想到的就這兩個原因：</p>
+<ol>
+<li>不想做或覺得沒必要做</li>
+<li>React 社群的東西多但若要做多方整合，則有很大的難度</li>
+</ol>
+<p>前者是他們自己的問題，如果是後者那代表社群有很大的問題。</p>
+<p>或許這些抱怨是在用過 Nuxt 之後，而對 Next 抱有過度期望所導致的失望，但在往後的選擇上，若是有 SSR 的需求，我會傾向於選擇 Nuxt，若沒有則會用一般的 React + Webpack 模板方案。</p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>總而言之，Next 給我的感受是，他們的維護者的心態比較像</p>
+<p><strong>「我們做了這個東西，但我們自己內部夠用就好，你們來試試（幫我們 debug）看吧！」</strong></p>
+<p>而 Nuxt 的心態則是</p>
+<p><strong>「我們來做一個讓 Vue 社群可以方便開發的整合方案吧！」</strong></p>
+<blockquote>
+<p>我想這差異可以解釋 Nuxt 是如何從狗屎鍊出寶石的</p>
+</blockquote>
+<p><img src="https://media.giphy.com/media/l4hmWKVDDUpiq355K/giphy.gif" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在使用過 Vue 社群的 Nuxt.js 開發過一次專案後，便對 React 方的 Next.js 抱有很大的興趣，尤其在知道 Nuxt 是由此啟發之後，對他抱的期待又更高了，於是在專案上線後，就轉去摸索了 Next 幾天，來試試看能不能把很久之前的 React 專案搬到上面，以下大概講一下那段時間的心得。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;以下以 3.0.1-beta.X 為主&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="react.js" scheme="https://notes.knovour.ninja/tags/react-js/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue.js 大型專案開發心得</title>
@@ -72,7 +125,7 @@
     <link href="https://notes.knovour.ninja/2017/01/21/elm-practice/"/>
     <id>https://notes.knovour.ninja/2017/01/21/elm-practice/</id>
     <published>2017-01-21T13:50:05.000Z</published>
-    <updated>2017-05-13T11:04:02.224Z</updated>
+    <updated>2017-05-13T11:04:02.225Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/7WTNc3K.png" alt="banner"></p>
 <p>前陣子在考慮摸索 Elm，剛好在那時候也在找當季蔬果的資料，後來想想，乾脆用這些資料來當作摸索的題材，於是這<a href="https://notes.knovour.ninja/food/">網站</a>就誕生了，以下來大概講一下感想。</p>
@@ -135,7 +188,7 @@
     <link href="https://notes.knovour.ninja/2016/07/08/years-of-using-linux/"/>
     <id>https://notes.knovour.ninja/2016/07/08/years-of-using-linux/</id>
     <published>2016-07-08T04:19:39.000Z</published>
-    <updated>2017-05-18T16:59:12.192Z</updated>
+    <updated>2017-05-18T16:59:12.193Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://c2.staticflickr.com/8/7749/28343013895_fae193cf7b_o.png" alt="banner"></p>
 <p>上圖是我的 Linux 現在的樣子：</p>
@@ -262,7 +315,7 @@
     <link href="https://notes.knovour.ninja/2016/05/23/my-experience-about-react-redux-in-one-month/"/>
     <id>https://notes.knovour.ninja/2016/05/23/my-experience-about-react-redux-in-one-month/</id>
     <published>2016-05-23T12:05:22.000Z</published>
-    <updated>2017-05-13T11:04:11.214Z</updated>
+    <updated>2017-05-13T11:04:11.215Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/dQE29dn.png" alt="banner"></p>
 <p>之前自學 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 時寫了一個簡單的線上簡歷，而我也確實靠他加分而拿到了工作，之後進去也是開始用 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 建立頁面，之後加上了 <a href="http://redux.js.org/" target="_blank" rel="external">Redux</a>；雖然這兩個總天數加起來大概就一個月，不敢說自己有摸清這些東西，不過還是就開發經驗來寫一些感想。</p>
@@ -367,7 +420,7 @@
     <link href="https://notes.knovour.ninja/2016/05/02/react-flux-short-explain/"/>
     <id>https://notes.knovour.ninja/2016/05/02/react-flux-short-explain/</id>
     <published>2016-05-01T18:01:07.000Z</published>
-    <updated>2017-05-13T11:04:54.523Z</updated>
+    <updated>2017-05-13T11:04:54.524Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1490/26164008694_dbb0df5f80_o.png" alt="banner"></p>
 <p><a href="https://facebook.github.io/react/" target="_blank" rel="external">React.js</a> 的 <a href="https://facebook.github.io/flux/" target="_blank" rel="external">Flux</a> 的部份我看了好久還是不太能理解他的意思，這幾天總算理出點頭緒（雖然不知道對不對…），在這邊做一點紀錄。</p>
@@ -443,7 +496,7 @@
     <link href="https://notes.knovour.ninja/2016/03/29/d3-p5-js-notes-bar-chart/"/>
     <id>https://notes.knovour.ninja/2016/03/29/d3-p5-js-notes-bar-chart/</id>
     <published>2016-03-29T15:36:17.000Z</published>
-    <updated>2017-05-13T11:03:43.341Z</updated>
+    <updated>2017-05-13T11:03:43.342Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1649/25528810634_018358eb4d_o.png" alt="banner"></p>
 <ul>
@@ -477,7 +530,7 @@
     <link href="https://notes.knovour.ninja/2016/03/23/problems-about-sails-js/"/>
     <id>https://notes.knovour.ninja/2016/03/23/problems-about-sails-js/</id>
     <published>2016-03-22T16:00:06.000Z</published>
-    <updated>2017-05-13T11:04:44.460Z</updated>
+    <updated>2017-05-13T11:04:44.461Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1570/25992008245_bc315d092b_o.jpg" alt="banner"></p>
 <p>本來標題想寫「Sails.js 算不算死了」，不過這樣似乎太過分了，這篇主要是講講之前用它來開發的感受。</p>
@@ -547,7 +600,7 @@
     <link href="https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-area-chart/"/>
     <id>https://notes.knovour.ninja/2016/03/03/d3-p5-js-notes-area-chart/</id>
     <published>2016-03-03T14:44:07.000Z</published>
-    <updated>2017-05-13T11:03:31.178Z</updated>
+    <updated>2017-05-13T11:03:31.179Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1702/25692006245_dff9729e3b_o.png" alt="banner"></p>
 <ul>
@@ -636,7 +689,7 @@
     <link href="https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/"/>
     <id>https://notes.knovour.ninja/2016/03/01/d3-p5-js-notes/</id>
     <published>2016-03-01T01:20:14.000Z</published>
-    <updated>2016-03-02T19:04:02.176Z</updated>
+    <updated>2016-03-02T19:04:02.177Z</updated>
     
     <content type="html"><![CDATA[<p>這陣子看了點 <a href="https://d3js.org/" target="_blank" rel="external">D3</a>，並找了官方 wiki 的<a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank" rel="external">範例</a>來試試，不過不是用 SVG，而是用 canvas 來畫。</p>
 <p>之前要寫的網站要生成簡易的圖表，但因為沒學過 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 的經驗（當時也來不及），所以找了現成的 <a href="http://www.chartjs.org/" target="_blank" rel="external">Chart.js</a> 來用，除了這套之外，之後也在 feedly 看了不少圖表生成的套件介紹，蠻多都是用 canvas 的。不過這倒也不是什麼選擇 canvas 的原因。</p>
@@ -704,7 +757,7 @@
     <link href="https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/"/>
     <id>https://notes.knovour.ninja/2016/01/11/change-blog-from-openshift-to-github/</id>
     <published>2016-01-11T15:40:12.000Z</published>
-    <updated>2016-01-11T16:40:27.854Z</updated>
+    <updated>2016-01-11T16:40:27.855Z</updated>
     
     <content type="html"><![CDATA[<p>去年決定將 Blog 從 <a href="http://logdown.com/" target="_blank" rel="external">Logdown</a> 換成自架 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 後，就想找一個線上空間來管理。但 <a href="https://www.linode.com/" target="_blank" rel="external">Linode</a> 或 <a href="https://www.digitalocean.com/" target="_blank" rel="external">Digital Ocean</a> 要從頭來覺得麻煩，而 <a href="https://heroku.com/" target="_blank" rel="external">Heroku</a> 不知道為何怎樣就是看不懂，後來看到 <a href="https://www.openshift.com/" target="_blank" rel="external">OpenShift</a> 設定似乎挺簡單，於是就辦來試試看。</p>
 <p>無奈 <a href="https://www.openshift.com/" target="_blank" rel="external">OpenShift</a> 根本 Bug 滿天飛，社群的 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 架設速成 script 根本不能用就算了，連從官方的 Node.js 重頭架也常設定跑失敗，跑到最後居然是鎖我帳號？？更別說我在試用時三不五時被登出，不然就是怎麼按 Application 都沒顯示東西，也不知道怎麼回到我剛剛的設定頁面。<br><a id="more"></a><br>後來過了幾個月回去看又好了（<a href="https://heroku.com/" target="_blank" rel="external">Heroku</a> 這段期間我還是看不懂），但 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 速成 script 還是不能用，至少官方 Node 是可行的，於是就把 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 給弄起來了（中間在 Build 時還是爆掉幾次）。之後要把 <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a> 給升級時，說要額外加 Gear（就是要收錢的意思），我就給他加了，反正一個月只有收大概幾塊錢。</p>
@@ -798,7 +851,7 @@
     <link href="https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/"/>
     <id>https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/</id>
     <published>2015-08-12T18:38:00.000Z</published>
-    <updated>2016-01-11T15:48:49.371Z</updated>
+    <updated>2016-01-11T15:48:49.372Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><p>首先先設定完<a href="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/">這篇文</a>的前置作業。</p>
 <p><strong>部署與開發用的機器都要安裝 PM2</strong>：<code>sudo npm i pm2 -g</code></p>
@@ -843,7 +896,7 @@
     <link href="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/"/>
     <id>https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/</id>
     <published>2015-07-17T15:42:00.000Z</published>
-    <updated>2017-05-17T19:42:58.184Z</updated>
+    <updated>2017-05-17T19:42:58.185Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><p><strong>假設是全新的 Linux，帳號為 deploy</strong></p>
 <ol>

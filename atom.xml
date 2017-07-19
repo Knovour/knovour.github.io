@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2017-07-19T17:23:26.104Z</updated>
+  <updated>2017-07-19T17:29:41.838Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://notes.knovour.ninja/2017/07/18/try-next-js/"/>
     <id>https://notes.knovour.ninja/2017/07/18/try-next-js/</id>
     <published>2017-07-18T15:29:59.000Z</published>
-    <updated>2017-07-19T17:23:26.104Z</updated>
+    <updated>2017-07-19T17:29:41.838Z</updated>
     
     <content type="html"><![CDATA[<p>在使用過 Vue 社群的 <a href="https://nuxtjs.org" target="_blank" rel="external">Nuxt.js</a> 開發過一次專案後，便對 React 方的 <a href="https://github.com/zeit/next.js/" target="_blank" rel="external">Next.js</a> 抱有很大的興趣，尤其在知道 Nuxt 是由此啟發之後，對他抱的期待又更高了，於是在專案上線後，就轉去摸索了 Next 幾天，來試試看能不能把很久之前的 React 專案搬到上面，以下大概講一下那段時間的心得。</p>
 <p><strong>以下以 3.0.1-beta.X 為主</strong><br><a id="more"></a></p>
@@ -41,7 +41,7 @@
 <p>到這邊之後，剩下的我基本上就草草看過就放棄了。後來原本的舊專案就改將他遷移到 <a href="https://github.com/coryhouse/react-slingshot" target="_blank" rel="external">react-slingshot</a> 這個 webpack 架構上了，幸好這專案原本就沒有 SSR/SEO 的需求，所以不用太過在意。</p>
 <h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>到後來我才想到要去看 Next 究竟整合了社群的哪些東西，結果是一個也沒有（不算上 hot loader 那些東西），不論他的具體理由為何，我認為這是一件很蠢的事情。</p>
 <p>開源社群基本上就是有個類似金字塔的模式：每個問題都有數種到數十種方案，到一定程度之後，就會出現幾個整合方案，再之後就會有更大型的多方整合方案，這些整合方案會從各種要解決的問題中取出他們認為適合的套件並使之成為預設功能。少部份不滿意的還是會自行製造一個輪子，但整體來說依然會有不少外部方案整合其中。比如在 Express 之上就有 <a href="http://krakenjs.com/" target="_blank" rel="external">Kraken.js</a>、<a href="http://sailsjs.com/" target="_blank" rel="external">Sails.js</a> 等整合方案，就算想自製輪子，至少也要讓他看起來像個樣子（比如 Sail.js 衍生出來的 <a href="http://waterlinejs.org/" target="_blank" rel="external">Waterline</a>）。</p>
-<p>然而 React 社群是如此的活躍，在開發過程中你可能會遇到的問題裡，每個都有非常多的方案可以選，往好處想是選擇很多，但在如何選擇上也是一種困擾。然而在如此豐富的社群資源下，卻依然只做出自己專屬的輪子，而沒有多方整合，我能想到的就這兩個原因：</p>
+<p>然而 React 社群是如此的活躍，在開發過程中你可能會遇到的問題裡，每個都有非常多的方案可以選，往好處想是選擇很多，但在如何選擇上也是一種困擾。然而在如此豐富的社群資源下，卻依然只做出自己專屬的輪子，而沒有進行整合，我能想到的就這兩個原因：</p>
 <ol>
 <li>不想做或覺得沒必要做</li>
 <li>React 社群的東西多但若要做多方整合則有很大的難度</li>

@@ -5,27 +5,29 @@
     <entry>
       <title><![CDATA[Next.js 試用感想]]></title>
       <url>/2017/07/18/try-next-js/</url>
-      <content type="html"><![CDATA[<p>在使用過 Vue 社群的 Nuxt.js 開發過一次專案後，便對 React 方的 Next.js 抱有很大的興趣，尤其在知道 Nuxt 是由此啟發之後，對他抱的期待又更高了，於是在專案上線後，就轉去摸索了 Next 幾天，來試試看能不能把很久之前的 React 專案搬到上面，以下大概講一下那段時間的心得。</p>
+      <content type="html"><![CDATA[<p>在使用過 Vue 社群的 <a href="https://nuxtjs.org" target="_blank" rel="external">Nuxt.js</a> 開發過一次專案後，便對 React 方的 <a href="https://github.com/zeit/next.js/" target="_blank" rel="external">Next.js</a> 抱有很大的興趣，尤其在知道 Nuxt 是由此啟發之後，對他抱的期待又更高了，於是在專案上線後，就轉去摸索了 Next 幾天，來試試看能不能把很久之前的 React 專案搬到上面，以下大概講一下那段時間的心得。</p>
 <p><strong>以下以 3.0.1-beta.X 為主</strong><br><a id="more"></a></p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>在我翻 Next 的 Readme 大概幾分鐘後，我瞄到了這個：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">href</span>=<span class="string">"/about"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>here<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">Link</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><img src="https://media.giphy.com/media/LyJ6KPlrFdKnK/giphy.gif" alt="WTF"></p>
 <p>我靠，<code>Link</code> 再包 <code>a</code>？認真？沒有人對這有意見嗎？我知道他的 <code>Link</code> 可以包其他元件當作事件綁定用，但有必要因為要讓其他元素也能切換網址就要這樣寫嗎？我得說這大概是第一個讓我在一開始就想放棄的東西。</p>
-<p>後來我決定繼續弄下去，先來看看怎麼使用動態網址，畢竟現在的網站越來越需要這樣做了。結果往下拉之後發現，已經要加入後端套件（Koa、Express）了嗎？我才剛開始半小時耶？什麼都還沒寫到耶？</p>
+<p>後來我決定繼續弄下去，先來看看怎麼使用動態路徑，畢竟現在的網站越來越需要這樣做了。結果往下拉之後發現，已經要加入後端套件（Koa、Express）了嗎？我才剛開始半小時耶？什麼都還沒寫到耶？</p>
 <p><img src="https://media.giphy.com/media/Ni4cpi0uUkd6U/giphy.gif" alt="WTF"></p>
-<p>而且官方的 example 只講到兩個網址互換不同的 pages 名稱，並沒有講到動態網址怎麼處理，要看得要到他們的教學網站去看，而且得先登入才能看全部，搞什麼神秘？而且這教學網址只有在 Readme 提個一句就沒了，直接往下拉的話還真不會去注意到。</p>
+<p>然而官方的<a href="https://github.com/zeit/next.js/tree/v3-beta/examples/custom-server-express" target="_blank" rel="external">範例</a>只講到兩個網址互換不同的 pages 名稱，並沒有講到動態路徑怎麼處理，要看得要到他們的<a href="https://learnnextjs.com/" target="_blank" rel="external">教學網站</a>去看，而且得先登入才能看全部，搞什麼神秘？況且這教學網址只有在 Readme 前面提個一句就沒了，直接往下拉的話還真不會去注意到。</p>
 <p>總之到最後總算是弄出來了，就像下面這樣：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Koa</span></div><div class="line">router.get(<span class="string">'/jobs/:id'</span>, <span class="keyword">async</span> ctx =&gt; &#123;</div><div class="line">	<span class="keyword">await</span> app.render(ctx.req, ctx.res, <span class="string">'/detail'</span>, ctx.query)</div><div class="line">	ctx.respond = <span class="literal">false</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Next.js --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">href</span>=<span class="string">"/detail?id=123"</span> <span class="attr">as</span>=<span class="string">"/jobs/123"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>job 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Link</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>這看起來就像是為了實現這功能，而得繞了一圈才能回來的感覺，而且 <code>href</code> 跟 <code>as</code> 之間的內容看起來很不搭嘎，搭配後端一起看就像是個硬湊的方案一樣，後來看了一下 SEO 的部份，才知道他還得自己加上 react-helmet 來蓋過他自創的 Head 內容，這邊的實現方式看起來也像是繞了一圈才回來一樣。</p>
+<p>這看起來就像是為了實現這功能，而得繞了一圈才能回來的感覺，而且 <code>href</code> 跟 <code>as</code> 之間的內容看起來很不搭嘎，搭配後端一起看就像是個硬湊的方案一樣，後來看了一下 SEO 的部份，才知道他還得自己加上 <a href="https://github.com/nfl/react-helmet" target="_blank" rel="external">react-helmet</a> 來蓋過他自創的 Head 內容，這邊的<a href="https://github.com/zeit/next.js/tree/v3-beta/examples/with-react-helmet" target="_blank" rel="external">實現方式</a>看起來也像是繞了一圈才回來一樣。</p>
 <p><img src="https://media.giphy.com/media/3ohryA9Cg8oHsOK2cw/giphy.gif" alt="no"></p>
-<p>到這邊之後，剩下的我基本上就草草看過就放棄了。後來原本的舊專案就改將他遷移到 react-slingshot 這個 webpack 架構上了，幸好這專案原本就沒有 SSR/SEO 的需求，所以不用太過在意。</p>
-<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>到後來我才想到要去看 Next.js 究竟整合了社群的哪些東西，結果是一個也沒有（不算上 hot loader 那些東西），不論他的具體理由為何，我認為這是一件很蠢的事情。</p>
-<p>開源社群基本上就是有個類似金字塔的模式：每個問題都有數種到數十種方案，到一定程度之後，就會出現幾個整合方案，再之後就會有更大型的多方整合方案，這些整合方案會從各種要解決的問題中取出他們認為適合的套件並使之成為預設功能。少部份不滿意的還是會自行製造一個輪子，但整體來說依然會有不少外部方案整合其中。比如在 Express 之上就有 Kraken.js、Sails.js 等整合方案，就算想自製輪子，至少也要讓他看起來像個樣子（比如 Sail.js 衍生出來的 Waterline）。</p>
+<p>而 Nuxt 則是實現了用資料夾結構與檔名關係來達成<a href="https://nuxtjs.org/guide/routing" target="_blank" rel="external">動態路徑</a>的功能：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">pages/</div><div class="line">--| _slug/</div><div class="line">-----| comments.vue   <span class="comment"># /:slug/comments</span></div><div class="line">-----| index.vue      <span class="comment"># /:slug</span></div><div class="line">--| users/</div><div class="line">-----| _id.vue        <span class="comment"># /users/:id</span></div><div class="line">--| index.vue         <span class="comment"># /</span></div></pre></td></tr></table></figure>
+<p>到這邊之後，剩下的我基本上就草草看過就放棄了。後來原本的舊專案就改將他遷移到 <a href="https://github.com/coryhouse/react-slingshot" target="_blank" rel="external">react-slingshot</a> 這個 webpack 架構上了，幸好這專案原本就沒有 SSR/SEO 的需求，所以不用太過在意。</p>
+<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>到後來我才想到要去看 Next 究竟整合了社群的哪些東西，結果是一個也沒有（不算上 hot loader 那些東西），不論他的具體理由為何，我認為這是一件很蠢的事情。</p>
+<p>開源社群基本上就是有個類似金字塔的模式：每個問題都有數種到數十種方案，到一定程度之後，就會出現幾個整合方案，再之後就會有更大型的多方整合方案，這些整合方案會從各種要解決的問題中取出他們認為適合的套件並使之成為預設功能。少部份不滿意的還是會自行製造一個輪子，但整體來說依然會有不少外部方案整合其中。比如在 Express 之上就有 <a href="http://krakenjs.com/" target="_blank" rel="external">Kraken.js</a>、<a href="http://sailsjs.com/" target="_blank" rel="external">Sails.js</a> 等整合方案，就算想自製輪子，至少也要讓他看起來像個樣子（比如 Sail.js 衍生出來的 <a href="http://waterlinejs.org/" target="_blank" rel="external">Waterline</a>）。</p>
 <p>然而 React 社群是如此的活躍，在開發過程中你可能會遇到的問題裡，每個都有非常多的方案可以選，往好處想是選擇很多，但在如何選擇上也是一種困擾。然而在如此豐富的社群資源下，卻依然只做出自己專屬的輪子，而沒有多方整合，我能想到的就這兩個原因：</p>
 <ol>
 <li>不想做或覺得沒必要做</li>
-<li>React 社群的東西多但若要做多方整合，則有很大的難度</li>
+<li>React 社群的東西多但若要做多方整合則有很大的難度</li>
 </ol>
 <p>前者是他們自己的問題，如果是後者那代表社群有很大的問題。</p>
 <p>或許這些抱怨是在用過 Nuxt 之後，而對 Next 抱有過度期望所導致的失望，但在往後的選擇上，若是有 SSR 的需求，我會傾向於選擇 Nuxt，若沒有則會用一般的 React + Webpack 模板方案。</p>

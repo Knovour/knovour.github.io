@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>用 PM2 部署 node server | Knovour Notes</title>
+  <title>Tag: Polymer | Knovour Notes</title>
   <meta name="description" content="個人筆記、心得" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -12,18 +12,16 @@
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/atom.xml" title="Knovour Notes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="用 PM2 進行 node.js server 佈署。">
-<meta name="keywords" content="node.js,deploy">
-<meta property="og:type" content="article">
-<meta property="og:title" content="用 PM2 部署 node server">
-<meta property="og:url" content="https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/index.html">
+  <meta name="description" content="個人筆記、心得">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Knovour Notes">
+<meta property="og:url" content="https://notes.knovour.ninja/tags/Polymer/index.html">
 <meta property="og:site_name" content="Knovour Notes">
-<meta property="og:description" content="用 PM2 進行 node.js server 佈署。">
+<meta property="og:description" content="個人筆記、心得">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2016-01-11T15:48:49.372Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用 PM2 部署 node server">
-<meta name="twitter:description" content="用 PM2 進行 node.js server 佈署。">
+<meta name="twitter:title" content="Knovour Notes">
+<meta name="twitter:description" content="個人筆記、心得">
 
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -133,72 +131,57 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-deploy-node-js-by-pm2"
-  class="post white-box article-type-post"
-  itemscope itemprop="blogPost">
-	<section class='meta'>
-	<h2 class="title">
-  	<a href="/2015/08/13/deploy-node-js-by-pm2/">
-    	用 PM2 部署 node server
-    </a>
-  </h2>
-	<time>
-	  8月 13, 2015
-	</time>
-	
-	</section>
-	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前置作業"><span class="toc-number">1.</span> <span class="toc-text">前置作業</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署設定"><span class="toc-number">2.</span> <span class="toc-text">部署設定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#開始部署"><span class="toc-number">3.</span> <span class="toc-text">開始部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#額外指令"><span class="toc-number">4.</span> <span class="toc-text">額外指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#參考來源"><span class="toc-number">5.</span> <span class="toc-text">參考來源</span></a></li></ol></section>
-	
-	<section class="article typo">
-  	<div class="article-entry" itemprop="articleBody">
-    	<h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><p>首先先設定完<a href="https://notes.knovour.ninja/2015/07/17/deploy-node-js-by-shipit/">這篇文</a>的前置作業。</p>
-<p><strong>部署與開發用的機器都要安裝 PM2</strong>：<code>sudo npm i pm2 -g</code></p>
-<h2 id="部署設定"><a href="#部署設定" class="headerlink" title="部署設定"></a>部署設定</h2><p>於專案資料夾底下執行 <code>pm2 ecosystem</code> 生成 <code>ecosystem.json5</code>，修改副檔名為 json 檔以便顯示語法 hightlight。</p>
-<p>將裡面的內容做修改</p>
-<script src="https://gist.github.com/Knovour/f27c0cf743e991973f57.js"></script>
+        
+  <script>
+    window.subData= { title:'Tag : Polymer'}
+  </script>
 
-<p>注意最後一句裡 <code>pm2 startOrRestart ecosystem.json</code> 的副檔名是否相同。<br><a id="more"></a></p>
-<h2 id="開始部署"><a href="#開始部署" class="headerlink" title="開始部署"></a>開始部署</h2><p>第一次部署時先執行 setup</p>
-<p><code>pm2 deploy ecosystem.json production setup</code></p>
-<p>成功後就可以正式部署了</p>
-<p><code>pm2 deploy ecosystem.json production</code></p>
-<p>之後專案更新時只要執行第二句即可。</p>
-<p>一切順利的話 PM2 就會在 server 端開始執行了。</p>
-<h2 id="額外指令"><a href="#額外指令" class="headerlink" title="額外指令"></a>額外指令</h2><p>開機啟動：<code>pm2 startup -u DEPLOY_SERVER_USER_ACCOUNT</code></p>
-<p>不設 <code>-u</code>（user）的話，在開機時預設就會以 root 權限執行。</p>
-<p>其他指令或設定請至 <a href="https://github.com/Unitech/pm2" target="_blank" rel="external">PM2</a> 檢視說明文件</p>
-<h2 id="參考來源"><a href="#參考來源" class="headerlink" title="參考來源"></a>參考來源</h2><ul>
-<li><a href="https://github.com/Unitech/pm2" target="_blank" rel="external">PM2</a></li>
-<li><a href="https://github.com/Unitech/PM2/blob/master/ADVANCED_README.md" target="_blank" rel="external">PM2 Advance Readme</a></li>
-<li><a href="http://www.toobug.net/article/using_pm2_deploy.html" target="_blank" rel="external">使用 PM2 Deploy 部署基于 Git 版本管理的网站应用</a></li>
-<li><a href="https://www.gitbook.com/book/wohugb/pm2/details" target="_blank" rel="external">PM2 GitBook</a></li>
-<li><a href="http://nicmitchell.com/2015/04/deploying-node-js-applications-with-pm2/" target="_blank" rel="external">Deploying Node.js Applications with PM2</a></li>
+<section class="post-list">
+	
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2017/11/06/about-tenten-recurit/">
+        轉轉徵人頁面開發記事
+      </a>
+    </h2>
+    
+    <time>
+      11月 6, 2017
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p><img src="https://jobs.tenten.co/assets/images/meta.jpg" alt="banner"></p>
+<p><a href="https://jobs.tenten.co/" target="_blank" rel="external">徵人頁面</a></p>
+<p>這次的專案需求相對自由，不用管 IE 死活，對技術也沒特別要求，加上只有單一頁面，所以我決定用最單純的開發環境來進行。</p>
+<h2 id="主要架構"><a href="#主要架構" class="headerlink" title="主要架構"></a>主要架構</h2><ul>
+<li>主框架：<a href="https://www.polymer-project.org/" target="_blank" rel="external">Polymer</a>，用官方的 <code>polymer-cli</code> 創建專案。</li>
+<li>輔助工具：<a href="https://www.browsersync.io/" target="_blank" rel="external">Browsersync</a>、<a href="https://jakearchibald.github.io/svgomg/" target="_blank" rel="external">SVGOMG</a>（線上 SVG 壓縮工具）</li>
 </ul>
+<p>沒有 webpack，只有用 polymer-cli 預設的指令打包壓縮。</p>
 
-  	</div>
-	  
-	  <div class="article-tags tags">
+    
+	  <div class="readmore">
+      <a href="/2017/11/06/about-tenten-recurit/">Read More</a>
+    </div>
+    
+    
+    
+	  <div class="full-width auto-padding tags">
       
-        <a href="/tags/node-js/">node.js</a>
-      
-        <a href="/tags/deploy/">deploy</a>
+        <a href="/tags/Polymer/">Polymer</a>
       
 	  </div>
     
-	</section>
-	
-		<section id="comments">
-			<div id="disqus_thread"></div>
-		</section>
-	
+  </section>
 </article>
-<script>
-	window.subData = {
-		title: '用 PM2 部署 node server',
-		tools: true
-	}
-</script>
+    </div>
+  
+</section>
+
 
       </div>
       <aside class='l_side'>
@@ -279,13 +262,11 @@
 <script>
   var disqus_shortname = 'knovour-notes';
   
-  var disqus_url = 'https://notes.knovour.ninja/2015/08/13/deploy-node-js-by-pm2/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

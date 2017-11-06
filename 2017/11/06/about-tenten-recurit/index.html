@@ -12,18 +12,19 @@
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/atom.xml" title="Knovour Notes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="徵人頁面 這次的專案需求相對自由，不用管 IE 死活，對技術也沒特別要求，加上只有單一頁面，所以我決定用最單純的開發環境來進行。 主要架構 主框架：Polymer，用官方的 polymer-cli 創建專案。 輔助工具：Browsersync、SVGOMG（線上 SVG 壓縮工具）  沒有 webpack，只有用 polymer-cli 預設的指令打包壓縮。">
+  <meta name="description" content="用 Polymer 開發轉轉徵人頁面">
+<meta name="keywords" content="Polymer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="轉轉徵人頁面開發記事">
 <meta property="og:url" content="https://notes.knovour.ninja/2017/11/06/about-tenten-recurit/index.html">
 <meta property="og:site_name" content="Knovour Notes">
-<meta property="og:description" content="徵人頁面 這次的專案需求相對自由，不用管 IE 死活，對技術也沒特別要求，加上只有單一頁面，所以我決定用最單純的開發環境來進行。 主要架構 主框架：Polymer，用官方的 polymer-cli 創建專案。 輔助工具：Browsersync、SVGOMG（線上 SVG 壓縮工具）  沒有 webpack，只有用 polymer-cli 預設的指令打包壓縮。">
+<meta property="og:description" content="用 Polymer 開發轉轉徵人頁面">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://jobs.tenten.co/assets/images/meta.jpg">
-<meta property="og:updated_time" content="2017-11-06T18:33:15.625Z">
+<meta property="og:updated_time" content="2017-11-06T18:36:23.711Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="轉轉徵人頁面開發記事">
-<meta name="twitter:description" content="徵人頁面 這次的專案需求相對自由，不用管 IE 死活，對技術也沒特別要求，加上只有單一頁面，所以我決定用最單純的開發環境來進行。 主要架構 主框架：Polymer，用官方的 polymer-cli 創建專案。 輔助工具：Browsersync、SVGOMG（線上 SVG 壓縮工具）  沒有 webpack，只有用 polymer-cli 預設的指令打包壓縮。">
+<meta name="twitter:description" content="用 Polymer 開發轉轉徵人頁面">
 <meta name="twitter:image" content="https://jobs.tenten.co/assets/images/meta.jpg">
 
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
@@ -173,6 +174,12 @@
 
   	</div>
 	  
+	  <div class="article-tags tags">
+      
+        <a href="/tags/Polymer/">Polymer</a>
+      
+	  </div>
+    
 	</section>
 	
 		<section id="comments">
@@ -228,7 +235,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/tags/D3/" style="font-size: 20px; color: #000">D3</a> <a href="/tags/Linux/" style="font-size: 14px; color: #808080">Linux</a> <a href="/tags/Vue/" style="font-size: 14px; color: #808080">Vue</a> <a href="/tags/deploy/" style="font-size: 16px; color: #555">deploy</a> <a href="/tags/elm/" style="font-size: 14px; color: #808080">elm</a> <a href="/tags/flux/" style="font-size: 14px; color: #808080">flux</a> <a href="/tags/game/" style="font-size: 14px; color: #808080">game</a> <a href="/tags/ghost/" style="font-size: 14px; color: #808080">ghost</a> <a href="/tags/google/" style="font-size: 14px; color: #808080">google</a> <a href="/tags/linux/" style="font-size: 14px; color: #808080">linux</a> <a href="/tags/node-js/" style="font-size: 20px; color: #000">node.js</a> <a href="/tags/openshift/" style="font-size: 14px; color: #808080">openshift</a> <a href="/tags/p5-js/" style="font-size: 20px; color: #000">p5.js</a> <a href="/tags/react-js/" style="font-size: 18px; color: #2b2b2b">react.js</a> <a href="/tags/redux/" style="font-size: 16px; color: #555">redux</a> <a href="/tags/sails-js/" style="font-size: 14px; color: #808080">sails.js</a> <a href="/tags/search/" style="font-size: 14px; color: #808080">search</a> <a href="/tags/wine/" style="font-size: 14px; color: #808080">wine</a> <a href="/tags/雜談/" style="font-size: 14px; color: #808080">雜談</a>
+        <a href="/tags/D3/" style="font-size: 20px; color: #000">D3</a> <a href="/tags/Linux/" style="font-size: 14px; color: #808080">Linux</a> <a href="/tags/Polymer/" style="font-size: 14px; color: #808080">Polymer</a> <a href="/tags/Vue/" style="font-size: 14px; color: #808080">Vue</a> <a href="/tags/deploy/" style="font-size: 16px; color: #555">deploy</a> <a href="/tags/elm/" style="font-size: 14px; color: #808080">elm</a> <a href="/tags/flux/" style="font-size: 14px; color: #808080">flux</a> <a href="/tags/game/" style="font-size: 14px; color: #808080">game</a> <a href="/tags/ghost/" style="font-size: 14px; color: #808080">ghost</a> <a href="/tags/google/" style="font-size: 14px; color: #808080">google</a> <a href="/tags/linux/" style="font-size: 14px; color: #808080">linux</a> <a href="/tags/node-js/" style="font-size: 20px; color: #000">node.js</a> <a href="/tags/openshift/" style="font-size: 14px; color: #808080">openshift</a> <a href="/tags/p5-js/" style="font-size: 20px; color: #000">p5.js</a> <a href="/tags/react-js/" style="font-size: 18px; color: #2b2b2b">react.js</a> <a href="/tags/redux/" style="font-size: 16px; color: #555">redux</a> <a href="/tags/sails-js/" style="font-size: 14px; color: #808080">sails.js</a> <a href="/tags/search/" style="font-size: 14px; color: #808080">search</a> <a href="/tags/wine/" style="font-size: 14px; color: #808080">wine</a> <a href="/tags/雜談/" style="font-size: 14px; color: #808080">雜談</a>
     </div>
 </div>
 

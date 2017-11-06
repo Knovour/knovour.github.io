@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title><![CDATA[轉轉徵人頁面開發記事]]></title>
+      <url>/2017/11/06/about-tenten-recurit/</url>
+      <content type="html"><![CDATA[<p><img src="https://jobs.tenten.co/assets/images/meta.jpg" alt="banner"></p>
+<p><a href="https://jobs.tenten.co/" target="_blank" rel="external">徵人頁面</a></p>
+<p>這次的專案需求相對自由，不用管 IE 死活，對技術也沒特別要求，加上只有單一頁面，所以我決定用最單純的開發環境來進行。</p>
+<h2 id="主要架構"><a href="#主要架構" class="headerlink" title="主要架構"></a>主要架構</h2><ul>
+<li>主框架：<a href="https://www.polymer-project.org/" target="_blank" rel="external">Polymer</a>，用官方的 <code>polymer-cli</code> 創建專案。</li>
+<li>輔助工具：<a href="https://www.browsersync.io/" target="_blank" rel="external">Browsersync</a>、<a href="https://jakearchibald.github.io/svgomg/" target="_blank" rel="external">SVGOMG</a>（線上 SVG 壓縮工具）</li>
+</ul>
+<p>沒有 webpack，只有用 polymer-cli 預設的指令打包壓縮。</p>
+<a id="more"></a>
+<h2 id="開發過程"><a href="#開發過程" class="headerlink" title="開發過程"></a>開發過程</h2><p>基本上由於頁面單純的關係，沒有遇到 Polymer 比較深的坑，到是 css animation 眾多，導致在網頁效能上耗費許久，Chrome 沒有太大問題，然而 Firefox（57 beta 版）的 CPU 使用率卻降不下來，不得已只好先在 Firefox 下把部份動畫取消，但這幾天更新的版本似乎處理掉這個問題了，所以又重新把動畫給加回去，穩定版的就請自求多福。</p>
+<h2 id="Polymer-感想"><a href="#Polymer-感想" class="headerlink" title="Polymer 感想"></a>Polymer 感想</h2><p>初次看時覺得很像 Vue.js，甚至覺得 Vue 如果能直接結合 web component 的技術應該也不錯。</p>
+<p>摸索時最讓我困擾的，大概就是 CSS 作用域的控制，由於每個元件裡面的 html 元素都被 Shadow DOM 包裝起來，所以 css reset 起到的作用其實不大。但是 CSS 可以額外使用的功能很靈活，可以直接設定 var 值來把 component 預設值蓋過，不須透過 js 來傳參數，相對簡潔許多。在大致了解內建的 <code>:host</code> 與 <code>::slotted</code> 的用法後，一樣的元件用 Polymer 做或許會比用 Vue 要來的簡潔。</p>
+<p>開發期間唯一遇到一個算是坑的大概是初始 js 載入這件事，最一開始的頁面需要載入一支 <code>webcomponents-loader.js</code> 作為引導，在開發期間不會有什麼事，但打包之後卻無法在 Firefox 正常執行，得改成 <code>webcomponents-lite.js</code> 這支有加上 polyfill 的 js 才行。</p>
+<p>Polymer 給我的感覺比較像是可以在一般專案裡，將複雜的元件剝出來獨立處理，而不是整個頁面都直接這樣開發，至於 Polymer 跟直接使用 web component 差別在哪，我目前也沒有頭緒。</p>
+<h2 id="最後"><a href="#最後" class="headerlink" title="最後"></a>最後</h2><p>對轉轉工作有興趣的人請跟我們聯繫吧！</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/SFt7Br1VRVw" frameborder="0" allowfullscreen></iframe></div>
+<p>是說 Google 內部有拿 Angular 來做什麼產品嗎？連 Youtube 都只用 Polymer 而已。</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Next.js 試用感想]]></title>
       <url>/2017/07/18/try-next-js/</url>
       <content type="html"><![CDATA[<p>在使用過 Vue 社群的 <a href="https://nuxtjs.org" target="_blank" rel="external">Nuxt.js</a> 開發過一次專案後，便對 React 方的 <a href="https://github.com/zeit/next.js/" target="_blank" rel="external">Next.js</a> 抱有很大的興趣，尤其在知道 Nuxt 是由此啟發之後，對他抱的期待又更高了，於是在專案上線後，就轉去摸索了 Next 幾天，來試試看能不能把很久之前的 React 專案搬到上面，以下大概講一下那段時間的心得。</p>

@@ -139,6 +139,42 @@
   <section class="meta">
     
     <h2 class="title">
+      <a href="/2017/11/06/about-tenten-recurit/">
+        轉轉徵人頁面開發記事
+      </a>
+    </h2>
+    
+    <time>
+      11月 6, 2017
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p><img src="https://jobs.tenten.co/assets/images/meta.jpg" alt="banner"></p>
+<p><a href="https://jobs.tenten.co/" target="_blank" rel="external">徵人頁面</a></p>
+<p>這次的專案需求相對自由，不用管 IE 死活，對技術也沒特別要求，加上只有單一頁面，所以我決定用最單純的開發環境來進行。</p>
+<h2 id="主要架構"><a href="#主要架構" class="headerlink" title="主要架構"></a>主要架構</h2><ul>
+<li>主框架：<a href="https://www.polymer-project.org/" target="_blank" rel="external">Polymer</a>，用官方的 <code>polymer-cli</code> 創建專案。</li>
+<li>輔助工具：<a href="https://www.browsersync.io/" target="_blank" rel="external">Browsersync</a>、<a href="https://jakearchibald.github.io/svgomg/" target="_blank" rel="external">SVGOMG</a>（線上 SVG 壓縮工具）</li>
+</ul>
+<p>沒有 webpack，只有用 polymer-cli 預設的指令打包壓縮。</p>
+
+    
+	  <div class="readmore">
+      <a href="/2017/11/06/about-tenten-recurit/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/2017/07/18/try-next-js/">
         Next.js 試用感想
       </a>
@@ -489,46 +525,6 @@
         <a href="/tags/node-js/">node.js</a>
       
         <a href="/tags/sails-js/">sails.js</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/03/22/d3-p5-js-notes-custom-ajax-preload/">
-        D3 + p5.js 筆記 - 自訂 preload 的 Ajax
-      </a>
-    </h2>
-    
-    <time>
-      3月 22, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <p><a href="http://p5js.org/" target="_blank" rel="external">p5.js</a> 已經內建數種檔案請求的方式，這邊紀錄一下自己建立 ajax 請求註冊到 <code>preload()</code> 的方式（以 <a href="https://d3js.org/" target="_blank" rel="external">D3</a> 為例）。</p>
-<script src="https://gist.github.com/Knovour/57b761d08ff758396ab6.js?file=p5-private-preload.js"></script>
-
-<p>這邊要注意的是，在第 10 行的部份，請求後的資料不能直接指定給預先宣告的變數，否則 <code>setup()</code> 取資料時會是 <code>undefined</code>，或者可以這樣宣告：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span></div><div class="line"></div><div class="line"><span class="comment">// load function</span></div><div class="line"><span class="keyword">let</span> tmp = &#123; <span class="attr">list</span>: [] &#125;;</div><div class="line"><span class="comment">// ---</span></div></pre></td></tr></table></figure>
-<p>在取得資料後直接將資料指定給 <code>tmp.list</code>，在 <code>setup()</code> 裡直接以 <code>data.list</code> 的方式取值即可，而範例裡的 <code>return</code> 跟 <code>callback</code> 都是必要的，省略任何一樣都會出現 <code>undefined</code>。</p>
-<p>不用 <code>new</code> 的方式可以到<a href="https://gist.github.com/Knovour/57b761d08ff758396ab6" target="_blank" rel="external">這裡</a>檢視。</p>
-
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/D3/">D3</a>
-      
-        <a href="/tags/p5-js/">p5.js</a>
       
 	  </div>
     

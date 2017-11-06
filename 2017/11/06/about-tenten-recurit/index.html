@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Archives: 2017 | Knovour Notes</title>
+  <title>轉轉徵人頁面開發記事 | Knovour Notes</title>
   <meta name="description" content="個人筆記、心得" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -12,16 +12,19 @@
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/atom.xml" title="Knovour Notes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="個人筆記、心得">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Knovour Notes">
-<meta property="og:url" content="https://notes.knovour.ninja/archives/2017/index.html">
+  <meta name="description" content="徵人頁面 這次的專案需求相對自由，不用管 IE 死活，對技術也沒特別要求，加上只有單一頁面，所以我決定用最單純的開發環境來進行。 主要架構 主框架：Polymer，用官方的 polymer-cli 創建專案。 輔助工具：Browsersync、SVGOMG（線上 SVG 壓縮工具）  沒有 webpack，只有用 polymer-cli 預設的指令打包壓縮。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="轉轉徵人頁面開發記事">
+<meta property="og:url" content="https://notes.knovour.ninja/2017/11/06/about-tenten-recurit/index.html">
 <meta property="og:site_name" content="Knovour Notes">
-<meta property="og:description" content="個人筆記、心得">
+<meta property="og:description" content="徵人頁面 這次的專案需求相對自由，不用管 IE 死活，對技術也沒特別要求，加上只有單一頁面，所以我決定用最單純的開發環境來進行。 主要架構 主框架：Polymer，用官方的 polymer-cli 創建專案。 輔助工具：Browsersync、SVGOMG（線上 SVG 壓縮工具）  沒有 webpack，只有用 polymer-cli 預設的指令打包壓縮。">
 <meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://jobs.tenten.co/assets/images/meta.jpg">
+<meta property="og:updated_time" content="2017-11-06T18:33:15.625Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Knovour Notes">
-<meta name="twitter:description" content="個人筆記、心得">
+<meta name="twitter:title" content="轉轉徵人頁面開發記事">
+<meta name="twitter:description" content="徵人頁面 這次的專案需求相對自由，不用管 IE 死活，對技術也沒特別要求，加上只有單一頁面，所以我決定用最單純的開發環境來進行。 主要架構 主框架：Polymer，用官方的 polymer-cli 創建專案。 輔助工具：Browsersync、SVGOMG（線上 SVG 壓縮工具）  沒有 webpack，只有用 polymer-cli 預設的指令打包壓縮。">
+<meta name="twitter:image" content="https://jobs.tenten.co/assets/images/meta.jpg">
 
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -131,31 +134,26 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        
+        <article id="post-about-tenten-recurit"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/2017/11/06/about-tenten-recurit/">
+    	轉轉徵人頁面開發記事
+    </a>
+  </h2>
+	<time>
+	  11月 6, 2017
+	</time>
 	
-  <script>
-    window.subData= { title:'Year : 2017'}
-  </script>
-
-<section class="post-list">
+	</section>
 	
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2017/11/06/about-tenten-recurit/">
-        轉轉徵人頁面開發記事
-      </a>
-    </h2>
-    
-    <time>
-      11月 6, 2017
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <p><img src="https://jobs.tenten.co/assets/images/meta.jpg" alt="banner"></p>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#主要架構"><span class="toc-number">1.</span> <span class="toc-text">主要架構</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#開發過程"><span class="toc-number">2.</span> <span class="toc-text">開發過程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Polymer-感想"><span class="toc-number">3.</span> <span class="toc-text">Polymer 感想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最後"><span class="toc-number">4.</span> <span class="toc-text">最後</span></a></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p><img src="https://jobs.tenten.co/assets/images/meta.jpg" alt="banner"></p>
 <p><a href="https://jobs.tenten.co/" target="_blank" rel="external">徵人頁面</a></p>
 <p>這次的專案需求相對自由，不用管 IE 死活，對技術也沒特別要求，加上只有單一頁面，所以我決定用最單純的開發環境來進行。</p>
 <h2 id="主要架構"><a href="#主要架構" class="headerlink" title="主要架構"></a>主要架構</h2><ul>
@@ -163,137 +161,31 @@
 <li>輔助工具：<a href="https://www.browsersync.io/" target="_blank" rel="external">Browsersync</a>、<a href="https://jakearchibald.github.io/svgomg/" target="_blank" rel="external">SVGOMG</a>（線上 SVG 壓縮工具）</li>
 </ul>
 <p>沒有 webpack，只有用 polymer-cli 預設的指令打包壓縮。</p>
+<a id="more"></a>
+<h2 id="開發過程"><a href="#開發過程" class="headerlink" title="開發過程"></a>開發過程</h2><p>基本上由於頁面單純的關係，沒有遇到 Polymer 比較深的坑，到是 css animation 眾多，導致在網頁效能上耗費許久，Chrome 沒有太大問題，然而 Firefox（57 beta 版）的 CPU 使用率卻降不下來，不得已只好先在 Firefox 下把部份動畫取消，但這幾天更新的版本似乎處理掉這個問題了，所以又重新把動畫給加回去，穩定版的就請自求多福。</p>
+<h2 id="Polymer-感想"><a href="#Polymer-感想" class="headerlink" title="Polymer 感想"></a>Polymer 感想</h2><p>初次看時覺得很像 Vue.js，甚至覺得 Vue 如果能直接結合 web component 的技術應該也不錯。</p>
+<p>摸索時最讓我困擾的，大概就是 CSS 作用域的控制，由於每個元件裡面的 html 元素都被 Shadow DOM 包裝起來，所以 css reset 起到的作用其實不大。但是 CSS 可以額外使用的功能很靈活，可以直接設定 var 值來把 component 預設值蓋過，不須透過 js 來傳參數，相對簡潔許多。在大致了解內建的 <code>:host</code> 與 <code>::slotted</code> 的用法後，一樣的元件用 Polymer 做或許會比用 Vue 要來的簡潔。</p>
+<p>開發期間唯一遇到一個算是坑的大概是初始 js 載入這件事，最一開始的頁面需要載入一支 <code>webcomponents-loader.js</code> 作為引導，在開發期間不會有什麼事，但打包之後卻無法在 Firefox 正常執行，得改成 <code>webcomponents-lite.js</code> 這支有加上 polyfill 的 js 才行。</p>
+<p>Polymer 給我的感覺比較像是可以在一般專案裡，將複雜的元件剝出來獨立處理，而不是整個頁面都直接這樣開發，至於 Polymer 跟直接使用 web component 差別在哪，我目前也沒有頭緒。</p>
+<h2 id="最後"><a href="#最後" class="headerlink" title="最後"></a>最後</h2><p>對轉轉工作有興趣的人請跟我們聯繫吧！</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/SFt7Br1VRVw" frameborder="0" allowfullscreen></iframe></div>
+<p>是說 Google 內部有拿 Angular 來做什麼產品嗎？連 Youtube 都只用 Polymer 而已。</p>
 
-    
-	  <div class="readmore">
-      <a href="/2017/11/06/about-tenten-recurit/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
+  	</div>
+	  
+	</section>
+	
+		<section id="comments">
+			<div id="disqus_thread"></div>
+		</section>
+	
 </article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2017/07/18/try-next-js/">
-        Next.js 試用感想
-      </a>
-    </h2>
-    
-    <time>
-      7月 18, 2017
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <p>在使用過 Vue 社群的 <a href="https://nuxtjs.org" target="_blank" rel="external">Nuxt.js</a> 開發過一次專案後，便對 React 方的 <a href="https://github.com/zeit/next.js/" target="_blank" rel="external">Next.js</a> 抱有很大的興趣，尤其在知道 Nuxt 是由此啟發之後，對他抱的期待又更高了，於是在專案上線後，就轉去摸索了 Next 幾天，來試試看能不能把很久之前的 React 專案搬到上面，以下大概講一下那段時間的心得。</p>
-<p><strong>以下以 3.0.1-beta.X 為主</strong><br>
-
-    
-	  <div class="readmore">
-      <a href="/2017/07/18/try-next-js/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/react-js/">react.js</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2017/05/19/something-about-tientien-frontend-development/">
-        Vue.js 大型專案開發心得
-      </a>
-    </h2>
-    
-    <time>
-      5月 19, 2017
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <p><img src="http://i.imgur.com/Z3hXaNJ.png" alt=""></p>
-<p>歷時數月的田田蔬果終於正式上線了。</p>
-<p>這次專案是用 <a href="https://vuejs.org/" target="_blank" rel="external">Vue</a> 作為主軸來進行開發，對公司以及對我來講，不只是第一次的體驗，也是第一次將此類技術直接用在一個完整專案，來達到前後端分離的目標。</p>
-
-    
-	  <div class="readmore">
-      <a href="/2017/05/19/something-about-tientien-frontend-development/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/Vue/">Vue</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2017/01/21/elm-practice/">
-        摸索 Elm
-      </a>
-    </h2>
-    
-    <time>
-      1月 21, 2017
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <p><img src="http://i.imgur.com/7WTNc3K.png" alt="banner"></p>
-<p>前陣子在考慮摸索 Elm，剛好在那時候也在找當季蔬果的資料，後來想想，乾脆用這些資料來當作摸索的題材，於是這<a href="https://notes.knovour.ninja/food/">網站</a>就誕生了，以下來大概講一下感想。</p>
-<ul>
-<li><a href="https://www.harvest.moe" target="_blank" rel="external">當季蔬果一覽</a></li>
-<li><a href="https://github.com/Knovour/food" target="_blank" rel="external">GitHub</a></li>
-</ul>
-<h2 id="選-Elm-的原因"><a href="#選-Elm-的原因" class="headerlink" title="選 Elm 的原因"></a>選 Elm 的原因</h2><p>很大一部份其實是逃避現實，由於 JavaScript 的 framework 跟 library 大量出現，而且不僅是前後端，還延伸到桌面軟體、APP 甚至是 IoT 上。以前只是將 ES6 轉成 ES5 的 Babel，現在除了將可能會有的 ECMAScript 語法轉換以外，還可以讓 JS 支援一些不存在的語法（比如 Flow），再配上 webpack 還可以進一步定義更深的語法結構，雖然不是說非得全包全學不可，但五花八門的輪子不斷冒出，當下感覺是非常的吃不消。</p>
-<p>當時摸的是 React，雖然我個人挺喜歡這 library JSX 語法我很討厭，加上圍繞著 React 衍生的各種有的沒的花樣，輕則只是加點功能，重則有如在這之上又加了自創的語法一般，導致整個檔案看起來就像是三四種語言或語法風格的大雜燴，但不得不說，React 生態系真的把 JS 玩得很溜，比如 <a href="https://github.com/styled-components/styled-components" target="_blank" rel="external">styled-components</a> 又是一絕，但又要多塞一種風格在裡面我得考慮考慮。</p>
-<p>原本下一個想碰的是 <a href="https://cycle.js.org/" target="_blank" rel="external">Cycle.js</a>，但後來想想，Redux 跟 <a href="https://cycle.js.org/" target="_blank" rel="external">Cycle.js</a> 都有跟 Elm 借鑒一些東西，加上繼 Redux 出現之後，Elm 被關注的程度似乎有上升的趨勢，不如就直接學 Elm 看看，而這也是我第一個學的轉 JS 的語言。</p>
-
-    
-	  <div class="readmore">
-      <a href="/2017/01/21/elm-practice/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/elm/">elm</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-</section>
-
-
+<script>
+	window.subData = {
+		title: '轉轉徵人頁面開發記事',
+		tools: true
+	}
+</script>
 
       </div>
       <aside class='l_side'>
@@ -374,11 +266,13 @@
 <script>
   var disqus_shortname = 'knovour-notes';
   
+  var disqus_url = 'https://notes.knovour.ninja/2017/11/06/about-tenten-recurit/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

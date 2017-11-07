@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://notes.knovour.ninja/"/>
-  <updated>2017-11-06T18:36:23.711Z</updated>
+  <updated>2017-11-07T12:17:51.765Z</updated>
   <id>https://notes.knovour.ninja/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://notes.knovour.ninja/2017/11/06/about-tenten-recurit/"/>
     <id>https://notes.knovour.ninja/2017/11/06/about-tenten-recurit/</id>
     <published>2017-11-06T15:19:15.000Z</published>
-    <updated>2017-11-06T18:36:23.711Z</updated>
+    <updated>2017-11-07T12:17:51.765Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://jobs.tenten.co/assets/images/meta.jpg" alt="banner"></p>
 <p><a href="https://jobs.tenten.co/" target="_blank" rel="external">徵人頁面</a></p>
@@ -38,7 +38,6 @@
 <p>Polymer 給我的感覺比較像是可以在一般專案裡，將複雜的元件剝出來獨立處理，而不是整個頁面都直接這樣開發，至於 Polymer 跟直接使用 web component 差別在哪，我目前也沒有頭緒。</p>
 <h2 id="最後"><a href="#最後" class="headerlink" title="最後"></a>最後</h2><p>對轉轉工作有興趣的人請跟我們聯繫吧！</p>
 <div class="video-container"><iframe src="//www.youtube.com/embed/SFt7Br1VRVw" frameborder="0" allowfullscreen></iframe></div>
-<p>是說 Google 內部有拿 Angular 來做什麼產品嗎？連 Youtube 都只用 Polymer 而已。</p>
 ]]></content>
     
     <summary type="html">

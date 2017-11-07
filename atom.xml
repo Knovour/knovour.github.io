@@ -820,7 +820,7 @@
     <link href="https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/"/>
     <id>https://notes.knovour.ninja/2015/09/16/path-of-exile-on-linux/</id>
     <published>2015-09-16T13:26:00.000Z</published>
-    <updated>2017-05-13T11:04:35.054Z</updated>
+    <updated>2017-11-07T12:25:48.769Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://farm1.staticflickr.com/621/21000960109_98f4415f3d_c.jpg" alt="banner"></p>
 <p>之前在 Wine 上跑過一陣子 PoE，但經過幾次更新後，loading 畫面除了狂閃外基本上就是完全進不去的狀態，然而當時也是有點膩了，所以也懶得折騰（基本上都是在講把 Wine 降級或是裝 PlayOnLinux，不過不想這樣搞）。</p>
@@ -874,11 +874,11 @@
     </summary>
     
     
-      <category term="linux" scheme="https://notes.knovour.ninja/tags/linux/"/>
-    
       <category term="wine" scheme="https://notes.knovour.ninja/tags/wine/"/>
     
       <category term="game" scheme="https://notes.knovour.ninja/tags/game/"/>
+    
+      <category term="Linux" scheme="https://notes.knovour.ninja/tags/Linux/"/>
     
   </entry>
   

@@ -44,27 +44,6 @@
     </url>
 
     <url>
-        <loc>https://notes.knovour.ninja/tags/linux/</loc>
-        <lastmod>2017-05-13T11:04:35.054Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/tags/wine/</loc>
-        <lastmod>2017-05-13T11:04:35.054Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://notes.knovour.ninja/tags/game/</loc>
-        <lastmod>2017-05-13T11:04:35.054Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://notes.knovour.ninja/tags/sails-js/</loc>
         <lastmod>2017-05-13T11:04:44.461Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -114,13 +93,6 @@
     </url>
 
     <url>
-        <loc>https://notes.knovour.ninja/tags/Linux/</loc>
-        <lastmod>2017-05-18T16:59:12.193Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://notes.knovour.ninja/tags/Vue/</loc>
         <lastmod>2017-05-18T17:40:19.068Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -137,6 +109,27 @@
     <url>
         <loc>https://notes.knovour.ninja/tags/Polymer/</loc>
         <lastmod>2017-11-07T12:17:51.765Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/wine/</loc>
+        <lastmod>2017-11-07T12:25:48.769Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/game/</loc>
+        <lastmod>2017-11-07T12:25:48.769Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://notes.knovour.ninja/tags/Linux/</loc>
+        <lastmod>2017-11-07T12:25:48.769Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

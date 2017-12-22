@@ -114,6 +114,13 @@
     </url>
 
     <url>
+        <loc>https://notes.knovour.ninja/tags/Linux/</loc>
+        <lastmod>2017-11-07T12:25:48.769Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://notes.knovour.ninja/tags/wine/</loc>
         <lastmod>2017-11-07T12:25:48.769Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -128,8 +135,8 @@
     </url>
 
     <url>
-        <loc>https://notes.knovour.ninja/tags/Linux/</loc>
-        <lastmod>2017-11-07T12:25:48.769Z</lastmod>
+        <loc>https://notes.knovour.ninja/tags/css/</loc>
+        <lastmod>2017-12-22T16:53:22.588Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
